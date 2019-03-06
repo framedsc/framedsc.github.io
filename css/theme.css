@@ -523,6 +523,7 @@ img.shadowed, div.figure img {
 
 div.figure p {
 	font-size: smaller;
+	text-align: left;
 }
 
 .float-left {
