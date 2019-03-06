@@ -1,0 +1,22 @@
+{
+  "docs": [
+    {
+      "location": "contactinfo.htm",
+      "breadcrumbs": "Home / Contact info",
+      "keywords": "blabla Contact Discord info",
+      "title": "Contact info"
+    },
+    {
+      "location": "GameGuides/acodyssey.htm",
+      "breadcrumbs": "Home / Game guides / Assassins Creed Odyssey",
+      "keywords": "11 27s_Creed_Odyssey acheader Ansel aspect Aspect Assassin assassinscreedodyssey AssassinsCreedOdyssey by Camera Cameras com control Creed Custom Day DirectX disabling DOF DSR Feature Features fog FoV FransBouma game Game Gaming github Hotsampling https HUD Images in InjectableGenericCameraSystem limitations Links master Mode Mods Nexus nexusmods No Odyssey of on Otis_Inf pause PC pcgamingwiki Photo png ratio Ratios removal Reshade Resolution scaling shadowed Shot summary Supported Time Timestop toggle tools Tools tree Useful Vanilla versions wiki Wiki with www Yes",
+      "title": "Assassin's Creed Odyssey"
+    },
+    {
+      "location": "GameGuides/re2.htm",
+      "breadcrumbs": "Home / Game guides / Resident Evil 2",
+      "keywords": "11 Aspect by Camera Care CE CheatTables com Control ct Custom DSR Feature Flashlight FOV Framework Free Hide Hotsampling https Images Jim2point0 Lock Mod Mode mods nexusmods No Photo png Position Ratios RE2 re2_new re2header Remove residentevil22019 shadowed Stop Summary Supported Table Taker The Time Tools Vanilla Vignette www Yes",
+      "title": "Resident Evil 2"
+    }
+  ]
+}
