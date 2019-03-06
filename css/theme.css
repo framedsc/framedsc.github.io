@@ -362,6 +362,10 @@ img {
 	vertical-align: middle;
 }
 
+img.autosize {
+    max-width:100%;
+    height: auto;
+}
 
 input {
 	line-height: normal;
@@ -506,6 +510,14 @@ td {
 /* #endregion*/
 
 /* #region general classes */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
 .hidden {
 	display: none !important;
 	visibility: hidden;
@@ -540,6 +552,11 @@ div.figure p {
 
 .full-width {
 	width: 100%;
+}
+
+.mt10
+{
+	margin-top: 10px;
 }
 
 .no-highlight {
@@ -1127,6 +1144,10 @@ div.figure p {
 	text-align: center;
 	font-size: 100%;
 	*zoom: 1;
+}
+
+.nav-top > .fa {
+	margin-top : 10px;
 }
 
 .nav-top:before, .nav-top:after {

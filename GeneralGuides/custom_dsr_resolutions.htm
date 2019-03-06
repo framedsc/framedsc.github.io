@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>How to get 10 custom resolutions in any aspect ratio you want - FRAMED. Screenshot Community</title>
+    <title>Custom DSR Resolutions - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
@@ -40,7 +40,7 @@
 <ul>
 <li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../GeneralGuides/index.htm">General guides</a></span></li>
 
-<li class="tocentry current"><a class="current" href="../GeneralGuides/custom_dsr_resolutions.htm">How to get 10 custom resolutions in any aspect ratio you want</a>
+<li class="tocentry current"><a class="current" href="../GeneralGuides/custom_dsr_resolutions.htm">Custom DSR Resolutions</a>
 <ul class="currentrelative">
 <li class="tocentry"><a href="#export-your-registry-settings">1. Export your registry settings</a></li>
 
@@ -48,7 +48,7 @@
 
 <li class="tocentry"><a href="#edit-your-exported-registry-file">3. Edit your exported registry file</a></li>
 
-<li class="tocentry"><a href="#nohighlight">4. Use DevManView OR Restart your computer</a></li>
+<li class="tocentry"><a href="#use-devmanview-or-restart-your-computer">4. Use DevManView OR Restart your computer</a></li>
 
 <li class="tocentry"><a href="#enjoy-your-new-resolutions">5. Enjoy your new resolutions!</a></li>
 
@@ -75,7 +75,7 @@
             <div class="nav-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <div class="breadcrumbs">
-<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../GeneralGuides/index.htm">General guides</a></li> / <li><a href="../GeneralGuides/custom_dsr_resolutions.htm">How to get 10 custom resolutions in any aspect ratio you want</a></li></ul>
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../GeneralGuides/index.htm">General guides</a></li> / <li><a href="../GeneralGuides/custom_dsr_resolutions.htm">Custom DSR Resolutions</a></li></ul>
 					
                     </div>
                     <hr />
@@ -94,16 +94,16 @@
 </ol>
 <h2 id="export-your-registry-settings">1. Export your registry settings<a class="headerlink" href="#export-your-registry-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Open Regedit (open your start menu or press WIN+R and type &quot;regedit&quot;). Navigate here (Copy this line and paste it in the top line in RegEdit)</p>
-<p><code>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\nvlddmkm\State\DisplayDatabase</code></p>
-<p>And from there to your display name</p>
+<pre class="nocode">Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\nvlddmkm\State\DisplayDatabase
+</pre><p>And from there to your display name</p>
 <p>You might have a bunch of different folders in there for your displays. For example, <a href="https://i.imgur.com/ZHav1Kf.png" target="_blank">this is what mine looks like</a>. The bottom 2 ended up being my monitors (I have 2). You'll know the folders correspond to a monitor when you see a populated &quot;SmoothScalingData&quot; parameter.</p>
 <p>Right click that folder and click &quot;export.&quot; Save the file somewhere you'll remember it. This file is handy as you simply need to double click it after a new driver install to restore your custom resolutions.</p>
 <h2 id="run-the-dsr-calculator">2. Run the DSR Calculator<a class="headerlink" href="#run-the-dsr-calculator" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>The DSR Calculator is a tool I made that will allow you to type in 10 custom resolutions and will generate the required hex information for them. You simply need to copy that to your clipboard and be prepared to replace that section of the registry file you exported.</p>
 <p><a href="https://web.archive.org/web/20180301201005/http://www.jim2point0.com/tools/dsr_hex/" target="_blank">Click here to download the DSR Calculator</a> (extract to a folder and open the index.html in your browser)</p>
 <p>When you finish, you'll get some data that looks like this:</p>
-<p><code>&quot;SmoothScalingData&quot;=hex:01,00,00,00,22,00,00,00,10,00,00,00,C7,38,00,00,41,36,00,00,00,00,00,00,22,44,00,00,61,51,00,00,00,00,00,00,7D,4F,00,00,82,6C,00,00,00,00,00,00,D8,5A,00,00,A2,87,00,00,00,00,00,00,11,22,00,00,41,36,00,00,00,00,00,00,C7,38,00,00,20,1B,00,00,00,00,00,00,7D,4F,00,00,61,51,00,00,00,00,00,00,D8,5A,00,00,82,6C,00,00,00,00,00,00,33,66,00,00,41,36,00,00,00,00,00,00,7C,23,00,00,61,51,00,00,00,00,00,00</code></p>
-<h2 id="edit-your-exported-registry-file">3. Edit your exported registry file<a class="headerlink" href="#edit-your-exported-registry-file" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<pre class="nocode">&quot;SmoothScalingData&quot;=hex:01,00,00,00,22,00,00,00,10,00,00,00,C7,38,00,00,41,36,00,00,00,00,00,00,22,44,00,00,61,51,00,00,00,00,00,00,7D,4F,00,00,82,6C,00,00,00,00,00,00,D8,5A,00,00,A2,87,00,00,00,00,00,00,11,22,00,00,41,36,00,00,00,00,00,00,C7,38,00,00,20,1B,00,00,00,00,00,00,7D,4F,00,00,61,51,00,00,00,00,00,00,D8,5A,00,00,82,6C,00,00,00,00,00,00,33,66,00,00,41,36,00,00,00,00,00,00,7C,23,00,00,61,51,00,00,00,00,00,00
+</pre><h2 id="edit-your-exported-registry-file">3. Edit your exported registry file<a class="headerlink" href="#edit-your-exported-registry-file" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Remember that file you exported? Open it in a text editor. We're interested in replacing the lines highlighted like in this picture (lines 5-10):</p>
 <p><img src="https://i.imgur.com/r3KJVKY.png" alt="Registry File Editing" /></p>
 <p>Highlight those lines and paste in the data you copied from the DSR tool. Save the file and then run it (double click). Say yes when it warns you about the potential damage you could be doing to your computer. </p>
@@ -111,7 +111,7 @@
 <p><img src="https://i.imgur.com/tx8PgZp.png" alt="Registry Permissions" /></p>
 <p>Click your relevant user\group and check &quot;full control&quot; under &quot;allow.&quot; Or you can just set full control for everything.</p>
 <p>Now you should just be able to double click registry files to import those settings again. </p>
-<h2 id="nohighlight">4. Use DevManView OR Restart your computer<a class="headerlink" href="#nohighlight" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="use-devmanview-or-restart-your-computer">4. Use DevManView OR Restart your computer<a class="headerlink" href="#use-devmanview-or-restart-your-computer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>You can get this tool here and then create a BAT file that will toggle specific devices. For our purposes, this saves from having to do a complete restart every time you import new registry settings, which means you can instantly change out your DSR resolutions if you make a few copies of your original registry file (why have 10 resolutions when you can have 30?)</p>
 <p><a href="http://www.nirsoft.net/utils/device_manager_view.html" target="_blank">Get the tool from here</a>. The download link is all the way down a the bottom.</p>
 <p>Extract that somewhere. I personally maintain a &quot;utilities&quot; folder for stuff like this.
