@@ -101,7 +101,8 @@ and this guide should help you understand what the various values mean and what 
 <p>All settings in the Cinematic DOF shader are drag sliders, which means you can click them, hold the left-mousebutton and drag the mouse
 left or right to resp. decrease and increase the value. By holding <code>shift</code> while dragging the increase/decrease will go faster. When holding
 <code>ctrl</code> while clicking gives you the ability to type in the value you want. </p>
-<h2 id="focusing">Focusing<a class="headerlink" href="#focusing" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The screenshots below are taken with Cinematic DOF v1.1.10, released on May 25th, 2019.</p>
+</div><h2 id="focusing">Focusing<a class="headerlink" href="#focusing" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>One of the most important parts of a depth of field shader is to focus on the right element in the 3D world. By default the 
 shader has its focusing mode set to <em>auto-focus</em> and <em>mouse-driven auto-focus</em>. This means that if you mouse the mouse over the scene, the 
 element that's below the mouse pointer will be the element the shader will focus on. Everything in front of it and behind it will be blurred.</p>
@@ -130,12 +131,12 @@ you want to focus on). That leaves the focal length and the aperture. </p>
 in general it means the lower the value, the more open the lens will be, so the more light will come into the lens/camera, and with that the more blur you'll 
 get in out-of-focus areas. For the Cinematic DOF shader, the two parameters are basically doing the same thing, as the shader itself doesn't control the amount of
 light coming into the camera. </p>
-<p>So what values should you pick? To get started, let's look at the defaults the shader comes with: 120mm for Focal length and 2.8 for aperture. If you'd use
-a 120mm lens on a modern camera with aperture 2.8 you'd get nice portrait shots with a nice shallow depth of field and nice background blur. </p>
+<p>So what values should you pick? To get started, let's look at the defaults the shader comes with: 100mm for Focal length and 2.8 for aperture. If you'd use
+a 100mm lens on a modern camera with aperture 2.8 you'd get nice portrait shots with a nice shallow depth of field and nice background blur. </p>
 <p>Here's the default setting in action:</p>
 <div class="figure">
-<img src="../../Images/ShaderGuides/CinematicDOF/focus_120mm_2_8.jpg" alt="120mm/2.8" title="120mm with 2.8 aperture" class="shadowed" width="1024" height="576" />
-<p>120mm with 2.8 aperture</p>
+<img src="../../Images/ShaderGuides/CinematicDOF/focus_100mm_2_8.jpg" alt="100mm/2.8" title="100mm with 2.8 aperture" class="shadowed" width="1024" height="576" />
+<p>100mm with 2.8 aperture</p>
 </div>
 <p>Look careful at the blurring on the wings of the statue, and the thick blurring in the background. </p>
 <p>If we change the lens and aperture to the values of a lens that's often sold with a modern camera, a 50mm lens with aperture 5.6, the results are a bit different:</p>
@@ -145,10 +146,10 @@ a 120mm lens on a modern camera with aperture 2.8 you'd get nice portrait shots 
 </div>
 <p>You can clearly see there's way less blur in the background. The focus is still on the statue, camera is still on the same distance. Also the blurring on the wings is gone, 
 they're cleanly in focus.</p>
-<p>Here's the same scene with a lens of 120mm and aperture of 5.6:</p>
+<p>Here's the same scene with a lens of 100mm and aperture of 5.6:</p>
 <div class="figure">
-<img src="../../Images/ShaderGuides/CinematicDOF/focus_120mm_5_6.jpg" alt="120mm/5.6" title="120mm with 5.6 aperture" class="shadowed" width="1024" height="576" />
-<p>120mm with 5.6 aperture</p>
+<img src="../../Images/ShaderGuides/CinematicDOF/focus_100mm_5_6.jpg" alt="100mm/5.6" title="100mm with 5.6 aperture" class="shadowed" width="1024" height="576" />
+<p>100mm with 5.6 aperture</p>
 </div>
 <p>And with a 50mm lens with aperture 2.8:</p>
 <div class="figure">
@@ -158,11 +159,11 @@ they're cleanly in focus.</p>
 <p>There's subtle more blur than with a 5.6 aperture. You're free to choose what will give you the right blur factor. It's often only necessary to change one the 
 two, either lens length <em>or</em> aperture, but not both. To get started, leave the aperture on 2.8 for now and only change the lens length to a lower value for less blur 
 and a higher value for more blur. </p>
-<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>Moving the camera closer to the focused element also makes the blur be more prominent. </p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>Moving the camera closer to the focused element also makes the blur be more prominent (and you have to change the manual focus plane if you're using manual focusing)</p>
 </div><h2 id="blur-tweaking">Blur tweaking<a class="headerlink" href="#blur-tweaking" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>After you've set up the focus, the lens length and aperture, you can now tweak the blur of the near plane (in front of what's in focus) and the far plane (what's behind
 what's in focus). Additionally you can change the quality of the blur and apply a post-blur smoothing factor to iron out any undersampling artifacts you might see. </p>
-<p>Let's see what these look like. We'll use the defaults of 120mm and aperture of 2.8</p>
+<p>Let's see what these look like. We'll use the defaults of 100mm and aperture of 2.8</p>
 <h3 id="far-plane-blur">Far plane blur<a class="headerlink" href="#far-plane-blur" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>First we have <em>Far plane max blur</em>. Here you can tweak the blur strength given by the lens length + aperture + distance combination. A value of 1.0 gives the 
 default blur for that combination. A value of 0 totally switches off bluring for the far plane. If you set the value to a high value, e.g. 3.0, you get excessive
@@ -178,11 +179,11 @@ blurring as seen in the shot below.</p>
 <p>Far plane blur with blur set to 0.5</p>
 </div>
 <p>This might look the same as using a shorter lens, like 50mm, but that's not the case: with a 50mm lens the blur starts later, deeper into the 3D world, farther away from 
-the focus plane. With 120mm the blur starts already on the wings of the statue. Because the blur factor is set to a lower value, the blur is very subtle. </p>
+the focus plane. With 100mm the blur starts already on the wings of the statue. Because the blur factor is set to a lower value, the blur is very subtle. </p>
 <h3 id="near-plane-blur">Near plane blur<a class="headerlink" href="#near-plane-blur" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>Additionally you can tweak the blur for the <em>near plane</em>. The near plane is blurred with a soft edge to make it realistic. The same applies to the near plane blur as 
 for the far plane blur: setting it to 0 switches it off, setting it to a high value makes the blur extremely prominent. </p>
-<p>Below an example shot where the focus is on the second pilar, using the default blur factor of 1.0 for both near and far plane.</p>
+<p>Below an example shot where the focus is on the statue and far blur has been disabled, using the default near plane blur factor of 1.0.</p>
 <div class="figure">
 <img src="../../Images/ShaderGuides/CinematicDOF/blur_np_1_0.jpg" alt="near plane blur 1.0" title="Near plane blur with blur set to 1.0" class="shadowed" width="1024" height="576" />
 <p>Near plane blur with blur set to 1.0</p>
@@ -225,35 +226,39 @@ than it is on the edges. To do this, increase the <strong>Highlight edge bias</s
 <p>Highlight edge bias of 0.5</p>
 </div>
 <h3 id="highlight-type">Highlight type<a class="headerlink" href="#highlight-type" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>There are different types of highlights. The default is <em>Twinkle circles</em> which gives the nice round colored highlight bokehs. However Cinematic DOF has another
-highlight type, Bloom burn. It can give a more bloomy highlight without the typical round bokehs. An example of this is below.</p>
+<p>There are different types of highlights: Bloom burn and Twinkle circlets. The latter gives more prominent round colored highlight bokehs, Bloom burn keeps things more subtle.
+An example of each is below.</p>
 <div class="figure">
-<img src="../../Images/ShaderGuides/CinematicDOF/ht_bloomblur.jpg" alt="Bloom blur" title="Bloom blur highlight type" class="shadowed" width="1024" height="576" />
-<p>Bloom blur highlight type</p>
+<img src="../../Images/ShaderGuides/CinematicDOF/ht_bloomblur.jpg" alt="Bloom blur" title="Bloom burn highlight type" class="shadowed" width="1024" height="576" />
+<p>Bloom burn highlight type</p>
+</div>
+<div class="figure">
+<img src="../../Images/ShaderGuides/CinematicDOF/ht_twinklecirclets.jpg" alt="Twinkle circlets" title="Twinkle circlets highlight type" class="shadowed" width="1024" height="576" />
+<p>Twinkle circlets highlight type</p>
 </div>
 <h3 id="highlight-gain">Highlight gain<a class="headerlink" href="#highlight-gain" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>Both near and far plane have their own <strong>Highlight gain</strong>. This value controls how much of a boost the highlights get. Below you'll see a shot of
-a scene in another Unreal Engine demo, SoulSlum, where there are a lot of background lights, and by default they still look quite weak:</p>
+<p>Both near and far plane have their own <strong>Highlight gain</strong>. This value controls how much of a boost the highlights get. Below you'll see a shot with some 
+far and near highlights, and by default they still look quite weak:</p>
 <div class="figure">
-<img src="../../Images/ShaderGuides/CinematicDOF/ht_gain_off.jpg" alt="Highlight gain off" title="Highlight gain of 0.0" class="shadowed" width="1024" height="640" />
+<img src="../../Images/ShaderGuides/CinematicDOF/ht_gain_off.jpg" alt="Highlight gain off" title="Highlight gain of 0.0" class="shadowed" width="1024" height="576" />
 <p>Highlight gain of 0.0</p>
 </div>
-<p>However if we crank the Highlight gain of the far plane up to 1.0, we get a totally different scene:</p>
+<p>However if we crank the Highlight gain of the near and far plane up to 0.5, we get a totally different scene:</p>
 <div class="figure">
-<img src="../../Images/ShaderGuides/CinematicDOF/ht_gain_1_0.jpg" alt="Highlight gain 1.0" title="Highlight gain of 1.0" class="shadowed" width="1024" height="640" />
-<p>Highlight gain of 1.0</p>
+<img src="../../Images/ShaderGuides/CinematicDOF/ht_gain_0_5.jpg" alt="Highlight gain 0.5" title="Highlight gain of 0.5" class="shadowed" width="1024" height="576" />
+<p>Highlight gain of 0.5</p>
 </div>
 <p>This might be a bit much however. There's another control you can use in tandem with the highlight gain, which is described in the next paragraph</p>
 <h3 id="highlight-treshold">Highlight treshold<a class="headerlink" href="#highlight-treshold" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>By default all highlights are boosted when you crank up the highlight gain of either near or far plane. This might be what you want, but it likely is a bit much. Also
 in case of TAA/SMAA artifacts it might be you get highlight edges on your focused element because the framebuffer doesn't perfectly align with the depth buffer. </p>
-<p>To tell the shader to only crank up the highlights above a certain brightness, you can use the <strong>Highlight treshold</strong> for both near plane and far plane. If it's set
-to e.g. 0.3, all pixels which have a luminosity of 0.3 (0.0 being black, 1.0 being bright white) will be boosted. Below is an example shot with the same gain as above
-but now also paired with a threshold of 0.7. All pixels which are brighter than 0.7 will get the gain applied, all other pixels are left alone. A lot less highlights are
-visible, only the ones which are very bright.</p>
+<p>To tell the shader to only crank up the highlights above a certain luminosity, you can use the <strong>Highlight treshold</strong> for both near plane and far plane. If it's set
+to e.g. 0.3, all pixels which have a luminosity of 0.3 or higher (0.0 being black, 1.0 being bright white) will be boosted. Below is an example shot with the same gain as above
+but now also paired with a threshold of 0.5. All pixels which are brighter than 0.5 will get the gain applied, all other pixels are left alone. The highlights
+in front of the fire in the back are dimmed a bit, only the brightest ones are visible.</p>
 <div class="figure">
-<img src="../../Images/ShaderGuides/CinematicDOF/ht_threshold.jpg" alt="Highlight threshold" title="Highlight threshold of 0.7 with gain of 1.0" class="shadowed" width="1024" height="640" />
-<p>Highlight threshold of 0.7 with gain of 1.0</p>
+<img src="../../Images/ShaderGuides/CinematicDOF/ht_threshold.jpg" alt="Highlight threshold" title="Highlight threshold of 0.5 with gain of 0.8" class="shadowed" width="1024" height="576" />
+<p>Highlight threshold of 0.5 with gain of 0.8</p>
 </div>
 <h3 id="highlight-normalization-for-far-plane">Highlight normalization for far plane<a class="headerlink" href="#highlight-normalization-for-far-plane" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>The way the highlights are calculated depends on luminosity and the blur factor. This can lead to a loss in <em>light energy</em> around the edges of a bokeh highlight as 
@@ -261,8 +266,8 @@ things are calculated in SDR, not HDR. To make it look like everything was done 
 shader comes with a normalization factor, which can correct this.</p>
 <p>In the shot below we use little gain, a small threshold value and a normalization factor. This leads to nice circular bokehs in the far plane. </p>
 <div class="figure">
-<img src="../../Images/ShaderGuides/CinematicDOF/ht_normalized.jpg" alt="Highlight normalization" title="Highlight normalization of 0.5 with gain of 0.15 and threshold of 0.18" class="shadowed" width="1024" height="640" />
-<p>Highlight normalization of 0.5 with gain of 0.15 and threshold of 0.18</p>
+<img src="../../Images/ShaderGuides/CinematicDOF/ht_normalized.jpg" alt="Highlight normalization" title="Highlight normalization of 0.26" class="shadowed" width="1024" height="640" />
+<p>Highlight normalization of 0.26</p>
 </div>
 <p>The near plane doesn't have normalization as it doesn't need it: the blur system of the near plane works differently so highlights don't need normalization.</p>
 <h2 id="anamorphism-control">Anamorphism control<a class="headerlink" href="#anamorphism-control" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
