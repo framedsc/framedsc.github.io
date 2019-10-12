@@ -47,6 +47,8 @@
 <ul class="currentrelative">
 <li class="tocentry"><a href="#why-would-i-want-to-use-a-lut">Why would I want to use a LUT?</a></li>
 
+<li class="tocentry"><a href="#reshade">ReShade</a></li>
+
 <li class="tocentry"><a href="#adobe-photoshop">Adobe Photoshop</a></li>
 
 <li class="tocentry"><a href="#adobe-lightroom">Adobe Lightroom</a></li>
@@ -86,70 +88,115 @@
                 </div>
                 <div role="main">
                     <div class="section">
-<p><img src="../Images\lutg_header.png" alt="LUT Generation!" width="896" height="180" /></p>
-<p>LUTs are a powerful tool that can completely change the look of any picture. This guide is geared towards generating LUTs for usage in ReShade, however, this guide remains useful if you're into photo editing and anything based around colours in general.</p>
+<p><img src="Images\lutguide\lutg_header.png" alt="LUT Generation!" class="shadowed autosize" /></p>
+<p>LUTs are a powerful tool that can completely change the look of any picture. This guide is geared towards generating LUTs for usage in ReShade.</p>
 <hr />
 <h2 id="why-would-i-want-to-use-a-lut">Why would I want to use a LUT?<a class="headerlink" href="#why-would-i-want-to-use-a-lut" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>LUTs (Look-up Tables) are a cheap way of changing the colours of your game without having to rely on a huge stack of shaders that eats at your performance. You can use them to make in-game colours look more natural (colour correction), or give your game a certain stylised look (colour grading).</p>
+<p>LUTs (Look-up Tables) are a cheap and simple way of changing the colours of your game without having to rely on a huge stack of shaders that eats at your performance. You can use them to make in-game colours look more natural (colour correction), or give your game a certain stylised look (colour grading).</p>
+<p><img src="../Images\lutguide\lutg_comp.png" alt="LUT example" class="shadowed autosize" width="2560" height="1080" />
+<em>Mass Effect: Andromeda</em></p>
 <h3 id="how-do-i-use-a-lut">How do I use a LUT?<a class="headerlink" href="#how-do-i-use-a-lut" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>You'll need one of these:</p>
 <p><img src="../Images\lutguide\lut_neutral.png" alt="This is a Neutral LUT" class="shadowed autosize" width="1024" height="32" /></p>
-<p>This is a LUT. More specifically, this is a <strong>neutral</strong> LUT. It does absolutely nothing, but is the starting point for <em>everything</em> you can do with LUTs.</p>
+<p>This texture is a LUT. More specifically, this is a <strong>neutral</strong> LUT. It does absolutely nothing, but is the starting point for <em>everything</em> you can do with LUTs.</p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p><strong>This texture is incredibly important!</strong> It is the LUT itself, after all. Make sure you have it! You can either download the above texture, or it can be found in the standard <code>reshade-shaders</code> Textures folder as <code>lut.png</code>. <strong>Back it up</strong> somewhere, you'll want copies of this texture.</p>
-</div><p>ReShade uses the shader <code>LUT.fx</code> to load and apply this. Note that <code>LUT.fx</code> only handles <strong>one</strong> (1) LUT, and I highly recommend this single LUT to be your colour correction LUT. You can have multiple LUTs and switch through them with the <code>MultiLUT.fx</code> shader, which will be covered later on.</p>
-<p>### What now?</p>
-<p>This guide is split into three parts (for now), covering generation of LUTs using Photoshop or Lightroom, and the usage of the <code>MultiLUT.fx</code> shader.</p>
+</div><p>ReShade uses the shader <code>LUT.fx</code> to load and apply this. Note that <code>LUT.fx</code> only handles <strong>one</strong> (1) LUT, and I highly recommend this single LUT to be your colour correction LUT. You can have multiple LUTs and switch through them with the <code>MultiLUT.fx</code> shader.</p>
+<h3 id="how-can-i-make-one">How can I make one?<a class="headerlink" href="#how-can-i-make-one" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>This guide covers the generation of LUTs using: </p>
+<ul>
+<li>ReShade</li>
+<li>Adobe Photoshop</li>
+<li>Adobe Lightroom</li>
+</ul>
+<p>Additionally, it contains the usage guide for the <code>MultiLUT.fx</code> shader.<br />
+<em>Navigate to these sections using the sidebar.</em></p>
+<p>GIMP is not covered in this guide, as the <a href="https://reshade.me/forum/shader-discussion/3179-lut-s-powerful-color-correction-the-guide" target="_blank">old LUT guide</a> still works.</p>
+<hr />
+<h2 id="reshade">ReShade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>What you'll need:</p>
+<ul>
+<li>the game of your choice (with ReShade installed)</li>
+<li>the shader <code>qUINT_lightroom.fx</code></li>
+<li>any ReShade shaders that change colours</li>
+</ul>
+<p><em>I will be using ReShade 4.3.0. This guide assumes you are familiar with configuring ReShade.</em></p>
+<h4 id="step-1-setting-up">Step 1: Setting up<a class="headerlink" href="#step-1-setting-up" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p><code>qUINT_lightroom.fx</code> is <strong>not</strong> part of the standard collection of shaders. Download it from the <a href="https://github.com/martymcmodding/qUINT" target="_blank">qUINT framework</a>.</p>
+</div><p>While qUINT Lightroom is perfectly capable of very extensive colour changes on its own, this guide will incorporate the effects of other colour grading/correcting shaders, such as <code>FilmicPass.fx</code>, <code>LevelsPlus.fx</code>, <code>Technicolor.fx</code> and so on into our LUT. </p>
+<p>You would want to &quot;bake&quot; all these shaders into a single LUT because each shader has a small performance impact. These impacts, no matter how small, will add up over time. The impact of the <code>LUT.fx</code> shader on the other hand is much smaller, especially compared to other shaders, saving you your frames.</p>
+<p>Additionally, having these LUTs around can preserve your presets in the odd event a future ReShade update causes shaders to malfunction.</p>
+<h4 id="step-2-configuring-reshade">Step 2: Configuring ReShade<a class="headerlink" href="#step-2-configuring-reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>We'll be taking advantage of qUINT Lightroom's ability to generate a LUT on-screen. <strong>The shader has to be at the top</strong> of your list, like so:</p>
+<p><img src="../Images\lutguide\lutg_rs-list.png" alt="A ReShade Hierarchy" class="shadowed autosize" width="583" height="215" /></p>
+<p>Having it at the top makes all shaders below it load on top of it, meaning their effects will be recorded onto the LUT.</p>
+<p>Tick <code>Enable LUT Overlay</code> to generate the LUT, and change <code>LUT tile size</code> and <code>LUT tile count</code> both to <code>32</code>.</p>
+<p><img src="../Images\lutguide\lutg_rs-cfg.png" alt="Configuring ReShade" class="shadowed autosize" width="583" height="215" /></p>
+<p>This is not a qUINT Lightroom guide, so we will not be covering how to use the rest of the shader. However, if you're experienced with it and have made changes you're happy with, continue to the next step.</p>
+<p>With qUINT Lightroom all set up, we can move on to the magic. You can disable the shader or the LUT overlay if you don't want the LUT to be in your way while editing. Enable your favourite shaders and start messing around.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p><strong>The shaders you want to use here must only change colours.</strong> Shaders that add bloom, grain, vignette, lens effects and/or any other visual effects (including depth shaders like AO and DoF) will only mess up your LUT.</p>
+</div><p>Once you're happy with your results, we can move on to exporting.</p>
+<h4 id="step-3-exporting">Step 3: Exporting<a class="headerlink" href="#step-3-exporting" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>The final step is to take a screenshot of your game, preferably using ReShade's built-in capture tool. The qUINT Lightroom-generated LUT has to be visible in this screenshot. If you've done everything right, the LUT should look different due to all the colour effects you've added.</p>
+<p>Crop just the LUT out of that screenshot. You have to be precise with this crop, make sure it's pixel perfect. Save it as a PNG. Do <strong>not</strong> export it in a lossy format like JPG, you do not want compression artifacts in a LUT.</p>
+<p>I would recommend exporting this file as <code>lut.png</code>, saving right into your Textures folder and replacing the previous <code>lut.png</code> that was in there. This makes it so you can use your LUT right away with <code>LUT.fx</code>.</p>
+<h4 id="extra-lut-precision">Extra: LUT precision<a class="headerlink" href="#extra-lut-precision" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>Playing with <code>LUT tile size</code> and <code>LUT tile count</code> changes the precision of the LUT. This is typically unnecessary as a tile size and count of 32 is plenty precise. In the event that you have changed these values to be different than 32, <code>LUT.fx</code> has to be modified in order to display the LUT correctly. Skip to <code>LUT variants and changing the atlas</code> of the MultiLUT section at the bottom if you are modifying the shader.</p>
 <hr />
 <h2 id="adobe-photoshop">Adobe Photoshop<a class="headerlink" href="#adobe-photoshop" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>What you'll need:<br />
-- at least one screenshot from your game<br />
-- Adobe Photoshop CS4 or newer <em>(requires Adjustment Layers)</em></p>
+<p>What you'll need:  </p>
+<ul>
+<li>at least one screenshot from your game  </li>
+<li>Adobe Photoshop CS4 or newer <em>(requires Adjustment Layers)</em></li>
+</ul>
 <p><em>I will be using Photoshop CC 2019. The game screenshot is from GreedFall.</em></p>
 <h4 id="step-0-screenshot-collage">Step 0: Screenshot Collage<a class="headerlink" href="#step-0-screenshot-collage" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>While not necessary, creating a collage of various screenshots will ensure that the effects of your LUT still look great in different scenes. They should cover various times of day and locations! This is important if you're making a corrective LUT.</p>
 <h4 id="step-1-adjustment-layers">Step 1: Adjustment Layers<a class="headerlink" href="#step-1-adjustment-layers" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
-<p>With your screenshots loaded into Photoshop, it's time to get to work. I'll be focusing on colour grading the screenshot I have loaded. Start by adding an Adjustment Layer from the Adjustments tab.</p>
+<p>With your screenshots loaded into Photoshop, it's time to get to work. I'll be focusing on colour grading the screenshot I have loaded. We'll be using Adjusment Layers here. Adjustment Layers are non-destructive ways to edit images and their effects can be copied to different documents.   </p>
+<p>Start by adding an Adjustment Layer from the Adjustments tab. </p>
 <p><img src="../Images\lutguide\lutg_ps-adj1.png" alt="Photoshop Import" class="shadowed autosize" width="1034" height="531" /></p>
-<p><strong>Use as many adjustment layers as you want!</strong> Don't hesitate to abuse them, as they all get baked down into a texture at the end. If you're going for style, go ahead and play with the weirder adjustments like Posterize and Threshold. </p>
-<p>Once you've had your fun, you should have a few extra layers on your right. </p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p><strong>Use as many adjustment layers as you want!</strong> Don't hesitate to abuse them, as they all get baked down into a texture at the end. If you're going for style, go ahead and play with the weirder adjustments like Posterize, Threshold and Gradient Map. Try changing Blending Modes as well!</p>
+</div><p>Once you've had your fun, you should have a few extra layers on your right. </p>
 <p><img src="../Images\lutguide\lutg_ps-adj2.png" alt="Photoshop Adjusted" class="shadowed autosize" width="1034" height="531" />
 <em>Curves for contrast, Vibrance for saturation, Color Balance for split-tones, H/S for selective colours (desaturated greens)</em></p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>This is <strong>not</strong> a guide on editing images. If you'd like to learn how to use these adjustment layers, I recommend <a href="https://www.howtogeek.com/274714/what-are-adjustment-layers-in-photoshop/" target="_blank">this guide by How-To Geek</a> as a quick introduction to them.</p>
 </div><p>You may have noticed the chain &amp; white canvas next to your adjustment layer icons.  </p>
-<p><img src="../Images\lutguide\mask.png" alt="Masks!" class="shadowed autosize" width="50" height="40" /></p>
+<p><img src="../Images\lutguide\mask.png" alt="Masks!" class="shadowed autosize" width="50" height="40" /> </p>
 <p><strong>Ignore these.</strong> These are masks for the adjustment layers. <strong>Adjustment masking</strong> (for obvious reasons) <strong>will not transfer to your LUTs.</strong></p>
 <h4 id="step-2-the-lut">Step 2: The LUT<a class="headerlink" href="#step-2-the-lut" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>Next, you want to load in the neutral LUT texture from earlier as a separate document. <strong>Make sure that it's the neutral one.</strong> If not, you'll end up with really weird colours once you're done.</p>
 <p>All you need to to here is copy the adjustment layers from your screenshot document to the new LUT document. This can be done by the traditional Ctrl+C / Ctrl-V, or you can select all adjustment layers, right-click, <code>Duplicate Layers...</code> and choose the LUT document.</p>
 <p><img src="../Images\lutguide\lutg_ps-lut.png" alt="Photoshop LUT" class="shadowed autosize" width="1034" height="531" /></p>
 <p>Depending on the extent of your adjustments, the LUT may look weird. My LUT shown above starts to look really off towards the left of the image, but that's because I desaturated the greens completely. If you've done everything right, there should be no worry here.</p>
-<h4 id="step-3-exporting">Step 3: Exporting<a class="headerlink" href="#step-3-exporting" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<h4 id="step-3-exporting-1">Step 3: Exporting<a class="headerlink" href="#step-3-exporting-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>The final step is to export the image as a <strong>PNG</strong>. Do <strong>not</strong> export it in a lossy format like JPG, you do not want compression artifacts in a LUT. Unless you're going for a weird corrupted effect. </p>
 <p>I would recommend exporting this file as <code>lut.png</code>, saving right into your Textures folder and replacing the previous <code>lut.png</code> that was in there. This makes it so you can use your LUT right away with <code>LUT.fx</code>.</p>
 <h4 id="extra-.cube-.3dl-and-other-3dlut-formats">Extra: .CUBE, .3DL and other 3DLUT formats<a class="headerlink" href="#extra-.cube-.3dl-and-other-3dlut-formats" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
-<p>LUTs found online typically will not look like those that we're familiar with here, usually being in the form of .CUBE, .3DL, .CSP, .ICC, etc. They can be used by applying them with the Color Lookup adjustment layer to your neutral LUT document.</p>
+<p>LUTs found online typically will be in the non-image file formats of .CUBE, .3DL, .CSP, .ICC, etc. They can be applied to a neutral LUT using the Color Lookup adjustment layer if you'd like to use them.</p>
 <hr />
 <h2 id="adobe-lightroom">Adobe Lightroom<a class="headerlink" href="#adobe-lightroom" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>What you'll need:<br />
-- at least one screenshot from your game<br />
-- Adobe Lightroom</p>
+<p>What you'll need: </p>
+<ul>
+<li>at least one screenshot from your game  </li>
+<li>Adobe Lightroom <em>(any version)</em></li>
+</ul>
 <p><em>I will be using Lightroom CC 2019, not Lightroom Classic. Outside of a few UI differences, the overall steps are identical. The game screenshot is from Mass Effect: Andromeda.</em></p>
 <h4 id="step-0-screenshot-collage-1">Step 0: Screenshot Collage<a class="headerlink" href="#step-0-screenshot-collage-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>While not necessary, creating a collage of various screenshots will ensure that the effects of your LUT still look great in different scenes. They should cover various times of day and locations! This is important if you're making a corrective LUT.</p>
 <h4 id="step-1-making-the-preset">Step 1: Making the Preset<a class="headerlink" href="#step-1-making-the-preset" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>Import your screenshot(s) into Lightroom. If you've never used Lightroom before, don't worry, it's pretty straightforward. You have all your tools on the right (they'll be under Develop in Lightroom Classic), just play around with them and see what results you get!</p>
 <p><img src="../Images\lutguide\lutg_lr-adj1.png" alt="Lightroom Import" class="shadowed autosize" width="1715" height="831" /></p>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>This is <strong>not</strong> a guide on editing images. <em>N.B.: I couldn't find any decent guides to wrangling Lightroom. Ghost, make one!</em></p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>This is <strong>not</strong> a guide on editing images with Lightroom. There are plenty of guides out there on how to use Lightroom's features.</p>
 </div><p>After a few minutes of messing around, this is my result.</p>
 <p><img src="../Images\lutguide\lutg_lr-adj2.png" alt="Lightroom Adjusted" class="shadowed autosize" width="1715" height="831" /></p>
-<p>Once you're happy with yours, save it as a preset. <br />
-<strong>Do NOT include Texture, Clarity, Dehaze, Vignette, Grain, Sharpening, Noise Reduction and any lens correction in your preset.</strong> This will completely ruin your LUT.</p>
-<h4 id="step-2-the-lut-1">Step 2: The LUT<a class="headerlink" href="#step-2-the-lut-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>Once you're happy with yours, save it as a preset.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p><strong>Do not include Texture, Clarity, Dehaze, Vignette, Grain, Sharpening, Noise Reduction and any lens corrections in your preset.</strong> This will completely ruin your LUT.</p>
+</div><h4 id="step-2-the-lut-1">Step 2: The LUT<a class="headerlink" href="#step-2-the-lut-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>Import the neutral LUT texture from earlier. <strong>Make sure that it's the neutral one.</strong> If not, you'll end up with really weird colours once you're done.</p>
 <p>Apply your saved preset to the neutral LUT.</p>
 <p><img src="../Images\lutguide\lutg_lr-lut.png" alt="Lightroom LUT" class="shadowed autosize" width="1715" height="831" /></p>
 <p>Depending on how much you modified your image, the LUT may look weird. My LUT shown above is quite washed out and overexposed, due to the extent of the changes I made to it. I'm not concerned though, as these changes were intended.</p>
-<h4 id="step-3-exporting-1">Step 3: Exporting<a class="headerlink" href="#step-3-exporting-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<h4 id="step-3-exporting-2">Step 3: Exporting<a class="headerlink" href="#step-3-exporting-2" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>The final step is to export the image as a <strong>PNG</strong>. Do <strong>not</strong> export it in a lossy format like JPG, you do not want compression artifacts in a LUT. Unless you're going for a weird corrupted effect. </p>
 <p>If you're <em>not</em> using Lightroom Classic, you have an additional step before you get to save as a PNG. You will need Photoshop for this. Under File, choose <code>Edit in Photoshop...</code>. This will automatically launch Photoshop with your LUT already loaded, ready to save. Export as PNG like you normally would.</p>
 <p>I would recommend exporting this file as <code>lut.png</code>, saving right into your Textures folder and replacing the previous <code>lut.png</code> that was in there. This makes it so you can use your LUT right away with <code>LUT.fx</code>.</p>
@@ -159,24 +206,24 @@
 <h2 id="multilut">MultiLUT<a class="headerlink" href="#multilut" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p><code>MultiLUT.fx</code> is a shader that allows you to load in multiple LUTs and switch between them, as the name would imply. It does this by collecting the LUTs in an atlas.</p>
 <p><img src="../Images\lutguide\multilut.png" alt="MultiLUT Atlas" class="shadowed autosize" width="1024" height="544" /></p>
-<p>This is the default MultiLUT atlas. You're this far down in the guide, you should know what a LUT looks like. So you should be able to tell that each row of this mess of boxes is a separate LUT. </p>
+<p>This is the default MultiLUT atlas. You're this far down in the guide, you should know what a LUT looks like, you should be able to tell that each row of this mess of boxes is a separate LUT. </p>
 <p>You can use this shader as is, or <em>you can modify it</em>.</p>
 <p>Modification is simple enough, just replace each row of LUTs with one of the many you've surely made by now. I would recommend keeping the top LUT as is; it's a neutral LUT.</p>
 <h3 id="renaming-the-luts">Renaming the LUTs<a class="headerlink" href="#renaming-the-luts" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>You may not want your LUTs to be named <code>Color 1</code>, <code>Color 2</code>, <code>Color 3 (Blue oriented)</code> and so on, so this is how you can modify the shader file so that they're named the way you want.</p>
-<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>Use the ReShade GUI whenever you are modifying a shader file (ReShade 4.0+, under the Statistics tab). With a key bound to reload ReShade, you can check what your modifications are doing on-the-fly. This is helpful to make sure your syntax is correct.</p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p><strong>Use the ReShade GUI whenever you are modifying a shader file</strong> (ReShade 4.0+, under the Statistics tab). With a key bound to reload ReShade, you can check what your modifications are doing on-the-fly. This is helpful to make sure your syntax is correct.</p>
 </div><p>After opening the shader file, look for Line 31:</p>
 <pre class="nocode">ui_items=&quot;Neutral\0Color1\0Color2\0Color3 (Blue oriented)\0Color4 (Hollywood)\0Color5\0Color6\0Color7\0Color8\0Cool light\0Flat &amp; green\0Red lift matte\0Cross process\0Azure Red Dual Tone\0Sepia\0\B&amp;W mid constrast\0\B&amp;W high contrast\0&quot;;
 </pre><p>This is the line we want to edit to give our LUTs custom names. <code>\0</code> acts as the separator between the names, so don't remove that.</p>
 <p>Let's say we added 4 of our own LUTs, replacing the second to fifth LUTs of that atlas (remember, first is neutral!). Now we want to give them names, I'll use the NATO alphabet for simplicity's sake: Alfa, Bravo, Charlie, Delta.</p>
 <p>Line 31 should now look like this:</p>
 <pre class="nocode">ui_items=&quot;Neutral\0Alfa\0Bravo\0Charlie\0Delta\0&quot;;
-</pre><p>We've removed the excess names since we just want to use your LUTs. Don't worry, ReShade will ignore them with no issue. </p>
+</pre><p>We've removed the excess names since we just want to use your LUTs. Don't worry, ReShade will ignore the excess names with no issue. </p>
 <p>You can continue modifying the names to your own need. If you want to use quotes in your LUT names, don't use <code>&quot;</code>. This ends the line and will cause errors. You'll want to use <code>'</code> instead.</p>
 <h3 id="adding-more-luts">Adding more LUTs<a class="headerlink" href="#adding-more-luts" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>The default atlas contains 17 LUTs, but if you have made more and would like to add them, the shader file once again needs to be modified to accommodate them. Once your atlas is fully compiled, you want to edit Line 20:</p>
 <pre class="nocode">#define fLUT_LutAmount 17
-</pre><p>Change 17 to the number of LUTs you now have.</p>
+</pre><p>Change 17 to the number of LUTs you now have. Remember to give them names so ReShade can find and load them.</p>
 <h3 id="lut-variants-and-changing-the-atlas">LUT variants and changing the atlas<a class="headerlink" href="#lut-variants-and-changing-the-atlas" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>Sometimes you may come across LUTs that have more tiles or have a different tile size, such as those generated using qUINT Lightroom with modified tiles. Or you may have found a different MultiLUT atlas that you'd like to use.  </p>
 <pre class="nocode">#define fLUT_TextureName &quot;MultiLut_Atlas.png&quot;
@@ -186,6 +233,45 @@
 <pre class="nocode">#define fLUT_TileAmount 32
 </pre><p>Line 17 controls how many tiles there are. This may differ if the LUT you found is meant to have higher precision (or lower). You will have to count the number of tiles (or divide width of the entire LUT by its height).</p>
 <hr />
+<h3 id="extras">Extras<a class="headerlink" href="#extras" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>In the biased not-guide part of this guide, I'll be covering my general pros and cons to the three methods of LUT generation above.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Subject</th>
+	<th>ReShade</th>
+	<th>Lightroom</th>
+	<th>Photoshop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><strong>Canvas</strong></td>
+	<td>Dynamic!</td>
+	<td>Fixed shot :(</td>
+	<td>Fixed shot :(</td>
+</tr>
+<tr>
+	<td><strong>Effect Types</strong></td>
+	<td>Modular effects</td>
+	<td>Not modular :(</td>
+	<td>Modular &amp; stackable!</td>
+</tr>
+<tr>
+	<td><strong>Experience</strong></td>
+	<td>Can be tedious :(</td>
+	<td>Fun and simple!</td>
+	<td>Can be tedious :(</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>:(</code> aren't scores; I much prefer Lightroom over the rest despite how this looks. It's always about your personal preferences.<br />
+Modularity refers to how effects can affect each other. Since ReShade shaders can have different orders that change how they affect each other, I consider it modular. Photoshop comes out above that with how you can just keep adding more of the same adjustment layers if you want.<br />
+I find Lightroom better to work with than Photoshop overall, with dedicated controls for colour temperature and split toning (which aren't dedicated adjustment layers in PS for some reason).</p>
+<h4 id="on-the-old-gimp-guide">On the old GIMP guide<a class="headerlink" href="#on-the-old-gimp-guide" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>I consider this entire guide to be an extension to the old one, covering more techniques you can use to generate LUTs. You can also use its method of adding the LUT directly to your screenshot, however I find a few drawbacks with that. You have the LUT constantly on-screen, you have to crop it afterwards, and you can't really quick-fire LUTs being made with presets. But that's just me. ¯\_(ツ)_/¯</p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>Always keep in mind that visuals are subjective! There's never a right or wrong way to what your LUT should look like. All that matters is that it works for you.</p>
+</div><hr />
 <p><em>last updated 12th October 2019</em><br />
 <em>written by moyevka</em></p>
 
