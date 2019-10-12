@@ -93,7 +93,7 @@
 <p>LUTs (Look-up Tables) are a cheap way of changing the colours of your game without having to rely on a huge stack of shaders that eats at your performance. You can use them to make in-game colours look more natural (colour correction), or give your game a certain stylised look (colour grading).</p>
 <h3 id="how-do-i-use-a-lut">How do I use a LUT?<a class="headerlink" href="#how-do-i-use-a-lut" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>You'll need one of these:</p>
-<p><img src="../Images\lutguide\lut_neutral.png" alt="This is a Neutral LUT" width="1024" height="32" /></p>
+<p><img src="../Images\lutguide\lut_neutral.png" alt="This is a Neutral LUT" class="shadowed autosize" width="1024" height="32" /></p>
 <p>This is a LUT. More specifically, this is a <strong>neutral</strong> LUT. It does absolutely nothing, but is the starting point for <em>everything</em> you can do with LUTs.</p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p><strong>This texture is incredibly important!</strong> It is the LUT itself, after all. Make sure you have it! You can either download the above texture, or it can be found in the standard <code>reshade-shaders</code> Textures folder as <code>lut.png</code>. <strong>Back it up</strong> somewhere, you'll want copies of this texture.</p>
 </div><p>ReShade uses the shader <code>LUT.fx</code> to load and apply this. Note that <code>LUT.fx</code> only handles <strong>one</strong> (1) LUT, and I highly recommend this single LUT to be your colour correction LUT. You can have multiple LUTs and switch through them with the <code>MultiLUT.fx</code> shader, which will be covered later on.</p>
@@ -109,19 +109,19 @@
 <p>While not necessary, creating a collage of various screenshots will ensure that the effects of your LUT still look great in different scenes. They should cover various times of day and locations! This is important if you're making a corrective LUT.</p>
 <h4 id="step-1-adjustment-layers">Step 1: Adjustment Layers<a class="headerlink" href="#step-1-adjustment-layers" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>With your screenshots loaded into Photoshop, it's time to get to work. I'll be focusing on colour grading the screenshot I have loaded. Start by adding an Adjustment Layer from the Adjustments tab.</p>
-<p><img src="../Images\lutguide\lutg_ps-adj1.png" alt="Photoshop Import" width="1034" height="531" /></p>
+<p><img src="../Images\lutguide\lutg_ps-adj1.png" alt="Photoshop Import" class="shadowed autosize" width="1034" height="531" /></p>
 <p><strong>Use as many adjustment layers as you want!</strong> Don't hesitate to abuse them, as they all get baked down into a texture at the end. If you're going for style, go ahead and play with the weirder adjustments like Posterize and Threshold. </p>
 <p>Once you've had your fun, you should have a few extra layers on your right. </p>
-<p><img src="../Images\lutguide\lutg_ps-adj2.png" alt="Photoshop Adjusted" width="1034" height="531" />
+<p><img src="../Images\lutguide\lutg_ps-adj2.png" alt="Photoshop Adjusted" class="shadowed autosize" width="1034" height="531" />
 <em>Curves for contrast, Vibrance for saturation, Color Balance for split-tones, H/S for selective colours (desaturated greens)</em></p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>This is <strong>not</strong> a guide on editing images. If you'd like to learn how to use these adjustment layers, I recommend <a href="https://www.howtogeek.com/274714/what-are-adjustment-layers-in-photoshop/" target="_blank">this guide by How-To Geek</a> as a quick introduction to them.</p>
 </div><p>You may have noticed the chain &amp; white canvas next to your adjustment layer icons.  </p>
-<p><img src="../Images\lutguide\mask.png" alt="Masks!" width="50" height="40" /> </p>
+<p><img src="../Images\lutguide\mask.png" alt="Masks!" class="shadowed autosize" width="50" height="40" /></p>
 <p><strong>Ignore these.</strong> These are masks for the adjustment layers. <strong>Adjustment masking</strong> (for obvious reasons) <strong>will not transfer to your LUTs.</strong></p>
 <h4 id="step-2-the-lut">Step 2: The LUT<a class="headerlink" href="#step-2-the-lut" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>Next, you want to load in the neutral LUT texture from earlier as a separate document. <strong>Make sure that it's the neutral one.</strong> If not, you'll end up with really weird colours once you're done.</p>
 <p>All you need to to here is copy the adjustment layers from your screenshot document to the new LUT document. This can be done by the traditional Ctrl+C / Ctrl-V, or you can select all adjustment layers, right-click, <code>Duplicate Layers...</code> and choose the LUT document.</p>
-<p><img src="../Images\lutguide\lutg_ps-lut.png" alt="Photoshop LUT" width="1034" height="531" /> </p>
+<p><img src="../Images\lutguide\lutg_ps-lut.png" alt="Photoshop LUT" class="shadowed autosize" width="1034" height="531" /></p>
 <p>Depending on the extent of your adjustments, the LUT may look weird. My LUT shown above starts to look really off towards the left of the image, but that's because I desaturated the greens completely. If you've done everything right, there should be no worry here.</p>
 <h4 id="step-3-exporting">Step 3: Exporting<a class="headerlink" href="#step-3-exporting" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>The final step is to export the image as a <strong>PNG</strong>. Do <strong>not</strong> export it in a lossy format like JPG, you do not want compression artifacts in a LUT. Unless you're going for a weird corrupted effect. </p>
@@ -138,16 +138,16 @@
 <p>While not necessary, creating a collage of various screenshots will ensure that the effects of your LUT still look great in different scenes. They should cover various times of day and locations! This is important if you're making a corrective LUT.</p>
 <h4 id="step-1-making-the-preset">Step 1: Making the Preset<a class="headerlink" href="#step-1-making-the-preset" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>Import your screenshot(s) into Lightroom. If you've never used Lightroom before, don't worry, it's pretty straightforward. You have all your tools on the right (they'll be under Develop in Lightroom Classic), just play around with them and see what results you get!</p>
-<p><img src="../Images\lutguide\lutg_lr-adj1.png" alt="Lightroom Import" width="1715" height="831" /></p>
+<p><img src="../Images\lutguide\lutg_lr-adj1.png" alt="Lightroom Import" class="shadowed autosize" width="1715" height="831" /></p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>This is <strong>not</strong> a guide on editing images. <em>N.B.: I couldn't find any decent guides to wrangling Lightroom. Ghost, make one!</em></p>
 </div><p>After a few minutes of messing around, this is my result.</p>
-<p><img src="../Images\lutguide\lutg_lr-adj2.png" alt="Lightroom Adjusted" width="1715" height="831" /></p>
+<p><img src="../Images\lutguide\lutg_lr-adj2.png" alt="Lightroom Adjusted" class="shadowed autosize" width="1715" height="831" /></p>
 <p>Once you're happy with yours, save it as a preset. <br />
 <strong>Do NOT include Texture, Clarity, Dehaze, Vignette, Grain, Sharpening, Noise Reduction and any lens correction in your preset.</strong> This will completely ruin your LUT.</p>
 <h4 id="step-2-the-lut-1">Step 2: The LUT<a class="headerlink" href="#step-2-the-lut-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>Import the neutral LUT texture from earlier. <strong>Make sure that it's the neutral one.</strong> If not, you'll end up with really weird colours once you're done.</p>
 <p>Apply your saved preset to the neutral LUT.</p>
-<p><img src="../Images\lutguide\lutg_lr-lut.png" alt="Lightroom LUT" width="1715" height="831" /></p>
+<p><img src="../Images\lutguide\lutg_lr-lut.png" alt="Lightroom LUT" class="shadowed autosize" width="1715" height="831" /></p>
 <p>Depending on how much you modified your image, the LUT may look weird. My LUT shown above is quite washed out and overexposed, due to the extent of the changes I made to it. I'm not concerned though, as these changes were intended.</p>
 <h4 id="step-3-exporting-1">Step 3: Exporting<a class="headerlink" href="#step-3-exporting-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>The final step is to export the image as a <strong>PNG</strong>. Do <strong>not</strong> export it in a lossy format like JPG, you do not want compression artifacts in a LUT. Unless you're going for a weird corrupted effect. </p>
@@ -158,7 +158,7 @@
 <hr />
 <h2 id="multilut">MultiLUT<a class="headerlink" href="#multilut" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p><code>MultiLUT.fx</code> is a shader that allows you to load in multiple LUTs and switch between them, as the name would imply. It does this by collecting the LUTs in an atlas.</p>
-<p><img src="../Images\lutguide\multilut.png" alt="MultiLUT Atlas" width="1024" height="544" /></p>
+<p><img src="../Images\lutguide\multilut.png" alt="MultiLUT Atlas" class="shadowed autosize" width="1024" height="544" /></p>
 <p>This is the default MultiLUT atlas. You're this far down in the guide, you should know what a LUT looks like. So you should be able to tell that each row of this mess of boxes is a separate LUT. </p>
 <p>You can use this shader as is, or <em>you can modify it</em>.</p>
 <p>Modification is simple enough, just replace each row of LUTs with one of the many you've surely made by now. I would recommend keeping the top LUT as is; it's a neutral LUT.</p>
