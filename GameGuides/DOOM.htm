@@ -274,7 +274,7 @@
 <ul>
 <li><a href="https://github.com/FransBouma/InjectableGenericCameraSystem/tree/master/Cameras/DOOM" target="_blank">Camera tools by Otis_Inf</a><br />
 <strong>Features</strong>: Camera control, FoV control, Timestop</li>
-<li><a href="..\CheatTables\DOOMx64_DET.CT">CE Table by DET</a>
+<li><a href="..\CheatTables\DOOMx64_DET.CT">CE Table by DET</a><br />
 <strong>Features</strong>: AR fix, FoV control</li>
 </ul>
 <h2 id="compatibility">Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
@@ -284,32 +284,28 @@
 <p>First, run the camera tools as administrator. <strong>IF everything's fine, then you don't need to apply the steps below.</strong> </p>
 <ol>
 <li>
-<p>Running as administrator</p>
-<ol>
+<strong>Running the tools as administrator</strong>
+<ul>
 <li>Right click on <code>DOOMx64.exe</code> go to <code>Properties &gt; Compatibility</code></li>
 <li>Click the <code>Change settings for all users</code> option</li>
 <li>Check <code>Run this program as an administrator</code> and press OK</li>
 <li>Right click to <code>IGCSInjector.exe</code> and click <code>Run as administrator</code></li>
-</ol>
+</ul>
 </li>
-<li>
-<p>Disable Windows UAC
- You may need to disable Windows UAC. To do this use <a href="https://winaero.com/blog/how-to-turn-off-and-disable-uac-in-windows-10/" target="_blank">this guide on winaero.com</a>. You don't need to download the app, just apply <strong>Option one</strong>, and <strong>Option two</strong>.</p>
-</li>
-<li>
-<p>Be patient
- Camera tools may not work as the game started. Kill some monsters, open the map, kill more monsters, spent some time, then try to start camera. </p>
-</li>
+<li><strong>Disable Windows UAC</strong><br />
+You may need to disable Windows UAC. To do this use <a href="https://winaero.com/blog/how-to-turn-off-and-disable-uac-in-windows-10/" target="_blank">this guide on winaero.com</a>. You don't need to download the app, just apply <strong>Option one</strong>, and <strong>Option two</strong>.</li>
+<li><strong>Be patient</strong><br />
+Camera tools may not work as the game started. Kill some monsters, open the map, kill more monsters, spent some time, then try to start camera.  </li>
 </ol>
 <h2 id="hotsampling--custom-ar">Hotsampling &amp; Custom AR<a class="headerlink" href="#hotsampling--custom-ar" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>By default changing AR via SRWE will likely cause a stretched output. There are two ways to avoid it:</p>
 <ol>
 <li>
-<p><strong>Custom AR With CE Table</strong>
- Simply download the provided <a href="..\CheatTables\DOOMx64_DET.CT">CE Table by DET</a> and check 'nuke portrait check / control FOV'. Now you can use any aspect ratio through SRWE. It's highly recommended to change CE Table's hotkeys for controlling FOV, otherwise it'll conflict with Camera Tools' FOV Control. </p>
+<p><strong>Custom AR With CE Table</strong><br />
+Simply download the provided <a href="..\CheatTables\DOOMx64_DET.CT">CE Table by DET</a> and check 'nuke portrait check / control FOV'. Now you can use any aspect ratio through SRWE. It's highly recommended to change CE Table's hotkeys for controlling FOV, otherwise it'll conflict with Camera Tools' FOV Control. </p>
 </li>
 <li>
-<p><strong>Custom AR Without CE Table</strong>
+<p><strong>Custom AR Without CE Table</strong><br />
 There shouldn't be any stretched output if you stick to your default AR. Simply multiply the current windowed resolution on SRWE by 3, 4 or higher depending on your PC specs to avoid stretching. For example if your windowed resolution is <code>1616x939</code> then <code>1616 x 4 = 6464</code> <code>939 x 4 = 3756</code> so <code>6464x3756</code> is your hotsampled resolution. Use <a href="https://github.com/Daodan317081/reshade-shaders/blob/master/Shaders/AspectRatioComposition.fx" target="_blank">AspectRatioComposition.fx made by Daodan317081</a> to preview in-game custom AR. Placing this shader at the bottom of the shader list and binding a key to toggle it, is highly recommended. After taking shot, you can crop it with your favorite image editor. (Photoshop and GIMP allows you to crop image by entering aspect ratios) </p>
 </li>
 </ol>
