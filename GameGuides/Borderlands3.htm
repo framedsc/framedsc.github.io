@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mirror's Edge Catalyst - FRAMED. Screenshot Community</title>
+    <title>Borderlands 3 - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
@@ -59,8 +59,19 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/borderlands2.htm">Borderlands 2</a>
 </li>
-<li class="tocentry"><a href="../GameGuides/Borderlands3.htm">Borderlands 3</a>
-</li>
+<li class="tocentry current"><a class="current" href="../GameGuides/Borderlands3.htm">Borderlands 3</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#summary">Summary</a></li>
+
+<li class="tocentry"><a href="#tools">Tools</a></li>
+
+<li class="tocentry"><a href="#useful-console-commands">Useful Console Commands</a></li>
+
+<li class="tocentry"><a href="#tips-and-tricks">Tips and Tricks</a></li>
+
+<li class="tocentry"><a href="#useful-links">Useful links</a></li>
+
+</ul>
 <li class="tocentry"><a href="../GameGuides/codevein.htm">Code Vein</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/control.htm">Control</a>
@@ -119,15 +130,8 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/metro_exodus.htm">Metro Exodus</a>
 </li>
-<li class="tocentry current"><a class="current" href="../GameGuides/mecatalyst.htm">Mirror's Edge Catalyst</a>
-<ul class="currentrelative">
-<li class="tocentry"><a href="#summary">Summary</a></li>
-
-<li class="tocentry"><a href="#tools">Tools</a></li>
-
-<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
-
-</ul>
+<li class="tocentry"><a href="../GameGuides/mecatalyst.htm">Mirror's Edge Catalyst</a>
+</li>
 <li class="tocentry"><a href="../GameGuides/MutantYearZero.htm">Mutant Year Zero: Road to Eden</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/NieRAutomata.htm">NieR: Automata</a>
@@ -200,7 +204,7 @@
             <div class="nav-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <div class="breadcrumbs">
-<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../GameGuides/index.htm">Game guides</a></li> / <li><a href="../GameGuides/mecatalyst.htm">Mirror's Edge Catalyst</a></li></ul>
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../GameGuides/index.htm">Game guides</a></li> / <li><a href="../GameGuides/Borderlands3.htm">Borderlands 3</a></li></ul>
 					
                     </div>
                     <hr />
@@ -208,8 +212,8 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../Images\mecatalyst_header.png" alt="Mirror's Edge Catalyst" title="Shot by ItsYFP" class="shadowed" width="896" height="180" />
-<p>Shot by ItsYFP</p>
+<img src="../Images\borderlands3_header.jpg" alt="Borderlands 3" title="Shot by Otis_Inf" class="shadowed" width="896" height="180" />
+<p>Shot by Otis_Inf</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
@@ -222,6 +226,10 @@
 <tbody>
 <tr>
 	<td>Vanilla Photo Mode</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td>Ansel</td>
 	<td>No</td>
 </tr>
 <tr>
@@ -241,10 +249,6 @@
 	<td>Yes</td>
 </tr>
 <tr>
-	<td>Ansel</td>
-	<td>Yes</td>
-</tr>
-<tr>
 	<td>DirectX versions</td>
 	<td>DirectX 11</td>
 </tr>
@@ -252,12 +256,64 @@
 </table>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="http://cinetools.xyz/games/" target="_blank">Cinematic Tools by Hattiwatti</a><br />
-<strong>Features</strong>: Free Camera, Timestop, FOV Control, Hide HUD (read the Readme File for Hotkeys) </li>
+<li>
+<p><a href="..\GeneralGuides\universal_ue4_consoleunlocker.htm">Universal Console Unlocker by Otis_Inf and SunBeam</a><br />
+<strong>Features</strong>: Unlocks the UE4 console in order to enter commands / cheats. See below what to do to enable
+the free camera.</p>
+</li>
+<li>
+<p><a href="..\CheatTables\Borderlands3_pm.CT">Cheat table by Jim2Point0 and Otis_Inf</a><br />
+<strong>Features</strong>: Removal of range limit in photomode, removal of clipping check, Additional of control over rotation / movement speed
+in photomode.</p>
+</li>
 </ul>
-<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="useful-console-commands">Useful Console Commands<a class="headerlink" href="#useful-console-commands" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="tweaks">Tweaks<a class="headerlink" href="#tweaks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Recommended console tweaks are the following. You can concatenate them together using the <code>|</code> character to one string and
+copy/paste them into the console in the game. </p>
+<pre class="nocode">sg.ShadowQuality 5|sg.FoliageQuality 5|sg.ViewDistanceQuality 5|sg.PostProcessQuality 5|sg.EffectsQuality 5|sg.TextureQuality 5|r.Shadow.DistanceScale 4|r.Streaming.LimitPoolSizeToVRAM 0|r.Streaming.PoolSize 4096|r.Streaming.MaxTempMemoryAllowed 256|r.SSR.Quality 4|r.MaxQualityMode 1|r.StaticMeshLODDistanceScale 0.001
+</pre><p>These set all quality settings to maximum and tweak the in-game streaming configuration so when you switch to a higher resolution it's going to 
+load textures much faster than with the default settings. </p>
+<h3 id="gameplay--screenshots">Gameplay / Screenshots<a class="headerlink" href="#gameplay--screenshots" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<dl>
+<dt>ToggleDebugCamera</dt>
+<dd>Enables the UE4 free camera</dd>
+<dt>TeleportToDebugCamera</dt>
+<dd>Teleports your character to the current camera location  </dd>
+<dt>slomo 0.5 / slomo 1.0</dt>
+<dd>Slow motion / Normal game speed</dd>
+<dt>showhud 0 / showhud 1</dt>
+<dd>hides / shows the in-game HUD. This is useful if you're using the debug camera instead of the in-game photomode. It's required to specify this
+command before you enable the debug camera otherwise it won't work. </dd>
+<dt>pause</dt>
+<dd>Pauses the game, which can be handy when you're trying to take a shot during a cutscene. The Universal Console Unlocker comes with a timestop
+but that doesn't pauses cutscenes properly. Specifying <code>pause</code> again continues the game</dd>
+</dl>
+<h3 id="rendering">Rendering<a class="headerlink" href="#rendering" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<dl>
+<dt>r.DepthOfFieldQuality 0</dt>
+<dd>Disables the in-game DoF</dd>
+<dt>r.PostProcessAAQuality 2</dt>
+<dd>Switches the TAA to FXAA. This is ideal when you paused the game and the TAA ruins the shot because some pixels are still in motion.
+To get back to the proper TAA for gameplay, use <code>r.PostProcessAAQuality 6</code></dd>
+<dt>r.MotionBlurQuality 0</dt>
+<dd>Switches off motion blur. This can help with blurry elements when you pause the game and use the debug camera or the in-game photomode. </dd>
+<dt>r.DefaultFeature.LensFlare 0</dt>
+<dd>Disables the lensflare</dd>
+<dt>r.BloomQuality 0</dt>
+<dd>Disables the bloom</dd>
+<dt>r.Fog 0</dt>
+<dd>Disables the fog</dd>
+</dl>
+<h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The console has a history. Simply press arrow-up to get the list of last entered commands. This allows you to quickly switch between previously entered
+commands like ToggleDebugCamera, r.PostProcessAAQuality 2 etc. It's advisable to switch off the HUD before enabling the debug camera, as sometimes some HUD
+elements aren't hidden when the debug camera is enabled. </p>
+<p>There's no tilt in the Debug camera in Unreal Engine. Best way to control it is via the keyboard + mouse. 
+Use mouse wheel to control the movement speed, WASD for movement and Q + E to move up/down.</p>
+<h2 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://pcgamingwiki.com/wiki/Mirror%27s_Edge_Catalyst" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://www.pcgamingwiki.com/wiki/Borderlands_3" target="_blank">PC Gaming Wiki</a></li>
 </ul>
 
                     </div>
