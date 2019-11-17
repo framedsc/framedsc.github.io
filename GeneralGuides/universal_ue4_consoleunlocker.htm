@@ -58,6 +58,8 @@
 
 <li class="tocentry"><a href="#downloading-the-unlocker">Downloading the unlocker</a></li>
 
+<li class="tocentry"><a href="#built-in-functionality">Built-in functionality</a></li>
+
 <li class="tocentry"><a href="#console-tricks">Console tricks</a></li>
 
 <li class="tocentry"><a href="#troubleshooting">Troubleshooting</a></li>
@@ -103,7 +105,7 @@
                     <div class="section">
 <h1 id="universal-unreal-engine-4-console-unlocker">Universal Unreal Engine 4 Console Unlocker<a class="headerlink" href="#universal-unreal-engine-4-console-unlocker" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>It's forbidden to host the Universal Unreal Engine 4 Console Unlocker binaries elsewhere, be it your own site or e.g. Nexus Mods. The only site the
-unlocker binary is distributed is this site. </p>
+unlocker binary is distributed on is this site. </p>
 </div><p>For Unreal Engine 4 powered games, it's possible to re-create the in-game console that's usually stripped out when the game is build for shipping. To do so, 
 you can use the Universal UE4 Console Unlocker / Dumper dll (comes with injector exe and readme). After adjusting the .ini file for the right exe to inject the 
 dll in, it should show a console window that it has found all offsets and the console object has been created as well as that cheats have been enabled. </p>
@@ -282,8 +284,48 @@ and the unlocker can't re-activate the console as essential functions aren't the
 </ul>
 <h2 id="downloading-the-unlocker">Downloading the unlocker<a class="headerlink" href="#downloading-the-unlocker" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://mega.nz/#!8dImASIY!go8fVu2HVSu4ddfLRq2EyaPx0c5XJBeAdL9AbRgcbc4" target="_blank">Universal UE4 Unlocker v1.0.15</a></li>
+<li><a href="https://mega.nz/#!QVxCmIwQ!40fnUHK5Ai_rgXylzQZQ8yASpTOpGY3uCO2AVGhR3hg" target="_blank">Universal UE4 Unlocker v1.0.16</a></li>
 </ul>
+<h2 id="built-in-functionality">Built-in functionality<a class="headerlink" href="#built-in-functionality" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The following features are build-in (and enabled if the code can be found in the game)</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Feature</th>
+	<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Re-scan AOBs and re-try to create the console</td>
+	<td><code>Ctrl</code>-<code>End</code></td>
+</tr>
+<tr>
+	<td>Display help</td>
+	<td><code>Ctrl</code>-<code>H</code></td>
+</tr>
+<tr>
+	<td>Dump actual object addresses and names to text files</td>
+	<td><code>Ctrl</code>-<code>Numpad /</code></td>
+</tr>
+<tr>
+	<td>Toggle additional HUD / Menu elements</td>
+	<td><code>Del</code></td>
+</tr>
+<tr>
+	<td>Toggle game pause (Using UWorld::IsPaused)</td>
+	<td><code>Numpad 0</code></td>
+</tr>
+<tr>
+	<td>Toggle game pause (Using slomo 0)</td>
+	<td><code>Page Down</code></td>
+</tr>
+<tr>
+	<td>(In-game) Open the console</td>
+	<td><code>~</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="console-tricks">Console tricks<a class="headerlink" href="#console-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>The Unreal Engine console supports copy / paste of text. This is a great help if you want to execute multiple commands and have to type them in every time. 
 Additionally, it supports multiple commands on the same line, where you separate the commands with the <code>|</code> character. Combined with copy/paste you can
