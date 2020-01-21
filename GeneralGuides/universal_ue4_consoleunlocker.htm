@@ -108,6 +108,7 @@
                 <div role="main">
                     <div class="section">
 <h1 id="universal-unreal-engine-4-console-unlocker">Universal Unreal Engine 4 Console Unlocker<a class="headerlink" href="#universal-unreal-engine-4-console-unlocker" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p><strong>Engine versions supported</strong>: Unreal Engine 4.15 - 4.24</p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>It's forbidden to host the Universal Unreal Engine 4 Console Unlocker binaries elsewhere, be it your own site or e.g. Nexus Mods. The only site the
 unlocker binary is distributed on is this site. </p>
 </div><p>For Unreal Engine 4 powered games, it's possible to re-create the in-game console that's usually stripped out when the game is build for shipping. To do so, 
@@ -121,7 +122,7 @@ does contain its own camera system. v2.0.x requires Direct3D 11 at the moment, s
 you could try v1.0.16 and the debug camera of Unreal Engine. </p>
 <ul>
 <li>
-<p><a href="https://mega.nz/#!NVJSlYRD!By_w2J6MjTcXTuOswZDnCrl_1y9Wxa8JxDNzVYDmzgY" target="_blank">Universal UE4 Unlocker v2.0.5</a>. See for the changelog <a href="universal_ue4_consoleunlocker.htm#changelog">below</a>.</p>
+<p><a href="https://mega.nz/#!FRA0lALS!UhEGKIeuxKbyV8qtQC1tq2lclOkAhsgQkjBH3BPQS7Q" target="_blank">Universal UE4 Unlocker v2.0.6</a>. See for the changelog <a href="universal_ue4_consoleunlocker.htm#changelog">below</a>.</p>
 </li>
 <li>
 <p><a href="https://mega.nz/#!QVxCmIwQ!40fnUHK5Ai_rgXylzQZQ8yASpTOpGY3uCO2AVGhR3hg" target="_blank">Universal UE4 Unlocker v1.0.16</a>. (No built-in camera, only for console enabling)</p>
@@ -506,6 +507,12 @@ Dumper code is based on the SDK generator by Kn4ck3r.<br />
 Special thanks to Pino44io for testing.</p>
 <p>&copy;2019 All rights reserved.</p>
 <h2 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="v2.0.6">v2.0.6:<a class="headerlink" href="#v2.0.6" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li><strong>ADDED</strong>: Added support for UE4.23's new NamePool structure for object names. This adds support for UE4 4.23 and higher</li>
+<li><strong>FIXED</strong>: Fixed an issue that could occur with some games where one of the camera write blocks in the engine uses a different register, causing the game to crash as
+the UUU uses a single interception block for all camera write blocks. </li>
+</ul>
 <h3 id="v2.0.5">v2.0.5:<a class="headerlink" href="#v2.0.5" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
 <li><strong>FIXED</strong>: Fixes issue with slomo interception where a slow motion action set by the game was resulting in a high game speed instead of a slow game speed. </li>
