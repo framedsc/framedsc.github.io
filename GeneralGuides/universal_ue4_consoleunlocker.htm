@@ -56,7 +56,7 @@
 
 <li class="tocentry"><a href="#the-built-in-free-camera">The Built-in free camera</a></li>
 
-<li class="tocentry"><a href="#dumping-names--object-addresses">Dumping names / object addresses</a></li>
+<li class="tocentry"><a href="#dumping-object-addresses">Dumping object addresses</a></li>
 
 <li class="tocentry"><a href="#games-that-work-with-the-unlocker">Games that work with the unlocker</a></li>
 
@@ -107,12 +107,12 @@
                 </div>
                 <div role="main">
                     <div class="section">
-<h1 id="universal-unreal-engine-4-console-unlocker">Universal Unreal Engine 4 Console Unlocker<a class="headerlink" href="#universal-unreal-engine-4-console-unlocker" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<h1 id="universal-unreal-engine-4-unlocker">Universal Unreal Engine 4 Unlocker<a class="headerlink" href="#universal-unreal-engine-4-unlocker" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <p><strong>Engine versions supported</strong>: Unreal Engine 4.15 - 4.24</p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>It's forbidden to host the Universal Unreal Engine 4 Console Unlocker binaries elsewhere, be it your own site or e.g. Nexus Mods. The only site the
 unlocker binary is distributed on is this site. </p>
 </div><p>For Unreal Engine 4 powered games, it's possible to re-create the in-game console that's usually stripped out when the game is build for shipping. To do so, 
-you can use the Universal UE4 Console Unlocker / Dumper dll, in short <strong>UUU</strong>. It comes with its own injector, IGCSInjectorUI.exe, and is ready to use. See below what
+you can use the Universal UE4 Unlocker, in short <strong>UUU</strong>. It comes with its own injector, IGCSInjectorUI.exe, and is ready to use. See below what
 you have to do to get started.</p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>The game's exe as well as the IGCSInjectorUI.exe have to be run as <em>administrator</em>. Right-click the exe's to run and select 'Run as Administrator' or create a shortcut to the 
 exe on your desktop, right-click it, select <em>Properties</em> and on the <em>Shortcut</em> tab, select <em>Advanced...</em>, then check the 'Run as Administrator' checkbox and click OK. </p>
@@ -267,12 +267,10 @@ single panorama with e.g. Microsoft Image Composition Editor or Photoshop.</p>
 <p>The lightfield feature takes shots by stepping the camera
 from left to right, moving it over a rail to to speak. You can then create a lightfield 'quilt' for e.g. Looking Glass 3D displays. </p>
 <p>To test the setup you have, press <code>Page Up</code>. To take all shots, press <code>Ctrl-PageUp</code>.</p>
-<h2 id="dumping-names--object-addresses">Dumping names / object addresses<a class="headerlink" href="#dumping-names--object-addresses" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>The unlocker has another feature up its sleeve: it can dump two text files in the game folder called UE4Tools_Names.txt and UE4Tools_Objects.txt. To do that, press <code>Ctrl-Numpad /</code>.
-The Names file contains all names of all objects in the game. Most of them aren't really useful, but some are, e.g. if you open the file in a text editor and search for &quot; sg.&quot; 
-you find all settings variables for things you can also set in the game menu, only these accept higher values. Another one is &quot; r.&quot; to find all render variables. </p>
-<p>The Objects text file shows all objects in the engine, and their addresses in memory. These memory addresses differ per level, so if you want to look up objects in-memory
-after you've loaded a new level, you have to dump the files again. The Objects file is useful for people who create cheat tables. </p>
+<h2 id="dumping-object-addresses">Dumping object addresses<a class="headerlink" href="#dumping-object-addresses" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The unlocker has another feature up its sleeve: it can dump a text file in the game folder called UE4Tools_Objects.txt. To do that, press <code>Ctrl-Numpad /</code>.
+The Objects text file shows all objects in the engine, and their addresses in memory. These memory addresses differ per level, so if you want to look up objects in-memory
+after you've loaded a new level, you have to dump the file again. The Objects file is useful for people who create cheat tables. </p>
 <h2 id="games-that-work-with-the-unlocker">Games that work with the unlocker<a class="headerlink" href="#games-that-work-with-the-unlocker" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Although the name suggests it's a universal unlocker that always works with any Unreal Engine 4 game, the reality is that developers sometimes change the game engine's code
 and the unlocker can't re-activate the console as essential functions aren't there anymore. The list below are games which are known to work with the unlocker. </p>
