@@ -116,7 +116,7 @@ The only site the unlocker binary is distributed on is this site. </p>
 <h2 id="downloading-the-uuu">Downloading the UUU<a class="headerlink" href="#downloading-the-uuu" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>To download the UUU please use the link below. It's usable with all <a href="universal_ue4_consoleunlocker.htm#games-that-work-with-the-unlocker">the supported games in the list</a>. </p>
 <ul>
-<li><a href="https://mega.nz/#!JBxmAK7R!K6mKHMMtn1sRc34I866wdnUJIJS-y4J8QfKWu_JjyAk" target="_blank">Universal UE4 Unlocker v3.0.1</a>. See for the changelog <a href="universal_ue4_consoleunlocker.htm#changelog">below</a>.</li>
+<li><a href="https://mega.nz/#!8IJHBYyB!jw21m-GCs85uzj9E5XRysqyJCsNfZS0Zx4Eu9_zvuUM" target="_blank">Universal UE4 Unlocker v3.0.2</a>. See for the changelog <a href="universal_ue4_consoleunlocker.htm#changelog">below</a>.</li>
 </ul>
 <h2 id="starting-the-uuu">Starting the UUU<a class="headerlink" href="#starting-the-uuu" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>After downloading the zip linked below, unpack it in an empty folder. </p>
@@ -209,6 +209,26 @@ ConsoleKey=Tilde
 <tr>
 	<td>Arrow left/right or mouse or r-stick</td>
 	<td>Rotate camera left/right</td>
+</tr>
+<tr>
+	<td>LMB + mouse forward / backward</td>
+	<td>Move camera up / down</td>
+</tr>
+<tr>
+	<td>RMB + mouse forward/backward</td>
+	<td>Move camera forward / backward</td>
+</tr>
+<tr>
+	<td>LMB or RMB + mouse left / right</td>
+	<td>Move camera left / right</td>
+</tr>
+<tr>
+	<td>LMB + RMB + mouse left / right</td>
+	<td>Tilt camera left / right</td>
+</tr>
+<tr>
+	<td>Mousewheel</td>
+	<td>Increase / Decrease FoV</td>
 </tr>
 <tr>
 	<td>Numpad 8/Numpad 5 or l-stick</td>
@@ -1029,6 +1049,10 @@ dump the file again. The Objects file is useful for people who create cheat tabl
 	<td><code>Page Down</code></td>
 </tr>
 <tr>
+	<td>Skip frames when the game is paused</td>
+	<td><code>Page Up</code></td>
+</tr>
+<tr>
 	<td>(In-game) Open the console</td>
 	<td><code>~</code></td>
 </tr>
@@ -1063,6 +1087,12 @@ Dumper code is based on the SDK generator by Kn4ck3r.<br />
 Special thanks to Pino44io for testing.  </p>
 <p>&copy;2019-2020 All rights reserved.</p>
 <h2 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="v3.0.2">v3.0.2:<a class="headerlink" href="#v3.0.2" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li><strong>ADDED</strong>: Mouse-based camera movement / fov control (using left/right mouse button and mousewheel)</li>
+<li><strong>ADDED</strong>: Frameskip feature for when the game is paused (default PageUp)</li>
+<li><strong>FIXED</strong>: A checkbox control didn't send its changed state to the dll if the state changed to 'unchecked'. </li>
+</ul>
 <h3 id="v3.0.1">v3.0.1:<a class="headerlink" href="#v3.0.1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
 <li><strong>ADDED</strong>: Added alignment buttons for the window to the Hotsampling tab, so you can examine the window contents if it's larger than your monitor</li>
