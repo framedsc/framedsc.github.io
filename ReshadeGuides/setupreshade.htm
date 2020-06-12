@@ -165,20 +165,13 @@ you should select, first enable the <em>DisplayDepth</em> shader. You likely eit
 <p>When you go to the DX11 tab in the Reshade menu you can then pick the right depth buffer by checking its checkbox (or by trying the 
 <em>Copy depth before clearing</em> checkbox). If the screen becomes what it should be you picked the right depth buffer and you can use it with the techniques that depend on it. </p>
 <h2 id="limitations-and-gotchas">Limitations and gotchas<a class="headerlink" href="#limitations-and-gotchas" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>There are a couple of limitations with the current Reshade version (v4.2) which might cause some confusion. They're listed below.</p>
+<p>There are some limitations with the current Reshade version (v4.2) which might cause some confusion. They're listed below.</p>
 <ul>
-<li>
-<p>There's currently no DirectX12 support. Reshade supports DirectX 9, 10 and 11 and OpenGL. This means that if your game uses
-DirectX12 or Vulkan, you can't use Reshade, as it won't be able to intercept the rendering API and therefore your shaders won't 
-work. The game likely crashes at startup. So to use Reshade, be sure your game is set to use the right rendering API, e.g. DirectX11.</p>
-</li>
-<li>
-<p>When the game is an online game or actively performs network access, the depth buffer is disabled. Access to the depth buffer is 
+<li>When the game is an online game or actively performs network access, the depth buffer is disabled. Access to the depth buffer is 
 often required as a lot of effects use the depth buffer of the game. Reshade actively disables access to the depth buffer if it
 detects the game to be an online game (so there's network traffic on a regular basis). 
 If the depth buffer isn't available in the game, because of this, the shaders that depend on that will likely fail. E.g. using a 
-depth of field shader in a game like The Division is therefore not going to work: the depth buffer is disabled. </p>
-</li>
+depth of field shader in a game like The Division is therefore not going to work: the depth buffer is disabled. </li>
 </ul>
 <h2 id="further-information">Further information<a class="headerlink" href="#further-information" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
