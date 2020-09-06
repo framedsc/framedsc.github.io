@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NieR: Automata - FRAMED. Screenshot Community</title>
+    <title>Wolfenstein: The New Order - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
@@ -131,17 +131,8 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/MutantYearZero.htm">Mutant Year Zero: Road to Eden</a>
 </li>
-<li class="tocentry current"><a class="current" href="../GameGuides/NieRAutomata.htm">NieR: Automata</a>
-<ul class="currentrelative">
-<li class="tocentry"><a href="#feature-summary">Feature summary</a></li>
-
-<li class="tocentry"><a href="#tools">Tools</a></li>
-
-<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
-
-<li class="tocentry"><a href="#additional-notes">Additional Notes</a></li>
-
-</ul>
+<li class="tocentry"><a href="../GameGuides/NieRAutomata.htm">NieR: Automata</a>
+</li>
 <li class="tocentry"><a href="../GameGuides/ninokuniremastered.htm">Ni No Kuni: Wrath of the White Witch Remastered</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/nomanssky.htm">No Man's Sky</a>
@@ -190,8 +181,23 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/thewitcher3.htm">The Witcher 3: Wild Hunt</a>
 </li>
-<li class="tocentry"><a href="../GameGuides/wolfenstein_the_new_order.htm">Wolfenstein: The New Order</a>
-</li>
+<li class="tocentry current"><a class="current" href="../GameGuides/wolfenstein_the_new_order.htm">Wolfenstein: The New Order</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#summary">Summary</a></li>
+
+<li class="tocentry"><a href="#tools">Tools</a></li>
+
+<li class="tocentry"><a href="#setting-up-the-game">Setting up the game</a></li>
+
+<li class="tocentry"><a href="#usage">Usage</a></li>
+
+<li class="tocentry"><a href="#reshade">ReShade</a></li>
+
+<li class="tocentry"><a href="#custom-aspect-ratios">Custom Aspect Ratios</a></li>
+
+<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
+
+</ul>
 <li class="tocentry"><a href="../GameGuides/WorldOfTanks.htm">World of Tanks</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/xcom2.htm">XCOM 2</a>
@@ -228,7 +234,7 @@
             <div class="nav-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <div class="breadcrumbs">
-<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../GameGuides/index.htm">Game guides</a></li> / <li><a href="../GameGuides/NieRAutomata.htm">NieR: Automata</a></li></ul>
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../GameGuides/index.htm">Game guides</a></li> / <li><a href="../GameGuides/wolfenstein_the_new_order.htm">Wolfenstein: The New Order</a></li></ul>
 					
                     </div>
                     <hr />
@@ -236,10 +242,10 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../Images\nier-automata-header.png" alt="NieRAutomata" title="Shot by Midhras" width="896" height="180" />
-<p>Shot by Midhras</p>
+<img src="../\Images\wolfenstein_the_new_order.png" alt="Wolfenstein: The New Order" title="Shot by Originalnicodr" width="896" height="180" />
+<p>Shot by Originalnicodr</p>
 </div>
-<h2 id="feature-summary">Feature summary<a class="headerlink" href="#feature-summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
@@ -254,45 +260,149 @@
 </tr>
 <tr>
 	<td>Hotsampling</td>
-	<td>No</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>DSR</td>
-	<td>Yes</td>
+	<td>Yes (desktop DSR)</td>
 </tr>
 <tr>
 	<td>Custom Aspect Ratios</td>
-	<td>Yes, with tools</td>
+	<td>No (see notes)</td>
 </tr>
 <tr>
 	<td>Reshade</td>
-	<td>Yes</td>
+	<td>Yes (see notes)</td>
 </tr>
 <tr>
 	<td>Ansel</td>
 	<td>No</td>
 </tr>
 <tr>
-	<td>DirectX versions</td>
-	<td>DirectX 11</td>
+	<td>Graphic API version</td>
+	<td>OpenGL</td>
 </tr>
 </tbody>
 </table>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="..\CheatTables\nier_automata_121.ct">CE table by IDK31 and Smithfield</a><br />
-<strong>Features</strong>: Camera control, FoV, Speed control, HUD/Vignette/Banding/Character halo removal, Tonemap</li>
+<li><a href="\CheatTables\wolfenstein_the_new_order.CT">CE Table by K-Putt &amp; Jim2point0, merged with SunBeam's table</a><br />
+<strong>Features</strong>: Freecam, Tilt.</li>
+<li>Plus some cfg edits and commands for pause, HUD toggle, gun and arms toggle, FoV control, DoF and film grain toggle.</li>
 </ul>
+<h2 id="setting-up-the-game">Setting up the game<a class="headerlink" href="#setting-up-the-game" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="activating-the-console">Activating the console<a class="headerlink" href="#activating-the-console" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>The CT have a script to open the console with the tilde key, if it isn't working try adding <code>+com_allowConsole 1</code> as a startup parameter in the game (through steam parameters or direct access properties), without the table script and only that parameter it will bind the console to tilde key + control.</p>
+<h3 id="modifying-the-wolfconfig-file">Modifying the wolfConfig file<a class="headerlink" href="#modifying-the-wolfconfig-file" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Go to your wolfConfig.cfg (located in <code>C:\Users\User\Saved Games\MachineGames\Wolfenstein The New Order\base</code>) and add the following lines in the bindset 0 section:</p>
+<pre class="nocode">bind &quot;F5&quot; &quot;toggle g_showhud;toggle hands_show&quot;
+bind &quot;F6&quot; &quot;cvarrandom g_stoptime 0 0&quot;
+bind &quot;F7&quot; &quot;cvarrandom g_stoptime 1 1&quot;
+bind &quot;F8&quot; &quot;g_fov 100&quot;
+bind &quot;F9&quot; &quot;cvaradd g_fov -5&quot;
+bind &quot;F10&quot; &quot;cvaradd g_fov 5&quot;
+</pre><p>Sometimes F5 and F9 don't work as intended so you would need to rebind them in the game every time. Open the console with the tilde key and copy these lines one by one:</p>
+<pre class="nocode">cvaradd r_skippostprocess 1
+bind F9 &quot;cvaradd g_fov -5&quot;
+bind F5 &quot;toggle g_showhud;toggle hands_show&quot;
+</pre><p>The first command turns off the engine DoF and filmgrain, but it also turns off other post processing effects like color correction, altho not all of them. If you only want to turn off the post processing effects for shooting you can instead add bindings to change the <code>r_skippostprocess</code> value to -1 and 1 to turn them on and off respectively.</p>
+<p>Subtitles cant be turned off with F5, but you can dissabled them in the game options after composing a shot.</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Before shooting make sure to enter the command <code>r_multisamples 16</code> in the console to force the highest AA, altho it will freeze the game's depth buffer. To fix it just press <code>Esc</code> two times to open and close the menu. The same will probably happen if you want to go back to the old AA with <code>r_multisamples 2</code>.</p>
+<p>If you followed the guide to the letter you will end up with the following bindings</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Description</th>
+	<th>Key/button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Pause</td>
+	<td>F6</td>
+</tr>
+<tr>
+	<td>Unpause</td>
+	<td>F7</td>
+</tr>
+<tr>
+	<td>Toggle Hud, arms and gun</td>
+	<td>F5</td>
+</tr>
+<tr>
+	<td>Increase/Decrease FOV</td>
+	<td>F9/F10</td>
+</tr>
+<tr>
+	<td>Activate/Disable CE movement</td>
+	<td>Numpad 0</td>
+</tr>
+<tr>
+	<td>Activate/Disable gravity</td>
+	<td>Numpad 0</td>
+</tr>
+<tr>
+	<td>Move camera position</td>
+	<td>WASD</td>
+</tr>
+<tr>
+	<td>Move camera position (CE movement)</td>
+	<td>Numpad 4, Numpad 6, Numpad 8, Numpad 2</td>
+</tr>
+<tr>
+	<td>Move camera orientation</td>
+	<td>Mouse</td>
+</tr>
+<tr>
+	<td>Move camera up/down</td>
+	<td>Space bar/Control</td>
+</tr>
+<tr>
+	<td>Move camera up/down (CE movement)</td>
+	<td>Numpad 9, Numpad 3</td>
+</tr>
+<tr>
+	<td>Activate tilt modification</td>
+	<td><code>.</code></td>
+</tr>
+<tr>
+	<td>Tilt left/right</td>
+	<td><code>{</code> / <code>}</code></td>
+</tr>
+<tr>
+	<td>Tilto to 0 degrees</td>
+	<td><code>+</code></td>
+</tr>
+<tr>
+	<td>Tilt to 90 degrees</td>
+	<td><code>´</code></td>
+</tr>
+<tr>
+	<td>Faster CE camera position movement</td>
+	<td>Alt + Numpad 4, 6, 8, 2</td>
+</tr>
+<tr>
+	<td>Slower CE camera position movement</td>
+	<td>Ctrl + Numpad 4, 6, 8, 2</td>
+</tr>
+<tr>
+	<td>Faster tilting</td>
+	<td>Alt + <code>{</code> / <code>}</code></td>
+</tr>
+</tbody>
+</table>
+<p>To use the freecam you will need to click the box in Cheat Engine that says &quot;Enable 'god', 'noclip', 'notarget', console commands&quot; so you can use the <code>noclip</code> command, which will be used as the freecam. Use the WASD keys to set up the shot and press Numpad 0 to activate the cheat engine movement (which only works with noclip enabled), allowing you to do fine adjustments with the numpad.</p>
+<h3 id="tilting">Tilting<a class="headerlink" href="#tilting" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Once you get the position, before turning noclip off (enter the noclip command again in the console) turn off gravity (and CE camera position movement) if you haven't done so yet. After doing so and pressing the '.' key in the numpad you would be able to tilt with the keys stated above. </p>
+<p>Also take in mind that <strong>tilting may result in your character taking damage tho putting blood in the screen because of collisions, making you unpause to get the blood out of the screen.</strong>. If you find yourself with this problem try using the 'god' command.</p>
+<h2 id="reshade">ReShade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>There is a bug in OpenGL that doesn't let CineDOF compile properly (in Reshade 4.7 and probably previous releases). This has already been reported and (apparently) fixed in the next ReShade version, so use a version above 4.7 if you want to use this specific shader.</p>
+<h2 id="custom-aspect-ratios">Custom Aspect Ratios<a class="headerlink" href="#custom-aspect-ratios" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The game doesn't support vertical ARs (it stretches the image). Even tho wider AR seems to work, most of the time you will get hud elements at the side of the screen, but since this depends on the mission you may successfully use wide ARs.</p>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=682947327" target="_blank">Fix Automata Resolution mod by Kaldaien</a></li>
-<li><a href="https://www.nexusmods.com/nierautomata/mods/5" target="_blank">Hi-res Textures Pack by GPUnity</a></li>
-<li><a href="https://pcgamingwiki.com/wiki/Nier:_Automata" target="_blank">PC Gaming Wiki</a></li>
-</ul>
-<h2 id="additional-notes">Additional Notes<a class="headerlink" href="#additional-notes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ul>
-<li>To change aspect ratio, set the game to windowed mode and use custom resolution or DSR <a href="..\GeneralGuides\custom_dsr_resolutions.htm">(Custom res guide here)</a></li>
-<li>Depth buffer inaccessible with in-game AA turned on, turn off AA to get depth</li>
+<li><a href="https://www.pcgamingwiki.com/wiki/Wolfenstein:_The_New_Order" target="_blank">PC Gaming Wiki</a></li>
 </ul>
 
                     </div>
