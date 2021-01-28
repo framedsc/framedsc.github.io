@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Basics of Taking Screenshots - FRAMED. Screenshot Community</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/vs.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> FRAMED. Screenshot Community</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Home</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../GameGuides/index.htm">Game guides</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../GeneralGuides/index.htm">General guides</a></span></li>
+
+<li class="tocentry"><a href="../GeneralGuides/cheat_engine_tables.htm">Cheat Engine - Tables</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/custom_dsr_resolutions.htm">Custom DSR Resolutions</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/steam_update_guide.htm">Revert Steam Game Updates</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/universal_ue4_consoleunlocker.htm">Universal Unreal Engine 4 Unlocker</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/ue4guide.htm">Tweaking Unreal Engine 4 Games</a>
+</li>
+<li class="tocentry current"><a class="current" href="../GeneralGuides/basics.htm">The Basics of Taking Screenshots</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#hotsampling">Hotsampling</a></li>
+
+<li class="tocentry"><a href="#ansel">Ansel</a></li>
+
+<li class="tocentry"><a href="#dynamic-super-resolution---dsr">Dynamic Super Resolution - DSR</a></li>
+
+<li class="tocentry"><a href="#reshade">ReShade</a></li>
+
+<li class="tocentry"><a href="#how-to-capture-a-screenshot-of-a-game">How to capture a screenshot of a game</a></li>
+
+<li class="tocentry"><a href="#further-reading">Further reading</a></li>
+
+
+
+</ul>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../GeneralGuidesAdvanced.htm">Advanced</a></span>
+</li>
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../ReshadeGuides/index.htm">Reshade guides</a></span>
+</li>
+<li class="tocentry"><a href="../cheattablearchive.htm">Cheat Table Archive</a>
+</li>
+</ul>
+				<br/>
+				<ul>
+					<li class="tocentry">
+						<li class="tocentry">
+							<a href="/HallOfFramed/" target="_blank">Hall of Framed</a>
+						</li>
+					</li>
+				</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">FRAMED. Screenshot Community</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../GeneralGuides/index.htm">General guides</a></li> / <li><a href="../GeneralGuides/basics.htm">The Basics of Taking Screenshots</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="the-basics-of-taking-screenshots">The Basics of Taking Screenshots<a class="headerlink" href="#the-basics-of-taking-screenshots" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<h2 id="hotsampling">Hotsampling<a class="headerlink" href="#hotsampling" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The term refers to running a game in higher resolutions than your monitor supports, and in doing so being able to get screenshots at bigger definitions  (not desirable while playing since you will only see a portion of the window and, probably, with very low FPS).</p>
+<p>It is also often referred to when talking about a game running in aspect ratios that aren't supported by monitors, like <code>4:3</code> or <code>2:1</code>.</p>
+<p>To properly hotsample you would need to use programs like <a href="https://github.com/dtgDTGdtg/SRWE" target="_blank">SRWE</a> or
+ <a href="https://westechsolutions.net/sites/WindowedBorderlessGaming/" target="_blank">WindowedBorderlessGaming</a>. Please take in mind not every game supports this feature, 
+ so before attempting to hotsample check if the game is capable of doing so in the games <a href="https://framedsc.github.io/GameGuides/index.htm" target="_blank">guide</a> if it has one. Some games might have a mod or cheat engine table that unlocks hotsampling or custom ARs, and there have been reports of games hotsampling in borderless windows instead of windowed mode (which should be tried by default).</p>
+<p>Another technique used to achieve high resolution screenshots is <a href="https://framedsc.github.io/GeneralGuides/basics.htm#dynamic-super-resolution---dsr" target="_blank">DSR</a>. The advantage of hotsampling over DSR is that you can play at your regular definition, go to a higher one to get a screenshot, and come back to your gameplay definition when you are done, where DSR makes you play with the same definition as the one you use while shooting, which can be quite demanding depending on the PC and the game.</p>
+<h3 id="how-to-hotsample">How to hotsample<a class="headerlink" href="#how-to-hotsample" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Below you can find some guides on how to hotsample using SRWE:</p>
+<ul>
+<li><a href="https://github.com/dtgDTGdtg/SRWE/blob/master/README.md" target="_blank">Markdown guide in SRWE repostery</a></li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1119283512" target="_blank">Dom steam guide</a></li>
+</ul>
+<h3 id="historical-background">Historical background<a class="headerlink" href="#historical-background" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>The original SRWE was intentionally made for running skyrim in a smaller window to save memory, but in 2012 the user midhras used it for doing the opposite and asked the developer to build a generic tool that would allow the same in other windowed games, which he later did.
+Because that was being used more and more, a name was needed. Duncan Harris and midhras were talking about what to call using SRWE (or similar tools) to resize the game window, allowing for higher resolutions. The name shotsampling came out, but then Duncan called it hotsampling, which stayed.</p>
+<h3 id="external-links">External links<a class="headerlink" href="#external-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li><a href="https://www.nexusmods.com/fallout3/articles/49/?" target="_blank">Midhras nexus guide</a></li>
+<li><a href="https://github.com/Daodan317081/reshade-shaders/blob/master/Shaders/HotsamplingHelper.fx" target="_blank">Hotsampling helper shader for ReShade</a></li>
+<li><a href="https://youtu.be/gNyQB7jPwEA" target="_blank">Video showing SRWE in action</a></li>
+<li><a href="https://pcgamingexperience.com/resolutions/" target="_blank">Another guide</a></li>
+<li><a href="https://bsn.boards.net/post/552340" target="_blank">Yet another guide</a></li>
+</ul>
+<h2 id="ansel">Ansel<a class="headerlink" href="#ansel" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Referred to as the Nvidia tool that allows the player to move the camera freely (with restrictions depending on the game), taking screenshots with high definition by stitching various shots, taking 360° shots, applying filters, etc. Named after the famous landscape photographer Ansel Adams.</p>
+<h3 id="controls">Controls<a class="headerlink" href="#controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Description</th>
+	<th>Key/Jotstick button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Open Ansel</td>
+	<td>Alt + F2</td>
+</tr>
+<tr>
+	<td>Move the camera orientation</td>
+	<td>Mouse / Right analog</td>
+</tr>
+<tr>
+	<td>Move the camera position forwards,left, backguards, right</td>
+	<td>W,A,S,D / Left analog</td>
+</tr>
+<tr>
+	<td>Move the camera up, down</td>
+	<td>Z,X /</td>
+</tr>
+<tr>
+	<td>Tilt the camera</td>
+	<td>Q,E / Left and Right D-pads</td>
+</tr>
+<tr>
+	<td>Fast movement</td>
+	<td>(While moving) Shift /</td>
+</tr>
+<tr>
+	<td>Slow movement</td>
+	<td>/</td>
+</tr>
+<tr>
+	<td>FoV</td>
+	<td>/</td>
+</tr>
+<tr>
+	<td>Ins</td>
+	<td>Hide/show the Ansel GUI</td>
+</tr>
+</tbody>
+</table>
+<h3 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>It's often overlook since it comes with some limitations:</p>
+<ul>
+<li>You can't use ReShade with Ansel enabled, instead you have to use the Nvidia alternative <a href="https://www.geforce.com/es_ES/gfecnt/whats-new/articles/nvidia-freestyle-ansel-enhancements-geforce-experience-article" target="_blank">Freestyle</a> (which works with most reshade shaders).</li>
+<li>You can't hotsample with Ansel enabled.</li>
+<li>The camera often has limitations such as a range limit or clipping.</li>
+</ul>
+<p>That last one can sometimes be overcome with mods or cheat engine tables, so make sure to look them up.</p>
+<h3 id="list-of-games">List of Games<a class="headerlink" href="#list-of-games" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>You can find the full list of games that support Ansel <a href="https://www.nvidia.com/es-la/geforce/geforce-experience/games/" target="_blank">here</a>, but the list also includes games that lack one or more Ansel features, so be aware that not all of the games listed there have a freecam available using Ansel.</p>
+<p>Be sure to check the &quot;enable experimental features&quot; in GeForce Experience, since some games support isnt released yet.</p>
+<h3 id="external-links-1">External links<a class="headerlink" href="#external-links-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li><a href="https://www.techradar.com/how-to/nvidia-ansel-how-to-get-it-and-how-to-use-it" target="_blank">Trick for pumping up the max super resolution</a></li>
+<li><a href="https://www.ubergizmo.com/how-to/use-nvidia-ansel/" target="_blank">Extended Ansel modification settings</a></li>
+<li><a href="https://www.nvidia.com/en-us/geforce/geforce-experience/system-requirements" target="_blank">System Requirements</a></li>
+</ul>
+<h2 id="dynamic-super-resolution---dsr">Dynamic Super Resolution - DSR<a class="headerlink" href="#dynamic-super-resolution---dsr" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Dynamic Super Resolution (DSR for short) is a feature available in the Nvidia GPUs that allows games to render at a higher resolutions that your monitor supports. To be able to play using DSR the image gets downscaled so it fits your monitor, but the screenshots you take using it will be at the definition that the game renders.</p>
+<p>To add new resolutions (with custom aspect ratios) see the <a href="custom_dsr_resolutions.htm">custom dsr resolutions guide</a>.</p>
+<p>Bear in mind that not all games support this feature, so if you can't find the resolution in the game options after adding a new DSR resolution to your system then it probably doesn't support DSR. However, on some games while they do support DSR, the definition wont show up in the games video settings and you will need to set the DSR definition as your desktop definition.</p>
+<h3 id="external-links-2">External links<a class="headerlink" href="#external-links-2" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li><a href="https://www.nvidia.com/en-us/geforce/technologies/dsr/technology/" target="_blank">Nvidia DSR page</a></li>
+<li><a href="https://www.neogaf.com/threads/downsampling-a-simple-method-for-making-your-pc-games-look-better.509076/" target="_blank">DSR neogaf tutorial</a></li>
+<li><a href="https://www.neogaf.com/threads/downsampling-for-amd-cards-is-now-possible.472941/" target="_blank">AMD alternative neogaf tutorial</a></li>
+</ul>
+<h2 id="reshade">ReShade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>ReShade is a post-processing injector for games, which means that it allows you to apply post-processing effects in real time. More links and information can be found in the  <a href="https://framedsc.github.io/ReshadeGuides/setupreshade.htm" target="_blank">Setting up Reshade guide</a>.</p>
+<h3 id="external-links-3">External links<a class="headerlink" href="#external-links-3" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li><a href="https://reshade.me/" target="_blank">ReShade official page</a></li>
+<li><a href="https://www.pcgamingwiki.com/wiki/ReShade#List_of_known_shader_repositories" target="_blank">List of repositories</a></li>
+<li><a href="https://www.pcgamingwiki.com/wiki/ReShade#Game_compatibility" target="_blank">Game compatibility list</a></li>
+<li><a href="https://www.youtube.com/watch?v=hYUiWfvyafQ" target="_blank">How To fix most of your problems with ReShade</a></li>
+<li><a href="https://www.youtube.com/watch?v=1z3VyU_4GQY" target="_blank">How to Fix a Misaligned Depth Buffer on ReShade</a></li>
+</ul>
+<h2 id="how-to-capture-a-screenshot-of-a-game">How to capture a screenshot of a game<a class="headerlink" href="#how-to-capture-a-screenshot-of-a-game" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>There are a number of ways to take screenshots from games, here are a few of the most commonly used programs.</p>
+<ul>
+<li><strong>Steam</strong> (Make sure to select in Steam screenshot parameters the option to save a lossless .png)</li>
+<li><strong>ReShade</strong> (In some reshade builds the built-in screenshot function does not behave well with certain graphic APIs)</li>
+<li><strong>Windows Gaming Bar</strong> (Windows key + Alt + Prnt Screen)</li>
+<li><strong>MSI Afterburner</strong> (Key is configurable)</li>
+<li><strong>Nvidia Overlay</strong> (Alt-F1)</li>
+</ul>
+<p>Steam, ReShade and Afterburner have been proven to work well while hotsampling, but if you run into difficulties with any try switching up.</p>
+<h2 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ul>
+<li><a href="https://ilikedetectives.com/virtual-photography-101" target="_blank">VP Guide by ILikeDetectives</a></li>
+</ul>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+&copy 2019-2021 FRAMED. All rights reserved.
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
