@@ -131,12 +131,12 @@
 <p>Right click that folder and click &quot;export.&quot; Save the file somewhere you'll remember it. This file is handy as you simply need to double click it after a new driver install to restore your custom resolutions.</p>
 <h2 id="run-the-dsr-calculator">2. Run the DSR Calculator<a class="headerlink" href="#run-the-dsr-calculator" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>The DSR Calculator is a tool I made that will allow you to type in 10 custom resolutions and will generate the required hex information for them. You simply need to copy that to your clipboard and be prepared to replace that section of the registry file you exported.</p>
-<p><a href="https://web.archive.org/web/20180301201005/http://www.jim2point0.com/tools/dsr_hex/" target="_blank">Click here to download the DSR Calculator</a> (extract to a folder and open the index.html in your browser)</p>
+<p><a href="https://jim2point0.github.io/jim2point0/dsr_hex/" target="_blank">Click here to view the DSR Calculator</a></p>
 <p>When you finish, you'll get some data that looks like this:</p>
 <pre class="nocode">&quot;SmoothScalingData&quot;=hex:01,00,00,00,22,00,00,00,10,00,00,00,C7,38,00,00,41,36,00,00,00,00,00,00,22,44,00,00,61,51,00,00,00,00,00,00,7D,4F,00,00,82,6C,00,00,00,00,00,00,D8,5A,00,00,A2,87,00,00,00,00,00,00,11,22,00,00,41,36,00,00,00,00,00,00,C7,38,00,00,20,1B,00,00,00,00,00,00,7D,4F,00,00,61,51,00,00,00,00,00,00,D8,5A,00,00,82,6C,00,00,00,00,00,00,33,66,00,00,41,36,00,00,00,00,00,00,7C,23,00,00,61,51,00,00,00,00,00,00
 </pre><h2 id="edit-your-exported-registry-file">3. Edit your exported registry file<a class="headerlink" href="#edit-your-exported-registry-file" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Remember that file you exported? Open it in a text editor. We're interested in replacing the lines highlighted like in this picture (lines 5-10):</p>
-<p><img src="https://i.imgur.com/r3KJVKY.png" alt="Registry File Editing" /></p>
+<p><img src="../Images\dsr_hex\dsr_copy_paste.png" alt="Registry File Editing" class="shadowed resizable" width="1835" height="717" /></p>
 <p>Highlight those lines and paste in the data you copied from the DSR tool. Save the file and then run it (double click). Say yes when it warns you about the potential damage you could be doing to your computer. </p>
 <p>If you get an error saying that you can not import the settings, you need to set permissions on that folder in the registry. Find your monitor in the registry settings like you did when you exported it. Right click -&gt; permissions.</p>
 <p><img src="https://i.imgur.com/tx8PgZp.png" alt="Registry Permissions" /></p>
