@@ -301,34 +301,28 @@
 </tr>
 <tr>
 	<td>DirectX versions</td>
-	<td>DirectX 11</td>
+	<td>DirectX 11 / 12</td>
 </tr>
 </tbody>
 </table>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li>
-<p><a href="..\GeneralGuides\universal_ue4_consoleunlocker.htm">Universal Console Unlocker by Otis_Inf and SunBeam</a><br />
-<strong>Features</strong>: Unlocks the UE4 console in order to enter commands / cheats. See below what to do to enable
-the free camera.</p>
-</li>
-<li>
-<p><a href="..\CheatTables\Borderlands3_pm.CT">Cheat table by Jim2Point0 and Otis_Inf</a><br />
-<strong>Features</strong>: Removal of range limit in photomode, removal of clipping check, Additional of control over rotation / movement speed
-in photomode.</p>
-</li>
+<li><a href="..\GeneralGuides\universal_ue4_consoleunlocker.htm">Universal Console Unlocker by Otis_Inf and SunBeam</a><br />
+<strong>Features</strong>: Unlocks the UE4 console in order to enter commands / cheats and offers a free camera among other things. The camera also works in 
+the photomode. </li>
 </ul>
 <h2 id="useful-console-commands">Useful Console Commands<a class="headerlink" href="#useful-console-commands" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <h3 id="tweaks">Tweaks<a class="headerlink" href="#tweaks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>Recommended console tweaks are the following. You can concatenate them together using the <code>|</code> character to one string and
 copy/paste them into the console in the game. </p>
-<pre class="nocode">sg.ShadowQuality 5|sg.FoliageQuality 5|sg.ViewDistanceQuality 5|sg.PostProcessQuality 5|sg.EffectsQuality 5|sg.TextureQuality 5|r.Shadow.DistanceScale 4|r.Streaming.LimitPoolSizeToVRAM 0|r.Streaming.PoolSize 4096|r.Streaming.MaxTempMemoryAllowed 256|r.SSR.Quality 4|r.MaxQualityMode 1|r.StaticMeshLODDistanceScale 0.001
+<pre class="nocode">sg.ShadowQuality 5|sg.FoliageQuality 5|sg.ViewDistanceQuality 5|sg.PostProcessQuality 5|sg.EffectsQuality 5|sg.TextureQuality 5|r.Shadow.DistanceScale 4|r.Streaming.LimitPoolSizeToVRAM 0|r.Streaming.PoolSize 4096|r.Streaming.MaxTempMemoryAllowed 256|r.SSR.Quality 4|r.MaxQualityMode 1|r.StaticMeshLODDistanceScale 0.001|r.maxanisotropy 16 
 </pre><p>These set all quality settings to maximum and tweak the in-game streaming configuration so when you switch to a higher resolution it's going to 
 load textures much faster than with the default settings. </p>
 <h3 id="gameplay--screenshots">Gameplay / Screenshots<a class="headerlink" href="#gameplay--screenshots" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>For screenshots, you can use the built-in camera of the UUU, also within the photomode. The debug camera can be handy however, hence it's mentioned below</p>
 <dl>
 <dt>ToggleDebugCamera</dt>
-<dd>Enables the UE4 free camera</dd>
+<dd>Enables the UE4 free camera. Use the UUU camera whenever possible however, use this camera e.g. in combination of TeleportToDebugCamera. </dd>
 <dt>TeleportToDebugCamera</dt>
 <dd>Teleports your character to the current camera location  </dd>
 <dt>slomo 0.5 / slomo 1.0</dt>
@@ -339,14 +333,15 @@ command before you enable the debug camera otherwise it won't work. </dd>
 <dt>pause</dt>
 <dd>Pauses the game, which can be handy when you're trying to take a shot during a cutscene. The Universal Console Unlocker comes with a timestop
 but that doesn't pauses cutscenes properly. Specifying <code>pause</code> again continues the game</dd>
+<dt>camera 3rd</dt>
+<dd>Switch to 3rd person view. </dd>
+<dt>camera 1st</dt>
+<dd>Switch to 1st person view</dd>
 </dl>
 <h3 id="rendering">Rendering<a class="headerlink" href="#rendering" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <dl>
 <dt>r.DepthOfFieldQuality 0</dt>
 <dd>Disables the in-game DoF</dd>
-<dt>r.PostProcessAAQuality 2</dt>
-<dd>Switches the TAA to FXAA. This is ideal when you paused the game and the TAA ruins the shot because some pixels are still in motion.
-To get back to the proper TAA for gameplay, use <code>r.PostProcessAAQuality 6</code></dd>
 <dt>r.MotionBlurQuality 0</dt>
 <dd>Switches off motion blur. This can help with blurry elements when you pause the game and use the debug camera or the in-game photomode. </dd>
 <dt>r.DefaultFeature.LensFlare 0</dt>
@@ -358,10 +353,7 @@ To get back to the proper TAA for gameplay, use <code>r.PostProcessAAQuality 6</
 </dl>
 <h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>The console has a history. Simply press arrow-up to get the list of last entered commands. This allows you to quickly switch between previously entered
-commands like ToggleDebugCamera, r.PostProcessAAQuality 2 etc. It's advisable to switch off the HUD before enabling the debug camera, as sometimes some HUD
-elements aren't hidden when the debug camera is enabled. </p>
-<p>There's no tilt in the Debug camera in Unreal Engine. Best way to control it is via the keyboard + mouse. 
-Use mouse wheel to control the movement speed, WASD for movement and Q + E to move up/down.</p>
+commands like Pause, r.PostProcessAAQuality 2 etc. </p>
 <h2 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://www.pcgamingwiki.com/wiki/Borderlands_3" target="_blank">PC Gaming Wiki</a></li>
