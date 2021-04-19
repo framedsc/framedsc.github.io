@@ -159,29 +159,29 @@ This controls how bright the light is.</p>
 <p><strong>Raytracing intensity scale</strong><br />
 <em>unknown</em></p>
 <p><strong>Radius</strong><br />
-This controls how far the light can travel, likely in in-game meters.
-<img src="../Images\cyberlit\eg_radius.png" alt="radius" class="shadowed autosize" width="800" height="540" /></p>
+This controls how far the light can travel, likely in in-game meters.</p>
+<p><img src="../Images\cyberlit\eg_radius.png" alt="radius" class="shadowed autosize" width="800" height="540" /></p>
 <p><strong>Attenuation</strong><br />
-This controls the intensity falloff of the light. 0 represents a 'natural' (inverse-square) falloff, while 1 maintains the intensity throughout the light radius. Values above 1 don't appear to do anything.
-<img src="../Images\cyberlit\eg_attn.png" alt="attenuation" class="shadowed autosize" width="800" height="540" /></p>
+This controls the intensity falloff of the light. 0 represents a 'natural' (inverse-square) falloff, while 1 maintains the intensity throughout the light radius. Values above 1 don't appear to do anything.</p>
+<p><img src="../Images\cyberlit\eg_attn.png" alt="attenuation" class="shadowed autosize" width="800" height="540" /></p>
 <div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>Attenuation is a useful setting to have set to 1 while moving lights around. Since there is no intensity falloff due to distance, your subject will stay lit at the same brightness as lights are moved further or nearer.</p>
 </div><p><strong>Roughness Bias</strong><br />
-This overrides the roughness of the specular highlights produced by a light when shone on a surface. Values to 127 appear to make specular highlights rougher. A flip happens at 128, where specular highlights are now sharp and become more rough until they return to default at 255.
-<img src="../Images\cyberlit\eg_roughness.png" alt="highlights!" class="shadowed autosize" width="1600" height="400" /></p>
+This overrides the roughness of the specular highlights produced by a light when shone on a surface. Values to 127 appear to make specular highlights rougher. A flip happens at 128, where specular highlights are now sharp and become more rough until they return to default at 255.</p>
+<p><img src="../Images\cyberlit\eg_roughness.png" alt="highlights!" class="shadowed autosize" width="1600" height="400" /></p>
 <hr />
 <h2 id="spotlight-settings">Spotlight settings<a class="headerlink" href="#spotlight-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p><img src="../Images\cyberlit\ctrl_spot.png" alt="spotlights!" class="shadowed autosize" width="408" height="146" /></p>
 <p>With the light type set to <strong>Spot</strong>, these controls are exposed, allowing the editing of how the light looks. </p>
 <p><em>Examples in this section have Attenuation set to 1 for clearer illustrations.</em></p>
 <p><strong>Inner angle</strong><br />
-This controls the softness of the light relative to the outer angle, in degrees. Anything within the inner cone will be evenly lit while the light gradually falls off closer to the outer cone. Setting inner angle to be equal or greater than outer angle creates a spotlight with hard edges.
-<img src="../Images\cyberlit\eg_innerangle.png" alt="angles 1" class="shadowed autosize" width="800" height="540" /></p>
-<p>Note how the edges of the light are visibly harder towards the bottom when inner angle is equal to outer angle. </p>
+This controls the softness of the light relative to the outer angle, in degrees. Anything within the inner cone will be evenly lit while the light gradually falls off closer to the outer cone. Setting inner angle to be equal or greater than outer angle creates a spotlight with hard edges.</p>
+<p><img src="../Images\cyberlit\eg_innerangle.png" alt="angles 1" class="shadowed autosize" width="800" height="540" />
+Note how the edges of the light are visibly harder towards the bottom when inner angle is equal to outer angle. </p>
 <p><strong>Outer angle</strong><br />
-This controls how wide the whole cone of light is, in degrees.
-<img src="../Images\cyberlit\eg_outerangle.png" alt="angles 2" class="shadowed autosize" width="800" height="540" /></p>
-<p>A larger outer angle will cast shadows over a larger region, however the shadow map remains the same resolution. An outer angle that's too large will result in pixelated shadows! This is also why you may not get hair shadows; the shadow map is simply too &quot;low-res&quot; / stretched out to capture them.
-<img src="../Images\cyberlit\eg_outres.png" alt="ew!" class="shadowed autosize" width="800" height="400" /></p>
+This controls how wide the whole cone of light is, in degrees.</p>
+<p><img src="../Images\cyberlit\eg_outerangle.png" alt="angles 2" class="shadowed autosize" width="800" height="540" /></p>
+<p>A larger outer angle will cast shadows over a larger region, however the shadow map remains the same resolution. An outer angle that's too large will result in pixelated shadows! This is also why you may not get hair shadows; the shadow map is simply too &quot;low-res&quot; / stretched out to capture them.</p>
+<p><img src="../Images\cyberlit\eg_outres.png" alt="ew!" class="shadowed autosize" width="800" height="400" /></p>
 <p><strong>Softness</strong><br />
 This 'modifies' the falloff gradient set by the inner &amp; outer angle. Values closer to 0 shift the gradient to be harsher, while values past 2 further soften the light past the set inner angle. Setting softness to 0 produces a very similar hard-edged spotlight to the one produced by an 'inner angle = outer angle' spotlight.</p>
 <p><strong>Shadow angle &amp; radius</strong><br />
@@ -194,8 +194,8 @@ This determines the render distance of your shadows. Increase this if your shado
 <p><strong>Fade range</strong><br />
 This appears to be a modifier of fade distance.</p>
 <p><strong>Softness mode</strong><br />
-This determines how sharp / soft the edges of your shadows are. Can be useful when replicating a harsh camera flash or strong sunlight.
-<img src="../Images\cyberlit\eg_shadows.png" alt="shadows 2!" class="shadowed autosize" width="1600" height="400" /></p>
+This determines how sharp / soft the edges of your shadows are. Can be useful when replicating a harsh camera flash or strong sunlight.</p>
+<p><img src="../Images\cyberlit\eg_shadows.png" alt="shadows 2!" class="shadowed autosize" width="1600" height="400" /></p>
 <p><strong>Enable local / contact shadows</strong><br />
 Enabling these let your light cast shadows. <strong>Only spotlights are capable of casting shadows</strong></p>
 <hr />
@@ -233,8 +233,8 @@ This determines how long the capsule is. This affects both the shape of the cast
 <em>Do note the dropoff in light intensity!</em></p>
 <p><strong>Angles &amp; Softness</strong><br />
 These settings function identically to the spotlight settings above. However, by playing with the outer angle you can create strips of light when capsule length is long enough. This can be used to create some pretty neat effects, especially when outer angle is played with.</p>
-<p><img src="../Images\cyberlit\eg_strip.png" alt="strips" class="shadowed autosize" width="800" height="400" /><br />
-This was done using a long capsule light that's been rotated vertically with the orientation gizmo. Due to the incredibly small outer angle, inner angle is basically useless. The softness modifier helps to soften the edges of an otherwise quite harsh light strip. Also, note how the size of the light's reflection stays the same.</p>
+<p><img src="../Images\cyberlit\eg_strip.png" alt="strips" class="shadowed autosize" width="800" height="400" />  </p>
+<p>This was done using a long capsule light that's been rotated vertically with the orientation gizmo. Due to the incredibly small outer angle, inner angle is basically useless. The softness modifier helps to soften the edges of an otherwise quite harsh light strip. Also, note how the size of the light's reflection stays the same.</p>
 <p><strong>Area rectangle side A / B / Two sided</strong><br />
 <em>unknown</em></p>
 <hr />
