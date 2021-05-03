@@ -131,15 +131,17 @@
                     <div class="section">
 <h1 id="universal-unreal-engine-4-unlocker">Universal Unreal Engine 4 Unlocker<a class="headerlink" href="#universal-unreal-engine-4-unlocker" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <p><img src="../Images\UUU\UUULogo.jpg" alt="UUU Logo by Ichisake" class="shadowed" width="896" height="180" /></p>
-<p><strong>Engine versions supported</strong>: Unreal Engine 4.15 - 4.25</p>
+<p><strong>Engine versions supported</strong>: Unreal Engine 4.15 - 4.26</p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>It's forbidden to host the Universal Unreal Engine 4 Unlocker binaries elsewhere, be it your own site or e.g. Nexus Mods. 
 The only site the unlocker binary is distributed on is this site. </p>
 </div><p>For Unreal Engine 4 powered games, there's a universal way to add a free camera, add timestop, a hud toggle and re-create the in-game console (which is usually stripped out in released games): The Universal UE4 Unlocker, in short <strong>UUU</strong>. It comes with its own client exe, UuuClient.exe, and is ready to use. See below what you have to do to get started.</p>
 <h2 id="downloading-the-uuu">Downloading the UUU<a class="headerlink" href="#downloading-the-uuu" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>To download the UUU please use the link below. It's usable with all <a href="universal_ue4_consoleunlocker.htm#games-that-work-with-the-unlocker">the supported games in the list</a>. </p>
 <ul>
-<li><a href="https://mega.nz/file/0QwBiIhC#SuS8jMZkEzNBQ8wtfI2vJGLVSnckGBajR_y4n0EDgpk" target="_blank">Universal UE4 Unlocker v3.0.13</a>. See for the changelog <a href="universal_ue4_consoleunlocker.htm#changelog">below</a>.</li>
+<li><a href="https://mega.nz/file/8Y50GRCS#Sg3A_v5rLeCiI6a4Xppi0RI1gwWDkoU4qjEwV3_g9Eg" target="_blank">Universal UE4 Unlocker v3.0.14</a>. See for the changelog <a href="universal_ue4_consoleunlocker.htm#changelog">below</a>.</li>
 </ul>
+<p>If v3.0.14 doesn't work for you, please try 3.0.13:
+* <a href="https://mega.nz/file/0QwBiIhC#SuS8jMZkEzNBQ8wtfI2vJGLVSnckGBajR_y4n0EDgpk" target="_blank">Universal UE4 Unlocker v3.0.13</a>. See for the changelog <a href="universal_ue4_consoleunlocker.htm#changelog">below</a>.</p>
 <h2 id="starting-the-uuu">Starting the UUU<a class="headerlink" href="#starting-the-uuu" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>After downloading the zip linked below, unpack it in an empty folder. </p>
 <h3 id="injecting-the-dll">Injecting the DLL<a class="headerlink" href="#injecting-the-dll" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
@@ -154,7 +156,9 @@ exe on your desktop, right-click it, select <em>Properties</em> and on the <em>S
 <p><img src="../Images\UUU\AvailablefeaturesTab.jpg" alt="The available features tab" class="shadowed" width="874" height="569" /></p>
 <p>Here, with Darksiders III as example game, all features are available. </p>
 <p>The <strong>Game speed</strong> can be used with the <em>Slomo timestop</em> when it's active. The <strong>Dump object info</strong> button can be used to dump all active object names and the addresses in memory to a text file on disk. This feature is helpful for people who want to use cheat engine with the game at hand. See for more info <a href="universal_ue4_consoleunlocker.htm#dumping-object-addresses">the object dumping section below</a>.</p>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>It might be the UUU reports some elements aren't found while the game should be fully supported. This might be caused by assembly mismatches or the timing you injected the dll into the game process. If this
+happens try to inject the DLL at moment after you've loaded the level or after the game's menu has fully loaded. </p>
+</div><h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>The UUU has various settings you can configure, which you'll do on the <em>Configuration</em> tab. Additionally you can define the key-shortcuts for various functionality on the <em>Key bindings</em> tab. These are discussed below</p>
 <h3 id="configuration-tab">Configuration tab<a class="headerlink" href="#configuration-tab" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p><img src="../Images\UUU\ConfigurationTab.jpg" alt="The configuration tab" class="shadowed" width="874" height="569" /></p>
@@ -1570,8 +1574,13 @@ Research: Otis_Inf and SunBeam<br />
 Logo: Ichisake<br />
 Dumper code is based on the SDK generator by Kn4ck3r.<br />
 Special thanks to Pino44io for testing.  </p>
-<p>&copy;2019-2020 All rights reserved.</p>
+<p>&copy;2019-2021 All rights reserved.</p>
 <h2 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="v3.0.14">v3.0.14:<a class="headerlink" href="#v3.0.14" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li><strong>ADDED</strong>: Support for Unreal Engine v4.26</li>
+<li><strong>FIXED</strong>: Custom console keys now work again after it was broken for newer engine versions. </li>
+</ul>
 <h3 id="v3.0.13">v3.0.13:<a class="headerlink" href="#v3.0.13" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
 <li><strong>FIXED</strong>: The <code>SET</code> command was readded using code which assumed a fixed length of the check block, but in some games this was a different length, causing crashes when a command was specified on the console.</li>
