@@ -55,7 +55,7 @@
 
 <li class="tocentry"><a href="#shader-duplication">Shader duplication</a></li>
 
-<li class="tocentry"><a href="#limitations-and-gotchas">Limitations and gotchas</a></li>
+<li class="tocentry"><a href="#depth-buffer-on-online-games">Depth buffer on online games</a></li>
 
 <li class="tocentry"><a href="#further-information">Further information</a></li>
 
@@ -185,15 +185,11 @@ you should select, first enable the <em>DisplayDepth</em> shader. You likely eit
 <em>Copy depth before clearing</em> checkbox). If the screen becomes what it should be you picked the right depth buffer and you can use it with the techniques that depend on it. </p>
 <h2 id="shader-duplication">Shader duplication<a class="headerlink" href="#shader-duplication" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>There are cases where you would want to use one shader more than once (CanvasFog and StageDepthPlus shaders are popular in that regard). With most shaders all you need to do is replace the technique name in the shader code to a different one, but some shaders will need to change the name of a <code>namespace</code> or a texture name, so be aware of that. Be sure to check the shaders code for comments regarding duplicating the shader.</p>
-<h2 id="limitations-and-gotchas">Limitations and gotchas<a class="headerlink" href="#limitations-and-gotchas" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>There are some limitations with the current Reshade version (v4.2) which might cause some confusion. They're listed below.</p>
-<ul>
-<li>When the game is an online game or actively performs network access, the depth buffer is disabled. Access to the depth buffer is 
-often required as a lot of effects use the depth buffer of the game. Reshade actively disables access to the depth buffer if it
-detects the game to be an online game (so there's network traffic on a regular basis). 
-If the depth buffer isn't available in the game, because of this, the shaders that depend on that will likely fail. E.g. using a 
-depth of field shader in a game like The Division is therefore not going to work: the depth buffer is disabled. </li>
-</ul>
+<h2 id="depth-buffer-on-online-games">Depth buffer on online games<a class="headerlink" href="#depth-buffer-on-online-games" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>When the game is an online game or actively performs network access, the depth buffer is disabled. Access to the depth buffer is often required as a lot of effects use the depth buffer of the game. Reshade actively disables access to the depth buffer if it
+detects the game to be an online game (so there's network traffic on a regular basis). If the depth buffer isn't available in the game, because of this, the shaders that depend on that will likely fail.</p>
+<p>So if you are trying to use reshade in a game which uses the internet connection constantly (because of the DRM or because it's always online like The Division or Steep) you will have to use custom reshade .dlls builds to get depth buffer access, otherwise reshade will block it. Alternatively you can still use reshade without depth buffer access, but some shaders that use it like CinematicDof won't work.</p>
+<p>Keep in mind that the official version of reshade is whitelisted by some games anti-cheat software, so by using a custom .dll you may get banned depending on the game, so do your research beforehand.</p>
 <h2 id="further-information">Further information<a class="headerlink" href="#further-information" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://reshade.me/" target="_blank">Reshade website</a></li>

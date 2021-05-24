@@ -95,6 +95,10 @@
 
 <li class="tocentry"><a href="#troubleshooting">Troubleshooting</a></li>
 
+<li class="tocentry"><a href="#reshade">Reshade</a></li>
+
+<li class="tocentry"><a href="#hotsampling">Hotsampling</a></li>
+
 <li class="tocentry"><a href="#useful-link">Useful Link</a></li>
 
 </ul>
@@ -295,7 +299,7 @@
 </tr>
 <tr>
 	<td>Reshade</td>
-	<td>Yes (No Depth Buffer. For the depth buffer, use Reshade Debbie)</td>
+	<td>Yes (read below)</td>
 </tr>
 <tr>
 	<td>Ansel</td>
@@ -309,8 +313,8 @@
 </table>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://www.mediafire.com/folder/tnmqo9becu169/CinematicTools" target="_blank">Cinematic Tools by Hattiwatti</a><br />
-<strong>Features</strong>: Camera control, Timestop, FoV, Time of day and Weather control. </li>
+<li><a href="https://www.mediafire.com/file/mheyys1uka0wbjd/CT_TheDivision18_20181003.rar/file" target="_blank">Cinematic Tools by Hattiwatti</a><br />
+<strong>Features</strong>: Camera control, Timestop, FoV, Depth of Field, Time of day and Weather control. </li>
 </ul>
 <table class="table table-bordered-all table-responsive">
 <thead>
@@ -344,6 +348,26 @@
 	<td>Mouse, Arrow Keys</td>
 	<td>Rotate Camera</td>
 </tr>
+<tr>
+	<td>Numpad 1/Numpad 3</td>
+	<td>Tilt camera left/right</td>
+</tr>
+<tr>
+	<td>PageUp/PageDown</td>
+	<td>Increase/Decrease FoV</td>
+</tr>
+<tr>
+	<td>Inside Tool's UI</td>
+	<td>Whater control</td>
+</tr>
+<tr>
+	<td>Inside Tool's UI</td>
+	<td>Time of day control</td>
+</tr>
+<tr>
+	<td>Inside Tool's UI</td>
+	<td>Depth of Field</td>
+</tr>
 </tbody>
 </table>
 <div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>Tool won't work with DirectX 12, so make sure it's not enabled on your video settings.</p>
@@ -351,14 +375,19 @@
 <p>You should be fine with running both the game and the tools as admin, you might experience some crashes, if you can't get the tools work after several attempts, here are some things you can do:</p>
 <ol>
 <li><strong>Start Ubisoft Connect and Steam as admin</strong>.</li>
-<li><strong>Start the game as admin directly from the main carpet</strong>. This should be enough, but in case that didn't work:</li>
+<li><strong>Start the game as admin directly from the main folder</strong>. This should be enough, but in case that didn't work:</li>
 <li><strong>Load the game and don't inject the tools immediately</strong>, walk around a bit, spend some minutes, then inject the tools.<br />
 <strong>Optional</strong>: You might want to use another injector, you can use ExtremeInjector unless you use Windows 10, it doesn't work with it, though you don't need to change it, the tool's injector works pretty well.</li>
 <li><strong>Change your graphics settings</strong>, set them to, let's say, medium or high, if you get the tools working, try changing some setting little by little, remember to reload your game whenever it tells you to do so.</li>
 </ol>
 <p>If nothing above worked, which is unlikely, <em>try restarting your PC</em> or just <em>be patient and keep trying</em>.</p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Use the tools at your own risk! Even though the game hasn't received an update in a long time, there still chance for you to get banned, I'd recommend to not spend much time with the tools on the PvP areas known as Dark Zones.</p>
-</div><h2 id="useful-link">Useful Link<a class="headerlink" href="#useful-link" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+</div><h2 id="reshade">Reshade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Since the game is always online you won't be able to use the depth buffer with the common reshade installer, you will need to use a custom reshade build that doesn't block the use of reshade if the game is connected to the internet. You can find more about it <a href="https://framedsc.github.io/ReshadeGuides/setupreshade.htm#depth-buffer-on-online-games" target="_blank">here</a>.</p>
+<h2 id="hotsampling">Hotsampling<a class="headerlink" href="#hotsampling" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Since you are running the game as admin you would also need to run SRWE as admin for the game process to show up. </p>
+<p>Additionally, when hotsampling some tools configurations get reseted, like the blending between wheaters, so beware of that.</p>
+<h2 id="useful-link">Useful Link<a class="headerlink" href="#useful-link" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://www.pcgamingwiki.com/wiki/Tom_Clancy%27s_The_Division" target="_blank">PC Gaming Wiki</a></li>
 </ul>
