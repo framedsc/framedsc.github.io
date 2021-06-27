@@ -73,9 +73,13 @@
 <ul class="currentrelative">
 <li class="tocentry"><a href="#summary">Summary</a></li>
 
+<li class="tocentry"><a href="#mods">Mods</a></li>
+
 <li class="tocentry"><a href="#tools">Tools</a></li>
 
-<li class="tocentry"><a href="#srwe">SRWE</a></li>
+<li class="tocentry"><a href="#workflow">Workflow</a></li>
+
+<li class="tocentry"><a href="#rough-edges">Rough Edges</a></li>
 
 <li class="tocentry"><a href="#useful-links">Useful links</a></li>
 
@@ -204,7 +208,7 @@
 <tbody>
 <tr>
 	<td>Vanilla Photo Mode</td>
-	<td>No</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Hotsampling</td>
@@ -212,7 +216,7 @@
 </tr>
 <tr>
 	<td>DSR</td>
-	<td>No *</td>
+	<td>Yes (not all resolutions are supported)</td>
 </tr>
 <tr>
 	<td>Custom Aspect Ratios</td>
@@ -220,7 +224,7 @@
 </tr>
 <tr>
 	<td>Reshade</td>
-	<td>Yes (DirectX 11)</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Ansel</td>
@@ -232,18 +236,24 @@
 </tr>
 </tbody>
 </table>
-<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>To use a DSR resolution, set your desktop resolution to it first, then you should be able to select it in-game. You will not see all DSR resolutions though.</p>
-</div><h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="mods">Mods<a class="headerlink" href="#mods" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><strong>Cheat Engine Table by Otis_Inf &amp; HattiWatti</strong><br />
-<a href="..\CheatTables\Control_DX12_Hotsampling.CT">DX12 Hotsampling Script</a><br />
-<strong>Features</strong>: Hotsampling</li>
+<li><a href="https://www.nexusmods.com/control/mods/11" target="_blank">Loose Files Loader</a>: This mod does not do anything on its own but is used by other mods that supply loose files.</li>
+<li><a href="https://www.nexusmods.com/control/mods/14" target="_blank">Tweakables</a>: This mod allows the player to customize a wide variety of the game's tweakable parameters. </li>
+<li><a href="https://www.nexusmods.com/control/mods/23" target="_blank">Photomode Range Unlocker</a>: This mod unlocks the in-game Photomode allowing the player to move the camera to greater distances than what is possible in the vanilla game.</li>
 </ul>
-<h2 id="srwe">SRWE<a class="headerlink" href="#srwe" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>To enable hotsampling (via SRWE) enable the hotsampling script. You may also need to check the <code>Force EXITSIZEMOVE</code> option in SRWE. 
-Press <code>ESC</code> in-game in order to alt-tab to SRWE. After changing the resolution, alt-tab back to the game and press <code>ESC</code> again to force the game to update.</p>
+<h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ul>
+<li><a href="..\CheatTables\Control_DX12_Hotsampling.CT">Cheat Engine Table by Otis_Inf &amp; HattiWatti</a>: This tool is used to perform Hotsampling. To learn more, refer to this <a href="https://framedsc.github.io/GeneralGuides/cheat_engine_tables.htm" target="_blank">Cheat Engine Table guide</a>.</li>
+</ul>
+<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>First, run the game as adminstrator. [<em>Note</em>: Only the DX12 exe supports Raytracing].</p>
+<p>Alt-tab out of the game to run both SRWE (as administrator) and Control's Cheat Engine table. Attach both of them to Control's exe process and hop back in game.</p>
+<p>When you feel like taking a shot, press <code>ESC</code>, change the game's Display Mode to <code>Windowed</code> and open the Photo Mode. Frame your shot and add any Reshade effect if you want. When you are satisfied with the composition and the colors, alt-tab out and in SRWE, set the Width and Height according to the resolution you want to take the shot in. Remember to check the <code>Force EXITSIZEMOVE</code> option in SRWE. After setting the resolution, alt-tab back in to the game and wait for 1-2 second while Reshade reloads the effects. Take the screenshot using Reshade's screenshot keybind.</p>
+<h2 id="rough-edges">Rough Edges<a class="headerlink" href="#rough-edges" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The game seems to have some issues with noise, which is exacerbated with Raytracing, especially on walls and doors in some cases. Texture breaking has also been noticed at certain resolutions and aspect ratios.</p>
 <h2 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p><a href="https://pcgamingwiki.com/wiki/Control" target="_blank">PC Gaming wiki</a></p>
+<p><a href="https://www.pcgamingwiki.com/wiki/Control" target="_blank">PC Gaming wiki</a></p>
 
                     </div>
                 </div>

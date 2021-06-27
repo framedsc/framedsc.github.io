@@ -122,7 +122,7 @@ left or right to resp. decrease and increase the value. By holding <code>shift</
 <code>ctrl</code> while clicking gives you the ability to type in the value you want. </p>
 <div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The screenshots below are taken with Cinematic DOF v1.1.10, released on May 25th, 2019.</p>
 </div><h2 id="focusing">Focusing<a class="headerlink" href="#focusing" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>One of the most important parts of a depth of field shader is to focus on the right element in the 3D world. By default the 
+<p>One of the most important parts of a depth of field shader is to focus on the right element in the 3D world. By default, the 
 shader has its focusing mode set to <em>auto-focus</em> and <em>mouse-driven auto-focus</em>. This means that if you mouse the mouse over the scene, the 
 element that's below the mouse pointer will be the element the shader will focus on. Everything in front of it and behind it will be blurred.</p>
 <p>This works for some situations, however if you want to set up the shot and alt-tab to a tool to increase the resolution of the screen for instance,
@@ -135,7 +135,7 @@ option in the Cinematic DOF settings in the Reshade menu. </p>
 the stronger the blur will be in the out-of-focus areas. </p>
 <h3 id="focusing-overlay">Focusing overlay<a class="headerlink" href="#focusing-overlay" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>Cinematic DOF has an important focus helper, its <em>out-of-focus plane overlay</em>. When the <strong>Show out-of-focus plane overlay on mouse down</strong> is checked,
-the shader will show an overlay every time the left-mousebutton is pressed and hold down. The overlay consists of three colors: white for far plane 
+the shader will show an overlay every time the left-mousebutton is pressed and held down. The overlay consists of three colors: white for far plane 
 (the area behind what's in focus) out of focus elements, red for near plane (the area in front of what's in focus) out of focus elements and a blue
 line for what's exact in focus. </p>
 <p>It also displays the <em>hyperfocal</em> area without any color, right next to the blue line. This area is considered 'in focus' 
@@ -157,7 +157,7 @@ a 100mm lens on a modern camera with aperture 2.8 you'd get nice portrait shots 
 <img src="../../Images/ShaderGuides/CinematicDOF/focus_100mm_2_8.jpg" alt="100mm/2.8" title="100mm with 2.8 aperture" class="shadowed" width="1024" height="576" />
 <p>100mm with 2.8 aperture</p>
 </div>
-<p>Look careful at the blurring on the wings of the statue, and the thick blurring in the background. </p>
+<p>Look carefully at the blurring on the wings of the statue, and the thick blurring in the background. </p>
 <p>If we change the lens and aperture to the values of a lens that's often sold with a modern camera, a 50mm lens with aperture 5.6, the results are a bit different:</p>
 <div class="figure">
 <img src="../../Images/ShaderGuides/CinematicDOF/focus_50mm_5_6.jpg" alt="50mm/5.6" title="50mm with 5.6 aperture" class="shadowed" width="1024" height="576" />
