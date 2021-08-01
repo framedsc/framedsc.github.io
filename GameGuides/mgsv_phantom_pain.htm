@@ -64,6 +64,8 @@
 
 <li class="tocentry"><a href="#controls">Controls</a></li>
 
+<li class="tocentry"><a href="#reshade">Reshade</a></li>
+
 <li class="tocentry"><a href="#useful-links">Useful Links</a></li>
 
 
@@ -287,9 +289,16 @@ So TL;DR: to pause the game: press Numpad 0. To then unpause the game after that
 <p>In the camera menu (Control+INS) you'll find DoF controls. These controls work when the camera is enabled. </p>
 <h1 id="time-of-day-and-weather-control">Time of Day and Weather control<a class="headerlink" href="#time-of-day-and-weather-control" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <p>In order to efectivly control time of day and Weather the game must be unpaused and the camera must be enabled, otherwise the game's values are overwriting your changes. This is done to avoid you configuring things which have a negative effect on gameplay. </p>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>The game doesnt support the new versions of ReShade, it runs with the version 0.10.0.602 and SweetFx 2.0. However it isn't compatible with the camera tools. The only way to use both is to start the game and just when the game window comeout start the tools as admin (it's likely it will crash, just keep trying until you get it).</p>
-</div><h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="reshade">Reshade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>To be able to use reshade in the game you will need:</p>
 <ul>
+<li><a href="https://github.com/doitsujin/dxvk/releases/tag/v1.8.1" target="_blank">DXVK</a> (drop the DLLs from the x64 directory into the game's root dir), which will convert DirectX to Vulkan (v1.8.1 was suggested, but feel free to try a newer version).</li>
+<li>Install Reshade as Vulkan globally (the second button on Reshade's installer).</li>
+</ul>
+<p>Other methods for using reshade in the game involve defocusing the games window when the game is being initialized, but the method described above seems to work well. Overlays (Steam/Afterburner/etc) also work fine with this method.</p>
+<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ul>
+<li><a href="https://www.nexusmods.com/metalgearsolidvtpp/mods/45" target="_blank">Infinite Heaven mod</a></li>
 <li><a href="https://www.nexusmods.com/metalgearsolidvtpp/mods/406/" target="_blank">Post-processing mod</a></li>
 <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1210727595" target="_blank">Anti-Aliasing Guide</a></li>
 <li><a href="https://pcgamingwiki.com/wiki/Metal_Gear_Solid_V:_The_Phantom_Pain" target="_blank">PC Gaming Wiki</a></li>
