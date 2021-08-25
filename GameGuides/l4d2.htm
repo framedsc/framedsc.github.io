@@ -273,12 +273,17 @@ Open the console with the `/~ key.
 <tr>
 	<td><code>nb_stop</code></td>
 	<td><code>0</code> / <code>1</code></td>
-	<td>toggles AI behaviour (timestop)</td>
+	<td>toggles bots &amp; zombie behaviour (timestop)</td>
 </tr>
 <tr>
 	<td><code>r_drawviewmodel</code></td>
 	<td><code>0</code> / <code>1</code></td>
 	<td>toggles viewmodel (weapon visibility)</td>
+</tr>
+<tr>
+	<td><code>host_timescale</code></td>
+	<td>-</td>
+	<td>controls gamespeed (multiplier)</td>
 </tr>
 <tr>
 	<td><code>map</code></td>
@@ -307,8 +312,11 @@ Open the console with the `/~ key.
 </tr>
 </tbody>
 </table>
-<p><code>hidehud</code> does not hide captions and survivor tips, those have to be disabled in the game settings.</p>
+<p><code>hidehud</code> does not hide captions and survivor tips, those have to be disabled in the game settings.  
+</p>
 <h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="starting-a-shooting-session">Starting a shooting session<a class="headerlink" href="#starting-a-shooting-session" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Most of these commands only work in a session with cheats enabled. To start one, open the console in the main menu and enter <code>sv_cheats 1</code>. Next, start a level of your choice with the <code>map</code> command. </p>
 <h3 id="binding-commands--autoexec.cfg">Binding commands &amp; autoexec.cfg<a class="headerlink" href="#binding-commands--autoexec.cfg" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>The above commands can be bound to hotkeys with the use of <code>bind &lt;key&gt; &lt;command&gt;</code> / <code>bindToggle &lt;key&gt; &lt;command&gt;</code> (latter is best for 0 / 1 commands) so the console doesn't have to be opened all the time. </p>
 <p>These <code>bind</code> commands can be written to an <code>autoexec.cfg</code> file created in <code>~\Left 4 Dead 2\left4dead2\cfg</code> folder. <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=381795162" target="_blank">This guide</a> goes into much greater detail regarding console commands and <code>autoexec.cfg</code>.</p>
