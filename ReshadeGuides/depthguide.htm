@@ -116,14 +116,15 @@
 <p><img src="../Images/depthguide/ds_depthslicer1.png" alt="1" class="shadowed autosize" width="568" height="263" /></p>
 <p>Your scene should now be white, with maybe a slice of black visible. The only settings you need to adjust now are <em>Depth Position</em> and <em>Depth Near Plane</em>. Adjust <em>Depth Position</em> until all of your subject is in black, with the background entirely white. Next, reduce <em>Depth Near Plane</em> until any foreground objects are now white too. I recommend using the arrows to make these adjustments as the sliders can get difficult to work with at such small values.</p>
 <p>If set up right, you should get something like this.<br />
-<img src="../Images/depthguide/ds_example.png" alt="2" title="Bugsnax" class="shadowed autosize" width="1350" height="570" />  
-</p>
+<img src="../Images/depthguide/ds_example.png" alt="2" class="shadowed autosize" width="1350" height="570" /><br />
+<em>Bugsnax</em></p>
 <p>You can now capture this and use it as a mask in your image editor of choice. This method is very similar to what you can achieve with <code>Chromakey.fx</code>. A matte is likely to produce a cleaner result than a greenscreen key and is best for still images. </p>
 <hr />
 <h2 id="graded-depth-range">Graded Depth Range<a class="headerlink" href="#graded-depth-range" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>This method exports a specific range of the depth buffer. Given the 8-bit greyscale limitation of a .png/.bmp capture, there's only a maximum of 256 depth layers that can be used. This can expose banding issues when these 256 layers are stretched too thin. By using <code>DisplayDepth.fx</code>'s debug features, we can highlight a specific slice of the depth buffer containing only the depth layers we want to work with. This requires that you do know what you want to do with the depth map, since it cannot be modified extensively once captured.</p>
 <p>With <code>DisplayDepth.fx</code> active, set <em>Present type</em> to <em>Depth map</em> and enter the Advanced settings. The two settings that are relevant here are <em>Far Plane</em> and <em>Multiplier</em>. <em>Far Plane</em> brings the far plane, the white point, closer to the camera. <em>Multiplier</em> acts sort of like the near plane, bringing the black point further from the camera.</p>
-<p><img src="../Images/depthguide/gdr_grading.png" alt="example" class="shadowed autosize" width="1350" height="452" /></p>
+<p><img src="../Images/depthguide/gdr_grading.png" alt="example" class="shadowed autosize" width="1350" height="452" /><br />
+<em>Cyberpunk 2077</em></p>
 <p>Above is an example of a graded depth map following the above. <em>Far Plane</em> was set to a very small number, 1.0, and <em>Multiplier</em> was increased until the subject (in black) was well separated from the background. </p>
 <p>This tiny range of the depth buffer is handy for effects like shallow depth of field portraiture, where the focal plane needs to be only so wide but defocusing of the subject's ears, neck and other features is still desired.</p>
 <p>Once set up, screenshot it with your favourite screenshotting tool.</p>
@@ -160,9 +161,9 @@ Lastly, we can return to our Fog folder and adjust our adjustment layers until w
 <p><img src="../Images/depthguide/fog_finalising.png" alt="comparison again" class="shadowed autosize" width="1391" height="658" /></p>
 <p><img src="../Images/depthguide/fog_final.png" alt="final" class="shadowed autosize" width="1391" height="658" /></p>
 <p><a href="../Images/depthguide/L4D2_humveeFog.psd">Download the PSD</a>. </p>
-<p>Yes, there are much better approaches to adding fog through Reshade like TreyM's fantastic <a href="https://github.com/TreyM/MShaders/blob/main/Shaders/MShaders/AtmosphericDensity.fx" target="_blank">Atmospheric Density</a> shader. The point of this tutorial is to provide you with a starting point for all that can be done with an image and its depth map. I hope this has given you some ideas!</p>
+<p>The point of this tutorial is to provide you with a starting point for all that can be done with an image and its depth map. I hope this has given you some ideas!</p>
 <hr />
-<p><em>last updated 25th August 2021</em><br />
+<p><em>last updated 26th August 2021</em><br />
 <em>written by <a href="https://twitter.com/moyevka" target="_blank">moyevka</a></em>  </p>
 
                     </div>
