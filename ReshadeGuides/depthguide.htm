@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exporting Depth Buffers with Reshade - FRAMED. Screenshot Community</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/vs.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> FRAMED. Screenshot Community</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Home</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Gameguides.htm">Game guides</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../GeneralGuides/index.htm">General guides</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../ReshadeGuides/index.htm">Reshade guides</a></span></li>
+
+<li class="tocentry"><a href="../ReshadeGuides/setupreshade.htm">Setting up reshade</a>
+</li>
+<li class="tocentry"><a href="../ReshadeGuides/shaderscatalogue.htm">Shaders Catalogue</a>
+</li>
+<li class="tocentry"><a href="../ReshadeGuides/lutgenguide.htm">LUT Generation</a>
+</li>
+<li class="tocentry"><a href="../ReshadeGuides/reshadeuwp.htm">Injecting ReShade in UWP games</a>
+</li>
+<li class="tocentry current"><a class="current" href="../ReshadeGuides/depthguide.htm">Exporting Depth Buffers with Reshade</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#depth-slice">Depth Slice</a></li>
+
+<li class="tocentry"><a href="#graded-depth-range">Graded Depth Range</a></li>
+
+<li class="tocentry"><a href="#high-range-depth-export">High-range Depth Export</a></li>
+
+<li class="tocentry"><a href="#tutorial-adding-fog-using-a-depth-map">Tutorial: Adding fog using a depth map</a></li>
+
+</ul>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../ReshadeGuidesShaderguides.htm">Shader guides</a></span>
+</li>
+</ul>
+</li>
+<li class="tocentry"><a href="../cheattablearchive.htm">Cheat Table Archive</a>
+</li>
+</ul>
+				<br/>
+				<ul>
+					<li class="tocentry">
+						<ul>
+							<li>
+								<span class="navigationgroup">Galleries</span>
+							</li>
+							<li class="tocentry">
+								<a href="/HallOfFramed/" target="_blank">Hall of Framed</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">FRAMED. Screenshot Community</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../ReshadeGuides/index.htm">Reshade guides</a></li> / <li><a href="../ReshadeGuides/depthguide.htm">Exporting Depth Buffers with Reshade</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<p><img src="../Images/depthguide/depth_header.png" alt="ddeeepth" class="shadowed autosize" width="896" height="180" /></p>
+<p>Exporting depth buffers gives you much greater control over any post-work you might want to do on a shot, in Photoshop or other similar image editors. Exported depth buffers, or simply depth maps, can be used as mattes for background replacements, masks for depth-based colour grades, adding effects like fog, or even simulating complex effects like depth of field in post.</p>
+<p>While Reshade does offer all this functionality through its <a href="../ReshadeGuides/shaderscatalogue.htm">extensive catalogue of shaders</a>, some may prefer to make these changes in post. It gives the stability of working 'offline' (can't crash your game if it isn't running!), access to tools one might be more comfortable with, as well as effects that aren't possible in Reshade right now.</p>
+<p>This guide will cover the export of depth buffers 3 different ways, all using Reshade but with the use of different shaders. It fundamentally relies on capturing a screenshot of the Reshade effect. Additionally, a short tutorial on how to use an exported depth buffer to add a very simple fog effect is included at the end.</p>
+<hr />
+<h2 id="depth-slice">Depth Slice<a class="headerlink" href="#depth-slice" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>If all you need is a simple slice of the depth buffer prod80's <a href="https://github.com/prod80/prod80-ReShade-Repository/blob/master/Shaders/" target="_blank">Depth Slicer</a> is the shader you want. <strong>prod80's shaders require the 4 FXH files listed at the top of the repository to be downloaded and added to your shaders.</strong> You will also need any colour-modifying shader that can turn the entire scene black, such as <a href="https://github.com/martymcmodding/qUINT/blob/master/Shaders/qUINT_lightroom.fx" target="_blank">qUINT_Lightroom</a> with the black level set to max. The goal is to capture a black-on-white image we can easily use as a mask.</p>
+<p>With your scene turned black, make sure Depth Slicer is placed <strong>below</strong> Lightroom / the shader you're using in the Reshade GUI. We want Depth Slicer to be able to affect the black image. Set Depth Slicer up like shown below.</p>
+<p><img src="../Images/depthguide/ds_depthslicer1.png" alt="1" class="shadowed autosize" width="568" height="263" /></p>
+<p>Your scene should now be white, with maybe a slice of black visible. The only settings you need to adjust now are <em>Depth Position</em> and <em>Depth Near Plane</em>. Adjust <em>Depth Position</em> until all of your subject is in black, with the background entirely white. Next, reduce <em>Depth Near Plane</em> until any foreground objects are now white too. I recommend using the arrows to make these adjustments as the sliders can get difficult to work with at such small values.</p>
+<p>If set up right, you should get something like this.<br />
+<img src="../Images/depthguide/ds_example.png" alt="2" class="shadowed autosize" width="1350" height="570" /><br />
+<em>Bugsnax</em></p>
+<p>You can now capture this and use it as a mask in your image editor of choice. This method is very similar to what you can achieve with <code>Chromakey.fx</code>. A matte is likely to produce a cleaner result than a greenscreen key and is best for still images. </p>
+<hr />
+<h2 id="graded-depth-range">Graded Depth Range<a class="headerlink" href="#graded-depth-range" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>This method exports a specific range of the depth buffer. Given the 8-bit greyscale limitation of a .png/.bmp capture, there's only a maximum of 256 depth layers that can be used. This can expose banding issues when these 256 layers are stretched too thin. By using <code>DisplayDepth.fx</code>'s debug features, we can highlight a specific slice of the depth buffer containing only the depth layers we want to work with. This requires that you do know what you want to do with the depth map, since it cannot be modified extensively once captured.</p>
+<p>With <code>DisplayDepth.fx</code> active, set <em>Present type</em> to <em>Depth map</em> and enter the Advanced settings. The two settings that are relevant here are <em>Far Plane</em> and <em>Multiplier</em>. <em>Far Plane</em> brings the far plane, the white point, closer to the camera. <em>Multiplier</em> acts sort of like the near plane, bringing the black point further from the camera.</p>
+<p><img src="../Images/depthguide/gdr_grading.png" alt="example" class="shadowed autosize" width="1350" height="452" /><br />
+<em>Cyberpunk 2077</em></p>
+<p>Above is an example of a graded depth map following the above. <em>Far Plane</em> was set to a very small number, 1.0, and <em>Multiplier</em> was increased until the subject (in black) was well separated from the background. </p>
+<p>This tiny range of the depth buffer is handy for effects like shallow depth of field portraiture, where the focal plane needs to be only so wide but defocusing of the subject's ears, neck and other features is still desired.</p>
+<p>Once set up, screenshot it with your favourite screenshotting tool.</p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p><code>DisplayDepth.fx</code> dithers its depth layers together so that its output isn't full of banding. This dithering can appear as artifacts in some depth effects. A modified version of <code>DisplayDepth.fx</code> that includes a dither toggle can be downloaded <a href="../Images/depthguide/DisplayDepth.fx">here</a>.</p>
+</div><hr />
+<h2 id="high-range-depth-export">High-range Depth Export<a class="headerlink" href="#high-range-depth-export" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>This last method gets you as close as we can to the full-range, raw depth buffer Reshade depth effects work with. By capturing depth that's been packed into all three RGB channels, it can be unpacked and merged into a 24-bit channel that has many more depth layers than the 8-bit alternative. This relies on <a href="https://github.com/BlueSkyDefender" target="_blank">BlueSkyDefender</a>'s <code>Depth_Tool.fx</code> and a tool written by <a href="https://twitter.com/7MinutesToEight" target="_blank">seven</a> to convert the capture into a 32-bit EXR file, both of which can be downloaded <a href="https://github.com/stillseven/depth_converter" target="_blank">here</a>. </p>
+<p>After adding <code>Depth_Tool.fx</code> to your shaders folder and setting up a shot, all you have to do is enable the shader and ensure Reshade is set to capture BMPs. The shader does not need to be adjusted.</p>
+<p>The capture should look like this:
+<img src="../Images/depthguide/hrd_goodeg.png" alt="example" class="shadowed autosize" width="1640" height="775" /></p>
+<p>If it looks like a gentle green-blue gradient, <em>Custom Depth Map</em> has to be reversed.</p>
+<p>Once saved as a BMP, open the depth converter EXE and follow its GUI. It will output an EXR file into a folder named &quot;output&quot; in the same directory the EXE was placed in.</p>
+<p>You now have a perfectly usable high bit-depth depth map to use in any program that supports EXRs!</p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>If converting PNGs to BMPs, <strong>ensure that the conversion is to 24 bits per pixel</strong>. BMPs support a wide range of bit depths and converters may default to other bit depths. </p>
+</div><hr />
+<h2 id="tutorial-adding-fog-using-a-depth-map">Tutorial: Adding fog using a depth map<a class="headerlink" href="#tutorial-adding-fog-using-a-depth-map" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>In this final section of the guide, we'll go through how you can use one of these exported depth buffers with this simple Photoshop tutorial. By duplicating our original image, editing it in a way we see fit, then masking it with the depth map, we can mimic the appearance of thick fog in a scene.</p>
+<p>You'll want Photoshop CS4 or higher to follow along, but this tutorial can be easily adapted to work with other image editors. I'll be working with a screenshot from <em>Left 4 Dead 2</em>.</p>
+<p><strong>Step 1</strong><br />
+With your image loaded in Photoshop, unlock it as a background and duplicate it (CTRL+J). This will be the layer we'll work with. Create a new folder/group and place this duplicated layer in it. Rename the folder as &quot;Fog&quot; to keep things organised.</p>
+<p><img src="../Images/depthguide/fog_start.png" alt="start" class="shadowed autosize" width="1391" height="658" /></p>
+<p><strong>Step 2</strong><br />
+Going over to the Adjustments tab, add a Levels adjustment layer. This will control the bulk of the effect. Drag the left arrow on the second slider towards the middle, this washes out the image considerably but is what we're looking for since we want that grey, foggy look. Next, we can take the middle arrow of the first slider and drag it towards the right. This further flattens out our image. Our last colour adjustment to make is taking the right arrow of the second slider and moving it slightly left. This mimics light falling off in intensity as it travels through the fog.</p>
+<p><img src="../Images/depthguide/fog_levelsadjust.png" alt="levels" class="shadowed autosize" width="1380" height="652" /></p>
+<p><strong>Step 3</strong><br />
+Create a mask on your Fog folder. We'll now import the depth map so that we can use it for the fog effect. Ctrl+Click on the depth map layer to select all its contents and copy (CTRL+C) it. Alt+click on the <em>mask</em> of the Fog folder to enter it. We can then paste (CTRL+V) the depth map into the mask. Clicking on another layer, we should now see a gradual transition to the fog. It's not as intense as I'd like it, so now we'll emphasise the fog by grading the mask. </p>
+<p>Alt+clicking back into the mask, we can now use Levels (CTRL+L) to grade it. Levels has some handy eyedroppers we'll be using to simplify this process, they're the three buttons above the Preview tickbox. With the leftmost eyedropper selected, we'll set our black point. This determines where fog isn't visible. In my case, I want Coach to be visible, so I'll click on him. The rightmost eyedropper sets our white point, where fog will be strongest. I'll click somewhere in the trees.</p>
+<p><img src="../Images/depthguide/fog_depthgrade.png" alt="levels again" class="shadowed autosize" width="1380" height="653" /></p>
+<p>Unfortunately, as masks don't do adjustment layers, <strong>this grade will be permanent</strong>. Click out of the mask, undo and retry until you get the result you're looking for. </p>
+<p><img src="../Images/depthguide/fog_foggrades.png" alt="comparison" class="shadowed autosize" width="1391" height="658" /></p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>A high-range depth map is highly recommended for this process. A regular capture of <code>DisplayDepth.fx</code> will definitely introduce banding when you try to grade it like the above. Alternatively, you can grade the depth map before exporting it (Graded Depth Range), but that won't have the full flexibility of grading in post.</p>
+</div><p><strong>Step 4</strong><br />
+Lastly, we can return to our Fog folder and adjust our adjustment layers until we get the look we want. I've tweaked my Layers adjustment to darken the fog more, and added a Color Balance adjustment on the midtones to tint the fog. </p>
+<p><img src="../Images/depthguide/fog_finalising.png" alt="comparison again" class="shadowed autosize" width="1391" height="658" /></p>
+<p><img src="../Images/depthguide/fog_final.png" alt="final" class="shadowed autosize" width="1391" height="658" /></p>
+<p><a href="../Images/depthguide/L4D2_humveeFog.psd">Download the PSD</a>. </p>
+<p>The point of this tutorial is to provide you with a starting point for all that can be done with an image and its depth map. I hope this has given you some ideas!</p>
+<hr />
+<p><em>last updated 26th August 2021</em><br />
+<em>written by <a href="https://twitter.com/moyevka" target="_blank">moyevka</a></em>  </p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+&copy 2019-2021 FRAMED. All rights reserved.
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
