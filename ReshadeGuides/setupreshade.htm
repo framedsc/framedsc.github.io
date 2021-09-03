@@ -57,6 +57,8 @@
 
 <li class="tocentry"><a href="#depth-buffer-on-online-games">Depth buffer on online games</a></li>
 
+<li class="tocentry"><a href="#using-reshade-alongisde-other-injectable-mods">Using reshade alongisde other injectable mods</a></li>
+
 <li class="tocentry"><a href="#further-information">Further information</a></li>
 
 <li class="tocentry"><a href="#custom-shader-repositories">Custom shader repositories</a></li>
@@ -69,6 +71,8 @@
 <li class="tocentry"><a href="../ReshadeGuides/lutgenguide.htm">LUT Generation</a>
 </li>
 <li class="tocentry"><a href="../ReshadeGuides/reshadeuwp.htm">Injecting ReShade in UWP games</a>
+</li>
+<li class="tocentry"><a href="../ReshadeGuides/depthguide.htm">Exporting Depth Buffers with Reshade</a>
 </li>
 <li class="tocentry">
 <span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../ReshadeGuidesShaderguides.htm">Shader guides</a></span>
@@ -190,6 +194,8 @@ you should select, first enable the <em>DisplayDepth</em> shader. You likely eit
 detects the game to be an online game (so there's network traffic on a regular basis). If the depth buffer isn't available in the game, because of this, the shaders that depend on that will likely fail.</p>
 <p>So if you are trying to use reshade in a game which uses the internet connection constantly (because of the DRM or because it's always online like The Division or Steep) you will have to use custom reshade .dlls builds to get depth buffer access, otherwise reshade will block it. Alternatively you can still use reshade without depth buffer access, but some shaders that use it like CinematicDof won't work.</p>
 <p>Keep in mind that the official version of reshade is whitelisted by some games anti-cheat software, so by using a custom .dll you may get banned depending on the game, so do your research beforehand.</p>
+<h2 id="using-reshade-alongisde-other-injectable-mods">Using reshade alongisde other injectable mods<a class="headerlink" href="#using-reshade-alongisde-other-injectable-mods" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Sometimes you may encounter that you can't use reshade alongside another mod that also injects itself into the process. One way of avoiding this is using <a href="https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases" target="_blank">ASI Loader</a> to put the extra mods in a scripts folder. Read the <a href="https://github.com/ThirteenAG/Ultimate-ASI-Loader/blob/master/readme.md" target="_blank">README file on the ASI Loader repo</a> for more information on how to use it.</p>
 <h2 id="further-information">Further information<a class="headerlink" href="#further-information" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://reshade.me/" target="_blank">Reshade website</a></li>
