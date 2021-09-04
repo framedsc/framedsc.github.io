@@ -95,15 +95,7 @@
 <ul class="currentrelative">
 <li class="tocentry"><a href="#summary">Summary</a></li>
 
-<li class="tocentry"><a href="#cheat-table"><a href="../CheatTables/DeadSpace2_camera.CT">Cheat Table</a></a></li>
-
-<li class="tocentry"><a href="#timescale">Timescale</a></li>
-
-<li class="tocentry"><a href="#free-camera">Free Camera</a></li>
-
-<li class="tocentry"><a href="#relative-camera-control">Relative Camera Control</a></li>
-
-<li class="tocentry"><a href="#extra-features">Extra features</a></li>
+<li class="tocentry"><a href="#cheat-table-features"><a href="../CheatTables/DeadSpace2_camera.CT">Cheat Table</a> Features:</a></li>
 
 <li class="tocentry"><a href="#common-info">Common Info</a></li>
 
@@ -255,10 +247,97 @@
 </tbody>
 </table>
 <p>Resolution can be changed in configuration file. GeDoSaTo is supported according to <a href="https://github.com/PeterTh/gedosato/blob/master/pack/config/whitelist.txt#L52" target="_blank">whitelist</a>. 
-Configuration would be similar to <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=604010024" target="_blank">DS1.</a> </p>
-<h2 id="cheat-table"><a href="../CheatTables/DeadSpace2_camera.CT">Cheat Table</a><a class="headerlink" href="#cheat-table" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<h2 id="timescale">Timescale<a class="headerlink" href="#timescale" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Timescale is game speed multiplier. 1.00 - default, &gt;1 faster, 0 (and lower) pauses the game, while still able to control the camera to catch the composition. </p>
+Configuration is similar to <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=604010024" target="_blank">DS1.</a> </p>
+<h2 id="cheat-table-features"><a href="../CheatTables/DeadSpace2_camera.CT">Cheat Table</a> Features:<a class="headerlink" href="#cheat-table-features" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="relative-camera-control-rcc">Relative Camera Control (RCC)<a class="headerlink" href="#relative-camera-control-rcc" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Control the camera position, relative to player. Limited by walls. </p>
+<p>Description:</p>
+<ul>
+<li><code>FOV</code>: Field of View.</li>
+<li>
+<p><code>Zoom</code> (Cam Distance): how far back the camera sits from character. The further you go, the smaller char is. </p>
+</li>
+<li>
+<p><code>Cam Height</code>: by increasing\decreasing this, the camera will move up\down. HOWEVER, this does not apply when looking up or down - change distance for this.</p>
+</li>
+<li>
+<p><code>Center Offsets</code>: 3 values the game uses to determine how far left\right the camera sits from character. However, it's dependent on where you're looking. No matter where you look, these will always move the camera left\right. To make things simple, hotkeys are setup to change all 3 at the same time.</p>
+</li>
+<li>
+<p><code>Pivot Distance</code>: The camera rotates around a pivot point. By default, that point is located wherever Isaac is. However, if you increase this value, the camera will rotate around a point in front of Isaac. Negative values for behind him. This is one of several ways to simply put the camera in front of Isaac and get him out of the shot. Has other uses too.</p>
+</li>
+</ul>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Aiming and many other in-game events reset camera values. To prevent value from changing, <strong>freeze it</strong>: click in the box leftside of it's name. Or highlight it and press <code>Space</code>.  
+</p>
+</div><p>Hotkeys:</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Controls</th>
+	<th>CTRL +</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Zoom</td>
+	<td>Num +/-</td>
+</tr>
+<tr>
+	<td>Height</td>
+	<td>Num 2/8</td>
+</tr>
+<tr>
+	<td>X</td>
+	<td>Num 4/6</td>
+</tr>
+<tr>
+	<td>Y</td>
+	<td>Num 3/9</td>
+</tr>
+<tr>
+	<td>Char Size</td>
+	<td>PgUp/Dn</td>
+</tr>
+</tbody>
+</table>
+<p>Technical info: </p>
+<p>This is the port of Jim2Point0's DS1 table. See <a href="https://web.archive.org/web/20141021190640/flickr.com/groups/deadendthrills/discuss/72157631765632995/" target="_blank">original description.</a> Altho code differs, the same camera values with similar structure were found using CE's 'Group search'. The table only modifies values, without changes to code.</p>
+<h3 id="free-camera">Free Camera<a class="headerlink" href="#free-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Detaches camera from character. </p>
+<p>Control your camera by modifying 3 values. In-game rotating still works and you still control the character. </p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Controls</th>
+	<th>ALT +</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Toggle</td>
+	<td>Num 0</td>
+</tr>
+<tr>
+	<td>Height</td>
+	<td>Num 2/8</td>
+</tr>
+<tr>
+	<td>X</td>
+	<td>Num 4/6</td>
+</tr>
+<tr>
+	<td>Y</td>
+	<td>Num +/-</td>
+</tr>
+</tbody>
+</table>
+<p>Controls are not handy, as they move camera in absolute coordinate system. Recommended to use after RCC.</p>
+<p>Credits: <a href="https://github.com/ghostinthecamera/PhotomodeCheatTables/blob/master/WIP/Dead%20Space%202/notes.txt" target="_blank">Notes by GhostInTheCamera.</a></p>
+<h3 id="extra">Extra<a class="headerlink" href="#extra" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li>Timescale</li>
+</ul>
+<p>Timescale is game speed multiplier. 1.00 - default, &gt;1 faster, 0 (and lower) pauses the game, while still able to control the camera. </p>
 <table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
@@ -277,87 +356,10 @@ Configuration would be similar to <a href="https://steamcommunity.com/sharedfile
 </tr>
 </tbody>
 </table>
-<h2 id="free-camera">Free Camera<a class="headerlink" href="#free-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Detaches camera from character. </p>
-<p>Control your camera by modifying 3 values. In-game rotating still works and you still control the character. </p>
-<table class="table table-bordered-all table-responsive">
-<thead>
-<tr>
-	<th>Controls</th>
-	<th>ALT +</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-	<td>Toggle</td>
-	<td><code>Num 0</code></td>
-</tr>
-<tr>
-	<td>Height</td>
-	<td>`Num 2</td>
-	<td>8`</td>
-</tr>
-<tr>
-	<td>X</td>
-	<td>`Num 4</td>
-	<td>6`</td>
-</tr>
-<tr>
-	<td>Y</td>
-	<td>`Num +</td>
-	<td>-`</td>
-</tr>
-</tbody>
-</table>
-<p>Credits: <a href="https://github.com/ghostinthecamera/PhotomodeCheatTables/blob/master/WIP/Dead%20Space%202/notes.txt" target="_blank">Notes by GhostInTheCamera.</a></p>
-<h2 id="relative-camera-control">Relative Camera Control<a class="headerlink" href="#relative-camera-control" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Control the camera position, relative to char. </p>
-<table class="table table-bordered-all table-responsive">
-<thead>
-<tr>
-	<th>Controls</th>
-	<th>CTRL +</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-	<td>Zoom</td>
-	<td>`Num +</td>
-	<td>-`</td>
-</tr>
-<tr>
-	<td>Height</td>
-	<td>`Num 2</td>
-	<td>8`</td>
-</tr>
-<tr>
-	<td>X</td>
-	<td>`Num 4</td>
-	<td>6`</td>
-</tr>
-<tr>
-	<td>Y</td>
-	<td>`Num 3</td>
-	<td>9`</td>
-</tr>
-<tr>
-	<td>Char Size</td>
-	<td>PgUp/Dn</td>
-</tr>
-</tbody>
-</table>
-<h3 id="description">Description<a class="headerlink" href="#description" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>FOV: Field of View.</p>
-<p>Zoom: it's Cam Distance - how far back the camera sits from character. The further you go, the smaller char is. It has two values for when you stay or walk. Single hotkey for both for smooth gameplay.</p>
-<p>Cam Height: by increasing\decreasing this, the camera will move up and down. HOWEVER, this does not apply when looking up or down - change distance for this.</p>
-<p>Center Offsets: 3 values the game uses to determine how far left\right the camera sits from character. However, it's dependent on where you're looking. No matter where you look, these will always move the camera left\right. To make things simple, hotkeys are setup to change all 3 at the same time.</p>
-<p>Pivot Distance: The camera rotates around a pivot point. By default, that point is located wherever Isaac is. However, if you increase this value, the camera will rotate around a point in front of Isaac. Negative values for behind him. This is one of several ways to simply put the camera in front of Isaac and get him out of the shot. Has other uses too.</p>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Aiming and many other in-game events reset camera values. To prevent value from changing, <strong>freeze it</strong>: click in the box leftside of it's name. Or highlight it and press <code>Space</code>.  
-</p>
-</div><p>Technical info: </p>
-<p>This is the port of Jim2Point0's DS1 table. See <a href="https://web.archive.org/web/20141021190640/flickr.com/groups/deadendthrills/discuss/72157631765632995/" target="_blank">original description.</a> Altho code differs, the same camera values with similar structure were found using CE's 'Group search'. Only modifies values, without code changes.</p>
-<h2 id="extra-features">Extra features<a class="headerlink" href="#extra-features" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Enemies don't see you and 0g anywhere.</p>
+<ul>
+<li>Enemies don't see you.</li>
+<li>0g anywhere (Ctrl+9)</li>
+</ul>
 <h2 id="common-info">Common Info<a class="headerlink" href="#common-info" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p><strong>Easing attaching to process</strong><br />
 In settings, set auto-attach to <code>deadspace2.exe</code> or <code>dead</code> for short and tick <code>Even</code>.<br />
