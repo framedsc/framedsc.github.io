@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>10247</ID>
+      <Description>"Pause Game [F3]"</Description>
+      <LastState/>
+      <Color>000000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(pauseAOB,witcher3.exe,44 39 B0 60 01 00 00 75 12 4C 8D 85 x x x x 48 8B D6 48 8B CF)
+//44 39 B0 60 01 00 00 75 12 4C 8D 85 x x x x 48 8B D6 48 8B CF E8 06 05 00 00 48 8D 4C 24 28
+
+alloc(newmem,2048,witcher3.exe)
+label(returnhere)
+label(exit)
+
+label(pauseState)
+registersymbol(pauseState)
+registersymbol(pauseAOB)
+
+newmem:
+mov [pauseState],rax
+cmp [rax+00000160],r14d
+jmp exit
+
+exit:
+jmp returnhere
+
+//
+pauseState:
+dq 0
+
+//
+
+pauseAOB:
+jmp newmem
+nop
+nop
+returnhere:
+
+[DISABLE]
+dealloc(newmem)
+pauseAOB:
+cmp [rax+00000160],r14d
+unregistersymbol(pauseState)
+unregistersymbol(pauseAOB)
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Activate</Action>
+          <Keys>
+            <Key>114</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>10249</ID>
+          <Description>"Pause State"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>pauseState</Address>
+          <Offsets>
+            <Offset>160</Offset>
+          </Offsets>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>96</Key>
+              </Keys>
+              <Value>1</Value>
+              <ID>0</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>18</Key>
+                <Key>96</Key>
+              </Keys>
+              <Value>0</Value>
+              <ID>1</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>10251</ID>
+          <Description>"Freeze = Numpad 0"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>FF00FF</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>10250</ID>
+          <Description>"Resume = ALT+Numpad 0"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>FF00FF</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>294</ID>
+      <Description>"Change Unit Animation Speeds [F4]"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(freeze,witcher3.exe,F3 44 0F 11 04 08 8B)
+alloc(newmem,$1000,freeze)
+alloc(freeze_geralt,4)
+alloc(freeze_other,4)
+alloc(freeze_activate,1)
+
+label(code)
+label(return)
+label(is_player)
+label(is_other)
+
+freeze_activate:
+  db 0
+
+freeze_geralt:
+  dd (float)1.0
+
+freeze_other:
+  dd (float)0.0
+
+newmem:
+  cmp byte ptr [freeze_activate],1
+  jne code
+
+  //cmp rax,2954
+  //je is_other
+  //cmp rax,7370
+  //je is_other
+  //cmp rax,14728
+  //je is_other
+  //cmp rax,14140
+  //je is_other
+  //movss [rax+rcx],xmm8
+  //jmp is_player
+
+  cmp rax,55370
+  je is_player
+  cmp rax,550F0
+  je is_player
+  cmp rax,76E0
+  je is_player
+  cmp rax,7620
+  je is_player
+is_other:
+  mulss xmm8,[freeze_other]
+  jmp code
+
+is_player:
+  mulss xmm8,[freeze_geralt]
+
+code:
+  movss [rax+rcx],xmm8
+  jmp return
+
+freeze:
+  jmp newmem
+  nop
+return:
+registersymbol(freeze)
+registersymbol(freeze_geralt)
+registersymbol(freeze_other)
+registersymbol(freeze_activate)
+
+[DISABLE]
+freeze:
+  db F3 44 0F 11 04 08
+unregistersymbol(freeze)
+unregistersymbol(freeze_geralt)
+unregistersymbol(freeze_other)
+unregistersymbol(freeze_activate)
+dealloc(newmem)
+dealloc(freeze_geralt)
+dealloc(freeze_other)
+dealloc(freeze_activate)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "witcher3.exe"+47FDF6
+
+"witcher3.exe"+47FDC8: 49 8B 80 80 00 00 00     -  mov rax,[r8+00000080]
+"witcher3.exe"+47FDCF: 48 8B F1                 -  mov rsi,rcx
+"witcher3.exe"+47FDD2: 0F 29 74 24 40           -  movaps [rsp+40],xmm6
+"witcher3.exe"+47FDD7: 48 8B 48 28              -  mov rcx,[rax+28]
+"witcher3.exe"+47FDDB: 8B 86 F0 00 00 00        -  mov eax,[rsi+000000F0]
+"witcher3.exe"+47FDE1: 0F 29 7C 24 30           -  movaps [rsp+30],xmm7
+"witcher3.exe"+47FDE6: 44 0F 29 44 24 20        -  movaps [rsp+20],xmm8
+"witcher3.exe"+47FDEC: 44 0F 28 C3              -  movaps xmm8,xmm3
+"witcher3.exe"+47FDF0: 4D 8B F0                 -  mov r14,r8
+"witcher3.exe"+47FDF3: 4C 8B FA                 -  mov r15,rdx
+// ---------- INJECTING HERE ----------
+"witcher3.exe"+47FDF6: F3 44 0F 11 04 08        -  movss [rax+rcx],xmm8
+// ---------- DONE INJECTING  ----------
+"witcher3.exe"+47FDFC: 8B 9E 00 01 00 00        -  mov ebx,[rsi+00000100]
+"witcher3.exe"+47FE02: 48 03 D9                 -  add rbx,rcx
+"witcher3.exe"+47FE05: 48 8B 43 18              -  mov rax,[rbx+18]
+"witcher3.exe"+47FE09: 48 85 C0                 -  test rax,rax
+"witcher3.exe"+47FE0C: 74 06                    -  je witcher3.exe+47FE14
+"witcher3.exe"+47FE0E: 48 8B 68 20              -  mov rbp,[rax+20]
+"witcher3.exe"+47FE12: EB 02                    -  jmp witcher3.exe+47FE16
+"witcher3.exe"+47FE14: 33 ED                    -  xor ebp,ebp
+"witcher3.exe"+47FE16: 8B 86 80 01 00 00        -  mov eax,[rsi+00000180]
+"witcher3.exe"+47FE1C: 8B BE 10 01 00 00        -  mov edi,[rsi+00000110]
+}
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Activate</Action>
+          <Keys>
+            <Key>115</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>10077</ID>
+          <Description>"1.0=Normal, 0.5=Half, 0.0=Frozen"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>008000</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>295</ID>
+          <Description>"Apply Effect [F4]"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+freeze_activate:
+db 1
+[DISABLE]
+freeze_activate:
+db 0
+</AssemblerScript>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Activate</Action>
+              <Keys>
+                <Key>115</Key>
+              </Keys>
+              <ID>0</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Deactivate</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>115</Key>
+              </Keys>
+              <ID>1</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>296</ID>
+          <Description>"Geralt Speed"</Description>
+          <VariableType>Float</VariableType>
+          <Address>freeze_geralt</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>53</Key>
+              </Keys>
+              <Value>0</Value>
+              <ID>0</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>54</Key>
+              </Keys>
+              <Value>1</Value>
+              <ID>1</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>10078</ID>
+          <Description>"Other Speed"</Description>
+          <VariableType>Float</VariableType>
+          <Address>freeze_other</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>10241</ID>
+      <Description>"Time of Day"</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(time,witcher3.exe,01 47 08 83 7F)
+alloc(newmem,$1000,time)
+
+label(code)
+label(return)
+label(time_save)
+label(time_ptr)
+
+newmem:
+code:
+  mov [time_ptr],rdi
+time_save:
+  readmem(time,7)
+  jmp return
+
+time_ptr:
+  dq 0
+
+time:
+  jmp newmem
+  nop
+  nop
+return:
+
+registersymbol(time)
+registersymbol(time_save)
+registersymbol(time_ptr)
+
+[DISABLE]
+time:
+  readmem(time_save,7)
+unregistersymbol(time)
+unregistersymbol(time_save)
+unregistersymbol(time_ptr)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "witcher3.exe"+22BD65
+
+"witcher3.exe"+22BD46: 0F 5B C0                    -  cvtdq2ps xmm0,xmm0
+"witcher3.exe"+22BD49: 0F 2E C1                    -  ucomiss xmm0,xmm1
+"witcher3.exe"+22BD4C: 74 12                       -  je witcher3.exe+22BD60
+"witcher3.exe"+22BD4E: 0F 14 C9                    -  unpcklps xmm1,xmm1
+"witcher3.exe"+22BD51: 0F 50 C1                    -  movmskps ecx,xmm0
+"witcher3.exe"+22BD54: 83 E0 01                    -  and eax,01
+"witcher3.exe"+22BD57: 2B C8                       -  sub ecx,eax
+"witcher3.exe"+22BD59: 66 0F 6E C9                 -  movd xmm1,ecx
+"witcher3.exe"+22BD5D: 0F 5B C9                    -  cvtdq2ps xmm1,xmm1
+"witcher3.exe"+22BD60: F3 48 0F 2C C1              -  cvttss2si rax,xmm1
+// ---------- INJECTING HERE ----------
+"witcher3.exe"+22BD65: 01 47 08                    -  add [rdi+08],eax
+"witcher3.exe"+22BD68: 83 7F 1C 00                 -  cmp dword ptr [rdi+1C],00
+// ---------- DONE INJECTING  ----------
+"witcher3.exe"+22BD6C: F3 0F 10 4F 0C              -  movss xmm1,[rdi+0C]
+"witcher3.exe"+22BD71: F3 0F 2C C1                 -  cvttss2si eax,xmm1
+"witcher3.exe"+22BD75: 66 0F 6E C0                 -  movd xmm0,eax
+"witcher3.exe"+22BD79: 0F 5B C0                    -  cvtdq2ps xmm0,xmm0
+"witcher3.exe"+22BD7C: F3 0F 5C C8                 -  subss xmm1,xmm0
+"witcher3.exe"+22BD80: F3 0F 11 4F 0C              -  movss [rdi+0C],xmm1
+"witcher3.exe"+22BD85: 0F 84 C8 00 00 00           -  je witcher3.exe+22BE53
+"witcher3.exe"+22BD8B: 48 89 5C 24 30              -  mov [rsp+30],rbx
+"witcher3.exe"+22BD90: 48 89 6C 24 38              -  mov [rsp+38],rbp
+"witcher3.exe"+22BD95: 33 ED                       -  xor ebp,ebp
+}
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>115</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>9863</ID>
+          <Description>"[ ] keys"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>time_ptr</Address>
+          <Offsets>
+            <Offset>8</Offset>
+          </Offsets>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Increase Value</Action>
+              <Keys>
+                <Key>221</Key>
+              </Keys>
+              <Value>600</Value>
+              <ID>0</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Increase Value</Action>
+              <Keys>
+                <Key>18</Key>
+                <Key>221</Key>
+              </Keys>
+              <Value>3600</Value>
+              <ID>1</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Decrease Value</Action>
+              <Keys>
+                <Key>18</Key>
+                <Key>219</Key>
+              </Keys>
+              <Value>3600</Value>
+              <ID>2</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Decrease Value</Action>
+              <Keys>
+                <Key>219</Key>
+              </Keys>
+              <Value>600</Value>
+              <ID>3</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Increase Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>221</Key>
+              </Keys>
+              <Value>60</Value>
+              <ID>5</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Decrease Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>219</Key>
+              </Keys>
+              <Value>60</Value>
+              <ID>6</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Toggle Activation</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>220</Key>
+              </Keys>
+              <ID>4</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Increase Value</Action>
+              <Keys>
+                <Key>16</Key>
+                <Key>221</Key>
+              </Keys>
+              <Value>10</Value>
+              <ID>7</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Decrease Value</Action>
+              <Keys>
+                <Key>16</Key>
+                <Key>219</Key>
+              </Keys>
+              <Value>10</Value>
+              <ID>8</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols>
+    <SymbolEntry>
+      <Name>rage</Name>
+      <Address>1409552A7</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>weight</Name>
+      <Address>4039F908</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>unlimited</Name>
+      <Address>140DB8F24</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>player</Name>
+      <Address>1400F59C1</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>player_stats</Name>
+      <Address>1400F5AA3</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>keyboard</Name>
+      <Address>13F709090</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>global_game</Name>
+      <Address>14011D3A9</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>vtable</Name>
+      <Address>13F1550F5</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>durability</Name>
+      <Address>7FF74AA34F5C</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>console</Name>
+      <Address>7FF742253810</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>global_console_debug</Name>
+      <Address>7FF742D0E18A</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>use_console</Name>
+      <Address>7FF7426FB043</Address>
+    </SymbolEntry>
+  </UserdefinedSymbols>
+</CheatTable>
