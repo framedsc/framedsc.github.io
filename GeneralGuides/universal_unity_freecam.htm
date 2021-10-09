@@ -136,7 +136,8 @@
 <p>Click on INSTALL (or RE-INSTALL if you are upgrading from a previous version)  
 </p>
 </li>
-<li>A success popup should appear if the installation has been successful.  </li>
+<li>A success popup should appear if the installation has been successful.  
+</li>
 <li>
 <p>Upon launching the game, a new window with a console will open on your screen. A process called the unhollowing will start. Wait until MelonLoader is done unhollowing. <strong>This process requires an internet connection.</strong> <br />
 <img src="../Images/UUFGuide/Unhollowing01.png" alt="Unhollower01" class="shadowed autosize" width="979" height="512" />  
@@ -171,12 +172,17 @@
 <p>Close the game and copy the contents from the BepInEx x32 / x64 zip into the game's installation folder.  
 </p>
 </li>
-<li>Start the game again. <strong>Your game may crash at startup</strong> here, but that's OK. You'll be closing it again anyway.  </li>
-<li>Close the game and look inside the BepInEx folder. You should see that new folders were created.  </li>
+<li>Start the game again. <strong>Your game may crash at startup</strong> here, but that's OK. You'll be closing it again anyway.  
+</li>
+<li>Close the game and look inside the BepInEx folder. You should see that new folders were created.  
+</li>
 <li>Open <code>LogOutput.log</code> and check for a line that gives you the Unity version of the game, like
-<code>[Info   :   BepInEx] Running under Unity v2019.1.10.15730669</code>  </li>
-<li>Note down the version, then open the config folder and edit <code>BepInEx.cfg</code>.  </li>
-<li>Change <code>Type</code> according to the Unity version in the <code>[Preloader.Entrypoint]</code> section like so:  </li>
+<code>[Info   :   BepInEx] Running under Unity v2019.1.10.15730669</code>  
+</li>
+<li>Note down the version, then open the config folder and edit <code>BepInEx.cfg</code>.  
+</li>
+<li>Change <code>Type</code> according to the Unity version in the <code>[Preloader.Entrypoint]</code> section like so:  
+</li>
 </ul>
 <table class="table table-bordered-all table-responsive">
 <thead>
@@ -203,9 +209,12 @@
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>For Unity 4 games, <code>System.dll</code> and <code>System.Core.dll</code> must be present in <code>&lt;Game Name&gt;_Data/Managed</code>. If not, you will have to download an old Unity 5 build as a middle ground and export the 2 files from the Unity Editor. </p>
 </div><div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>You can also enable console logging under <code>[Logging.Console]</code> by changing <code>Enabled</code> to <code>true</code>.</p>
 </div><ul>
-<li>Start the game and confirm it's not crashing or hanging. If it is, you might need to redo the BepInEx process above. Close the game again.  </li>
-<li>Copy over the freecam plugins to the <code>BepInEx\plugins</code> folder.  </li>
-<li>Start the game and confirm that the camera is installed by pressing <code>Backspace</code>.  </li>
+<li>Start the game and confirm it's not crashing or hanging. If it is, you might need to redo the BepInEx process above. Close the game again.  
+</li>
+<li>Copy over the freecam plugins to the <code>BepInEx\plugins</code> folder.  
+</li>
+<li>Start the game and confirm that the camera is installed by pressing <code>Backspace</code>.  
+</li>
 </ul>
 <h4 id="configuring-the-plugin">Configuring the plugin<a class="headerlink" href="#configuring-the-plugin" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>Each DLL installed has its own CFG file that can be found in <code>BepInEx/Config</code>, allowing you to change the hotkeys to your own needs.</p>
