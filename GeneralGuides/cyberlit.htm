@@ -161,14 +161,14 @@ This adds to any set colors with a color that corresponds to the temperature of 
 <p><strong>Intensity</strong><br />
 This controls how bright the light is.</p>
 <p><strong>Raytracing intensity scale</strong><br />
-<em>unknown</em></p>
+<em>unknown, appears to modify Intensity</em></p>
 <p><strong>Radius</strong><br />
 This controls how far the light can travel, likely in in-game meters.</p>
 <p><img src="../Images\cyberlit\eg_radius.png" alt="radius" class="shadowed autosize" width="800" height="540" /></p>
-<p><strong>Attenuation</strong><br />
-This controls the intensity falloff of the light. 0 represents a 'natural' (inverse-square) falloff, while 1 maintains the intensity throughout the light radius. Values above 1 don't appear to do anything.</p>
+<p><strong>Light intensity falloff</strong><br />
+This controls the intensity falloff of the light. Setting this to <strong>Inverse-square</strong> mimics how light intensity would dim in the real world as it gets further from the source. Setting this to <strong>None</strong> maintains light intensity throughout the light radius.  </p>
 <p><img src="../Images\cyberlit\eg_attn.png" alt="attenuation" class="shadowed autosize" width="800" height="540" /></p>
-<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>Attenuation is a useful setting to have set to 1 while moving lights around. Since there is no intensity falloff due to distance, your subject will stay lit at the same brightness as lights are moved further or nearer.</p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>It can be useful to set this to <strong>None</strong> while moving lights around. Since there is no intensity falloff due to distance, your subject will stay lit at the same brightness as lights are moved further or nearer.</p>
 </div><p><strong>Roughness Bias</strong><br />
 This overrides the roughness of the specular highlights produced by a light when shone on a surface. Values to 127 appear to make specular highlights rougher. A flip happens at 128, where specular highlights are now sharp and become more rough until they return to default at 255.</p>
 <p><img src="../Images\cyberlit\eg_roughness.png" alt="highlights!" class="shadowed autosize" width="1600" height="400" /></p>
@@ -184,12 +184,12 @@ Note how the edges of the light are visibly harder towards the bottom when inner
 <p><strong>Outer angle</strong><br />
 This controls how wide the whole cone of light is, in degrees.</p>
 <p><img src="../Images\cyberlit\eg_outerangle.png" alt="angles 2" class="shadowed autosize" width="800" height="540" /></p>
-<p>A larger outer angle will cast shadows over a larger region, however the shadow map remains the same resolution. An outer angle that's too large will result in pixelated shadows! This is also why you may not get hair shadows; the shadow map is simply too &quot;low-res&quot; / stretched out to capture them.</p>
+<p>A larger outer angle will cast shadows over a larger region, however the shadow map remains the same resolution. An outer angle that's too large will result in pixelated shadows!</p>
 <p><img src="../Images\cyberlit\eg_outres.png" alt="ew!" class="shadowed autosize" width="800" height="400" /></p>
 <p><strong>Softness</strong><br />
 This 'modifies' the falloff gradient set by the inner &amp; outer angle. Values closer to 0 shift the gradient to be harsher, while values past 2 further soften the light past the set inner angle. Setting softness to 0 produces a very similar hard-edged spotlight to the one produced by an 'inner angle = outer angle' spotlight.</p>
 <p><strong>Shadow angle &amp; radius</strong><br />
-Independent controls for fine-tuning shadow casting. Similar to light angle &amp; radius above, except just for shadows.</p>
+Independent controls for fine-tuning shadow casting. Similar to light angle &amp; radius above, except just for shadows. Can be buggy, best to leave at -1 (default values).</p>
 <hr />
 <h2 id="shadow-settings">Shadow settings<a class="headerlink" href="#shadow-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p><img src="../Images\cyberlit\ctrl_shadow.png" alt="shadows!" class="shadowed autosize" width="407" height="147" /></p>
@@ -200,11 +200,14 @@ This appears to be a modifier of fade distance.</p>
 <p><strong>Softness mode</strong><br />
 This determines how sharp / soft the edges of your shadows are. Can be useful when replicating a harsh camera flash or strong sunlight.</p>
 <p><img src="../Images\cyberlit\eg_shadows.png" alt="shadows 2!" class="shadowed autosize" width="1600" height="400" /></p>
-<p><strong>Enable local / contact shadows</strong><br />
-Enabling these let your light cast shadows. <strong>Only spotlights are capable of casting shadows</strong></p>
+<p><strong>Enable local shadows</strong><br />
+Enabling this lets your light cast local shadows using a shadow map. <strong>Only spotlights are capable of casting local shadows</strong></p>
+<p><strong>Use contact shadows</strong><br />
+Enabling this lets your light cast screenspace shadows. Use this to have hair cast shadows.</p>
+<p><img src="../Images\cyberlit\eg_contact.png" alt="shadows 3!" class="shadowed autosize" width="800" height="400" /></p>
 <hr />
 <h2 id="toggles">Toggles<a class="headerlink" href="#toggles" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p><img src="../Images\cyberlit\ctrl_toggles.png" alt="checkboxes!" class="shadowed autosize" width="407" height="233" /></p>
+<p><img src="../Images\cyberlit\ctrl_toggles.png" alt="checkboxes!" class="shadowed autosize" width="407" height="254" /></p>
 <p>These checkboxes change how the light interacts with the rendering engine. For the most part, these can be left alone to achieve accurate lighting.</p>
 <p><strong>Use in GI / probes</strong><br />
 The light will cause and contribute to bounced / reflected lighting.</p>
@@ -216,12 +219,14 @@ The light will appropriately interact with transparent objects.</p>
 <p><strong>Use in particles</strong><br />
 The light will appropriately interact with particles (smoke, etc.).</p>
 <p><strong>Diffuse / Specular</strong><br />
-These control if the light contributes any surface lighting or specular highlights. Disabling diffuse for example creates a light that only shows up in reflections.</p>
+These control if the light contributes any surface lighting or specular highlights. Disabling diffuse for example creates a light that only shows up in reflections. This feature is currently bugged in-game (1.31), once unchecked you will not be able to re-enable them!</p>
 <p><strong>Directional</strong><br />
 The light will be collimated, casting parallel shadows. This is useful when playing with shadows - a directional light casting parallel shadows will not change the size of the shadows based on its properties. This can mimic the incredibly distant nature of the sun as a light source.</p>
 <p>Point lights do not work with Directional for obvious reasons. Area lights, even spotlight capsules (see below), do not work with Directional either.</p>
 <p>This is also how the outer angle shadow resolution example was taken, having the light be directional meant that the size of the shadow wouldn't change as the cone of light got wider.</p>
 <p><strong>Clamp attenuation</strong><br />
+<em>unknown</em></p>
+<p><strong>Allow distant light</strong><br />
 <em>unknown</em></p>
 <hr />
 <h2 id="using-area-lights">Using area lights<a class="headerlink" href="#using-area-lights" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
@@ -229,10 +234,10 @@ The light will be collimated, casting parallel shadows. This is useful when play
 <p><img src="../Images\cyberlit\ctrl_area2.png" alt="area light?" class="shadowed autosize" width="408" height="252" /></p>
 <p>Enabling Spotlight capsule causes the area light to function akin to a spotlight, with a few other quite useful features. Spotlight capsules function as capsule-shaped lights that point in a specific direction. They're also able to cast shadows!</p>
 <p><strong>Source radius</strong><br />
-This determines how large the light is physically in-game. This is different from the earlier <strong>Radius</strong> setting, which determines how far the light can cast. Generally, this affects the size of reflections.</p>
+This determines how large the light is physically in-game. This is different from the earlier <strong>Radius</strong> setting, which determines how far the light can cast. Generally, this affects the size of specular highlights.</p>
 <p><img src="../Images\cyberlit\eg_srcrad.png" alt="reflections" class="shadowed autosize" width="800" height="400" /></p>
 <p><strong>Capsule length</strong><br />
-This determines how long the capsule is. This affects both the shape of the casted light and its reflection.</p>
+This determines how long the capsule is. This affects both the shape of the casted light and its reflection. This also controls the size of the shadow map, reduce capsule length if your shadows are too pixelated.</p>
 <p><img src="../Images\cyberlit\eg_caplength.png" alt="bars" class="shadowed autosize" width="800" height="400" /><br />
 <em>Do note the dropoff in light intensity!</em></p>
 <p><strong>Angles &amp; Softness</strong><br />
@@ -254,7 +259,7 @@ These settings function identically to the spotlight settings above. However, by
 <p><img src="../Images\cyberlit\eg_eyelit.png" alt="eyelights!" class="shadowed autosize" width="800" height="400" /><br />
 Note that this does add specular highlights to other areas as well, most obviously on her lower eyelids in the above. You can reduce this additional specularity by placing the light more strategically.</p>
 <hr />
-<p><em>last updated 19th April 2021</em><br />
+<p><em>last updated 24th December 2021</em><br />
 <em>written by <a href="https://twitter.com/moyevka" target="_blank">moyevka</a></em><br />
 <em>thanks to <a href="https://twitter.com/NattyDread011" target="_blank">Dread</a> for clarifying some settings</em></p>
 
