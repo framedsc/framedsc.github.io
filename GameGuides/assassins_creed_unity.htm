@@ -313,8 +313,11 @@
 <p>*<em>The default Toggle HUD controller key interferes with Hatti's Camera Control bindings - it is recommended to change this mod's controller binding for toggling the HUD for ease of use.</em></p>
 <ol>
 <li>Locate <em>d3dx.ini</em> in the game directory, open it with a text editor and go to line 158. </li>
-<li>Replace <em>XB_LEFT_THUMB</em> with any binding of your choice (that does not interfere with any existing tool hotkey).  </li>
+<li>Replace <em>XB_LEFT_THUMB</em> with any binding of your choice (that does not interfere with any existing tool hotkey).</li>
 </ol>
+<h3 id="setting-up-reshades-depth-buffer">Setting up ReShade's depth buffer<a class="headerlink" href="#setting-up-reshades-depth-buffer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Assassin's Creed Unity will break shaders that use depth when you first setup ReShade as the game uses a reversed depth buffer, so changing <code>RESHADE_DEPTH_INPUT_IS_REVERSED</code> from 0 to 1 in the global preprocessor definitions should fix it. 
+After that, you may also have to select the correct buffer depending on your ReShade version as it may choose the incorrect one by default. Keep in mind that in some cutscenes, depth shaders will not work regardless of your settings.</p>
 <h3 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
 <li><a href="https://www.pcgamingwiki.com/wiki/Assassin%27s_Creed_Unity" target="_blank">PC Gaming Wiki</a></li>
