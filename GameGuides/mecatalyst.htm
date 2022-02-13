@@ -72,6 +72,8 @@
 
 <li class="tocentry"><a href="#tools">Tools</a></li>
 
+<li class="tocentry"><a href="#tips-and-tricks">Tips and Tricks</a></li>
+
 <li class="tocentry"><a href="#useful-links">Useful Links</a></li>
 
 </ul>
@@ -252,9 +254,99 @@
 </table>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://mega.nz/#!8dgWRYKa!QauLJZVyPHvmt4EOxCmQR0WDAOR2ygMYg8rFYLqtgAE" target="_blank">Cinematic Tools by Hattiwatti</a><br />
-<strong>Features</strong>: Free Camera, Timestop, FOV Control, Hide HUD (read the Readme File for Hotkeys) </li>
+<li>
+<p><a href="https://mega.nz/#!8dgWRYKa!QauLJZVyPHvmt4EOxCmQR0WDAOR2ygMYg8rFYLqtgAE" target="_blank">Cinematic Tools by Hattiwatti (Password: CinematicTools)</a><br />
+<strong>Features</strong>: Free Camera, Timestop, FOV Control, Hide HUD (read the Readme File for Hotkeys) </p>
+</li>
+<li>
+<p><a href="https://frostytoolsuite.com/downloads.html" target="_blank">Frosty's Mod Manager</a><br />
+<strong>Features</strong>: Requirement for most mods for Mirror's Edge Catalyst. If you want access to the Steam overlay use <a href="https://github.com/Dyvinia/FrostyFix/releases" target="_blank">Frosty's Fix</a></p>
+</li>
 </ul>
+<h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="hotsampling-and-custom-aspect-ratios">Hotsampling and Custom Aspect Ratios<a class="headerlink" href="#hotsampling-and-custom-aspect-ratios" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Mirror's Edge Catalyst supports SRWE by default and is capable of both hotsampling and custom aspect ratios without tweaking any settings. Make sure to run the game in Windowed, as it has not been tested in Borderless mode.</p>
+<h3 id="disabling-the-built-in-anti-aliasing">Disabling the Built-in Anti-Aliasing<a class="headerlink" href="#disabling-the-built-in-anti-aliasing" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>The game uses supersampled anti-aliasing combined with temporal anti-aliasing, which can be quite performance intensive. For better performance and to be sure they don't interrupt ReShade, you can disable both forms of anti-aliasing in the game's config files found in Documents folder.</p>
+<ol>
+<li>Start the Windows file explorer and navigate to the Documents folder which is in <code>%USERPROFILE%\Documents\</code> by default.</li>
+<li>Open the Mirror's Edge Catalyst folder, and find the folder named <code>settings</code>, then look for the file titled <code>PROF_SAVE_profile</code> and open it with your preferred text editor.</li>
+<li>Change both values for <code>GstRender.AntiAliasingDeferred</code> and <code>GstRender.AntiAliasingPost</code> to 0.</li>
+</ol>
+<p>After doing this, it's recommended to use another form of AA through ReShade, as the game's visual design will make edges stand out more. Using SweetFX's SMAA is a good alternative.</p>
+<h3 id="mods-for-easier-photography">Mods for Easier Photography<a class="headerlink" href="#mods-for-easier-photography" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Catalyst runs the game with depth of field and motion blur enabled, though you can disable motion blur in the settings, disabling the different kinds of depth of field during certain actions in game requires the use of a mod. You can use <a href="https://www.nexusmods.com/mirrorsedgecatalyst/mods/73" target="_blank">No Visual Environment Effects</a> and <a href="https://www.nexusmods.com/mirrorsedgecatalyst/mods/35/" target="_blank">Disable Runner's Flow Color Correction</a> to completely disable visual effects like color correction, chromatic aberration, and depth of field. These mods only disables these effects during combat and or freerunning, so you are free to manipulate them through shaders as you wish.</p>
+<p>The utility mod <a href="https://www.nexusmods.com/mirrorsedgecatalyst/mods/5" target="_blank">Debug Startpoint Selector</a> includes a menu to select and begin in any startpoint set by the game. This mod and the ones above use <a href="https://frostytoolsuite.com/downloads.html" target="_blank">Frosty's Mod Manager</a>. </p>
+<h3 id="setting-up-reshades-depth-buffer">Setting up Reshade's Depth Buffer<a class="headerlink" href="#setting-up-reshades-depth-buffer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Mirror's Edge Catalyst uses a reversed depth buffer, so ReShade needs to be set up to access this properly. Open the global preprocessor definitions tab and change <code>RESHADE_DEPTH_INPUT_IS_REVERSED</code> from 0 to 1. This allows for shaders to access depth effects, which will be mentioned in the next section.</p>
+<h3 id="using-hattis-camera-tools">Using Hatti's Camera Tools<a class="headerlink" href="#using-hattis-camera-tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Hattiwatti's tools are quite extensive, and this section will try to simplify them for easier understanding.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Key</th>
+	<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>INS</code></td>
+	<td>Toggle camera</td>
+</tr>
+<tr>
+	<td><code>DEL</code></td>
+	<td>Timestop</td>
+</tr>
+<tr>
+	<td><code>HOME</code></td>
+	<td>Toggle HUD</td>
+</tr>
+<tr>
+	<td><code>END</code></td>
+	<td>Block input to game</td>
+</tr>
+</tbody>
+</table>
+<p>These settings can also be opened in the tools' accompanying GUI. For an easier time, it is recommended to freeze time using <em>DELETE</em> and tweaking the camera's settings through the GUI.</p>
+<p>These are the movement controls for both keyboard and controller:</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Key</th>
+	<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>Arrow Keys</code> ¹ / RS</td>
+	<td>Look around</td>
+</tr>
+<tr>
+	<td><code>Num 8</code> / <code>Num 5</code> ¹ / LS</td>
+	<td>Move camera forward / backward</td>
+</tr>
+<tr>
+	<td><code>Num 4</code> / <code>Num 6</code> ¹ / LS</td>
+	<td>Move camera left / right</td>
+</tr>
+<tr>
+	<td><code>Num 7</code> / <code>Num 9</code> / LT / RT</td>
+	<td>Move camera up / down</td>
+</tr>
+<tr>
+	<td><code>Num 1</code> / <code>Num 3</code> / LB / RB</td>
+	<td>Roll camera left / right</td>
+</tr>
+<tr>
+	<td><code>PgUp</code> / <code>PgDn</code> / D-pad Up/Down</td>
+	<td>Increase / decrease FoV ²</td>
+</tr>
+</tbody>
+</table>
+<p>¹ - Blocking input to game allows WASD + Mouselook.<br />
+² - To enable custom FoV, set <code>Override FOV</code> to <code>-1</code>.</p>
+<p>The GUI is not only the preferred way of tweaking the camera, but it is also the only way to access different environment controls such as setting up additional lights. These can be found in the tabs present alongside <code>Camera</code>. Note that all the values including the camera's speed can be lower than 1, for more precise movement or intensities.</p>
+<p>The tool's GUI has some effects that are also available in ReShade, so you may opt for the ingame Depth of Field instead of your usual DoF shader of choice. Remember to experiment with the different effects, especially with Outdoor Environment Light and the Light Manager in <code>Misc/About</code> as these are unique to the tool. With the Light Manager you can achieve effects similar to three-point lighting and other lighting systems, or even make your own! :D</p>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://pcgamingwiki.com/wiki/Mirror%27s_Edge_Catalyst" target="_blank">PC Gaming Wiki</a></li>
