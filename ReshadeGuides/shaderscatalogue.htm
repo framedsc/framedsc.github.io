@@ -53,6 +53,22 @@
 
 <li class="tocentry"><a href="#graphics-improvements">Graphics improvements</a></li>
 
+<li class="tocentry"><a href="#fun-effects">Fun effects</a></li>
+
+<li class="tocentry"><a href="#painty-shaders">Painty shaders</a></li>
+
+<li class="tocentry"><a href="#outlines">Outlines</a></li>
+
+<li class="tocentry"><a href="#lens-flare">Lens Flare</a></li>
+
+<li class="tocentry"><a href="#screenshot-with-alpha-pixels">Screenshot with alpha pixels</a></li>
+
+<li class="tocentry"><a href="#images">Images</a></li>
+
+<li class="tocentry"><a href="#styles">Styles</a></li>
+
+<li class="tocentry"><a href="#masking">Masking</a></li>
+
 <li class="tocentry"><a href="#common-software-editing-tools">Common software editing tools</a></li>
 
 <li class="tocentry"><a href="#extra">Extra</a></li>
@@ -219,7 +235,7 @@ But before listing the shaders I will first introduce you to one that can be use
 <li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/PPFX_Godrays.fx" target="_blank"><strong>PPFX_Godrays</strong></a>: If you want to add godrays to a scene then this shader can help you with that.</li>
 <li><a href="https://github.com/luluco250/FXShaders/blob/master/Shaders/TrackingRays.fx" target="_blank"><strong>TrackingRays</strong></a>: Similar to the previous shader but the orientation of the rays are automatic.</li>
 </ul>
-<h3 id="fun-effects">Fun effects<a class="headerlink" href="#fun-effects" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<h2 id="fun-effects">Fun effects<a class="headerlink" href="#fun-effects" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>If the shaders in the &quot;graphics improvement&quot; section were situational, these ones are even more. They would probably require some fiddling, but use them if you are going for a <em>very</em> specific look. In some of them, instead of explaining what they do I will be dropping screenshots because it would be easier to see than read about them.</p>
 <ul>
 <li><a href="https://github.com/FransBouma/OtisFX/blob/master/Shaders/AdaptiveFog.fx" target="_blank"><strong>AdaptiveFog</strong></a>: Used most for creating a color background, or putting a subject in shadows. It also has some bloom settings for when the fog starts.</li>
@@ -261,12 +277,12 @@ It can also be used when you have a jitter depth buffer (sometimes caused by TAA
 <li><a href="https://github.com/martymcmodding/qUINT/blob/experimental/Shaders/qUINT_frametool.fx" target="_blank"><strong>qUINT_frametool</strong></a>: If you want to hotsample with a background blur similar to the one &quot;DirectionalDepthBlur&quot; makes then this one does the job.</li>
 <li><a href="https://github.com/Radegast-FFXIV/reshade-shaders/blob/master/Shaders/ZigZag.fx" target="_blank"><strong>ZigZag</strong></a>: It distorts the image around a point, useful for creating abstract shapes. And since it has an animation opinion, you can get some interesting results in combination with reallongexposure.</li>
 </ul>
-<h3 id="painty-shaders">Painty shaders<a class="headerlink" href="#painty-shaders" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<h2 id="painty-shaders">Painty shaders<a class="headerlink" href="#painty-shaders" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://github.com/LordOfLunacy/Insane-Shaders/blob/master/Shaders/Oilify.fx" target="_blank"><strong>Oilify</strong></a>: Applies a Kuwahara painty filter using an optimized method for extracting the image mean and variance separably.</li>
 <li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/pkd_Kuwahara.fx" target="_blank"><strong>pkd_kuwahara</strong></a></li>
 </ul>
-<h3 id="outlines">Outlines<a class="headerlink" href="#outlines" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<h2 id="outlines">Outlines<a class="headerlink" href="#outlines" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://github.com/LordOfLunacy/Insane-Shaders/blob/master/Shaders/BilateralComic.fx" target="_blank"><strong>BilateralComic</strong></a>: Cel-shading shader that uses a combination of bilateral filtering, posterization and edge detection to create a comic book style effect.</li>
 <li><a href="https://github.com/CeeJayDK/SweetFX/blob/master/Shaders/Cartoon.fx" target="_blank"><strong>Cartoon</strong></a>: Creates an outline-effect that makes the image look more cartoonish.</li>
@@ -275,26 +291,26 @@ It can also be used when you have a jitter depth buffer (sometimes caused by TAA
 <li><a href="https://github.com/Daodan317081/reshade-shaders/blob/master/Shaders/MeshEdges.fx" target="_blank"><strong>MeshEdges</strong></a>: More outlines with some color regarding the outlines themselves and the possibility to use a plain color with the outlines on top.</li>
 <li><a href="https://github.com/EDCVBNM/ED-shaders/blob/main/Shaders/LumaLines.fx" target="_blank"><strong>LumaLines</strong></a>: Draws an outline depending on the difference in luma between the pixels.</li>
 </ul>
-<h3 id="lens-flare">Lens Flare<a class="headerlink" href="#lens-flare" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<h2 id="lens-flare">Lens Flare<a class="headerlink" href="#lens-flare" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://github.com/BlueSkyDefender/AstrayFX/blob/master/Shaders/Flair.fx" target="_blank"><strong>Flair</strong></a>: Adds lens flares.</li>
 <li><a href="https://github.com/luluco250/FXShaders/blob/master/Shaders/HexLensFlare.fx" target="_blank"><strong>HexLensFlare</strong></a>: More lens flares.</li>
 <li><a href="https://github.com/luluco250/FXShaders/blob/master/Shaders/UnrealLens.fx" target="_blank"><strong>UnrealLens</strong></a></li>
 </ul>
-<h3 id="screenshot-with-alpha-pixels">Screenshot with alpha pixels<a class="headerlink" href="#screenshot-with-alpha-pixels" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<h2 id="screenshot-with-alpha-pixels">Screenshot with alpha pixels<a class="headerlink" href="#screenshot-with-alpha-pixels" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Used to screenshot using pixels with alpha value of 0 depending on the depth of the shot. You will probably need to use the latest version of reshade for these ones.</p>
 <ul>
 <li><a href="https://github.com/luluco250/FXShaders/blob/master/Shaders/DepthAlpha.fx" target="_blank"><strong>DepthAlpha</strong></a></li>
 <li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/CuttingTool_Depth.fx" target="_blank"><strong>CuttingTool_Depth</strong></a></li>
 </ul>
-<h3 id="images">Images<a class="headerlink" href="#images" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<h2 id="images">Images<a class="headerlink" href="#images" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Shaders used for rendering an image in game (like changing the sky). Can be used in combination with shaders like DepthAlpha and CuttingTool_Depth very well.</p>
 <ul>
 <li><a href="https://github.com/Fubaxiusz/fubax-shaders/blob/master/Shaders/Image.fx" target="_blank"><strong>Image</strong></a></li>
 <li><a href="https://github.com/Otakumouse/stormshade/blob/master/v4.X/reshade-shaders/Shader%20Library/Recommended/StageDepth.fx" target="_blank"><strong>StageDepth</strong></a></li>
 <li><a href="https://github.com/originalnicodr/CorgiFX/blob/master/Shaders/StageDepthPlus.fx" target="_blank"><strong>StageDepthPlus</strong></a>: Allows manipulating an image, letting you resize it independently from the x and y axis, positioning it, rotating it, using depth for masking and the ability of using different blending modes. You can also use a depth map alongside the texture image to interact with the game's depth.</li>
 </ul>
-<h3 id="styles">Styles<a class="headerlink" href="#styles" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<h2 id="styles">Styles<a class="headerlink" href="#styles" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><strong>Posterize</strong>: You can only get this shader in the <a href="https://international-gfe.download.nvidia.com/GFE/GFEClient/ReShadeFilters/v1.0/Curated_ReShade_Filters.zip" target="_blank">pack provided by nvidia</a></li>
 </ul>
@@ -315,7 +331,7 @@ It can also be used when you have a jitter depth buffer (sometimes caused by TAA
 <li><a href="https://github.com/luluco250/FXShaders/blob/master/Shaders/Sketch.fx" target="_blank"><strong>Sketch</strong></a></li>
 </ul>
 <p><img src="../Images/ShadersCatalog_Sketch.png" class="shadowed" width="840" height="525" /></p>
-<h3 id="masking">Masking<a class="headerlink" href="#masking" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<h2 id="masking">Masking<a class="headerlink" href="#masking" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>If you are familiar with photoshop or lightroom you probably know what masking is. If not, masking is referred to the act of selecting what parts of the screen you want some editing to take effect, often represented by white and black pixels for (white = the effects in between the CanvasMask shaders will be visible there, black= those effect won't be visible). The shaders that are in between the &quot;Before&quot; and &quot;After&quot; techniques of each mask shader will be masked out of the scene.</p>
 <ul>
 <li><a href="https://github.com/LordKobra/CobraFX/blob/master/Shaders/Cobra_Mask.fx" target="_blank"><strong>Cobra Mask</strong></a>: A color masking shader designed to be used with the ColorSort and Gravity shader, to apply a Mask with similar settings to the scene.</li>
