@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dragon Ball FigtherZ - FRAMED. Screenshot Community</title>
+    <title>Limbo - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/theme_22020328.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors_22020328.css" type="text/css" />
@@ -127,17 +127,8 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/dai.htm">Dragon Age: Inquisition</a>
 </li>
-<li class="tocentry current"><a class="current" href="../GameGuides/dragon_ball_figtherz.htm">Dragon Ball FigtherZ</a>
-<ul class="currentrelative">
-<li class="tocentry"><a href="#summary">Summary</a></li>
-
-<li class="tocentry"><a href="#tools">Tools</a></li>
-
-<li class="tocentry"><a href="#tips-and-tricks">Tips and Tricks</a></li>
-
-<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
-
-</ul>
+<li class="tocentry"><a href="../GameGuides/dragon_ball_figtherz.htm">Dragon Ball FigtherZ</a>
+</li>
 <li class="tocentry"><a href="../GameGuides/ELEX.htm">ELEX</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/TEW2.htm">The Evil Within 2</a>
@@ -174,8 +165,15 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/botw.htm">The Legend of Zelda: Breath of the Wild</a>
 </li>
-<li class="tocentry"><a href="../GameGuides/limbo.htm">Limbo</a>
-</li>
+<li class="tocentry current"><a class="current" href="../GameGuides/limbo.htm">Limbo</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#summary">Summary</a></li>
+
+<li class="tocentry"><a href="#workflow">Workflow</a></li>
+
+<li class="tocentry"><a href="#useful-links">Useful links</a></li>
+
+</ul>
 
 </ul>
 </li>
@@ -224,7 +222,7 @@
             <div class="nav-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <div class="breadcrumbs">
-<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../A-L.htm">A-L</a></li> / <li><a href="../GameGuides/dragon_ball_figtherz.htm">Dragon Ball FigtherZ</a></li></ul>
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../A-L.htm">A-L</a></li> / <li><a href="../GameGuides/limbo.htm">Limbo</a></li></ul>
 					
                     </div>
                     <hr />
@@ -232,8 +230,8 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../\Images\dragon_ball_figtherz.png" alt="Dragon Ball FighterZ" title="Shot by Rike" class="shadowed" width="896" height="180" />
-<p>Shot by Rike</p>
+<img src="../Images\limbo_header.png" alt="Limbo" title="Shot by cHota gAbbar" width="896" height="180" />
+<p>Shot by cHota gAbbar</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
@@ -254,7 +252,7 @@
 </tr>
 <tr>
 	<td>DSR</td>
-	<td>Yes</td>
+	<td>Yes (through Desktop)</td>
 </tr>
 <tr>
 	<td>Custom Aspect Ratios</td>
@@ -270,51 +268,26 @@
 </tr>
 <tr>
 	<td>DirectX versions</td>
-	<td>DirectX 11</td>
+	<td>DirectX 9</td>
 </tr>
 </tbody>
 </table>
-<h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>By default, the game starts in fullscreen mode and uses a <code>1280x720</code> rendering resolution. It is however possible to force the game to render at higher resolutions but they may not look as crisp, since the game 'intentionally uses blurring and other image filtering methods combined with assets made for <code>720p</code> resolution'.</p>
+<p>To do this (and many other things), you will need to modify the configuration file, i.e, <code>settings.txt</code> inside the game's root directory.</p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>You may want to make a backup of this file before you start tweaking.</p>
+</div><h3 id="entries-to-modify-">Entries to modify:-<a class="headerlink" href="#entries-to-modify-" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
-<li>
-<p><a href="..\CheatTables\DBFIGHTERZ-NEPAFU.CT">Cheat Engine Table by Nepafu</a><br />
-<strong>Features</strong>: Free Camera and FOV Control.</p>
-</li>
-<li>
-<p><a href="https://drive.google.com/file/d/1HYx476J8Wjcu6io8WPRtPypAg2_5rG-P/view" target="_blank">HUD Toggle pause menu by Langgi</a><br />
-<strong>Features</strong>: In-game pause menu HUD Toggle, just drop all the files in the game .exe folder.
-<strong>Hotkey</strong>: Caps Lock.</p>
-</li>
-<li>
-<p><a href="https://gamebanana.com/tools/6357" target="_blank">DBFZ Mod Manager</a><br />
-<strong>Features</strong>: Disables the Easy Anti Cheat.</p>
-</li>
+<li><code>backbufferheight</code>: By default, this is set to <code>720</code>. Change this value to force the game to render at resolutions greater than <code>720p</code>.</li>
 </ul>
-<h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ul>
-<li>
-<p>First of all, if you are not used with Cheat Engine tables, it is really recommended checking the general <a href="https://framedsc.github.io/GeneralGuides/cheat_engine_tables.htm" target="_blank">CE Guide</a>.</p>
-</li>
-<li>
-<p>Check the DBFZ Mod Manager documentation for instructions on how to set up the aplication;</p>
-</li>
-<li>
-<p>For EasyAntiCheat to be really ignored at the time of play, you must run the game with it disabled, to do so, make a desktop shortcut of the game using the executable in the following folder: <code>\Steam\steamapps\common\DRAGON BALL FighterZ\RED\Binaries\Win64\RED-Win64-Shipping.exe</code>.</p>
-</li>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The game will cap out at your desktop resolution irrespective of how high a value you enter here. For example, if your desktop resolution is <code>1080p</code>, and you change the <code>backbufferheight</code> to <code>2160</code>, the game still will render at <code>1080p</code>.</p>
+<p>You have to enable DSR and change your desktop resolution to <code>2160p</code>; only then will the game render at that resolution with <code>backbufferheight</code> set to <code>2160</code>.</p>
+</div><ul>
+<li><code>windowedmode</code>: By default, this is set to <code>false</code>. Changing this to <code>true</code> is necessary to be able to hotsample using SRWE. If you want to run the game in Borderless Windowed mode, you will have to use Special K and follow the guide <a href="https://www.pcgamingwiki.com/wiki/Limbo#Borderless_fullscreen_windowed" target="_blank">here</a></li>
 </ul>
-<p>In the shortcut, go to properties, in the target press space after &quot;RED-Win64-Shipping.exe&quot; ends and add -eac-nop-loaded</p>
-<p>Play the game using this shortcut and run it with admin rights.</p>
+<h2 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li>
-<p>ReShade and the HUD toggle must be set on this following folder and executable: <code>\Steam\steamapps\common\DRAGON BALL FighterZ\RED\Binaries\Win64\RED-Win64-Shipping.exe</code></p>
-</li>
-<li>
-<p>The HUD Toggle only removes the pause menu, but the rest of the HUD elements can be removed via the options menu.</p>
-</li>
-</ul>
-<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ul>
-<li><a href="https://pcgamingwiki.com/wiki/Dragon_Ball_FighterZ" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://www.pcgamingwiki.com/wiki/Limbo" target="_blank">PC Gaming wiki</a></li>
 </ul>
 
                     </div>
