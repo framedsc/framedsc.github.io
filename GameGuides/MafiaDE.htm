@@ -272,6 +272,11 @@ Note: You need to download Mafia 3: Definitive Edition tools, they work for Mafi
 <li><a href="https://db.nomad-group.net/page/MDE_ScriptHook:_Instructions" target="_blank">Scripthook</a>: Player model swap, no clip movement, spawn and edit vehicles, weather controls. </li>
 <li><a href="https://www.nexusmods.com/mafiadefinitiveedition/mods/58" target="_blank">Scripthook Revamped</a>: Adds more options to Scripthook such as the ability to play character animations, change time of day, add in character props. </li>
 </ul>
+<h3 id="reshade-depth-buffer">Reshade Depth Buffer<a class="headerlink" href="#reshade-depth-buffer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Because this game always runs in online mode you will not be able to use the depth buffer with the common reshade installer, you will need to use a custom build that doesn't block the use of reshade in online games. Find out more <a href="https://framedsc.com/ReshadeGuides/setupreshade.htm#depth-buffer-on-online-games" target="_blank">here</a>.</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Note that the game uses a reversed depth buffer. You will need to go to the global processor definitions and change <code>RESHADE_DEPTH_INPUT_IS_REVERSED</code> from <code>0</code> to <code>1</code>. This is essential and otherwise depth shaders will not work properly.</p>
+</div><h3 id="scripthook-and-reshade">Scripthook and Reshade<a class="headerlink" href="#scripthook-and-reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>If you are using Reshade alongside Scripthook, your game may no longer launch as Reshade hooks into the Scriphook launcher and interfers with the game. To fix this, edit <code>Mafia - Definitive Edition\ScriptHook\data\config.json</code> and change line 20 <code>&quot;showStartupMenu&quot;</code> from <code>true</code> to <code>false</code>.</p>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://www.nexusmods.com/mafiadefinitiveedition" target="_blank">Nexus Mods</a></li>
