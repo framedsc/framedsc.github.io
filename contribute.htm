@@ -10,8 +10,8 @@
 
     <title>Contribute to the site! - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/theme_20220412.css" type="text/css" />
-    <link rel="stylesheet" href="css/theme_colors_20220412.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme_20220414.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme_colors_20220414.css" type="text/css" />
     <link rel="stylesheet" href="css/styles/vs.css">
     <link rel="stylesheet" href="css/font-awesome.4.5.0.min.css">
 </head>
@@ -51,6 +51,8 @@
 <li class="tocentry"><a href="#making-headers">Making headers</a></li>
 
 <li class="tocentry"><a href="#images">Images</a></li>
+
+<li class="tocentry"><a href="#image-comparisons">Image comparisons</a></li>
 
 <li class="tocentry"><a href="#controller-buttons">Controller buttons</a></li>
 
@@ -141,9 +143,10 @@
 <hr />
 <h2 id="images">Images<a class="headerlink" href="#images" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>If your guide has images, use this line to embed them:</p>
-<pre><code class="Markdown">![title](Images\image.png &quot;subtitle&quot;){.shadowed .autosize}
+<pre><code class="Markdown">![alt text](Images\image.png &quot;This is the subtitle&quot;){.shadowed .autosize}
 </code></pre>
 
+<p>For the subtitle to show, there has to be an empty line above this line.</p>
 <p>Images will be sorted into the Images folder by the site admins. You may place them in a subfolder if you'd like to organise them.  </p>
 <p>There are a few CSS classes you can use in the Markdown line above to further format your images.</p>
 <table class="table table-bordered-all table-responsive">
@@ -183,6 +186,35 @@
 <h4 id="accepted-images">Accepted images<a class="headerlink" href="#accepted-images" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>Images on the site should be in a .PNG / high-quality .JPG format, under 1MB. While there are no current size limits, images on the site are resized to 896px width (with the .autosize tag, which should be added to all images). They don't have to be resized to that width, but we would prefer it if you kept image sizes reasonable.</p>
 <p>For excessively large images (say you want to include a full-res screenshot for some reason), they may be hosted externally. Use a trusted, reliable imagehost like <a href="https://imgur.com/upload" target="_blank">Imgur</a>.</p>
+<hr />
+<h2 id="image-comparisons">Image comparisons<a class="headerlink" href="#image-comparisons" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The site supports sliders to compare two images, if you'd like to show off a before/after or anything similar.</p>
+<div class="img-comp-container">
+  <div class="img-comp-aft">
+      <div class="img-comp-text">after ReShade</div>
+    <img src="Images/basics_doom2.jpg">
+  </div>
+  <div class="img-comp-bef img-comp-overlay">
+        <div class="img-comp-text">before ReShade</div>
+    <img src="Images/basics_doom1.jpg">
+  </div>
+</div>
+<div class="figure"><p>Subtitle. Shots by ItsYFP</p></div>
+<p>This is done wholly through HTML in your Markdown file:</p>
+<pre><code class="HTML">&lt;div class=&quot;img-comp-container&quot;&gt;
+  &lt;div class=&quot;img-comp-aft&quot;&gt;
+      &lt;div class=&quot;img-comp-text&quot;&gt;This is the after text&lt;/div&gt;
+    &lt;img src=&quot;Images/after.png&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;img-comp-bef img-comp-overlay&quot;&gt;
+        &lt;div class=&quot;img-comp-text&quot;&gt;This is the before text&lt;/div&gt;
+    &lt;img src=&quot;Images/before.png&quot;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;figure&quot;&gt;&lt;p&gt;This is the subtitle text.&lt;/p&gt;&lt;/div&gt;
+</code></pre>
+
+<p>The 'before' image does come after the 'after' image. Please make sure the two images are of the same height. </p>
 <hr />
 <h2 id="controller-buttons">Controller buttons<a class="headerlink" href="#controller-buttons" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>The site supports display of Xbox buttons through a font. You can use these to embellish a controls table like so:</p>
@@ -287,6 +319,10 @@
     <script src="js/modernizr-2.8.3.min.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/comparisons.js"></script>
+    <script>
+        initComparisons();
+    </script>
 
 </body>
 </html>

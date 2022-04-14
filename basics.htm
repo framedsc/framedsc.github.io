@@ -10,8 +10,8 @@
 
     <title>The Basics - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/theme_20220412.css" type="text/css" />
-    <link rel="stylesheet" href="css/theme_colors_20220412.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme_20220414.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme_colors_20220414.css" type="text/css" />
     <link rel="stylesheet" href="css/styles/vs.css">
     <link rel="stylesheet" href="css/font-awesome.4.5.0.min.css">
 </head>
@@ -126,13 +126,17 @@
 <hr />
 <h2 id="hotsampling">Hotsampling<a class="headerlink" href="#hotsampling" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p><strong>Hotsampling</strong> refers to briefly running a game in a much higher resolution than your monitor supports, allowing you to capture screenshots with incredible detail, then bringing it back down to a native playable resolution. </p>
+<div class="figure">
+<a href="https://live.staticflickr.com/65535/51870619317_08953f9a1d_o.png" target="_blank"><img src="Images/basics_hotsampling-eg.jpg" alt="hotsampling" title="Click to view full-res" class="autosize" /></a>
+<p>This was captured at <b>7558x3240</b> with no stitching or overpriced GPU needed. Just SRWE. (<i>wintermute</i>)</p>
+</div>
 <p>Hotsampling works by resizing the game window past the bounds of your monitor, using programs like <a href="https://github.com/dtgDTGdtg/SRWE" target="_blank">Simple Runtime Window Editor</a> (SRWE) or <a href="https://westechsolutions.net/sites/WindowedBorderlessGaming/" target="_blank">Windowed Borderless Gaming</a> (WBG). This resizing forces the game to render at the new resolution set by those programs, which will be larger than what fits on your screen. If your image looks &quot;very zoomed in&quot;, that's a sign that hotsampling has worked. A game has to be running in <strong>windowed</strong> or <strong>borderless windowed</strong> for hotsampling to work. </p>
 <p>SRWE is the preferred program, however there are cases like with some Ubisoft games (<em>Steep</em>, <em>Ghost Recon Breakpoint</em>) where WBG will have to be used instead. It is trickier and more frustrating than SRWE, so be sure to follow the guide we have linked below.</p>
 <p>To hotsample with WBG, open it, right click on the program in the taskbar, and select &quot;Add Window F3&quot;. ALT-TAB back to the game and press F3. This may take some tries as the program initialises the game.</p>
 <p>Keep in mind that not every game is able to hotsample. Do consult our <a href="./Gameguides.htm">game guides</a> to check if your game supports it. Occasionally, the ability to hotsample can be enabled through certain cheat tables, tools and/or mods, so check if those exist too. Certain games may also only hotsample to multiples of 16:9, i.e. no custom aspect ratios.</p>
 <h3 id="composing-for-custom-aspect-ratios">Composing for custom aspect ratios<a class="headerlink" href="#composing-for-custom-aspect-ratios" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>One of the benefits of hotsampling is arbitrary window sizes. In other words: custom aspect ratios. With hotsampling, it's possible to render your game at aspect ratios like 4:5 or 2:1 to take some stunning portraits and ultrawide landscapes without having to crop from 16:9 or hurt your neck looking at your monitor sideways.</p>
-<p>Let's say you want to take a 3:4 portrait at 3000x4000 but you're not sure how to compose it. Cropping from 16:9 wastes a lot of pixels, and hotsampling makes the shot too large to fit on your screen. You could use <a href="./ReshadeGuides/shaderscatalogue.htm#hotsampling">hotsampling helper shaders</a> for Reshade, they can scale down a duplicate of your hotsampled window to fit in your monitor. That still comes at the cost of running your game at a very high resolution i.e. low framerate, so instead we'll use SRWE to help us out here.</p>
+<p>Let's say you want to take a 3:4 portrait at 3000x4000 but you're not sure how to compose it. Cropping from 16:9 wastes a lot of pixels, and hotsampling makes the shot too large to fit on your screen. You could use <a href="./ReshadeGuides/shaderscatalogue.htm#hotsampling">hotsampling helper shaders</a> for ReShade, they can scale down a duplicate of your hotsampled window to fit in your monitor. That still comes at the cost of running your game at a very high resolution i.e. low framerate, so instead we'll use SRWE to help us out here.</p>
 <p>We can use SRWE to set our game window to 3:4 but <em>within</em> our monitor's limits. Since we're shooting a portrait, we'll take our monitor's height as our bounds. We can then find out the width from some simple math. So, at 1080p, we'd set the game window to <strong>810x1080</strong>. 1440p would be <strong>1080x1440</strong>, and 4K would be <strong>1620x2160</strong>. This gives us a 3:4 preview of our shot fit perfectly in our monitor where we can now compose in.</p>
 <p>This of course works with other aspect ratios, 21:9 would roughly be 1920x810 and so on. I would recommend saving this &quot;preview&quot; resolution as well as your final hotsampling resolution as SRWE profiles for ease of use, or you can download a profile pack below.</p>
 <p>Additionally, you can use this for thumbnail testing - viewing your composition as a small image to see if elements are well defined. Instead of going to the bounds of your monitor, you could simply go down to something tiny like 300x400 and compose from there. </p>
@@ -172,6 +176,17 @@
 <hr />
 <h2 id="reshade">ReShade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p><strong>ReShade</strong> is a post-processing injector for games, allowing you to add many post-processing effects to games such as bloom, ambient occlusion, depth of field, colour grading and so much more.</p>
+<div class="img-comp-container">
+  <div class="img-comp-aft">
+      <div class="img-comp-text">after ReShade</div>
+    <img src="Images/basics_doom2.jpg">
+  </div>
+  <div class="img-comp-bef img-comp-overlay">
+        <div class="img-comp-text">before ReShade</div>
+    <img src="Images/basics_doom1.jpg">
+  </div>
+</div>
+<div class="figure"><p><i><a href="./GameGuides/doometernal.htm">DOOM Eternal</a></i>, with MXAO, RTGI, SSR, Retrofog and Cinematic DoF. (<i>ItsYFP</i>)</p></div>
 <p>While it is incredibly popular for 'dressing up' a game's looks to a user's taste, it's since become very useful for the PC screenshotting community as an extremely flexible editor that provides an in-game, real-time preview.</p>
 <h3 id="the-depth-buffer">The depth buffer<a class="headerlink" href="#the-depth-buffer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>A 2D representation of how far or close objects are as seen from the camera, the depth buffer is what makes ReShade so powerful. It can be used to generate highly sophisticated effects such as <a href="./ReshadeGuides/Shaders/cinematicdof.htm">cinematic depth of field</a> and raytraced lighting. It can even add <a href="https://twitter.com/FransBouma/status/1506372102835822599" target="_blank">faux volumetric fog</a> to a scene, or just be used for gorgeous <a href="https://framedsc.com/HallOfFramed/?imageId=1631466300" target="_blank">silhouette effects</a>.</p>
@@ -186,26 +201,26 @@
 <li><a href="https://reshade.me/" target="_blank">Official page</a></li>
 <li><a href="https://www.pcgamingwiki.com/wiki/ReShade#List_of_known_shader_repositories" target="_blank">List of repositories</a> (PCGamingWiki)</li>
 <li><a href="https://www.pcgamingwiki.com/wiki/ReShade#Game_compatibility" target="_blank">Game compatibility list</a> (PCGamingWiki)</li>
-<li><a href="https://reshade.me/forum/troubleshooting/5227" target="_blank">Easy Troubleshooting</a> (Reshade)</li>
+<li><a href="https://reshade.me/forum/troubleshooting/5227" target="_blank">Easy Troubleshooting</a> (ReShade)</li>
 <li><a href="https://www.youtube.com/watch?v=hYUiWfvyafQ" target="_blank">How to fix most of your problems with ReShade</a> (YouTube)</li>
 <li><a href="https://www.youtube.com/watch?v=1z3VyU_4GQY" target="_blank">How to Fix a Misaligned Depth Buffer on ReShade</a> (YouTube)</li>
 </ul>
 <hr />
 <h2 id="capturing-screenshots">Capturing Screenshots<a class="headerlink" href="#capturing-screenshots" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>All the info above should have been enough for you to go out and compose a gorgeous shot in your favourite game. Now the question is: <em>How do you actually save the image?</em></p>
-<p>There are many ways of doing so, and none of them through a game's built-in capture function. Many games typically save their screenshots as compressed JPGs and don't capture any overlays (i.e. Reshade effects). We want to be able to save a full resolution image, preferably as a lossless PNG, and with all the Reshade effects we've added.</p>
+<p>There are many ways of doing so, and none of them through a game's built-in capture function. Many games typically save their screenshots as compressed JPGs and don't capture any overlays (i.e. ReShade effects). We want to be able to save a full resolution image, preferably as a lossless PNG, and with all the ReShade effects we've added.</p>
 <p>Here are some typical methods:</p>
 <ul>
 <li><strong><a href="https://reshade.me" target="_blank">ReShade</a></strong><br />
-Reshade comes with its own capture function and is typically the chosen option for many that have it installed. It should no longer have issues capturing higher resolutions as its PNG capture was rewritten for its 5.0 update. If you continue to use an older version of ReShade and need faster captures, you could also try:</li>
+ReShade comes with its own capture function and is typically the chosen option for many that have it installed. It should no longer have issues capturing higher resolutions as its PNG capture was rewritten for its 5.0 update. If you continue to use an older version of ReShade and need faster captures, you could also try:</li>
 <li><strong><a href="https://www.msi.com/Landing/afterburner/graphics-cards" target="_blank">MSI Afterburner</a></strong><br />
 Favored by quite a few, Afterburner is a graphics card utility that happens to be able to hook into games and take screen captures of them, even when the game isn't in focus. This makes it useful for games that might resize its window or move the camera after alt-tabbing back into the game. However, it's been known to conflict with certain games and their tools, causing crashes. You will also need to install RTSS, bundled with the installer, to be able to take screenshots with Afterburner.</li>
 <li><strong><a href="https://www.nvidia.com/en-sg/geforce/geforce-experience/" target="_blank">Nvidia GeForce Experience</a></strong><br />
-Nvidia's game overlay for anyone with an Nvidia GPU, GeForce Experience lets you record videos, livestream, do all sorts of stuff, but most importantly: capture screenshots. Same with Afterburner, it can capture faster than Reshade. Be sure you have <em>Desktop capture</em> disabled, otherwise it will just save whatever's on your monitor at the moment of capture.</li>
+Nvidia's game overlay for anyone with an Nvidia GPU, GeForce Experience lets you record videos, livestream, do all sorts of stuff, but most importantly: capture screenshots. Same with Afterburner, it can capture faster than ReShade. Be sure you have <em>Desktop capture</em> disabled, otherwise it will just save whatever's on your monitor at the moment of capture.</li>
 <li><strong><a href="https://screenshot.help/steam" target="_blank">Steam</a></strong><br />
 If you're playing a Steam game and are used to hitting F12, Steam Overlay works just fine for capturing too. Just be sure to enable <em>Save an uncompressed copy</em> under Steam Settings &gt; In-Game to save proper PNGs, Steam JPGs can be very low quality.</li>
 </ul>
-<p>These methods above have been proven to work well with hotsampling and Reshade, but if you run into issues with them, try switching them up.</p>
+<p>These methods above have been proven to work well with hotsampling and ReShade, but if you run into issues with them, try switching them up.</p>
 <hr />
 <h2 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
@@ -227,6 +242,10 @@ If you're playing a Steam game and are used to hitting F12, Steam Overlay works 
     <script src="js/modernizr-2.8.3.min.js"></script>
     <script src="js/highlight.pack.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/comparisons.js"></script>
+    <script>
+        initComparisons();
+    </script>
 
 </body>
 </html>
