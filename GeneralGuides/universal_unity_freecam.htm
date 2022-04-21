@@ -191,10 +191,8 @@ Somewhere in the installation directory, Mono has a folder called <code>Managed<
 </p>
 </li>
 <li>Open <code>LogOutput.log</code> and check for a line that gives you the Unity version of the game, like
-<code>[Info   :   BepInEx] Running under Unity v2019.1.10.15730669</code>  
-</li>
-<li>Note down the version, then open the config folder and edit the <code>BepInEx.cfg</code> file.  
-</li>
+<code>[Info   :   BepInEx] Running under Unity v2019.1.10.15730669</code>  </li>
+<li>Note down the version, then open the config folder and edit the <code>BepInEx.cfg</code> file.  </li>
 <li>
 <p>In the <code>[Preloader.Entrypoint]</code> section change <code>Type</code> to what their corresponding Unity version pints out in the table below:  
 </p>
@@ -310,8 +308,7 @@ Somewhere in the installation directory, Mono has a folder called <code>Managed<
 <p>Click on INSTALL (or RE-INSTALL if you are upgrading from a previous version)  
 </p>
 </li>
-<li>A success popup should appear if the installation has been successful.  
-</li>
+<li>A success popup should appear if the installation has been successful.  </li>
 <li>
 <p>Upon launching the game, a new window with a console will open on your screen. A process called the unhollowing will start. Wait until MelonLoader is done unhollowing. <strong>This process requires an internet connection.</strong><br />
 <img src="../Images/UUFGuide/Unhollowing01.png" alt="Unhollower01" class="shadowed autosize" width="979" height="512" />  
@@ -513,14 +510,12 @@ Supports keybinds, mouse axis inverting, and specify when mouse look on the free
 <h2 id="unlocking-the-camera">Unlocking the camera<a class="headerlink" href="#unlocking-the-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>When you want to get the camera press the backspace key to open the Universal Unity Freecam menu. There you will want to click on the light blue box to display a list of unity objects. Here you will need to disable any object that controls the camera of the game so we can control it ourselves. In this case, we will be disabling the Cinemachine.Brain object.</p>
 <p>Additional note: You can also disable other unity objects here if you like, to turn off an undesired postprocessing effect for example.</p>
-<p><img src="../Images/UUFGuide/unlocking_the_camera.png" alt="Unlocking the camera" class="shadowed autosize" width="1920" height="1080" />  
-</p>
+<p><img src="../Images/UUFGuide/unlocking_the_camera.png" alt="Unlocking the camera" class="shadowed autosize" width="1920" height="1080" />  </p>
 <p>After doing so click on the light blue box again to hide the objects list and activate each of the boxes (except maybe the FOV one). After doing that we will have full control of the camera!</p>
 <p>When you are done using the freecam activate the unity object you disabled and uncheck the boxes to make sure the game doesn't run into weird behaviors later while playing.</p>
 <h2 id="changing-the-fov">Changing the FOV<a class="headerlink" href="#changing-the-fov" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Sadly changing the FOV is not as straightforward as unlocking the camera. You will need to first find the camera that the game uses in the object explorer. To do so we will open the unity explorer with F2, click on the first tab that says &quot;Object Explorer&quot;, and click the &quot;Object Explorer&quot; tab in the new window that spawned. Here you will search for objects of the class &quot;UnityEngine.Camera&quot;. After picking the first one open it by clicking on them. This will open a new window with a bunch of values. Scroll down in this new window to find the FOV. Usually, there are two values, one for far and one for near FOV. You will want to edit the near FOV value to the FOV value you want to use, and that's it!</p>
-<p><img src="../Images/UUFGuide/changing_the_fov.png" alt="Unlocking the camera" class="shadowed autosize" width="1920" height="1080" />  
-</p>
+<p><img src="../Images/UUFGuide/changing_the_fov.png" alt="Unlocking the camera" class="shadowed autosize" width="1920" height="1080" />  </p>
 <p>If you don't find a FOV value pick another object of class &quot;UnityEngine.Camera&quot; and try again (in the case of Death Door said object is the one called &quot;Cam_Main&quot;).</p>
 <p>After you are done shooting you won't need to return to the original FOV; activating again the camera object you disabled in the first step (in our case Cinemachine.Brain) will take care of changing the FOV back to the gameplay one.</p>
 <h3 id="additional-notes">Additional notes:<a class="headerlink" href="#additional-notes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
@@ -537,8 +532,7 @@ Supports keybinds, mouse axis inverting, and specify when mouse look on the free
 <p>Alternatively, you can also pause by clicking on the top right button on the Unity Explorer UI, but it's not very advisable since it might prove difficult to get the pause at the right time in certain situations.</p>
 <h2 id="hud-toggle">HUD toggle<a class="headerlink" href="#hud-toggle" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>This will depend very much on the game and you will need to turn off objects in the scene explorer until you find the HUD. In the case of Death Door, the HUD is in the &quot;Canvas&quot; object, so disabling that will get off the HUD.</p>
-<p><img src="../Images/UUFGuide/hud_toggle.png" alt="Unlocking the camera" class="shadowed autosize" width="1920" height="1080" />  
-</p>
+<p><img src="../Images/UUFGuide/hud_toggle.png" alt="Unlocking the camera" class="shadowed autosize" width="1920" height="1080" />  </p>
 <p>If you can't find the right hud toggle in the Scene Explorer, go at the bottom of the window and change the scene you are inspecting to another until you find it eventually.</p>
 <h2 id="vignette-lights-and-other-stuff.">Vignette, lights, and other stuff.<a class="headerlink" href="#vignette-lights-and-other-stuff." title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Given that we are basically obtaining access to most (every?) unity object in the scene/game, we can then use that to our advantage to modify the game and scene as we please. For example, in Death Door, one can edit the Vignette object (which is found inside the CAM_MAIN object) properties to disable it (it's not enough to turn the object off in this case).</p>
