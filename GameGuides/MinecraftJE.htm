@@ -233,7 +233,7 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="Images\minecraft_header.png" alt="Minecraft" title="Shot by moyevka" class="shadowed autosize" />
+<img src="../Images\minecraft_header.png" alt="Minecraft" title="Shot by moyevka" class="shadowed autosize" width="896" height="180" />
 <p>Shot by moyevka</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
@@ -302,10 +302,6 @@
 	<td>F3</td>
 	<td>toggle <abbr title="Displays mostly performance information.">debug overlay</abbr></td>
 </tr>
-<tr>
-	<td>F5</td>
-	<td>toggle perspectives</td>
-</tr>
 </tbody>
 </table>
 <h3 id="commands">Commands<a class="headerlink" href="#commands" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
@@ -319,23 +315,32 @@
 </thead>
 <tbody>
 <tr>
-	<td>/gamemode creative</td>
+	<td><code>/gamemode creative</code></td>
 	<td>puts you in creative mode</td>
 </tr>
 <tr>
-	<td>/gamerule doDaylightCycle false</td>
+	<td><code>/gamemode spectator</code></td>
+	<td>puts you in spectator mode</td>
+</tr>
+<tr>
+	<td><code>/gamerule doDaylightCycle false</code></td>
 	<td>disables sun/moon movement</td>
 </tr>
 <tr>
-	<td>/time set [number]</td>
+	<td><code>/gamerule doWeatherCycle false</code></td>
+	<td>disables weather changes</td>
+</tr>
+<tr>
+	<td><code>/time set [number]</code></td>
 	<td>sets <abbr title="0 for sunrise, 6000 for noon, 12000 for sunset, 16000 for night">time of day</abbr></td>
 </tr>
 <tr>
-	<td>/kill @e[type=!player]</td>
+	<td><code>/kill @e[type=!player]</code></td>
 	<td>kills all mobs</td>
 </tr>
 </tbody>
 </table>
+<p>Spectator mode can be very helpful as you can noclip through blocks and change fly speed with the scrollwheel. </p>
 <p>Some worlds you download may not come with cheats enabled, preventing the use of these commands. You'll need a save editor like <a href="https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-tools/1262665-nbtexplorer-nbt-editor-for-windows-and-mac" target="_blank">NBTExplorer</a> to edit the world file and enable cheats. NBTExplorer should find your save files by default. Open the downloaded map's folder, open <code>level.dat</code> and look for <code>allowCommands</code>. Change that to <code>1</code>, then <em>Save All Modified Tags</em> (third icon in the top row).</p>
 <h3 id="improving-performance">Improving performance<a class="headerlink" href="#improving-performance" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>Minecraft doesn't exactly run well, even in entirely vanilla situations. You can attempt to boost performance by allocating more RAM to Minecraft, through some JVM arguments. In the Minecraft Launcher, head to the <em>Installations</em> tab, hover over the <code>...</code> and edit your install. Under <em>More Options</em>, change <code>-Xmx2G</code> to something like <code>-Xmx4G</code> or higher. The number sets how much RAM the game's allowed to use, so <code>-Xmx4G</code> would be 4GB. You can set it as high as your computer allows, I have mine at <code>-Xmx8G</code>.</p>
@@ -344,7 +349,7 @@
 <h2 id="shaders">Shaders<a class="headerlink" href="#shaders" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>The magic sauce that makes Minecraft not look like Minecraft, shaders overhaul the game's look entirely, giving it everything from shadows to path-traced lighting.</p>
 <h3 id="shader-hosts">Shader Hosts<a class="headerlink" href="#shader-hosts" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>These mods are <strong>required</strong> for shaders.</p>
+<p>These mods are <strong>required</strong> for shaders. Pick and install only one.</p>
 <ul>
 <li>
 <p><a href="https://optifine.net/home" target="_blank"><strong>OptiFine</strong></a><br />
@@ -528,6 +533,7 @@ In the Minecraft Launcher, head to the <em>Installations</em> tab, hover over th
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://minecraft.fandom.com/wiki/Commands" target="_blank">Console commands</a> (Minecraft Wiki)</li>
+<li><a href="https://mcstacker.net/" target="_blank">Command generator</a> (MCStacker)</li>
 <li><a href="https://www.planetminecraft.com/projects/?order=order_popularity" target="_blank">Minecraft maps</a> (Planet Minecraft)</li>
 </ul>
 
