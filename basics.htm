@@ -10,7 +10,7 @@
 
     <title>The Basics - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/theme_20220415.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme_20220423.css" type="text/css" />
     <link rel="stylesheet" href="css/theme_colors_20220415.css" type="text/css" />
     <link rel="stylesheet" href="css/styles/vs.css">
     <link rel="stylesheet" href="css/font-awesome.4.5.0.min.css">
@@ -176,15 +176,19 @@
 <hr />
 <h2 id="reshade">ReShade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p><strong>ReShade</strong> is a post-processing injector for games, allowing you to add many post-processing effects to games such as bloom, ambient occlusion, depth of field, colour grading and so much more.</p>
-<div class="img-comp-container">
-  <div class="img-comp-aft">
-      <div class="img-comp-text">after ReShade</div>
-    <img src="Images/basics_doom2.jpg">
+<div class="slider container" style="aspect-ratio: 64/27">
+  <div class="slider__img slider__img-after">
+    <p>after ReShade</p>
+    <img src="Images/basics_doom2.jpg" />
   </div>
-  <div class="img-comp-bef img-comp-overlay">
-        <div class="img-comp-text">before ReShade</div>
-    <img src="Images/basics_doom1.jpg">
+  <div class="slider__img slider__img-before">
+    <p>before ReShade</p>
+    <img src="Images/basics_doom1.jpg" />
   </div>
+  <input type="range" min="0" max="100" value="50" step="0.01" 
+    id="slider" class="slider__input" 
+    autocomplete="off" onwheel="this.blur()" 
+  />
 </div>
 <div class="figure"><p><i><a href="./GameGuides/doometernal.htm">DOOM Eternal</a></i>, with MXAO, RTGI, SSR, Retrofog and Cinematic DoF. (<i>ItsYFP</i>)</p></div>
 <p>While it is incredibly popular for 'dressing up' a game's looks to a user's taste, it's since become very useful for the PC screenshotting community as an extremely flexible editor that provides an in-game, real-time preview.</p>
@@ -243,9 +247,6 @@ If you're playing a Steam game and are used to hitting F12, Steam Overlay works 
     <script src="js/highlight.pack.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/comparisons.js"></script>
-    <script>
-        initComparisons();
-    </script>
 
 </body>
 </html>
