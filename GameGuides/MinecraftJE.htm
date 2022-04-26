@@ -10,7 +10,7 @@
 
     <title>Minecraft: Java Edition - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../css/theme_20220423.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_20220426.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors_20220415.css" type="text/css" />
     <link rel="stylesheet" href="../css/styles/vs.css">
     <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
@@ -279,7 +279,7 @@
 </tr>
 </tbody>
 </table>
-<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This guide is for the <strong>Java Edition</strong> of Minecraft.</p>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This guide is for the <strong><a href="https://minecraft.fandom.com/wiki/Java_Edition" target="_blank">Java Edition</a></strong> of Minecraft. Not to be confused with <a href="https://minecraft.fandom.com/wiki/Bedrock_Edition" target="_blank"><em>Bedrock Edition</em></a>, an entirely different multi-platform version of the game.</p>
 </div><h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Tools aren't necessarily required for Minecraft, as the majority of shots can be taken vanilla. Here are some quick bindings to get you started.</p>
 <table class="table table-bordered-all table-responsive">
@@ -340,14 +340,14 @@
 </tr>
 </tbody>
 </table>
-<p>Spectator mode can be very helpful as you can noclip through blocks and change fly speed with the scrollwheel. </p>
+<p>Spectator mode can be very helpful as you can noclip through blocks and change fly speed with the scrollwheel. It also stops shaderpacks from rendering your shadow.</p>
 <p>Some worlds you download may not come with cheats enabled, preventing the use of these commands. You'll need a save editor like <a href="https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-tools/1262665-nbtexplorer-nbt-editor-for-windows-and-mac" target="_blank">NBTExplorer</a> to edit the world file and enable cheats. NBTExplorer should find your save files by default. Open the downloaded map's folder, open <code>level.dat</code> and look for <code>allowCommands</code>. Change that to <code>1</code>, then <em>Save All Modified Tags</em> (third icon in the top row).</p>
 <h3 id="improving-performance">Improving performance<a class="headerlink" href="#improving-performance" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>Minecraft doesn't exactly run well, even in entirely vanilla situations. You can attempt to boost performance by allocating more RAM to Minecraft, through some JVM arguments. In the Minecraft Launcher, head to the <em>Installations</em> tab, hover over the <code>...</code> and edit your install. Under <em>More Options</em>, change <code>-Xmx2G</code> to something like <code>-Xmx4G</code> or higher. The number sets how much RAM the game's allowed to use, so <code>-Xmx4G</code> would be 4GB. You can set it as high as your computer allows, I have mine at <code>-Xmx8G</code>.</p>
 <p>JVM arguments can get pretty complex, this <a href="https://www.reddit.com/r/feedthebeast/comments/5jhuk9/modded_mc_and_memory_usage_a_history_with_a/" target="_blank">reddit post about modded Minecraft and memory consumption</a> provides a much more elaborate set of arguments complete with explanations for each.</p>
 <p>Mods such as <a href="https://optifine.net/home" target="_blank">OptiFine</a> and <a href="https://github.com/CaffeineMC/sodium-fabric" target="_blank">Sodium</a> exist that revamp how Minecraft renders to dramatically improve performance as well. You can install them as is, but we'll be looking into how they can also be used to improve how the game looks right below.</p>
 <h2 id="shaders">Shaders<a class="headerlink" href="#shaders" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>The magic sauce that makes Minecraft not look like Minecraft, shaders overhaul the game's look entirely, giving it everything from shadows to path-traced lighting.</p>
+<p>The magic sauce that makes Minecraft not look like Minecraft, shaders overhaul the game's look entirely, giving it everything from dynamic shadows to path-traced lighting.</p>
 <h3 id="shader-hosts">Shader Hosts<a class="headerlink" href="#shader-hosts" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>These mods are <strong>required</strong> for shaders. Pick and install only one.</p>
 <ul>
@@ -524,10 +524,10 @@ In the Minecraft Launcher, head to the <em>Installations</em> tab, hover over th
 <p>Minecraft should now launch with ReShade properly installed. Do note that <strong>ReShade causes some visual artifacts</strong> in the game. It may also affect how some render mods (OptiFine, Sodium) and shaderpacks render the game. SEUS PTGI and BSL, for example, have major artifacts with ReShade installed.</p>
 <h3 id="depth-buffer">Depth Buffer<a class="headerlink" href="#depth-buffer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>The depth buffer requires a bit of setup before it can be used by depth shaders. In the OpenGL tab (4.9.1 and below) / Add-ons &gt; Generic Depth (5.0+), <em>Copy depth buffer before clear operations</em> has to be ticked. Under <em>Edit global preprocessor definitions</em>, change <code>RESHADE_DEPTH_INPUT_IS_UPSIDE_DOWN</code> to <code>1</code>. </p>
-<p>The depth buffer has to be &quot;refreshed&quot; on resolution change. You can do this by unticking and reticking <em>Copy depth buffer [...]</em>.</p>
-<h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>It seems ReShade cannot reliably grab the right depth buffer upon resolution changes, i.e. hotsampling. It may need to be refreshed by unticking and reticking <em>Copy depth buffer [...]</em> or may even be upside down, forcing you to change <code>RESHADE_DEPTH_INPUT_IS_UPSIDE_DOWN</code> back to <code>0</code>.  </p>
+</div><h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <h3 id="quick-lower-fov">Quick-lower FoV<a class="headerlink" href="#quick-lower-fov" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>FoV has to be changed in the game menu, but you can quickly lower it with a <a href="https://minecraft.fandom.com/wiki/Spyglass" target="_blank">spyglass</a>. The OptiFine mod also includes a 'punch-in' function bound to <code>c</code> by default.</p>
+<p>The OptiFine mod includes a 'punch-in' function bound to <code>c</code> by default. You can also use an in-game <a href="https://minecraft.fandom.com/wiki/Spyglass" target="_blank">spyglass</a>, however that drops your FoV by 10x, which may be a bit too much of a zoom.</p>
 <h3 id="exporting-a-depth-buffer">Exporting a depth buffer<a class="headerlink" href="#exporting-a-depth-buffer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>A depth buffer can be exported with <a href="https://www.youtube.com/watch?v=nakyctgYDM8" target="_blank">the help of a shader</a>. This is handy in the cases where ReShade's introduced artifacts make it inconvenient to capture depth effects (and you know <a href="../ReshadeGuides/depthguide.htm">what to do with a depth map</a>). The capture of this depth map is limited to 8-bit, so you might have to adjust your chunk render distance to get a more precise depth capture.</p>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
