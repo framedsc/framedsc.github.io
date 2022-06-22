@@ -73,9 +73,9 @@
 
 <li class="tocentry"><a href="#tools">Tools</a></li>
 
-<li class="tocentry"><a href="#enabling-console-key-and-adding-keybinds">Enabling console key and adding keybinds:</a></li>
+<li class="tocentry"><a href="#enabling-console-key-and-adding-keybinds">Enabling console key and adding keybinds</a></li>
 
-<li class="tocentry"><a href="#running-console-commands-from-script-with-a-keybind">Running console commands from script with a keybind:</a></li>
+<li class="tocentry"><a href="#running-console-commands-from-script-with-a-keybind">Running console commands from script with a keybind</a></li>
 
 <li class="tocentry"><a href="#useful-links">Useful Links</a></li>
 
@@ -296,12 +296,13 @@
 settings of the game, it might be the game crashes when these are on screen. A newer fixed dll is available on 
 <a href="https://www.patreon.com/sunbeam906" target="_blank">Sunbeam's patreon</a> which fixes this.</p>
 </div><h1 id="resolutions">Resolutions<a class="headerlink" href="#resolutions" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
-<p>DSR fullscreen works well-ish. Different than 16:9 AR's may have issues, noticed a strange line down the left side in <code>3:4</code> AR.</p>
+<p>Using DSR fullscreen works ok. If you use an aspect ratio (AR) other than what the game natively support for your monitor (21:9 or 16:9), 
+you might run into issues, e.g. there's a strange line down the left side in <code>3:4</code> AR.</p>
 <h4 id="changing-resolution-while-game-is-paused">Changing resolution while game is paused<a class="headerlink" href="#changing-resolution-while-game-is-paused" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>Pause the game with <code>playersonly</code> (this is <code>F5</code> if you use the bindings below, see next section) then go into the graphics menu and change your resolution. 
 Exit main menu and game should still be paused. Enable camera, take shot, disable camera then disable <code>playersonly</code>. Camera Tool 
 pause and playersonly with stack so if you enable both, remember to disable both.</p>
-<h2 id="enabling-console-key-and-adding-keybinds">Enabling console key and adding keybinds:<a class="headerlink" href="#enabling-console-key-and-adding-keybinds" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="enabling-console-key-and-adding-keybinds">Enabling console key and adding keybinds<a class="headerlink" href="#enabling-console-key-and-adding-keybinds" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>This is what you need for adding a specific file for keybinds instead of editing any of the core game files. </p>
 <ol>
 <li>Create folder <code>&lt;game installation folder&gt;\DLC\356474\Content\BmGame\ScreenshootingBinds</code></li>
@@ -356,7 +357,7 @@ TypeKey=Backslash
 .Bindings=(Name=&quot;F12&quot;, Command=&quot;set BmGame.RPawnVillain bShouldPreventFinalBlowCam 1&quot;,Alt=True)
 </code></pre>
 
-<h2 id="running-console-commands-from-script-with-a-keybind">Running console commands from script with a keybind:<a class="headerlink" href="#running-console-commands-from-script-with-a-keybind" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="running-console-commands-from-script-with-a-keybind">Running console commands from script with a keybind<a class="headerlink" href="#running-console-commands-from-script-with-a-keybind" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>If you want to use the exec console command to execute other console commands you will need to create text files under 
 <code>&lt;game installation folder&gt;\Binaries</code> and add the commands you want to execute in those text files. </p>
 <p>Then add a keybind to <code>BMinput.ini</code> and press the keybind to execute in-game after you've started the game. 
