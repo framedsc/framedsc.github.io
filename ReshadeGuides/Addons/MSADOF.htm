@@ -197,34 +197,329 @@
 <p>MSADOF comprises of two files, <code>IgcsConnector.addon</code> and <code>MSADOF.fx</code>. The first of which is a ReShade add-on, and the second a ReShade shader. The ADDON file is installed in the same directory as your game EXE, while the FX file is installed to your reshade-shaders\Shaders folder.</p>
 <p>Once installed, upon opening the ReShade GUI, you will now see a new window. This is where you will control the bulk of MSADOF. You must also enable <code>MSADOF_ADDON</code> and drag it all the way to the bottom of your shaders list.</p>
 <h3 id="initial-setup">Initial Setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>For the add-on to function as intended, it's typically necessary to enable v-sync in your game. Motion blur should also be disabled.</p>
-<p>Some game-specific adjustments have to be made as well. You may browse this list of prepared <code>MSADOF.ini</code> game adjustment files for various games.</p>
-<p><details>
-  <summary> List of INIs</summary></p>
+<p>For the add-on to function as intended, it's typically necessary to enable v-sync in your game. Motion blur should also be disabled.
+Below, in the table, you will find the MSADOF values for games that have been tested. </p>
+<p>These values have to be added in the <code>Tweaking Mode</code> part of the addon. 
+For this, when loaded, click on <code>Switch Mode</code>. Scroll down, expand <code>Game Adjustements</code> and add the values. You may also have to change some in the <code>DOF Setting</code>
+Keep in mind that the <code>Skip Frame</code> value may differ on your system. </p>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_tweakingMode_01.png" alt="Example DOF Settings and Game Adjustements" class="shadowed autosize" width="490" height="396" /></p>
+<h3 id="list-of-values">List of values<a class="headerlink" href="#list-of-values" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
 	<th>Game</th>
-	<th>Additional notes</th>
+	<th>Near Plane</th>
+	<th>FOV</th>
+	<th>Variable</br> Near Plane</th>
+	<th>Skip</br>Frame</th>
+	<th>Camera</br>Multiplier</th>
+	<th>Flip X/Y</th>
+	<th>Comments</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-	<td><a href="../../MSADOF/Cyberpunk2077.ini">Cyberpunk 2077</a></td>
-	<td>Might require raytracing / a low framerate under vsync targets. Use: Frames to skip: <code>4</code></td>
+	<td>Ace Combat 7</td>
+	<td>1</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>2</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
 </tr>
 <tr>
-	<td><a href="../../MSADOF/DaysGone.ini">Days Gone</a></td>
-	<td>&nbsp;</td>
+	<td>Alien: Fireteam Elite</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>2</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
 </tr>
 <tr>
-	<td><a href="../../MSADOF/Witcher3.ini">The Witcher 3</a></td>
-	<td>For some reason placed one folder higher in <code>/bin/</code>. <em>Camera near plane</em> changes to 0.4 in cutscenes. It may rarely change to 0.02 as well.</td>
+	<td>Assassin's Creed Odyssey</td>
+	<td>0.0995</td>
+	<td>180</td>
+	<td>N</td>
+	<td>2</td>
+	<td>0.001</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Assassin's Creed Origins</td>
+	<td>0.0995</td>
+	<td>180</td>
+	<td>N</td>
+	<td>2</td>
+	<td>0.001</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Batman: Arkham Knight</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>2</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Beyond a Steel Sky</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>1</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Borderlands 3</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>2</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Blind Fate: Edo no Yami</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>1</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Code Vein</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>2</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Cyberpunk 2077</td>
+	<td>0.02</td>
+	<td>180</td>
+	<td>N</td>
+	<td>4</td>
+	<td>0.001</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Days Gone</td>
+	<td>9.95</td>
+	<td>320</td>
+	<td>N</td>
+	<td>1</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td>Might require raytracing / a low framerate under vsync targets.</td>
+</tr>
+<tr>
+	<td>Draugen</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>2</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ECHO</td>
+	<td>0.56</td>
+	<td>180</td>
+	<td>N</td>
+	<td>2</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td>No custom AR possible</td>
+</tr>
+<tr>
+	<td>Elden Ring</td>
+	<td>0.0500</td>
+	<td>180</td>
+	<td>N</td>
+	<td>2</td>
+	<td>0.001 - 0.01</td>
+	<td>X</td>
+	<td>In some areas the camera multiplier may have to be changed</td>
+</tr>
+<tr>
+	<td>Hellblade</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>2</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Kena: Bridge of Spirits</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>4</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Life is Strange: True Colors</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>1</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Mortal Shell</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>4</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MotoGP 19</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>2</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Resident Evil 2</td>
+	<td>0.01</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>1</td>
+	<td>0.001</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Resident Evil 3</td>
+	<td>0.01</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>1</td>
+	<td>0.001</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Scarlet Nexus</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>1</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Star Wars - Jedi Fallen Order</td>
+	<td>9.9995</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>1</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Stray</td>
+	<td>0.5625</td>
+	<td>180</td>
+	<td>N</td>
+	<td>1</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Tell Me Why</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>1</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>The Ascent</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>1</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>The Medium</td>
+	<td>2</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>3</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>The Shore</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>1</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>The Witcher 3 : Wild Hunt</td>
+	<td>gameplay : 0.2 - Cutscene : 0.4</td>
+	<td>180</td>
+	<td>N</td>
+	<td>0</td>
+	<td>0.001</td>
+	<td>X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Twin Mirror</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>Y</td>
+	<td>2</td>
+	<td>0.1</td>
+	<td>X</td>
+	<td></td>
 </tr>
 </tbody>
 </table>
-<p><em>Do remember to rename the INI file to <code>MSADOF.ini</code>!</em><br />
-</details></p>
 <p>If you have to adjust for your game, follow the <a href="#adjusting-for-a-new-game">advanced setup section</a> further below.</p>
 <hr />
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
