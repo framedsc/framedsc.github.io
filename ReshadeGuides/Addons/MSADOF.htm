@@ -215,12 +215,12 @@
 <div class="figure"><p>Layered defocusing of transparent and translucent materials.</p></div>
 <hr />
 <h2 id="installation--initial-setup">Installation &amp; initial setup<a class="headerlink" href="#installation--initial-setup" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>MSADOF comprises of two files, <code>IgcsConnector.addon</code> and <code>MSADOF.fx</code>. The first of which is a ReShade add-on, and the second a ReShade shader. The ADDON file is installed in the same directory as your game EXE, while the FX file is installed to your reshade-shaders\Shaders folder.</p>
+<p>MSADOF comprises of two files, <code>IgcsConnector.addon</code> and <code>MSADOF.fx</code>. The first of which is a ReShade add-on, and the second a ReShade shader. The ADDON file is installed in the same directory as your game EXE, while the FX file is installed to your <code>reshade-shaders\Shaders</code> folder.</p>
 <p>Once installed, upon opening the ReShade GUI, you will now see a new window. This is where you will control the bulk of MSADOF. You must also enable <code>MSADOF_ADDON</code> and drag it all the way to the bottom of your shaders list. Depth buffer access is necessary for the full functionality of the add-on.</p>
 <p>For the add-on to function as intended, it's typically necessary to enable vsync in your game. This ensures a more consistent frame pacing for better results. Motion blur should also be disabled.</p>
 <hr />
 <h2 id="list-of-preconfigured-values">List of preconfigured values<a class="headerlink" href="#list-of-preconfigured-values" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>As setting MSADOF up from scratch can be tricky, this is a compilation of known MSADOF values for games that have been tested. With the GUI open, click on <code>Switch Mode</code> to switch from <code>Photography Mode</code> to <code>Tweaking Mode</code>. Scroll down and expand <code>Game Adjustments</code> to add these values. You may also have to change some values in <code>DOF Settings</code>.</p>
+<p>As setting MSADOF up from scratch can be tricky, this is a compilation of known MSADOF values for games that have been tested. With the GUI open, click on <strong>Switch Mode</strong> to switch from <code>Photography Mode</code> to <code>Tweaking Mode</code>. Scroll down and expand <strong>Game Adjustments</strong> to add these values. You may also have to change some values in <strong>DOF Settings</strong>.</p>
 <p><img src="../../Images/MSADOF/MSADOF_Addon_tweakingMode_01.png" alt="Example of DOF Settings and Game Adjustments" class="shadowed autosize" width="490" height="396" /></p>
 <p><details>
   <summary><b>View list</b></summary></p>
@@ -585,7 +585,7 @@ Toggles for some lens imperfections. Fringing introduces a bright ring around bo
     autocomplete="off" onwheel="this.blur()" 
   />
 </div>
-<div class="figure"><p>Note the slight difference in brightness. This is due to fringing process, which brightens the last few accumulations for the effect.</p></div>  
+<div class="figure"><p>Note the slight difference in brightness. This is due to the fringing process brightening the last few accumulations to produce the effect.</p></div>  
 <hr />
 <h2 id="tweaking-mode">Tweaking Mode<a class="headerlink" href="#tweaking-mode" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>This is the mode for controlling the add-on in an advanced manner. </p>
@@ -604,11 +604,11 @@ Skips camera movement of every few frames to make accumulation more consistent. 
 <p><strong>Frames to wait</strong><br />
 Similar to above, this value should only be changed if you notice that the focus plane isn't properly sharp.</p>
 <p><strong>Show focus plane</strong><br />
-Overlays a plane on screen. Where the plane intersects the scene is where your focus distance is.</p>
+Overlays a plane on screen. Where the plane cuts the scene is where the focus distance is set.</p>
 <p><strong>Show rendering progress</strong><br />
 Displays a progress bar.</p>
 <p><strong>Save 32-bit EXR</strong><br />
-As the accumulation process can introduce banding, this option stacks the accumulated frames into a higher-precision buffer. This buffer is saved into a high bit-depth (32-bit) EXR, which is able to store 65,536x more colours than the standard BMP. This results in much smoother gradients with zero banding, and comes with the added benefit of having much more colour data for colour grading in post. The saved EXR requires <a href="#processing-saved-exrs">further post-processing</a> to produce the intended result.</p>
+As the accumulation process can introduce banding, this option stacks the accumulated frames into a higher-precision buffer. This buffer is saved into a high bit-depth (32-bit) EXR, which is able to store 65536x more colours than the standard BMP. This results in much smoother gradients with zero banding, and comes with the added benefit of having much more colour data for colour grading in post. The saved EXR requires <a href="#processing-saved-exrs">further post-processing</a> to produce the intended result.</p>
 <div class="slider container" style="aspect-ratio: 43/15">
   <div class="slider__img slider__img-after">
     <p>Processed EXR</p>
@@ -638,9 +638,9 @@ Stretches/squashes the bokeh circle. Useful for replicating oval bokeh character
 Affects the alignment of every point relative to the previous ring. Tweak if there's an obvious pattern forming in your bokeh.</p>
 <p><strong>Swirl scale</strong><br />
 Introduces swirl to bokeh, useful for Helios-style swirly bokeh.<br />
-<em>This feature is currently not working as intended.</em></p>
+<em>This feature is not currently working as intended.</em></p>
 <p><strong>Fringing scale</strong><br />
-Modifies how much the inner rings are darkened to introduce fringing to the bokeh.</p>
+Modifies how much the outer rings are brightened to introduce fringing to the bokeh.</p>
 <p><strong>Fringing power</strong><br />
 Modifies the falloff of the darkening to sharpen the fringing.</p>
 <h3 id="additional-info">Additional info<a class="headerlink" href="#additional-info" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
@@ -682,7 +682,7 @@ Modifies the falloff of the darkening to sharpen the fringing.</p>
 <p>A DOF shader can be used as a blurring pass before rendering to help and smooth out undersampling artifacts. Simply align the DOF shader's focus point to that of the add-on's and make the DOF strength very subtle. <strong>Do not</strong> use autofocus here, as the autofocus point will slip due to the camera movements.</p>
 <h3 id="antialiasing--image-sharpness">Antialiasing &amp; image sharpness<a class="headerlink" href="#antialiasing--image-sharpness" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>The camera-based nature of the shader means it does its own antialiasing! AA can be entirely disabled in your game to get a sharper image. </p>
-<p>In titles where TAA is integral to shading (Cyberpunk 2077 and its hair, for example), it can be left enabled at the cost of a slightly softer image. </p>
+<p>In titles where TAA is integral to shading (<em>Cyberpunk 2077</em> and its hair, for example), it can be left enabled at the cost of a slightly softer image. </p>
 <p>It is <strong>not</strong> recommended to have a sharpening pass prior to the render. Sharpening halos may become exaggerated and/or show up in the accumulation process.</p>
 <h3 id="have-fun-with-shaders">Have fun with shaders!<a class="headerlink" href="#have-fun-with-shaders" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>This add-on works great with ReShade shaders too! In fact, using a LUT prior to the render and saving the result in EXR can reduce colour banding, thanks to the stacking process. </p>
