@@ -73,6 +73,10 @@
 
 <li class="tocentry"><a href="#usage">Usage</a></li>
 
+<li class="tocentry"><a href="#photography-mode">Photography Mode</a></li>
+
+<li class="tocentry"><a href="#tweaking-mode">Tweaking Mode</a></li>
+
 <li class="tocentry"><a href="#adjusting-for-a-new-game">Adjusting for a new game</a></li>
 
 <li class="tocentry"><a href="#tips--tricks">Tips &amp; Tricks</a></li>
@@ -546,9 +550,9 @@
 <p>Once the add-on is set up, press <code>Ctrl+B</code> to begin the render. The final image is automatically saved to the same folder where your game EXE is located.</p>
 <p>The add-on also supports hotsampling! Simply start the render after hotsampling.</p>
 <hr />
-<h3 id="photography-mode">Photography Mode<a class="headerlink" href="#photography-mode" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<h2 id="photography-mode">Photography Mode<a class="headerlink" href="#photography-mode" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>This is the mode for controlling the add-on in a simplified manner. The controls are similar to that of a real camera. Values set in <code>Tweaking Mode</code> override those set in this mode.</p>
-<h4 id="cameralens-settings">Camera/Lens Settings<a class="headerlink" href="#cameralens-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<h3 id="cameralens-settings">Camera/Lens Settings<a class="headerlink" href="#cameralens-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p><strong>Focal Length</strong><br />
 The add-on translates the FOV it receives from the camera tool to focal length in mm. Useful for approximating real life focal lengths.</p>
 <p><strong>Aperture Size</strong><br />
@@ -566,11 +570,26 @@ This sets the focal plane. The arrows on the right change the step size of the s
 <p><strong>Blur Quality</strong><br />
 This sets how many samples are taken by the add-on, drastically affecting render times. Increase it if you notice undersampling (each point is clearly visible), decrease it if render times are taking too long. Translates to <em>Number of rings</em> in <code>Tweaking Mode</code>.</p>
 <p><strong>Lens Imperfections</strong><br />
-Toggles for some lens imperfections. Fringing introduces a bright ring around bokeh circles.</p>
+Toggles for some lens imperfections. Fringing introduces a bright ring around bokeh circles and its properties can be adjusted in <code>Tweaking Mode</code>.</p>
+<div class="slider container" style="aspect-ratio: 43/18">
+  <div class="slider__img slider__img-after">
+    <p>Scale: 0.6</br>Power: 6.0</p>
+    <img src="../../Images/MSADOF/comp_fringingOn.jpg" />
+  </div>
+  <div class="slider__img slider__img-before">
+    <p>No fringing</p>
+    <img src="../../Images/MSADOF/comp_fringingOff.jpg" />
+  </div>
+  <input type="range" min="0" max="100" value="50" step="0.01" 
+    id="slider" class="slider__input" 
+    autocomplete="off" onwheel="this.blur()" 
+  />
+</div>
+<div class="figure"><p>Note the slight difference in brightness. This is due to fringing process, which brightens the last few accumulations for the effect.</p></div>  
 <hr />
-<h3 id="tweaking-mode">Tweaking Mode<a class="headerlink" href="#tweaking-mode" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<h2 id="tweaking-mode">Tweaking Mode<a class="headerlink" href="#tweaking-mode" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>This is the mode for controlling the add-on in an advanced manner. </p>
-<h4 id="dof-settings">DOF Settings<a class="headerlink" href="#dof-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<h3 id="dof-settings">DOF Settings<a class="headerlink" href="#dof-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p><strong>Shape size</strong><br />
 This controls how large your bokeh will be. </p>
 <p><strong>Focus distance</strong><br />
@@ -578,7 +597,8 @@ This sets the focal plane. The arrows on the right change the step size of the s
 <p><strong>Increase focus precise at close range</strong><br />
 This changes the scaling of the focus distance slider. Higher values mean that the focus distance slider can operate in even smaller steps.</p>
 <p><strong>HDR Log Whitepoint</strong><br />
-Affects how bright pixels stack atop each other during the accumulation process.</p>
+Affects how bright pixels stack atop each other during the accumulation process. The default value of 2.0 provides the most natural highlighting.</p>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Whitepoint-01.jpg" alt="HDR Log Whitepoint" class="shadowed autosize" width="1680" height="700" /></p>
 <p><strong>Frames to skip</strong><br />
 Skips camera movement of every few frames to make accumulation more consistent. Depending on the performance of your game, this value might have to be changed. If you notice that the add-on is drawing rings/donuts on your focus plane, this value likely has to be changed.</p>
 <p><strong>Frames to wait</strong><br />
@@ -588,8 +608,23 @@ Overlays a plane on screen. Where the plane intersects the scene is where your f
 <p><strong>Show rendering progress</strong><br />
 Displays a progress bar.</p>
 <p><strong>Save 32-bit EXR</strong><br />
-As the accumulation process can introduce banding, this option stacks the accumulated frames into a higher-precision buffer, alleviating the banding. The saved EXR requires <a href="#processing-saved-exrs">further post-processing</a> to produce the intended result.</p>
-<h4 id="shape-settings">Shape settings<a class="headerlink" href="#shape-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+As the accumulation process can introduce banding, this option stacks the accumulated frames into a higher-precision buffer. This buffer is saved into a high bit-depth (32-bit) EXR, which is able to store 65,536x more colours than the standard BMP. This results in much smoother gradients with zero banding, and comes with the added benefit of having much more colour data for colour grading in post. The saved EXR requires <a href="#processing-saved-exrs">further post-processing</a> to produce the intended result.</p>
+<div class="slider container" style="aspect-ratio: 43/15">
+  <div class="slider__img slider__img-after">
+    <p>Processed EXR</p>
+    <img src="../../Images/MSADOF/comp_capture-EXR.png" />
+  </div>
+  <div class="slider__img slider__img-before">
+    <p>BMP capture</p>
+    <img src="../../Images/MSADOF/comp_capture-BMP.png" />
+  </div>
+  <input type="range" min="0" max="100" value="50" step="0.01" 
+    id="slider" class="slider__input" 
+    autocomplete="off" onwheel="this.blur()" 
+  />
+</div>
+<div class="figure"><p>Note that <b>exposure has been pushed by 3 stops</b> to highlight banding as well as show how much these 32-bit EXRs can be edited.</p></div>  
+<h3 id="shape-settings">Shape settings<a class="headerlink" href="#shape-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>These controls configure the shape of the bokeh circles. A preview of the shape can be seen in the UI.</p>
 <p><strong>Preview size</strong><br />
 Changes the scale of each point only in the preview window above it.</p>
@@ -608,9 +643,9 @@ Introduces swirl to bokeh, useful for Helios-style swirly bokeh.<br />
 Modifies how much the inner rings are darkened to introduce fringing to the bokeh.</p>
 <p><strong>Fringing power</strong><br />
 Modifies the falloff of the darkening to sharpen the fringing.</p>
-<h4 id="additional-info">Additional info<a class="headerlink" href="#additional-info" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<h3 id="additional-info">Additional info<a class="headerlink" href="#additional-info" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>This category displays useful as well as debug information. </p>
-<h4 id="game-adjustments">Game Adjustments<a class="headerlink" href="#game-adjustments" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<h3 id="game-adjustments">Game Adjustments<a class="headerlink" href="#game-adjustments" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>This category is to be left alone, as it is for first time configuration of a new game. See the section directly below on how to tweak it.</p>
 <hr />
 <h2 id="adjusting-for-a-new-game">Adjusting for a new game<a class="headerlink" href="#adjusting-for-a-new-game" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
@@ -618,15 +653,15 @@ Modifies the falloff of the darkening to sharpen the fringing.</p>
 <h4 id="checking-x-and-y">1. Checking X and Y<a class="headerlink" href="#checking-x-and-y" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>Before adjusting anything, do a quick render to judge the shape of the bokeh. You may have to adjust <em>Camera movement multiplier</em> and/or bring up <em>Focus distance</em> if the shape size is too dramatic, nothing seems to be happening, or you get a kaleidoscope effect.</p>
 <p>If the shape of the rendered bokeh is not perfectly circular, the <strong>Flip X</strong> and <strong>Flip Y</strong> checkboxes have to be configured. Mess around with them until the rendered result is circular.</p>
-<h4 id="calibrating-the-focus-plane">2. Calibrating the focus plane<a class="headerlink" href="#calibrating-the-focus-plane" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<h4 id="max-fov-value">2. Max FOV Value<a class="headerlink" href="#max-fov-value" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>Set your game to run in a 1:1 aspect ratio. Switch the add-on UI to <code>Tweaking Mode</code> and expand <em>Additional info</em>, keeping your eye on FOV. With the tool's free camera active, zoom out until the image flips. Note the FOV value at which this occurs, that will be the <strong>Max FOV Value</strong>.</p>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This value can typically be left at 180 for the majority of games.</p>
+</div><h4 id="calibrating-the-focus-plane">3. Calibrating the focus plane<a class="headerlink" href="#calibrating-the-focus-plane" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>This step requires quite a bit of trial &amp; error, as it involves messing with <em>Focus distance</em> until the focus plane is found. A high amount of blur (large <em>Shape size</em> / <em>Camera movement multiplier</em>) is recommended to help pinpoint the focus point.</p>
 <p>If you're struggling to find an area in focus and the results are consistently blurry, you might have to configure <em>Frames to skip</em>. The add-on drawing rings/donuts is usually a tell-tale sign of this.</p>
 <p><img src="../../Images/MSADOF/ringing.png" alt="ringing example" class="shadowed autosize" width="237" height="244" /></p>
 <p>Once you've managed to find the focus plane, adjust <strong>Camera near plane</strong> with <em>Show focus plane</em> ticked until the focus helper plane aligns with the actual focus plane. </p>
 <div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>Motion blur (and some TAA implementations) can interfere with this part, causing your results to be blurry no matter what. Be sure to disable them if you're still having trouble.</p>
-</div><h4 id="max-fov-value">3. Max FOV Value<a class="headerlink" href="#max-fov-value" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
-<p>Set your game to run in a 1:1 aspect ratio. Switch the add-on UI to <code>Tweaking Mode</code> and expand <em>Additional info</em>, keeping your eye on FOV. With the tool's free camera active, zoom out until the image flips. Note the FOV value at which this occurs, that will be the <strong>Max FOV Value</strong>.</p>
-<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This value can typically be left at 180 for the majority of games.</p>
 </div><h4 id="variable-near-plane">4. Variable Near Plane<a class="headerlink" href="#variable-near-plane" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>This checkbox should be ticked if the focus helper no longer aligns with the focus distance when the aspect ratio is changed. </p>
 <h4 id="done">Done!<a class="headerlink" href="#done" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
@@ -655,7 +690,7 @@ Modifies the falloff of the darkening to sharpen the fringing.</p>
 <h2 id="processing-saved-exrs">Processing saved EXRs<a class="headerlink" href="#processing-saved-exrs" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>The saved EXRs require gamma correction to look as they did on your screen, instead of a washed-out image. This is easiest done with Adobe Photoshop, however any editor that can open EXRs and perform gamma correction would also work.</p>
 <p>The EXRs are saved in linear gamma (gamma 1.0), so a simple gamma correction of 0.454545... (repeating) returns an image at the proper sRGB gamma of 2.2.</p>
-<p>This can be done with <em>Image</em> &gt; <em>Adjustments</em> &gt; <em>Exposure...</em> or with the Exposure adjusment layer in Photoshop.</p>
+<p>This can be done with <em>Image</em> &gt; <em>Adjustments</em> &gt; <em>Exposure...</em> or with the Exposure adjustment layer in Photoshop.</p>
 <p><img src="../../Images/MSADOF/MSADOF_Addon_EXR-Processing.jpg" alt="Aspect Ratio" class="shadowed autosize" width="1245" height="400" /></p>
 
                     </div>
