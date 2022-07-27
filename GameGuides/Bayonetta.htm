@@ -269,11 +269,11 @@
 </tr>
 <tr>
 	<td>Custom Aspect Ratios</td>
-	<td>Yes, see notes</td>
+	<td>Yes, <a href="#aspect-ratio">see notes</a></td>
 </tr>
 <tr>
 	<td>Reshade</td>
-	<td>Yes</td>
+	<td>Yes (DX9)</td>
 </tr>
 <tr>
 	<td>Ansel</td>
@@ -293,8 +293,8 @@
 <ul>
 <li><a href="..\CheatTables\Bayonetta_v2.CT">Cheat Engine Table</a><br />
 <strong>Features</strong>: Camera control, FOV control, Timeflow control, Vignette removal, Cheats  </li>
-<li><a href="https://mega.nz/file/qZI01b4b#Xs0WwnrIND4yah9Y2niF1Ux02KoRPyB3nVmeDEbfmqU" target="_blank">Hud Removal Tool</a>
-<strong>Features</strong>: Pause menu HUD toggle using Reshade add-on ShaderToggler</li>
+<li><a href="https://mega.nz/file/qZI01b4b#Xs0WwnrIND4yah9Y2niF1Ux02KoRPyB3nVmeDEbfmqU" target="_blank">Hud Removal Tool</a><br />
+<strong>Features</strong>: Pause menu HUD toggle using the <a href="https://github.com/FransBouma/ShaderToggler" target="_blank">ShaderToggler</a> ReShade add-on </li>
 </ul>
 <h2 id="controls">Controls<a class="headerlink" href="#controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
@@ -395,16 +395,16 @@
 </tr>
 </tbody>
 </table>
-<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The in-game camera is this games most difficult boss...and this free camera is no exception to that jankiness. Expect stange camera behaviour in certain levels and no proper camera control during cutscenes or any time the camera control is taken away from the player.</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The in-game camera is this game's most difficult boss... and this free camera is no exception to that jankiness. Expect strange camera behaviour in certain levels and no proper camera control during cutscenes or any time the camera control is taken away from the player.</p>
 </div><h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <h3 id="resolution">Resolution<a class="headerlink" href="#resolution" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>Hotsampling does not work but the resolution can be changed in the in-game settings to any DSR resolution while the game is paused.</p>
+<p>Hotsampling does not work, but the resolution can be changed in the in-game settings to any DSR resolution while the game is paused.</p>
 <h3 id="aspect-ratio">Aspect Ratio<a class="headerlink" href="#aspect-ratio" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>The game supports different aspect ratios. Go to .\Bayonetta\aspect unlock folder and add the registry entry by double clicking <code>DisableAspectLock.reg</code> or right-click selecting merge. </p>
+<p>The game supports different aspect ratios. Go to <code>.\Bayonetta\aspect unlock</code> folder and add the registry entry by double clicking <code>DisableAspectLock.reg</code> or right-click selecting merge. </p>
 <h3 id="vsync">VSync<a class="headerlink" href="#vsync" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>The in-game VSync is horrendous. Disable that and enable it in your graphic cards control panel. In NVidia Control Panel set the game specific VSync setting to <code>FAST</code>.</p>
+<p>The in-game VSync is horrendous. Disable that and enable it in your graphics card's control panel. In NVidia Control Panel set the game specific VSync setting to <code>FAST</code>.</p>
 <h3 id="reshade-and-msaa">Reshade and MSAA<a class="headerlink" href="#reshade-and-msaa" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>Reshade depth buffer works well in this game even with in-game MSAA enabled. </p>
+<p>Reshade depth buffer detection works well in this game, even with in-game MSAA enabled. </p>
 <p>Use below depth buffer values in Reshade 5.x </p>
 <ul>
 <li>RESHADE_DEPTH_LINEARIZATION_FAR_PLANE=1000</li>
@@ -413,7 +413,7 @@
 <li>RESHADE_DEPTH_INPUT_IS_LOGARITHMIC=0</li>
 </ul>
 <h3 id="pause-menu-camera">Pause Menu Camera<a class="headerlink" href="#pause-menu-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>When in the pause menu the camera position can be moved around the scene. This does not allow for camera rotation or FOV and can be visually buggy but it works any time an in-engine cutscene is playing. No need to enable anything just use the below keys.</p>
+<p>When in the pause menu, the camera position can be moved around the scene. This does not allow for camera rotation or FOV and can be visually buggy, but it works any time an in-engine cutscene is playing. No need to enable anything, just use the below keys.</p>
 <table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
@@ -463,14 +463,14 @@
 </table>
 <h3 id="cheats">Cheats<a class="headerlink" href="#cheats" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
-<li>Press <code>F11</code> to enable/disable infinite health</li>
+<li>Press <code>F11</code> to enable/disable infinite health.</li>
 <li>There are two address values for the current magic and money values, these can be set manually.</li>
 </ul>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://www.pcgamingwiki.com/wiki/Bayonetta" target="_blank">PC Gaming Wiki</a></li>
 <li>Credit: cheats by fantomas and Zachillios </li>
-<li>Credit: lookat camera control script and LUA lifted from IDK31 &amp; Smithfield's Nier Automata table</li>
+<li>Credit: lookat camera control script and LUA lifted from IDK31 &amp; Smithfield's NieR:Automata table</li>
 </ul>
 
                     </div>
