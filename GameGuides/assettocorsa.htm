@@ -49,6 +49,8 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/alienisolation.htm">Alien Isolation</a>
 </li>
+<li class="tocentry"><a href="../GameGuides/americantruck.htm">American Truck Simulator</a>
+</li>
 <li class="tocentry"><a href="../GameGuides/ashen.htm">Ashen</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/assassins_creed_odyssey.htm">Assassin's Creed Odyssey</a>
@@ -68,6 +70,8 @@
 <li class="tocentry"><a href="#essentials">Essentials</a></li>
 
 <li class="tocentry"><a href="#tips-and-tricks">Tips and Tricks</a></li>
+
+<li class="tocentry"><a href="#game-setup">Game setup</a></li>
 
 <li class="tocentry"><a href="#useful-links">Useful Links</a></li>
 
@@ -239,7 +243,7 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../Images\assettoheader.png" alt="Game Title" title="Shot by tripps" class="shadowed autosize" width="896" height="180" />
+<img src="../Images\assettoheader.png" alt="Assetto Corsa" title="Shot by tripps" class="shadowed autosize" width="896" height="180" />
 <p>Shot by tripps</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
@@ -290,11 +294,15 @@
 <li><a href="https://www.racedepartment.com/downloads/sol.24914/" target="_blank">Sol by Peter Boese</a><br />
 <strong>Features</strong>: Full control over game weather, day and night cycle.</li>
 </ul>
-<p>Note: CSP and Sol are meant to be used together.</p>
-<h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>CSP and Sol are meant to be used together.</p>
+</div><h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <h3 id="photo-mode">Photo Mode<a class="headerlink" href="#photo-mode" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>The game has two free camera modes. F5 camera links the camera to the car, F7 camera is unlinked from the car. Both cameras have different controls.</p>
 <p>Turn on the app in-game from right side GUI to be able to control FOV, DOF, aspect ratio, shutter speed, change time and sun angle, turn on/off lights, hide driver.</p>
+<div class="figure">
+<img src="../Images\assettocorsa\assetto_photomode.png" title="Photomode" class="shadowed autosize" width="643" height="672" />
+<p>Photomode</p>
+</div>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Do not use Assetto's built-in camera mode, use CSP Photo Mode app.</p>
 </div><p>Screenshots must be taken in-game with Replay mode.</p>
 <ul>
@@ -349,15 +357,19 @@
 </tbody>
 </table>
 <h3 id="hotsampling">Hotsampling<a class="headerlink" href="#hotsampling" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>Possible with CSP Nice Screenshots extension. To enable set <code>Resolution Multiply</code> to a higher value under Accumulation AA in CSP Settings &gt; Nice Screenshots extension.</p>
-<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Checkerboarding effect visible with Resolution Multiply, any value over 2x will ruin your shot.</p>
+<p>Possible with CSP Nice Screenshots extension.</p>
+<div class="figure">
+<img src="../Images\assettocorsa\assetto_hotsample.png" title="Hotsampling" class="shadowed autosize" width="1053" height="219" />
+<p>Hotsampling</p>
+</div>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Checkerboarding effect visible with &quot;Resolution Multiply&quot;, any value over <strong>2x</strong> will ruin your shot.</p>
 </div><h3 id="nice-screenshots-extension">Nice Screenshots extension<a class="headerlink" href="#nice-screenshots-extension" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>In CSP Settings &gt; Nice Screenshots, there is several things you can change on the fly while your game is open, and it will affect the game.
-There is also 3 things that overlap each other, so here's what you want to do if you want to use Accumulation AA, Accumulation DOF and Accumulation motion blur:</p>
-<p>In each effect, there's a &quot;Iterations&quot; setting, with different values
+<p>In CSP Settings &gt; Nice Screenshots, there are several things you can change on the fly with your game open which will affect the game.
+There are also 3 effects that overlap each other (Accumulation AA, Accumulation DOF and Accumulation motion blur), so here's what you want to do if you want to use them properly:</p>
+<p>In each effect, there's a &quot;Iterations&quot; setting, with a different value.
 They all do the same effect: take multiple photos and stitch them together, to smooth the 3 effects (AA, DOF, motion blur)
 Using all 3 of them at the highest values will either crash your game, or in the best case scenario, take 3 months to render.</p>
-<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>You only need to have one &quot;iteration&quot; value active to have a good result, you can always just put &quot;1&quot; or deactivate the effect when you don't use it.</p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>You only need to have one &quot;iteration&quot; value active to have a good result, you can always just put <strong>1</strong> or deactivate the effect when you don't use it.</p>
 </div><ul>
 <li>I want to take a static photo with no effects (no DOF or motion blur): AA iterations at 80 </li>
 <li>I want to take a photo with DOF and no motion blur: AA iterations at 1, DOF iterations at 1000 </li>
@@ -370,10 +382,29 @@ Play with the values, explore the settings and find out what can be useful for y
 <p>Most Post Processing filters have support for drag &amp; drop installation with Content Manager. For manual installation, go to your game's file directory and drag the files into:</p>
 <p><code>\assettocorsa\system\cfg\ppfilters</code></p>
 <p>Selecting filters is done from the CSP Photo Mode app or the separate Post Process Filter app.</p>
-<h3 id="game-setup">Game setup<a class="headerlink" href="#game-setup" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>From Content Manager in Assetto Corsa's System settings tick <code>Allow free camera</code>, untick <code>Orbit mode for F5 camera</code>, and select PNG in <code>Screenshots format</code>.</p>
-<p>Note: For Sol and CSP installation use their provided guides.</p>
-<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>For Reshade shaders to work in your Nice Screenshots extension photo exports, you need to have FXAA disabled in AC's video settings.</p>
+<div class="figure">
+<img src="../Images\assettocorsa\assetto_ppf.png" title="PPF" class="shadowed autosize" width="427" height="408" />
+<p>PPF</p>
+</div>
+<h3 id="motion-screenshots">Motion screenshots<a class="headerlink" href="#motion-screenshots" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>After setting everything up, the easiest way to take motion screenshots is by using the F5 camera in Replay mode, composing and taking your shot using F8 (Changing the amount of motion blur is done by changing the Shutter Speed in the Photo mode app). It is possible to switch the car being linked to the F5 camera by changing the Car value in the Replay menu.</p>
+<p>To take more experimental motion screenshots, the CSP Photo mode app has a separate button for Motion Shot (only available with &quot;FXAA&quot; <strong>enabled</strong>)</p>
+<div class="figure">
+<img src="../Images\assettocorsa\assetto_motionshot.png" title="Motion Shot" class="shadowed autosize" width="896" height="480" />
+<p>Motion Shot</p>
+</div>
+<p>After done composing your shot, click the green Make Shot button.</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>It is possible to do long exposures using the Make Shot feature by turning up the &quot;Brightness Boost&quot; to <strong>1000x</strong> in the Nice Screenshots extension settings, however the shot may very well take over 40 minutes to render.</p>
+</div><h2 id="game-setup">Game setup<a class="headerlink" href="#game-setup" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The basic essential settings to change are these</p>
+<div class="figure">
+<img src="../Images\assettocorsa\assetto_setup.png" title="Setup" class="shadowed autosize" width="841" height="221" />
+<p>Setup</p>
+</div>
+<p>Your &quot;assetto_corsa.ini&quot; may have to be set to read-only to prevent Content Manager from reverting to old settings.</p>
+<p>Go to <code>\assettocorsa\system\cfg</code>, open &quot;assetto_corsa.ini&quot; and change these values: <strong>[SCREENSHOT] FORMAT=PNG</strong> and <strong>[CAMERA] ALLOW FREE CAMERA=1</strong></p>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>For Sol and CSP installation use their provided guides.</p>
+</div><div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>For Reshade shaders to work in your Nice Screenshots extension photo exports, you need to have &quot;FXAA&quot; <strong>disabled</strong> in AC's video settings.</p>
 </div><div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>It's highly recommended to have separate gameplay and screenshot setting presets for high FPS and high graphics. You can switch between both with a right click anywhere in Content Manager, a menu will appear with the settings you saved.</p>
 </div><h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
