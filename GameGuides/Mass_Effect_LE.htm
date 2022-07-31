@@ -10,8 +10,8 @@
 
     <title>Mass Effect Legendary Edition - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../css/theme_20220426.css" type="text/css" />
-    <link rel="stylesheet" href="../css/theme_colors_20220415.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_20220731.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors_20220731.css" type="text/css" />
     <link rel="stylesheet" href="../css/styles/vs.css">
     <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
 </head>
@@ -303,33 +303,32 @@
 <strong>Features</strong>: Free Camera Control within the Photomode</li>
 <li><a href="https://www.nexusmods.com/masseffectlegendaryedition/mods/2?tab=files&amp;file_id=4619" target="_blank">ME3 Tweaks Mod Manager</a><br />
 <strong>Features</strong>: Unlocks the Command-Console, allows to unpack/pack coalesced files, HUD-Toggle via Console  </li>
-<li><a href="https://www.nexusmods.com/masseffect3/mods/76" target="_blank">Wenched Coalesced Editor</a>
+<li><a href="https://www.nexusmods.com/masseffect3/mods/76" target="_blank">Wenched Coalesced Editor</a><br />
 <strong>Features</strong>: Allowing you to edit ME's Coalesced File without unpacking it to access the BIOInput.ini</li>
 </ul>
 <p>We will be using the photomode for gameplay shots and the FlyCam/DebugCam for cutscene shots.</p>
 <h2 id="controls">Controls<a class="headerlink" href="#controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>You can set keybinds in the Cheat Table for the no boundaries functionality.</p>
 <h2 id="access-to-the-ingame-console-and-editing-.ini--coalesced-files">Access to the ingame console and Editing .ini + Coalesced Files<a class="headerlink" href="#access-to-the-ingame-console-and-editing-.ini--coalesced-files" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>If you want to use additional keybinds you need to unpack - edit - repack the Coalesced Files for Mass Effect 2 and Mass Effect 3. The following informations are taken from a older source which isn't available anymore.</p>
+<p>If you want to use additional keybinds, you need to unpack - edit - repack the Coalesced Files for Mass Effect 2 and Mass Effect 3. The following information is taken from a older source which isn't available anymore.</p>
 <h2 id="enabling-the-console">Enabling the Console<a class="headerlink" href="#enabling-the-console" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>To gain access to the console within the game download the ME3 Tweaks Mod Manager. 
-I didn't get around to test the feature myself but I suspect that you simply start the game trough the Mod Manager, according to online sources this will enable the ingame console by default in any of the games. </p>
-<p>To change the keybind head to the <code>Tools</code> section in the Mod Manager and choose 
+<p>To gain access to the console within the game, download the ME3 Tweaks Mod Manager. Starting the game through the mod manager should enable the in-game console in all three games.</p>
+<p>To change the keybind, head to the <code>Tools</code> section in the Mod Manager and choose 
 <code>Console Key Keybinder</code>. Set the bind to your likeing. </p>
 <p>Additional Information can be found here: 
-- http://www.nightsolo.net/games/mele/cheats.html
-- https://www.nexusmods.com/masseffectlegendaryedition/mods/2?tab=description
-- https://github.com/ME3Tweaks/ME3TweaksModManager</p>
+- <a href="http://www.nightsolo.net/games/mele/cheats.html" target="_blank">List of console commands</a> (Nightsolo)
+- <a href="https://www.nexusmods.com/masseffectlegendaryedition/mods/2?tab=description" target="_blank">ME3Tweaks Mod Manager</a> (Nexus Mods)
+- <a href="https://github.com/ME3Tweaks/ME3TweaksModManager" target="_blank">ME3Tweaks Mod Manager Source</a> (Github)</p>
 <h2 id="custom-resolutions">Custom Resolutions<a class="headerlink" href="#custom-resolutions" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Via console it is possible to change the game resoltion on the fly with the <code>setres</code> command. </p>
+<p>Through the console, it is possible to change the game resolution on the fly with the <code>setres</code> command. </p>
 <p>Typing in <code>setres 2560x1440</code> will set the game to the desired resolution. </p>
-<p>It's also possible to add this command to the BIOInput to exchange between resolutions even quicker. </p>
+<p>These commands can also be added to the BioInput to change between resolutions even quicker.</p>
 <p>Example:</p>
 <pre class="nocode">Bindings=(Name=&quot;U&quot;,Command=&quot;setres 5120x2880&quot;,Control=False,Shift=False,Alt=False,bIgnoreCtrl=False,bIgnoreShift=False,bIgnoreAlt=False)
-</pre><p>By using the <code>Ctrl</code> / <code>Alt</code> / <code>Shift</code> modifiers you can set multiple resolutions to one key: </p>
+</pre><p>By using the <code>Ctrl</code> / <code>Alt</code> / <code>Shift</code> modifiers, you can set multiple resolutions to one key: </p>
 <pre class="nocode">Bindings=(Name=&quot;U&quot;,Command=&quot;setres 1920x1080&quot;,Control=False,Shift=False,Alt=True,bIgnoreCtrl=False,bIgnoreShift=False,bIgnoreAlt=False)
 </pre><p>It is important that the resolutions that you want to use are either supported by your default and/or custom DSR settings. It's also possible to use the outdated downsample &amp; post-processing tool GeDoSato for the same matter.</p>
-<p>Either way the resolution you bind via key or type into the console need to be mirrored in your DSR settings or GeDoSaTo config.</p>
+<p>Either way, the resolution you bind via key or type into the console need to be mirrored in your DSR settings or GeDoSaTo config.</p>
 <h2 id="hud-removal">Hud Removal<a class="headerlink" href="#hud-removal" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ol>
 <li>To remove the hud you can either disable it completely within the Photomode. </li>
@@ -348,11 +347,11 @@ Bindings=(Name=&quot;NumPadEight&quot;,Command=&quot;walk&quot;)
 Bindings=(Name=&quot;NumPadNine&quot;,Command=&quot;ToggleFlyCam&quot;)
 Bindings=(Name=&quot;Multiply&quot;,Command=&quot;PlayersOnly&quot;)
 </pre><h2 id="mass-effect-2">Mass Effect 2<a class="headerlink" href="#mass-effect-2" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>This is where things will get a bit more tricky, thanks to the updated Mod Manager the process got a lot easier though. </p>
-<p>To unpack the Mass Effect 2 Coalesced head to <code>Mass Effect 2\BIOGame\CookedPCConsole</code> in your installation location of ME 2. </p>
-<p>Search for <code>Coalesced_Language.bin</code> or simply choose <code>Coalesced_INT.bin</code> - Do a back-up!</p>
+<p>This is where things will get a bit more tricky, but thanks to the updated Mod Manager, the process has become a lot easier. </p>
+<p>To unpack the Mass Effect 2 Coalesced, head to <code>Mass Effect 2\BIOGame\CookedPCConsole</code> in your installation location of ME 2. </p>
+<p>Search for <code>Coalesced_Language.bin</code> or simply choose <code>Coalesced_INT.bin</code> - <strong>Do a back-up!</strong></p>
 <p>Drag the file into the ME3TweaksModManager, in the left bottom are of the program window you'll get the following message: &quot;Decompiled Coalesced file&quot;</p>
-<p>If you head into the location of your choosen Coalesced File there will be a folder called the same name. Within that folder search for <code>BIOInput.ini</code>. Within that ini you need to perform multiple edits.</p>
+<p>If you head into the location of your choosen Coalesced File, there will be a folder called the same name. Within that folder search for <code>BIOInput.ini</code>. Within that ini you need to perform multiple edits.</p>
 <pre class="nocode">[SFXGameModeBase]
 (Name=&quot;F12&quot;,Command=&quot;Show Scaleform&quot;)
 (Name=&quot;F11&quot;,Command=&quot;PlayersOnly&quot;)
@@ -416,20 +415,17 @@ Bindings=(Name=&quot;Multiply&quot;,Command=&quot;PlayersOnly&quot;)
 (Name=&quot;F3&quot;,Command=&quot;God&quot;)
 (Name=&quot;F8&quot;,Command=&quot;Ghost&quot;)
 (Name=&quot;F4&quot;,Command=&quot;Walk&quot;)
-</pre><p>When you finished adding the commands, save the file and close it.
-Now search within the prior mentioned folder (where you grabbed the .ini from) and locate the follwing file <code>mele.extractedbin</code>.
-Drag that file into the ME3TweaksModManager and in the bottom left the following message should appear [Compiled Coalesced File].
-Within the folder you should find the new Coalesced. Drag this one into the <code>Mass Effect 2\BIOGame\CookedPCConsole</code>.</p>
+</pre><p>When you finished adding the commands, save the file and close it. Now, search within the previously mentioned folder (where you grabbed the .ini from) and locate the following file: <code>mele.extractedbin</code>. Drag that file into the ME3TweaksModManager and in the bottom left, the following message should appear [Compiled Coalesced File]. Within the folder you should find the new Coalesced. Drag this one into the <code>Mass Effect 2\BIOGame\CookedPCConsole</code>.</p>
 <h2 id="mass-effect-3">Mass Effect 3<a class="headerlink" href="#mass-effect-3" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>For Mass Effect 3 the process is a bit more straight forward, however it's up to you if you want to perform the edits by hand in Notepad etc. according to the prior mentioned process for ME2 or if you want to use the Wenched Coalesced Editor which allows you to directly edit the file without unpacking it first.</p>
-<p>Either way you need to perform the same steps.</p>
+<p>For Mass Effect 3, the process is a bit more straightforward, however it's up to you if you want to perform the edits by hand in Notepad etc. according to the previously mentioned process for ME2 or if you want to use the Wenched Coalesced Editor which allows you to directly edit the file without unpacking it first.</p>
+<p>Either way, the initial steps are the same.</p>
 <ol>
 <li>Navigate to <code>Mass Effect 3\BIOGame\CookedPCConsole</code></li>
 <li>Locate the <code>Coalesced.bin</code> file</li>
 </ol>
-<p>Perform the unpacking steps mentioned above or open up the file with the Coalesced Editor.
+<p>Perform the unpacking steps mentioned above, or open up the file with the Coalesced Editor.
 If you choose the Editor: open it up, load the file and head to the <code>SFXGAME</code> tab.</p>
-<p>Add the follwing commands under each named section:</p>
+<p>Add the following commands under each named section:</p>
 <pre class="nocode">[SFXGameModeCinematic]
 (Name=&quot;MouseX&quot;, Command=&quot;PC_LookX&quot;)
 (Name=&quot;MouseY&quot;, Command=&quot;PC_LookY&quot;) 
@@ -525,14 +521,14 @@ If you choose the Editor: open it up, load the file and head to the <code>SFXGAM
 (Name=&quot;Period&quot;, Command=&quot;set HeightFogComponent bEnabled True&quot;)
 (Name=&quot;F1&quot;, Command=&quot;initcredits 9999999&quot;)
 </pre><h2 id="fix-shadow-banding-in-the-trilogy">Fix Shadow Banding in the Trilogy<a class="headerlink" href="#fix-shadow-banding-in-the-trilogy" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>In <code>BioEngine.ini</code> locate <code>SystemSettings</code> and add or change the follwing lines:</p>
+<p>In <code>BioEngine.ini</code> locate <code>SystemSettings</code> and add or change the following lines:</p>
 <pre class="nocode">bEnableVSMShadows=True
 bEnableBranchingPCFShadows=False
 bAllowHardwareShadowFiltering=True
 ShadowDepthBias=0.100
 </pre><h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Obviously you can change the keys for the above mentioned keys to your likeing, but keep in mind that they need to look the same under every section.
-It's also possible to use the majority - if not all - binds via the console. </p>
+<p>Obviously, you can change the keys for the above mentioned keys to your liking, but keep in mind that they need to look the same under every section.
+It's also possible to use the majority - if not all - of the binds via the console. </p>
 <h3 id="additional-commands">Additional-Commands<a class="headerlink" href="#additional-commands" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <table class="table table-bordered-all table-responsive">
 <thead>
@@ -570,8 +566,8 @@ It's also possible to use the majority - if not all - binds via the console. </p
 </table>
 <p>You can find more commands in the <a href="https://docs.unrealengine.com/udk/Three/ConsoleCommands.html" target="_blank">UE3 Console Commands List</a>.</p>
 <h3 id="combination-of-console-commands">Combination of Console Commands<a class="headerlink" href="#combination-of-console-commands" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>For even more freedom you can combine the command ghost with teleport. By using that &quot;trick&quot; you can access area's which are locked behind cutscenes.
-Shoutout to my man ItsYfP for digging this one up.</p>
+<p>For even more freedom, you can combine the command ghost with teleport. By using that &quot;trick&quot;, you can access areas locked behind cutscenes.
+<em>Shoutout to my man ItsYFP for digging this one up.</em></p>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://www.pcgamingwiki.com/wiki/Mass_Effect_Legendary_Edition" target="_blank">PC Gaming Wiki</a></li>

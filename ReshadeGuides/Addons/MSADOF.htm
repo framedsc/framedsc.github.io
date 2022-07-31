@@ -10,8 +10,8 @@
 
     <title>MSADOF - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../css/theme_20220426.css" type="text/css" />
-    <link rel="stylesheet" href="../../css/theme_colors_20220415.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/theme_20220731.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/theme_colors_20220731.css" type="text/css" />
     <link rel="stylesheet" href="../../css/styles/vs.css">
     <link rel="stylesheet" href="../../css/font-awesome.4.5.0.min.css">
 </head>
@@ -221,9 +221,7 @@
 <hr />
 <h2 id="list-of-preconfigured-values">List of preconfigured values<a class="headerlink" href="#list-of-preconfigured-values" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>As setting MSADOF up from scratch can be tricky, this is a compilation of known MSADOF values for games that have been tested. With the GUI open, click on <strong>Switch Mode</strong> to switch from <code>Photography Mode</code> to <code>Tweaking Mode</code>. Scroll down and expand <strong>Game Adjustments</strong> to add these values. You may also have to change some values in <strong>DOF Settings</strong>.</p>
-<p><img src="../../Images/MSADOF/MSADOF_Addon_tweakingMode_01.png" alt="Example of DOF Settings and Game Adjustments" class="shadowed autosize" width="490" height="396" /></p>
-<p><details>
-  <summary><b>View list</b></summary></p>
+<p><details><summary class=important>View list</summary></p>
 <div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The <em>Frames to skip</em> parameter is dependent on your own hardware and the current performance of the game. Do tweak the value if you notice that the image isn't sharp or if there are <a href="#calibrating-the-focus-plane">visible rings</a> forming.</p>
 </div><table class="table table-bordered-all table-responsive">
 <thead>
@@ -337,7 +335,7 @@
 	<td>4</td>
 	<td>0.001</td>
 	<td>X</td>
-	<td>Might require raytracing / a low framerate under vsync targets.</td>
+	<td>Might require raytracing / a low framerate under vsync targets. Focus precision of 8 is recommended for portraits.</td>
 </tr>
 <tr>
 	<td>Days Gone</td>
@@ -554,6 +552,7 @@
 <h2 id="photography-mode">Photography Mode<a class="headerlink" href="#photography-mode" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>This is the mode for controlling the add-on in a simplified manner. The controls are similar to that of a real camera. Values set in <code>Tweaking Mode</code> override those set in this mode.</p>
 <h3 id="cameralens-settings">Camera/Lens Settings<a class="headerlink" href="#cameralens-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Settings_CameraLens.png" alt="Screenshot of the Camera/Lens UI" class="shadowed autosize" width="500" height="342" /></p>
 <p><strong>Focal Length</strong><br />
 The add-on translates the FOV it receives from the camera tool to focal length in mm. Useful for approximating real life focal lengths.</p>
 <p><strong>Aperture Size</strong><br />
@@ -587,16 +586,22 @@ Toggles for some lens imperfections. Fringing introduces a bright ring around bo
   />
 </div>
 <div class="figure"><p>Note the slight difference in brightness. This is due to the fringing process brightening the last few accumulations to produce the effect.</p></div>  
+<h3 id="helpers-settings">Helpers Settings<a class="headerlink" href="#helpers-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><strong>Show focus plane</strong><br />
+Overlays a plane on screen. Where the plane cuts the scene is where the focus distance is set.</p>
+<p><strong>Show rendering progress</strong><br />
+Displays a progress bar.</p>
 <hr />
 <h2 id="tweaking-mode">Tweaking Mode<a class="headerlink" href="#tweaking-mode" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>This is the mode for controlling the add-on in an advanced manner. </p>
 <h3 id="dof-settings">DOF Settings<a class="headerlink" href="#dof-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Settings_DOF.png" alt="Screenshot of the DOF UI" class="shadowed autosize" width="500" height="234" /></p>
 <p><strong>Shape size</strong><br />
 This controls how large your bokeh will be. </p>
 <p><strong>Focus distance</strong><br />
 This sets the focal plane. The arrows on the right change the step size of the slider.</p>
 <p><strong>Increase focus precise at close range</strong><br />
-This changes the scaling of the focus distance slider. Higher values mean that the focus distance slider can operate in even smaller steps.</p>
+This changes the scaling of the focus distance slider. Higher values mean that the focus distance slider can operate in even smaller steps. This is useful for portraits, where extra focus precision is desired.</p>
 <p><strong>HDR Log Whitepoint</strong><br />
 Affects how bright pixels stack atop each other during the accumulation process. The default value of 2.0 provides the most natural highlighting.</p>
 <p><img src="../../Images/MSADOF/MSADOF_Addon_Whitepoint-01.jpg" alt="HDR Log Whitepoint" class="shadowed autosize" width="1680" height="700" /></p>
@@ -626,6 +631,7 @@ As the accumulation process can introduce banding, this option stacks the accumu
 </div>
 <div class="figure"><p>Note that <b>exposure has been pushed by 3 stops</b> to highlight banding as well as show how much these 32-bit EXRs can be edited.</p></div>  
 <h3 id="shape-settings">Shape settings<a class="headerlink" href="#shape-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Settings_ShapeSettings.png" alt="Screenshot of the Shape UI" class="shadowed autosize" width="500" height="611" /></p>
 <p>These controls configure the shape of the bokeh circles. A preview of the shape can be seen in the UI.</p>
 <p><strong>Preview size</strong><br />
 Changes the scale of each point only in the preview window above it.</p>
@@ -645,11 +651,13 @@ Modifies how much the outer rings are brightened to introduce fringing to the bo
 <p><strong>Fringing power</strong><br />
 Modifies the falloff of the darkening to sharpen the fringing.</p>
 <h3 id="additional-info">Additional info<a class="headerlink" href="#additional-info" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Settings_AddInfo.png" alt="Screenshot of the Additional Info UI" class="shadowed autosize" width="500" height="129" /></p>
 <p>This category displays useful as well as debug information. </p>
 <h3 id="game-adjustments">Game Adjustments<a class="headerlink" href="#game-adjustments" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>This category is to be left alone, as it is for first time configuration of a new game. See the section directly below on how to tweak it.</p>
 <hr />
 <h2 id="adjusting-for-a-new-game">Adjusting for a new game<a class="headerlink" href="#adjusting-for-a-new-game" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Settings_GameAdjustments.png" alt="Screenshot of the Game Adjustments UI" class="shadowed autosize" width="500" height="160" /></p>
 <p>If you're playing a game that does not have known values yet or the values produce wrong results on your end, this is the process of setting up the <em>Game Adjustments</em> tab.</p>
 <h4 id="checking-x-and-y">1. Checking X and Y<a class="headerlink" href="#checking-x-and-y" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>Before adjusting anything, do a quick render to judge the shape of the bokeh. You may have to adjust <em>Camera movement multiplier</em> and/or bring up <em>Focus distance</em> if the shape size is too dramatic, nothing seems to be happening, or you get a kaleidoscope effect.</p>
