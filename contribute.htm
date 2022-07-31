@@ -52,6 +52,10 @@
 
 <li class="tocentry"><a href="#images">Images</a></li>
 
+<li class="tocentry"><a href="#alert-boxes">Alert boxes</a></li>
+
+<li class="tocentry"><a href="#summaries">Summaries</a></li>
+
 <li class="tocentry"><a href="#image-comparisons">Image comparisons</a></li>
 
 <li class="tocentry"><a href="#controller-buttons">Controller buttons</a></li>
@@ -107,7 +111,7 @@
 <hr />
 <h2 id="writing-guides">Writing guides<a class="headerlink" href="#writing-guides" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>If you're interested in writing a guide for the site, please <a href="https://mega.nz/file/rU8znZLT#gf0ifHl5hH3m8Hg44FVQQZkx8Cr4lGZB-yX8pZWJvPk" target="_blank">download this template</a>. It contains everything you need to get started - a Markdown template for a game guide and a .PSD + font file to generate a header. There are two versions of guide templates, one for <a href="./Gameguides.htm">PC guides</a> and one for <a href="./Consoleguides.htm">Console guides</a>.</p>
-<p>We recommend writing with <a href="https://vscode.dev/" target="_blank">Visual Studio Code</a> as it has a Markdown preview similar to how the site looks. The site is built with DocNet, however, which includes Markdown extensions not found in the VS Code preview. Learn more about <a href="http://fransbouma.github.io/DocNet/WritingcontentusingMarkdown.htm" target="_blank">DocNet's additional features</a>.</p>
+<p>We recommend writing with <a href="https://vscode.dev/" target="_blank">Visual Studio Code</a> as it has a Markdown preview similar to how the site looks. The site is built with DocNet, however, which includes Markdown extensions not found in the VS Code preview. Learn more about <a href="http://fransbouma.github.io/DocNet/WritingcontentusingMarkdown.htm" target="_blank">DocNet's additional features</a>, or continue reading to learn about some handy formatting features.</p>
 <p>The site also supports HTML in Markdown if you want the formatting of your guides to be a little fancier. The centred text above was written in the .MD like so:</p>
 <pre><code class="HTML">&lt;center&gt; &lt;b&gt;&lt;font size=+3 face=&quot;Galano Grotesque Alt&quot;&gt;We want you!&lt;/font&gt;&lt;/b&gt; &lt;br&gt;
 &lt;i&gt;We're looking for authors! Don't know what to write? Check our&lt;/i&gt; &lt;a href=&quot;&lt;URL&gt;&quot; target=&quot;_blank&quot;&gt;&lt;b&gt;issue tracker&lt;/b&gt;&lt;/a&gt;. &lt;/center&gt;
@@ -186,6 +190,39 @@
 <h4 id="accepted-images">Accepted images<a class="headerlink" href="#accepted-images" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>Images on the site should be in a .PNG / high-quality .JPG format, under 1MB. While there are no current size limits, images on the site are resized to 896px width (with the .autosize tag, which should be added to all images). They don't have to be resized to that width, but we would prefer it if you kept image sizes reasonable.</p>
 <p>For excessively large images (say you want to include a full-res screenshot for some reason), they may be hosted externally. Use a trusted, reliable imagehost like <a href="https://imgur.com/upload" target="_blank">Imgur</a>.</p>
+<hr />
+<h2 id="alert-boxes">Alert boxes<a class="headerlink" href="#alert-boxes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>You may have noticed that the site has a bunch of these alert boxes!</p>
+</div><div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>They're handy for highlighting certain pieces of information!</p>
+</div><div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Whether you want to break off a part of your guide to talk about it more in detail...</p>
+</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>...or if you want to warn users about something that could happen...</p>
+</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Alert boxes are a useful addition to your guide!</p>
+</div><div class="alert alert-danger"><span class="alert-title"><i class="fa fa-times-circle"></i> Danger!</span><p>FAILURE TO READ THE README WILL RESULT IN PROSECUTION.</p>
+</div><p>Alert boxes can be added by wrapping text around <code>@alert [box type]</code> and <code>@end</code>, like so:</p>
+<pre class="nocode">@alert neutral
+You may have noticed that the site has a bunch of these alert boxes!
+@end
+</pre><p>The box types mostly correspond to their title above, <code>@alert tip</code> produces a green alert box, <code>@alert info</code> produces a blue alert box, so on and so forth. The exception is <code>@alert neutral</code>, which produces the black alert boxes.</p>
+<hr />
+<h2 id="summaries">Summaries<a class="headerlink" href="#summaries" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Some parts of your guides can be hidden away by a dropdown if necessary.</p>
+<p><details>
+<summary>Click me!</summary>
+Hello! I'm some text that's been hidden away because I don't want to be visible all the time!
+</details></p>
+<p>These can be used to hide tables, images, or anything else that you feel might break the flow of the guide.</p>
+<pre><code class="HTML">&lt;details&gt;
+&lt;summary&gt;Click me!&lt;/summary&gt;
+Hello! I'm some text that's been hidden away because I don't want to be visible all the time!
+&lt;/details&gt;
+</code></pre>
+
+<p>These summaries also support an <code>important</code> class, if you need the dropdown to stand out. Use <code>&lt;summary class=important&gt;</code> to add one.
+<details>
+<summary class=important>Now you really have to click me!</summary>
+Hello! I'm even more text that's been hidden away, but my author really wanted you to read me. Maybe I'm supposed to be hiding a super long table that would interrupt the guide, but it's still an important table for you to be referencing at some point.  </p>
+<p>While we're here, it's a good time to should mention that these summary dropdowns <b>don't support punctuation formatting.</b> You need to use HTML to bold, italicise, and further format your text in these.
+</details></p>
 <hr />
 <h2 id="image-comparisons">Image comparisons<a class="headerlink" href="#image-comparisons" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>The site supports sliders to compare two images, if you'd like to show off a before/after or anything similar.</p>
