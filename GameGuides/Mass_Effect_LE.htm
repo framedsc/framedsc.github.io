@@ -296,8 +296,9 @@
 <li><a href="https://github.com/FransBouma/InjectableGenericCameraSystem/blob/master/MiscCheatTables/MassEffectLE.CT" target="_blank">Photo Mode Range Unlocker by Otis_Inf</a><br />
 <strong>Features</strong>: Free Camera Control within the Photomode</li>
 <li><a href="https://www.nexusmods.com/masseffectlegendaryedition/mods/2?tab=files&amp;file_id=4619" target="_blank">ME3 Tweaks Mod Manager</a><br />
-<strong>Features</strong>: Unlocks the Command-Console, allows to unpack/pack coalesced files, HUD-Toggle via Console  </li>
-<li><a href="https://www.nexusmods.com/masseffect3/mods/76" target="_blank">Wenched Coalesced Editor</a><br />
+<strong>Features</strong>: Unlocks the Command-Console, allows to unpack/pack coalesced files, HUD-Toggle via Console  
+</li>
+<li><a href="https://www.nexusmods.com/masseffect3/mods/76" target="_blank">Wench Coalesced Editor</a><br />
 <strong>Features</strong>: Allowing you to edit ME's Coalesced File without unpacking it to access the BIOInput.ini</li>
 </ul>
 <p>We will be using the photomode for gameplay shots and the FlyCam/DebugCam for cutscene shots.</p>
@@ -307,7 +308,7 @@
 <p>If you want to use additional keybinds, you need to unpack - edit - repack the Coalesced Files for Mass Effect 2 and Mass Effect 3. The following information is taken from a older source which isn't available anymore.</p>
 <h2 id="enabling-the-console">Enabling the Console<a class="headerlink" href="#enabling-the-console" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>To gain access to the console within the game, download the ME3 Tweaks Mod Manager. Starting the game through the mod manager should enable the in-game console in all three games.</p>
-<p>To change the keybind, head to the <code>Tools</code> section in the Mod Manager and choose 
+<p>To change the keybind, go to the <code>Tools</code> section in the Mod Manager and choose 
 <code>Console Key Keybinder</code>. Set the bind to your likeing. </p>
 <p>Additional Information can be found here: 
 - <a href="http://www.nightsolo.net/games/mele/cheats.html" target="_blank">List of console commands</a> (Nightsolo)
@@ -342,7 +343,7 @@ Bindings=(Name=&quot;NumPadNine&quot;,Command=&quot;ToggleFlyCam&quot;)
 Bindings=(Name=&quot;Multiply&quot;,Command=&quot;PlayersOnly&quot;)
 </pre><h2 id="mass-effect-2">Mass Effect 2<a class="headerlink" href="#mass-effect-2" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>This is where things will get a bit more tricky, but thanks to the updated Mod Manager, the process has become a lot easier. </p>
-<p>To unpack the Mass Effect 2 Coalesced, head to <code>Mass Effect 2\BIOGame\CookedPCConsole</code> in your installation location of ME 2. </p>
+<p>To unpack the Mass Effect 2 Coalesced, go to the folder <code>Mass Effect 2\BIOGame\CookedPCConsole</code> in your installation location of ME 2. </p>
 <p>Search for <code>Coalesced_Language.bin</code> or simply choose <code>Coalesced_INT.bin</code> - <strong>Do a back-up!</strong></p>
 <p>Drag the file into the ME3TweaksModManager, in the left bottom are of the program window you'll get the following message: &quot;Decompiled Coalesced file&quot;</p>
 <p>If you head into the location of your choosen Coalesced File, there will be a folder called the same name. Within that folder search for <code>BIOInput.ini</code>. Within that ini you need to perform multiple edits.</p>
@@ -418,7 +419,7 @@ Bindings=(Name=&quot;Multiply&quot;,Command=&quot;PlayersOnly&quot;)
 <li>Locate the <code>Coalesced.bin</code> file</li>
 </ol>
 <p>Perform the unpacking steps mentioned above, or open up the file with the Coalesced Editor.
-If you choose the Editor: open it up, load the file and head to the <code>SFXGAME</code> tab.</p>
+If you choose the Editor: start it and then load the file <code>Bioinput.ini</code> and within that file go to the <code>SFXGAME</code> tab.</p>
 <p>Add the following commands under each named section:</p>
 <pre class="nocode">[SFXGameModeCinematic]
 (Name=&quot;MouseX&quot;, Command=&quot;PC_LookX&quot;)
