@@ -110,7 +110,7 @@
 
 <li class="tocentry"><a href="#texturegraphic-mods">Texture/Graphic Mods</a></li>
 
-<li class="tocentry"><a href="#tweaks">Tweaks</a></li>
+<li class="tocentry"><a href="#tweaks--tips">Tweaks &amp; tips</a></li>
 
 <li class="tocentry"><a href="#useful-links">Useful Links</a></li>
 
@@ -249,7 +249,7 @@
 </tr>
 <tr>
 	<td>Hotsampling</td>
-	<td>Yes (with tools, dx12 only)</td>
+	<td>Yes <a href="#hotsampling">see notes</a></td>
 </tr>
 <tr>
 	<td>DSR</td>
@@ -257,7 +257,7 @@
 </tr>
 <tr>
 	<td>Custom Aspect Ratios</td>
-	<td>Yes (with tools)</td>
+	<td>Yes <a href="https://framedsc.com/basics.htm#composing-for-custom-aspect-ratios" target="_blank">with tools</a></td>
 </tr>
 <tr>
 	<td>Reshade</td>
@@ -290,24 +290,45 @@ Weather control, HUD toggle, Pause/Unpause (also in photomode), Time of day (hou
 </ul>
 <h2 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://www.nexusmods.com/reddeadredemption2/mods/1472" target="_blank">ScripthookRDR2</a> The original source is: <a href="https://www.dev-c.com/rdr2/scripthookrdr2/" target="_blank">https://www.dev-c.com/rdr2/scripthookrdr2/</a>
+<li><a href="https://www.nexusmods.com/reddeadredemption2/mods/1472" target="_blank">ScripthookRDR2</a> The original source is this <a href="https://www.dev-c.com/rdr2/scripthookrdr2/" target="_blank">https://www.dev-c.com/rdr2/scripthookrdr2/</a>,
 however this version might be outdated. The nexus mods variant is likely more recent.</li>
 <li><a href="https://www.rdr2mods.com/downloads/rdr2/tools/76-lennys-mod-loader-rdr/" target="_blank">Lenny's Mod Loader</a></li>
 </ul>
 <h2 id="texturegraphic-mods">Texture/Graphic Mods<a class="headerlink" href="#texturegraphic-mods" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://www.nexusmods.com/reddeadredemption2/mods/928" target="_blank">Weapon Texture Upscale</a></li>
-<li><a href="https://www.nexusmods.com/reddeadredemption2/mods/648" target="_blank">Gun Metal Rework</a></li>
-<li><a href="https://discord.gg/ADfQxWSv6J" target="_blank">Visual Redemption</a></li>
-<li><a href="https://www.nexusmods.com/reddeadredemption2/mods/1569" target="_blank">Vignette Disabler</a></li>
-<li><a href="https://www.nexusmods.com/reddeadredemption2/mods/1222" target="_blank">The Perfect TAA</a> 
+<li><a href="https://www.nexusmods.com/reddeadredemption2/mods/928" target="_blank">Weapon Texture Upscale</a><br />
+<strong>Feature</strong>: Upscales the gun textures. (DX12 only)</li>
+<li><a href="https://www.nexusmods.com/reddeadredemption2/mods/648" target="_blank">Gun Metal Rework</a><br />
+<strong>Feature</strong>: Updates the look of the in-game guns' metal finish.</li>
+<li><a href="https://www.nexusmods.com/reddeadredemption2/mods/1553" target="_blank">Higher Resolution Vegetation</a><br />
+<strong>Feature</strong>: Uses unused 1024x1024 resolution textures for some of the game's vegetation. (DX12 only)</li>
+<li><a href="https://discord.gg/ADfQxWSv6J" target="_blank">Visual Redemption</a><br />
+<strong>Feature</strong>: Slight graphical overhaul to not change too much of original game's visuals.</li>
+<li><a href="https://www.nexusmods.com/reddeadredemption2/mods/1569" target="_blank">Vignette Disabler</a><br />
+<strong>Feature</strong>: Disables the vignette visible in-game.</li>
+<li><a href="https://www.nexusmods.com/reddeadredemption2/mods/1222" target="_blank">The Perfect TAA</a><br />
 <strong>Feature</strong>: Attempts to fix ugly TAA blurring, (Good for 1080p, however hotsampling to 4K and up defeats its' purpose).</li>
 </ul>
-<h3 id="vulkan-or-dx12">Vulkan or DX12?<a class="headerlink" href="#vulkan-or-dx12" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<h3 id="hotsampling">Hotsampling<a class="headerlink" href="#hotsampling" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>While it's possible to hotsample with Vulkan, it is very unstable and has a crash rate of about 70% and the <a href="https://framedsc.com/basics.htm#hotsampling" target="_blank">tool used for hotsampling</a> loses track of which window to handle (Fixing this is done by <code>Refreshing</code> the <code>Window Tree</code>, which will allow you to select the game and edit the resolution again).</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>DirectX 12 API hotsamples with the SRWE tool without any problems.</p>
+</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Hotsampling to a 32:9 aspect ratio and going back to your original one will break every trainer menu, with some losing the text, and some having the text way off the screen.</p>
+</div><h3 id="vulkan-or-dx12">Vulkan or DX12?<a class="headerlink" href="#vulkan-or-dx12" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>If you're using Windows 7 or 8.x, the only option you have is Vulkan. If you use Windows 10, you can use DX12 as well. There are reports
 of higher performance under Vulkan, but also lower-res textures and less stability. The cheat table should work with both. Regardless, the 
 game is highly unstable, and you have to prepare for crashes during your gameplay session.</p>
-<h3 id="weather-control">Weather control<a class="headerlink" href="#weather-control" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Most texture mods do not work in DX12, making it a trade-off if you are willing to modify the game textures.</p>
+</div><h2 id="tweaks--tips">Tweaks &amp; tips<a class="headerlink" href="#tweaks--tips" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>In the file <code>My Documents\Rockstar Games\Red Dead Redemption 2\Settings\system.xml</code>:</p>
+<ul>
+<li>search for <code>&lt;lodScale value=&quot;....&quot; /&gt;</code> and <code>&lt;pedLodBias value=&quot;....&quot; /&gt;</code>, set these to 1.0, by default they're set to 0.0</li>
+<li>search for <code>&lt;deepsurfaceQuality&gt;...&lt;/deepsurfaceQuality&gt;</code>, set the value to kSettingLevel_Ultra.</li>
+</ul>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>As of the Blood Money (Version 1.25. July 13th, 2021) update, some graphics settings revert back to their default values. The graphics settings are: &quot;Resolution Scaling&quot; <code>off</code>, &quot;TAA&quot; <code>high</code>, &quot;MSAA&quot; <code>off</code>. It is currently not possible to change them in any way.</p>
+</div><div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>If you have visual artifacts that look similar to GPU VRAM artifacts (green, purple, white noise) in the game (usually noticed in the main menu), turn <code>off</code> &quot;Triple Buffering&quot;.</p>
+<p>@alert neutral
+Bypassing the in-game VRAM limit can only be done by changing the values through the <code>system.xml</code> file.</p>
+</div><h3 id="ct-weather-control">CT Weather control<a class="headerlink" href="#ct-weather-control" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>The cheat table offers two ways to control the weather: one option is to set the weather type, another is to define a combination
 between two weathers. </p>
 <h4 id="different-weather-types">Different weather types<a class="headerlink" href="#different-weather-types" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
@@ -414,7 +435,8 @@ between two weathers. </p>
 <p>To set the active weather, first enable the 'Weather control' entry in the table by clicking the check box in front of it. Then double click the 
 value in the 'Weather type' entry on the right. By default it'll show 'FFFFFFFF'. Double clicking it allows you to type a new weather, e.g. 4 for cloudy
 weather. The weather change will be instantly, also in photomode.</p>
-<h4 id="how-to-set-a-combination-of-two-weather-types">How to set a combination of two weather types<a class="headerlink" href="#how-to-set-a-combination-of-two-weather-types" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>You are not required to use the Cheat Table to change the weather, you may also use an in-game trainer to do it.</p>
+</div><h4 id="how-to-set-a-combination-of-two-weather-types">How to set a combination of two weather types<a class="headerlink" href="#how-to-set-a-combination-of-two-weather-types" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>If you want to create your own unique weather, you can create a combination of two weather types. 
 After you've enabled 'Weather control' you also have to enable 'Enable weather interpolation'. After that, you double click the value in the 
 'From weather' entry and type a value, e.g. 4 for cloudy weather. Then you double click the value in the 'To weather' column and also specify
@@ -423,20 +445,11 @@ a value, e.g. 14 for thick snow. </p>
 Double click the value of that entry to specify a value between 0 and 1, e.g. 0.3. If you e.g. specify 0.3 it means the weather is 70% the 'From weather'
 weather and 30% the 'To weather'. </p>
 <p>To go back to the other weather option, simply disable the 'Enable weather interpolation' entry.</p>
-<h2 id="tweaks">Tweaks<a class="headerlink" href="#tweaks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>In the file <code>My Documents\Rockstar Games\Red Dead Redemption 2\Settings\system.xml</code>:</p>
-<ul>
-<li>search for <code>&lt;lodScale value=&quot;....&quot; /&gt;</code> and <code>&lt;pedLodBias value=&quot;....&quot; /&gt;</code>, set these to 1.0, by default they're set to 0.0</li>
-<li>search for <code>&lt;deepsurfaceQuality&gt;...&lt;/deepsurfaceQuality&gt;</code>, set the value to kSettingLevel_Ultra.</li>
-</ul>
-<h3 id="hotsampling">Hotsampling<a class="headerlink" href="#hotsampling" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>While it's possible to hotsample with Vulkan, it is very unstable and has a crash rate of about 70% and the tool used for hotsampling loses track of which window to handle (To fix you have to Refresh Window Tree and you will be able to edit the resolution again)
-* DirectX 12 API hotsamples with the tool without any problems</p>
-<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Hotsampling to a 32:9 aspect ratio and going back to the original one will break every trainer menu, with some losing the text, and some having the text way off the screen.</p>
-</div><h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://www.pcgamingwiki.com/wiki/Red_Dead_Redemption_2" target="_blank">PC Gaming Wiki</a></li>
 <li><a href="https://www.youtube.com/watch?v=E-OIFFcIKDs" target="_blank">How to install and use Lenny's Mod Loader</a></li>
+<li><a href="../GeneralGuides/cheat_engine_tables.htm">Using Cheat Engine Tables</a></li>
 </ul>
 
                     </div>
