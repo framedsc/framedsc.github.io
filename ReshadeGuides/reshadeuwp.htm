@@ -10,7 +10,7 @@
 
     <title>Injecting ReShade in UWP games - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../css/theme_20220731.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_20220814.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors_20220731.css" type="text/css" />
     <link rel="stylesheet" href="../css/styles/vs.css">
     <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
@@ -54,8 +54,6 @@
 <li class="tocentry"><a href="#tools">Tools</a></li>
 
 <li class="tocentry"><a href="#how-to-inject-reshade-into-an-uwp-game">How to inject ReShade into an UWP game</a></li>
-
-
 
 <li class="tocentry"><a href="#preparation">Preparation</a></li>
 
@@ -123,17 +121,16 @@
                 <div role="main">
                     <div class="section">
 <p><img src="..\Images\MiscGuides\uwp_reshade_header.png" alt="Header" class="shadowed autosize" width="896" height="180" /></p>
-<h1 id="injecting-reshade-in-uwp-games-universal-windows-platform-aka.-windows-store-and-xbox-game-pass-pc">Injecting ReShade in UWP games (Universal Windows Platform aka. Windows Store and XBOX Game Pass PC)<a class="headerlink" href="#injecting-reshade-in-uwp-games-universal-windows-platform-aka.-windows-store-and-xbox-game-pass-pc" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
-<p>This guide will help you to inject ReShade into UWP games. Please note that this won't work in every UWP game since some have protections (like forza horizon 4 which shutdown when you inject a .dll).</p>
+<p>This guide will help you to inject ReShade into most Universal Windows Platform games, i.e. Windows Store &amp; PC Game Pass games. Please note that this won't work in every UWP game since some are protected (like <em>Forza Horizon 4</em>, which shuts down upon .dll injection).</p>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>You will need <a href="https://reshade.me/downloads/inject64.exe" target="_blank">crosire injector</a>.</p>
+<p>You will need <a href="https://reshade.me/downloads/inject64.exe" target="_blank">crosire's DLL injector</a>.</p>
 <h3 id="reshadeforuwp-tool">ReshadeForUWP tool<a class="headerlink" href="#reshadeforuwp-tool" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>Alternatively, there's a GUI tool to inject Reshade into UWP / Xbox game Pass PC games, <a href="https://github.com/MilkyDeveloper/ReshadeForUWP" target="_blank">located here</a> with little manual intervention. It asks you for the package name (and the custom process name, if any) and gets the metadata of the game through the <code>appxmanifest.xml</code> file. It then generates a BAT file to inject Reshade into the game and then launch it. Optionally, it also bootstraps a working Reshade install by downloading / extracting all of the FX files and generates the Reshade.ini file.</p>
+<p>Alternatively, <a href="https://github.com/MilkyDeveloper/ReshadeForUWP" target="_blank">this tool with a GUI</a> can help to inject Reshade into UWP / PC Game Pass games with little manual intervention. It asks you for the package name (and the custom process name, if any) and gets the metadata of the game through the <code>appxmanifest.xml</code> file. It then generates a BAT file to inject Reshade into the game and then launch it. Optionally, it also bootstraps a working Reshade install by downloading / extracting all of the FX files and generates the Reshade.ini file.</p>
 <h2 id="how-to-inject-reshade-into-an-uwp-game">How to inject ReShade into an UWP game<a class="headerlink" href="#how-to-inject-reshade-into-an-uwp-game" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li>Extract the zip containing the UWP Injector in a folder on your desktop or drive (eg:ReShadeUWP).</li>
+<li>Extract the zip containing the UWP Injector in a folder on your desktop or drive (e.g.: ReShadeUWP).</li>
 <li>Start the game you would like to use ReShade in.</li>
-<li>Open Task Manager and check the process name used by the game (eg: <code>MoonMan-Win64-Shipping.exe</code> for Deliver Us The Moon).</li>
+<li>Open Task Manager and check the process name used by the game (e.g.: <code>MoonMan-Win64-Shipping.exe</code> for <em>Deliver Us The Moon</em>).</li>
 <li>Close the game.</li>
 <li>Open a command prompt and navigate to the folder where the UWP Injector resides (you can write <code>cmd</code> in the address bar and it will open a command prompt there).</li>
 <li>Type <code>inject.exe name_of_the_process.exe</code>.</li>
@@ -141,18 +138,18 @@
 </ul>
 <p>ReShade should now be injected.</p>
 <h1 id="advanced-uwp-reshade-injection">Advanced UWP ReShade Injection<a class="headerlink" href="#advanced-uwp-reshade-injection" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
-<p>If you find the process above too tiring for every time you want to play a game you can instead follow these steps to make a script that automatically launches the game and reshade.</p>
+<p>If you find the process above too tedious since you have to do it every time you launch a game, you can instead follow these steps to make a script that automatically launches the game and injects Reshade.</p>
 <h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li>Extract the zip containing the UWP Injector in a folder on you Desktop or drive (eg:ReShadeUWP).</li>
-<li>Create a new folder and name it by the game name (eg: ReShade-DeliverUsTheMoon), copy the content previously unzipped in that folder.</li>
+<li>Extract the zip containing the UWP Injector in a folder on your Desktop or drive (e.g.: ReShadeUWP).</li>
+<li>Create a new folder and name it like the game (e.g.: ReShade-DeliverUsTheMoon), copy the contents previously unzipped in that folder.</li>
 <li>If you previously installed ReShade in a Steam game you can copy the Shaders and Textures in a specific folders (see ReShade Repository for more)</li>
 </ul>
 <h2 id="find-the-game-executable-and-application-id">Find the game executable and Application ID<a class="headerlink" href="#find-the-game-executable-and-application-id" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li>Download the game via Windows Store or XBOX Game Pass App</li>
 <li>If a link is available on the desktop right click on it and note the Target (eg: WiredProductions.DeliverUsTheMoon...)</li>
-<li>In PowerShell type <code>get-appxpackage &gt; C:\Users\&lt;Your UserName&gt;\Desktop\UWP_Apps_List.txt</code></li>
+<li>In PowerShell, type <code>get-appxpackage &gt; C:\Users\&lt;Your UserName&gt;\Desktop\UWP_Apps_List.txt</code></li>
 <li>Open the file and search for the Target previously noted</li>
 <li>You should find this:</li>
 </ul>
@@ -178,16 +175,16 @@ Status            : Ok
 <li>Note the PackageFamilyName. In this case: <code>WiredProductions.DeliverUsTheMoonWin10_hxzk6evwjr6sy</code></li>
 <li>Go to the InstallLocation by copying and pasting it in Explorer (<code>C:\Program Files\WindowsApps\WiredProductions.DeliverUsTheMoonWin10_1.4.44.0_x64__hxzk6evwjr6sy</code>)</li>
 <li>Open the <code>appxmanifest.xml</code> and note the Application ID (Application Id=&quot;App&quot;)</li>
-<li>Go to the folder where the game executable reside. In this case: <code>C:\Program Files\WindowsApps\WiredProductions.DeliverUsTheMoonWin10_1.4.44.0_x64__hxzk6evwjr6sy\MoonMan\Binaries\Win64\</code></li>
+<li>Go to the folder where the game executable resides. In this case: <code>C:\Program Files\WindowsApps\WiredProductions.DeliverUsTheMoonWin10_1.4.44.0_x64__hxzk6evwjr6sy\MoonMan\Binaries\Win64\</code></li>
 <li>Note the exe -&gt; MoonMan-Win64-Shipping.exe</li>
 </ul>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>If you encounter files with padlock on them, you will not be able to use the injection process as the game is then mostly memory protected</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>If you encounter files with a padlock on them, you will not be able to use the injection process as the game is memory-protected.</p>
 </div><h2 id="create-your-powershell-injection-script">Create your PowerShell injection script<a class="headerlink" href="#create-your-powershell-injection-script" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li>Start PowerShell ISE</li>
 <li>In the Script part start with <code>CD\</code> and press enter</li>
-<li>If the ReShade folder reside on a drive other than the C: write its drive letter and press enter</li>
-<li>Now write CD and the folder where ReShade injector resite (<code>CD D:\ReShadeUWP</code>)</li>
+<li>If the ReShade folder resides on a drive other than C:, write its drive letter and press enter</li>
+<li>Now write CD and the folder where the ReShade injector resides (<code>CD D:\ReShadeUWP</code>)</li>
 <li>Type <code>start-process -filepath inject.exe</code> followed the game executable name (<code>Start-Process -FilePath inject.exe MoonMan-Win64-Shipping.exe</code>)</li>
 <li>You will need to start another explorer process in order to start the game. So go on and type <code>Start-Process -filepath explorer.exe shell:appsFolder\PackageFamilyName!Application Id</code></li>
 <li>Your injection and start script is ready</li>
@@ -199,21 +196,21 @@ Cd 'D:\ReShade-DeliverUsTheMoon\'
 Start-Process -FilePath inject.exe MoonMan-Win64-Shipping.exe
 Start-Process -filepath explorer.exe shell:appsFolder\WiredProductions.DeliverUsTheMoonWin10_hxzk6evwjr6sy!App
 </pre><ul>
-<li>Save it on a safe place</li>
+<li>Save it somewhere safe</li>
 </ul>
 <div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>To execute your script, right-click it and choose 'Run with PowerShell'</p>
 </div><h2 id="reshade-repository">ReShade Repository<a class="headerlink" href="#reshade-repository" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>As you cannot install or copy file into an UWP game folder here is how we managed to have all our Shaders and Texture in just one folder.</p>
+<p>As you cannot install or copy files into a UWP game folder, here is how we managed to have all our Shaders and Texture in just one folder.</p>
 <ul>
-<li>First of all, if you copied the SHaders and Textures in a specific folder AND injected ReShade into an UWP game, a <code>reshade.ini</code> is created in the ReShade UWP folder (eg: <code>D:\ReShade-DeliverUsTheMoon\</code>)</li>
-<li>Open <code>reshade.ini</code> and modify the following lines to relflect your current setup</li>
+<li>First of all, if you copied the Shaders and Textures in a specific folder AND injected ReShade into an UWP game, a <code>reshade.ini</code> is created in the ReShade UWP folder (eg: <code>D:\ReShade-DeliverUsTheMoon\</code>)</li>
+<li>Open <code>reshade.ini</code> and modify the following lines to reflect your current setup</li>
 </ul>
-<p><code>CurrentPresetPath=D:\ReShade UWP\Deliver Us The Moon.ini
+<pre class="nocode">CurrentPresetPath=D:\ReShade UWP\Deliver Us The Moon.ini
 EffectSearchPaths=.\,D:\ReShade UWP\Shaders,D:\ReShade UWP\Shaders\OtisFX
-TextureSearchPaths=.\,D:\ReShade UWP\Textures</code></p>
-<p>This is how it looks on my side <img src="..\Images\MiscGuides\uwp_reshade_folder01.png" alt="alt text" class="shadowed autosize" width="1193" height="670" /></p>
+TextureSearchPaths=.\,D:\ReShade UWP\Textures
+</pre><p>This is how it looks on my side. <img src="..\Images\MiscGuides\uwp_reshade_folder01.png" alt="alt text" class="shadowed autosize" width="1193" height="670" /></p>
 <div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>To update the ReShade version, just download the installer from <a href="https://reshade.me/" target="_blank">reshade.me</a>.
-Open the installer with WinRar then copy and replace the ReShade64.dll with the new one</p>
+Open the installer with WinRar then copy and replace the ReShade64.dll with the new one.</p>
 </div>
                     </div>
                 </div>

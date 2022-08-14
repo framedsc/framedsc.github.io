@@ -10,7 +10,7 @@
 
     <title>UnityExplorer and Freecam - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../css/theme_20220731.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_20220814.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors_20220731.css" type="text/css" />
     <link rel="stylesheet" href="../css/styles/vs.css">
     <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
@@ -60,7 +60,7 @@
 <ul class="currentrelative">
 <li class="tocentry"><a href="#identifying-the-type-of-unity-game">Identifying the type of Unity game</a></li>
 
-<li class="tocentry"><a href="#downloading-bepinex-and-unity-explorer">Downloading BepinEx and Unity Explorer</a></li>
+<li class="tocentry"><a href="#downloading-bepinex-and-unity-explorer">Downloading BepInEx and Unity Explorer</a></li>
 
 <li class="tocentry"><a href="#installation">Installation</a></li>
 
@@ -135,45 +135,45 @@
                 </div>
                 <div role="main">
                     <div class="section">
-<p><img src="../Images/UUFGuide/toplogo.jpg" alt="toplogo" class="shadowed autosize" width="896" height="180" /></p>
-<p><strong>Engine versions supported:</strong> UnityExplorer supports most Unity versions from 5.2 to 2021+ (IL2CPP and Mono)</p>
-<p align="center">
+<p><img src="../Images/UUFGuide/toplogo.png" alt="toplogo" class="shadowed autosize" width="896" height="180" /></p>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p><strong>Engine versions supported:</strong> UnityExplorer supports most Unity versions from 5.2 to 2021+ (IL2CPP and Mono)</p>
+</div><p align="center">
 <a href="https://www.youtube.com/watch?v=qufWSNPyeYQ" target="_blank">
-  <img src="https://img.youtube.com/vi/qufWSNPyeYQ/hqdefault.jpg">
+  <img src="https://i.ytimg.com/vi_webp/qufWSNPyeYQ/maxresdefault.webp">
 </a>
 </p>
 <p><em>If you ever get lost in the setup or usage of this tool I suggest watching the video above for visual aid.</em></p>
 <h1 id="setup">Setup<a class="headerlink" href="#setup" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
 <h2 id="identifying-the-type-of-unity-game">Identifying the type of Unity game<a class="headerlink" href="#identifying-the-type-of-unity-game" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Launch the game and use the Task Manager to check if your game is 32-bit or 64-bit (if it is 32-bit it will have &quot;32 bit&quot; next to the program name).<br />
-<img src="../Images/UUFGuide/TaskManager01.png" alt="TaskManager01" class="shadowed autosize" width="194" height="31" /></p>
+<p>Launch the game and use the Task Manager to check if your game is 32-bit or 64-bit (if it is 32-bit, it will have &quot;32 bit&quot; next to the program name).  </p>
+<p><img src="../Images/UUFGuide/TaskManager01.png" alt="TaskManager01" class="shadowed autosize" width="197" height="26" /></p>
 <p>Open the game folder to determine if it is Mono or IL2CPP based
 - Mono games have a <code>UnityPlayer.dll</code> in the game folder and a <code>Managed</code> folder in the gamedata folder.
 - IL2CPP games have a <code>GameAssembly.dll</code> in the game folder and an <code>il2cpp_data</code> folder in the gamedata folder.</p>
-<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>If the game is on steam you can check the file structure before downloading by going to the <a href="https://steamdb.info" target="_blank">SteamDB</a> page of the game, <code>Depots</code> section, and from the table in there click the ID number on the games depot (usually the one with the bigger file size).</p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>If the game is on Steam, you can check the file structure before downloading by going to the <a href="https://steamdb.info" target="_blank">SteamDB</a> page of the game, <code>Depots</code> section, and from the table in there, click the ID number on the game's depot (usually the one with the bigger file size).</p>
 </div><p>The Unity Engine version number can be found by opening the <code>globalgamemanagers</code> file found in the game's data folder.</p>
 <p><img src="../Images/UUFGuide/globalgamemanagers.jpg" alt="globalgamemanagers" class="shadowed autosize" width="493" height="136" /></p>
-<h2 id="downloading-bepinex-and-unity-explorer">Downloading BepinEx and Unity Explorer<a class="headerlink" href="#downloading-bepinex-and-unity-explorer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="downloading-bepinex-and-unity-explorer">Downloading BepInEx and Unity Explorer<a class="headerlink" href="#downloading-bepinex-and-unity-explorer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Download the appropriate version of each software.</p>
 <ul>
-<li><a href="https://github.com/BepInEx/BepInEx/releases" target="_blank">BepinEx v5</a> (For Mono games)</li>
-<li><a href="https://builds.bepinex.dev/projects/bepinex_be" target="_blank">BepinEx v6</a> (For IL2CPP games)</li>
+<li><a href="https://github.com/BepInEx/BepInEx/releases" target="_blank">BepInEx v5</a> (For Mono games)</li>
+<li><a href="https://builds.bepinex.dev/projects/bepinex_be" target="_blank">BepInEx v6</a> (For IL2CPP games)</li>
 <li><a href="https://github.com/sinai-dev/UnityExplorer/releases" target="_blank">UnityExplorer</a></li>
 <li><a href="https://github.com/vtvrv/FreeMoveInjector/releases" target="_blank">FreeMoveInjector</a></li>
 <li><a href="https://github.com/sinai-dev/BepInExConfigManager" target="_blank">BepInExConfigManager</a> (optional)</li>
 </ul>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li>Extract the contents of the BepinEx zip into the game folder.</li>
-<li>Extract UnityExplorer and BepinExConfigManager's <code>plugins</code> and <code>patchers</code> folders into the game's BepinEx folder.</li>
-<li>Place <code>FreeMoveInjector.dll</code> in the <code>/BepinEx/plugins/</code> subfolder.</li>
+<li>Extract the contents of the BepInEx zip into the game folder.</li>
+<li>Extract UnityExplorer and BepInExConfigManager's <code>plugins</code> and <code>patchers</code> folders into the game's BepInEx folder.</li>
+<li>Place <code>FreeMoveInjector.dll</code> in the <code>/BepInEx/plugins/</code> subfolder.</li>
 </ul>
 <h2 id="starting-unity-explorer">Starting Unity Explorer<a class="headerlink" href="#starting-unity-explorer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>IL2CPP based games require Internet access the first time they are launched with BepinEx.</p>
-</div><p>Launch the game and BepinEx will complete the installation process. If everything is working a UnityExplorer window will appear.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>IL2CPP-based games require Internet access for their first launch with BepInEx.</p>
+</div><p>Launch the game and BepInEx will complete the installation process. If everything is working, a UnityExplorer window will appear.</p>
 <p><img src="../Images/UUFGuide/firstlaunch.jpg" alt="firstlaunch" class="shadowed autosize" width="874" height="492" /></p>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Follow the <a href="https://github.com/sinai-dev/BepInExConfigManager" target="_blank">BepinEx Troubleshooting Guide</a> to get broken game working.
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Follow the <a href="https://github.com/sinai-dev/BepInExConfigManager" target="_blank">BepInEx Troubleshooting Guide</a> to get a broken game working.
 The most common issue is a bad entrypoint.</p>
 </div><h1 id="usage">Usage<a class="headerlink" href="#usage" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
@@ -243,12 +243,10 @@ The most common issue is a bad entrypoint.</p>
 </table>
 <div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>The inspector window can be used to modify camera features such as FOV, draw distance (clipping plane) and more.</p>
 </div><h2 id="camera-locking">Camera Locking<a class="headerlink" href="#camera-locking" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ul>
-<li>Many game cameras will have existing behaviours that will prevent free movement (e.g. CineMachine). Disabling these behaviours will solve this issue.</li>
-<li>Mouse look may not work if the game is locking the cursor to the center of the screen. To solve this keep the UnityExplorer window open as this plugin will unlock the cursor.</li>
-</ul>
+<p>Many game cameras have existing behaviours that can prevent free movement (e.g. CineMachine). Disabling these behaviours will solve this issue.</p>
+<p>Mouse look may not work if the game is locking the cursor to the center of the screen. To solve this, keep the UnityExplorer window open as the plugin will unlock the cursor.</p>
 <h2 id="disabling-hud">Disabling HUD<a class="headerlink" href="#disabling-hud" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>The scene explorer window can disable any game object including HUD graphics. Alternatively, the inspector window's mouse inspection tool can easily select specific HUD graphics.</p>
+<p>The scene explorer window can disable any game object, including HUD graphics. Alternatively, the inspector window's mouse inspection tool can easily select specific HUD graphics.</p>
 <p><img src="../Images/UUFGuide/demonturfhud.jpg" alt="demonturfhud" class="shadowed autosize" width="874" height="610" /></p>
 <h2 id="more-links">More links<a class="headerlink" href="#more-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
