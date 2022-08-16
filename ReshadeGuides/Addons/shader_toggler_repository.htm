@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shader Toggler Repository - FRAMED. Screenshot Community</title>
+    <title>ShaderToggler - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../css/theme_20220814.css" type="text/css" />
     <link rel="stylesheet" href="../../css/theme_colors_20220814.css" type="text/css" />
@@ -61,11 +61,13 @@
 <li class="tocentry">
 <ul>
 <li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../../ReshadeGuidesAddonguides.htm">Addon guides</a></span></li>
-<li class="tocentry current"><a class="current" href="../../ReshadeGuides/Addons/shader_toggler_repository.htm">Shader Toggler Repository</a>
+<li class="tocentry current"><a class="current" href="../../ReshadeGuides/Addons/shader_toggler_repository.htm">ShaderToggler</a>
 <ul class="currentrelative">
+<li class="tocentry"><a href="#installation">Installation</a></li>
+
+<li class="tocentry"><a href="#example-usage-hud-removal">Example usage: HUD removal</a></li>
+
 <li class="tocentry"><a href="#repository">Repository</a></li>
-
-
 
 </ul>
 <li class="tocentry"><a href="../../ReshadeGuides/Addons/MSADOF.htm">MSADOF</a>
@@ -110,19 +112,49 @@
             <div class="nav-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <div class="breadcrumbs">
-<ul><li><a href="../../index.htm">Home</a></li> / <li><a href="../../ReshadeGuides/index.htm">Reshade guides</a></li> / <li><a href="../../ReshadeGuidesAddonguides.htm">Addon guides</a></li> / <li><a href="../../ReshadeGuides/Addons/shader_toggler_repository.htm">Shader Toggler Repository</a></li></ul>
+<ul><li><a href="../../index.htm">Home</a></li> / <li><a href="../../ReshadeGuides/index.htm">Reshade guides</a></li> / <li><a href="../../ReshadeGuidesAddonguides.htm">Addon guides</a></li> / <li><a href="../../ReshadeGuides/Addons/shader_toggler_repository.htm">ShaderToggler</a></li></ul>
 					
                     </div>
                     <hr />
                 </div>
                 <div role="main">
                     <div class="section">
-<h1 id="shader-toggler-repository">Shader Toggler Repository<a class="headerlink" href="#shader-toggler-repository" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
-<p>The <a href="https://github.com/FransBouma/ShaderToggler" target="_blank">Shader Toggler</a> is a ReShade addon created by Otis_inf that lets you turn off and on in-game shaders, like <a href="https://nohud.fandom.com/wiki/Creation_of_Hudtoggle_Mods" target="_blank">3DMigoto</a> let you do in DX9 games. For more information about the addon itself head up to the <code>README.md</code> on the repo linked above.</p>
-<p>This page functions as a repository for peoples created shader togglers using the mentioned addon.</p>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>To use these shader togglers make sure to rename the <code>.ini</code> file you are going to use to <code>ShaderToggler.ini</code> and drop it in the same folder as <code>ShaderToggler.addon</code> so the addon can pick them up.</p>
-</div><h2 id="repository">Repository<a class="headerlink" href="#repository" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<table class="table table-bordered-all table-responsive">
+<p><img src="../../Images/ShaderToggler/ShaderToggler_header.png" alt="ShaderToggler" class="shadowed autosize" width="896" height="180" /></p>
+<p><a href="https://github.com/FransBouma/ShaderToggler" target="_blank"><strong>ShaderToggler</strong></a> is an add-on for ReShade written by Otis_Inf. It allows you turn off and on in-game shaders, like <a href="https://nohud.fandom.com/wiki/Creation_of_Hudtoggle_Mods" target="_blank">3DMigoto</a>. This page is a brief guide on how you can use it to toggle shaders, and is also a repository for the toggle groups that people have contributed for various games.</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>ShaderToggler requires <strong>Reshade 5.1+ with full add-on support</strong>.</p>
+</div><hr />
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p><a href="https://github.com/FransBouma/ShaderToggler/releases" target="_blank">On the releases page</a>, there are two relevant files available for download.</p>
+<ul>
+<li><code>ShaderToggler_v101.zip</code> is for 64-bit games, i.e. the majority of modern releases.</li>
+<li><code>ShaderToggler_x86_101.zip</code> is for 32-bit games, typically older titles running in DX9 for example.</li>
+</ul>
+<p>Download the appropriate file and unzip it. Copy over <code>ShaderToggler.addon</code> to the same folder as your game's ReShade DLL for ReShade to be able to use it.</p>
+<p>Launch your game, open the ReShade GUI, and head to the <em>Add-ons</em> tab. You should now see <em>Shader Toggler</em> in the list of installed add-ons.</p>
+<p><img src="../../Images/ShaderToggler/ShaderTogglerUI.png" alt="Screenshot of the UI" class="shadowed autosize" width="435" height="305" /></p>
+<hr />
+<h2 id="example-usage-hud-removal">Example usage: HUD removal<a class="headerlink" href="#example-usage-hud-removal" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>While ShaderToggler can be used to hide many parts and elements of a game scene (including geometry!), it is probably most useful in removing the HUDs of games.</p>
+<p>In this example, we'll be using the add-on to remove the HUD from <em>The Witcher 3</em>.</p>
+<h4 id="step-1-creating-a-new-toggle-group">Step 1: Creating a new toggle group<a class="headerlink" href="#step-1-creating-a-new-toggle-group" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p><img src="../../Images/ShaderToggler/Usage-New-toggle-group.png" alt="New toggle group" class="shadowed autosize" width="435" height="212" /></p>
+<p>Start by clicking the <em>New</em> button under <em>List of toggle groups</em>. This should create a new entry with a number next to it. Click on the <em>Edit</em> button and edit it to your liking. This group will be named &quot;HUD&quot;, since we're removing the HUD, and it'll be bound to <code>Delete</code>, the common keybind for hiding the HUD in tools.</p>
+<h4 id="step-2-marking-shaders">Step 2: Marking shaders<a class="headerlink" href="#step-2-marking-shaders" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>With our new toggle group set up, it's time to start marking shaders. These shaders will be added to the toggle group, and on activation, will be hidden from the scene.</p>
+<p>Click on <em>Change shaders</em> and wait for the frame collection process (that should appear in the top left) to complete.</p>
+<p>Once the frames are collected, use <code>Numpad 1</code> and <code>Numpad 2</code> to step through the available pixel shaders. These tend to be what HUDs are. As you step through the pixel shaders, note which of them cause the HUD to disappear. Mark these with <code>Numpad 3</code>.</p>
+<p><img src="../../Images/ShaderToggler/ShaderMarking.webp" alt="Marking shaders" class="shadowed autosize" /></p>
+<p>Once you've marked all the shaders, click on <em>Done</em> to register the toggle group. If done right, when you use your key shortcut, it should now hide all the marked shaders at once, giving you a perfect HUD hide!</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p><strong>Save all Toggle Groups!</strong> <br />
+Or suffer the pain of having to do everything over again on next launch!<br />
+This creates a <code>ShaderToggler.ini</code> file in the same directory as the ADDON file. We encourage contributing this to our repository below.</p>
+</div><h3 id="doing-even-more">Doing even more!<a class="headerlink" href="#doing-even-more" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>HUD hiding is only one thing possible with ShaderToggler. The process above can easily be used to hide so much more, from various post-processing effects to whole render passes with pixel shader toggles, and even characters or foilage from a scene with vertex shader toggles.</p>
+<p>Do note that the add-on does not intercept compute shaders. This is why some effects, like some UE4 DOF implementations, can't be removed with ShaderToggler.</p>
+<hr />
+<h2 id="repository">Repository<a class="headerlink" href="#repository" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>These files need to be renamed to <code>ShaderToggler.ini</code> and placed in the same folder as <code>ShaderToggler.addon</code> for the add-on to pick them up correctly.</p>
+</div><table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
 	<th>Game</th>
@@ -153,7 +185,7 @@
 </tr>
 <tr>
 	<td><a href="../../ShaderTogglers/call_of_juarez_gunslinger.ini">Call of Juarez: Gunslinger</a></td>
-	<td>- HUD/Border (<code>F2</code>) <br> - Collor Correction (<code>F3</code>) <br> - Cell Shading Toggle (<code>F4</code>)</td>
+	<td>- HUD/Border (<code>F2</code>) <br> - Color Correction (<code>F3</code>) <br> - Cell Shading Toggle (<code>F4</code>)</td>
 	<td>&nbsp;</td>
 </tr>
 <tr>
