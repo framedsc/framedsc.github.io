@@ -66,15 +66,11 @@
 
 <li class="tocentry"><a href="#tools">Tools</a></li>
 
-<li class="tocentry"><a href="#usage">Usage</a></li>
-
 <li class="tocentry"><a href="#controls">Controls</a></li>
 
-<li class="tocentry"><a href="#reshade">Reshade</a></li>
+<li class="tocentry"><a href="#tips-and-tricks">Tips and Tricks</a></li>
 
 <li class="tocentry"><a href="#useful-links">Useful Links</a></li>
-
-
 
 </ul>
 <li class="tocentry"><a href="../GameGuides/metro_exodus.htm">Metro Exodus</a>
@@ -263,7 +259,7 @@
 </tr>
 <tr>
 	<td>Reshade</td>
-	<td>Yes (read description)</td>
+	<td>Yes (<a href="#reshade">see notes</a>)</td>
 </tr>
 <tr>
 	<td>Ansel</td>
@@ -280,57 +276,97 @@
 <li><a href="https://github.com/FransBouma/InjectableGenericCameraSystem/tree/master/Cameras/MGS5" target="_blank">Camera tools by Otis and Jan Schatter</a><br />
 <strong>Features</strong>: Free Camera, FOV, Timestop, HUD toggle, DOF control, time of day and weather control.</li>
 </ul>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ol>
-<li>Extract files where ever you want</li>
-<li>Start the game</li>
-<li>Launch the tools as admin</li>
-<li>A console window should appear with some text confirming everything's OK</li>
-</ol>
 <h2 id="controls">Controls<a class="headerlink" href="#controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ul>
-<li>Ctrl-INS                              : Open / close in-game main menu</li>
-<li>Ctrl-Mouse wheel                      : Resize font</li>
-<li>INS                                   : Enable/Disable camera</li>
-<li>HOME                                  : Lock / unlock camera movement</li>
-<li>ALT + rotate/move                     : Faster rotate / move</li>
-<li>Right-CTRL + rotate/move              : Slower rotate / move</li>
-<li>Controller Y-button + l/r-stick       : Faster rotate / move</li>
-<li>Controller X-button + l/r-stick       : Slower rotate / move</li>
-<li>Arrow up/down or mouse or r-stick     : Rotate camera up/down</li>
-<li>Arrow left/right or mouse or r-stick  : Rotate camera left/right</li>
-<li>Numpad 8/Numpad 5 or l-stick          : Move camera forward/backward</li>
-<li>Numpad 4/Numpad 6 or l-stick          : Move camera left / right</li>
-<li>Numpad 7/Numpad 9 or l/r-trigger      : Move camera up / down</li>
-<li>Numpad 1/Numpad 3 or d-pad left/right : Tilt camera left / right</li>
-<li>Numpad +/- or d-pad up/down           : Increase / decrease FoV</li>
-<li>Numpad * or controller B-button       : Reset FoV</li>
-<li>Numpad 0                              : Pause game. Press ESC twice to unpause (through menu)</li>
-<li>ALT+H                                 : Help</li>
-</ul>
-<h1 id="timestop">Timestop<a class="headerlink" href="#timestop" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
-<p>In the camera tools, one timestop is implemented, as Numpad 0. This timestop works in-game during normal gameplay and during cutscenes.
-It's the menu timestop without showing the menu. However as I couldn't find a toggle switch for it, (resetting it to the old value leaves the
-game paused) you have to use the menu show/hide keys to unpause the game, which is ESC or the menu button on the controller. 
-So TL;DR: to pause the game: press Numpad 0. To then unpause the game after that, press ESC (will show the menu) and again ESC
-(to get rid of the menu and continue the game). Easy.</p>
-<h1 id="dof">DoF<a class="headerlink" href="#dof" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
-<p>In the camera menu (Control+INS) you'll find DoF controls. These controls work when the camera is enabled. </p>
-<h1 id="time-of-day-and-weather-control">Time of Day and Weather control<a class="headerlink" href="#time-of-day-and-weather-control" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
-<p>In order to efectivly control time of day and Weather the game must be unpaused and the camera must be enabled, otherwise the game's values are overwriting your changes. This is done to avoid you configuring things which have a negative effect on gameplay. </p>
-<h2 id="reshade">Reshade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>To be able to use reshade in the game you will need:</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Key</th>
+	<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>CTRL</code> + <code>INS</code></td>
+	<td>Toggle GUI</td>
+</tr>
+<tr>
+	<td><code>CTRL</code> + Mouse wheel</td>
+	<td>Resize GUI</td>
+</tr>
+<tr>
+	<td><code>INS</code></td>
+	<td>Toggle freecam</td>
+</tr>
+<tr>
+	<td><code>HOME</code></td>
+	<td>Lock / unlock camera</td>
+</tr>
+<tr>
+	<td>Mouselook / Arrow keys / <font face="Controller">&gt;</font></td>
+	<td>Rotate camera</td>
+</tr>
+<tr>
+	<td><code>Num 8</code> / <code>Num 5</code> / <font face="Controller">&lt;</font></td>
+	<td>Move camera forward / backward</td>
+</tr>
+<tr>
+	<td><code>Num 4</code> / <code>Num 6</code> / <font face="Controller">&lt;</font></td>
+	<td>Move camera left / right</td>
+</tr>
+<tr>
+	<td><code>Num 7</code> / <code>Num 9</code> / <font face="Controller">{ / }</font></td>
+	<td>Move camera up / down</td>
+</tr>
+<tr>
+	<td><code>Num 1</code> / <code>Num 3</code> / <font face="Controller">A / D</font></td>
+	<td>Tilt camera left / right</td>
+</tr>
+<tr>
+	<td><code>Num +</code> / <code>Num -</code> / <font face="Controller">W / X</font></td>
+	<td>Increase / decrease FoV</td>
+</tr>
+<tr>
+	<td><code>Num *</code> / <font face="Controller">b</font></td>
+	<td>Reset FoV</td>
+</tr>
+<tr>
+	<td><code>ALT</code> / <font face="Controller">y</font></td>
+	<td>Faster movement modifier</td>
+</tr>
+<tr>
+	<td><code>R-CTRL</code> / <font face="Controller">x</font></td>
+	<td>Slower movement modifier</td>
+</tr>
+<tr>
+	<td><code>Num 0</code></td>
+	<td>Pause game (<a href="#timestop">see notes</a>)</td>
+</tr>
+<tr>
+	<td><code>ALT</code> + <code>H</code></td>
+	<td>Show help</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="timestop">Timestop<a class="headerlink" href="#timestop" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Timestop is implemented in the camera tools as <code>Num 0</code>. This timestop works during normal gameplay and during cutscenes. It's the same timestop as pausing the game, but without showing the menu. This means that to unpause the game, you have to use the menu show/hide keys (<code>ESC</code> or the menu button on controller).</p>
+<h3 id="depth-of-field">Depth of field<a class="headerlink" href="#depth-of-field" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>In the camera menu (<code>CTRL</code> + <code>INS</code>) you'll find in-game DoF controls. These controls work when the camera is enabled. </p>
+<h3 id="time-of-day-and-weather-control">Time of Day and Weather control<a class="headerlink" href="#time-of-day-and-weather-control" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>In order to effectively control time of day and weather, the game must be unpaused and the camera must be enabled, otherwise the game's values are overwriting your changes. This is done to avoid you configuring things which could have a negative effect on gameplay. </p>
+<h3 id="reshade">Reshade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>To be able to use Reshade in the game you will need:</p>
 <ul>
 <li><a href="https://github.com/doitsujin/dxvk/releases/tag/v1.8.1" target="_blank">DXVK</a> (drop the DLLs from the x64 directory into the game's root dir), which will convert DirectX to Vulkan (v1.8.1 was suggested, but feel free to try a newer version).</li>
 <li>Install Reshade as Vulkan globally (the second button on Reshade's installer).</li>
 </ul>
-<p>Other methods for using reshade in the game involve defocusing the games window when the game is being initialized, but the method described above seems to work well. Overlays (Steam/Afterburner/etc) also work fine with this method.</p>
+<p>Other methods for using Reshade in the game involve defocusing the game's window when the game is being initialized, but the method described above seems to work well. Overlays (Steam, Afterburner, etc.) also work fine with this method.</p>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://www.nexusmods.com/metalgearsolidvtpp/mods/45" target="_blank">Infinite Heaven mod</a></li>
-<li><a href="https://www.nexusmods.com/metalgearsolidvtpp/mods/406/" target="_blank">Post-processing mod</a></li>
-<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1210727595" target="_blank">Anti-Aliasing Guide</a></li>
 <li><a href="https://pcgamingwiki.com/wiki/Metal_Gear_Solid_V:_The_Phantom_Pain" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://www.nexusmods.com/metalgearsolidvtpp/mods/45" target="_blank">Infinite Heaven mod</a> (Nexus Mods)</li>
+<li><a href="https://www.nexusmods.com/metalgearsolidvtpp/mods/406/" target="_blank">Post-processing mod</a> (Nexus Mods)</li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1210727595" target="_blank">Anti-Aliasing Guide</a> (Steam Community)</li>
 </ul>
 
                     </div>

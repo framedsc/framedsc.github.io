@@ -41,13 +41,13 @@
 <li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../A-L.htm">A-L</a></span></li>
 <li class="tocentry"><a href="../GameGuides/aplaguetale.htm">A Plague Tale: Innocence</a>
 </li>
-<li class="tocentry"><a href="../GameGuides/Abzu.htm">Abzu</a>
+<li class="tocentry"><a href="../GameGuides/Abzu.htm">Abzû</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/AceCombat7.htm">Ace Combat 7</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/Alan_Wake.htm">Alan Wake</a>
 </li>
-<li class="tocentry"><a href="../GameGuides/alienisolation.htm">Alien Isolation</a>
+<li class="tocentry"><a href="../GameGuides/alienisolation.htm">Alien: Isolation</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/americantruck.htm">American Truck Simulator</a>
 </li>
@@ -267,11 +267,11 @@
 <tbody>
 <tr>
 	<td>Vanilla Photo Mode</td>
-	<td>Yes (see notes)</td>
+	<td>Yes (<a href="#photo-mode">see notes</a>)</td>
 </tr>
 <tr>
 	<td>Hotsampling</td>
-	<td>Yes (see notes)</td>
+	<td>Yes (<a href="#hotsampling--custom-ar">see notes</a>)</td>
 </tr>
 <tr>
 	<td>DSR</td>
@@ -279,15 +279,11 @@
 </tr>
 <tr>
 	<td>Custom Aspect Ratios</td>
-	<td>Yes (see notes)</td>
+	<td>Yes (<a href="#hotsampling--custom-ar">see notes</a>)</td>
 </tr>
 <tr>
 	<td>Reshade</td>
-	<td>Yes (see notes)</td>
-</tr>
-<tr>
-	<td>Reshade DoF</td>
-	<td>Yes (see notes)</td>
+	<td>Yes (<a href="#reshade--dof">see notes</a>)</td>
 </tr>
 <tr>
 	<td>Ansel</td>
@@ -295,11 +291,11 @@
 </tr>
 <tr>
 	<td>Graphics API</td>
-	<td>OpenGL, Vulkan (see notes)</td>
+	<td>OpenGL, Vulkan (<a href="#compatibility">see notes</a>)</td>
 </tr>
 <tr>
-	<td>Compatible with</td>
-	<td>Current (6.66) (see notes)</td>
+	<td>Game version</td>
+	<td>6.66 (<a href="#compatibility">see notes</a>)</td>
 </tr>
 <tr>
 	<td>See notes</td>
@@ -315,10 +311,10 @@
 <strong>Features</strong>: AR fix, FoV control</li>
 </ul>
 <h2 id="compatibility">Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>To use the camera tools, you'll need to downgrade the game's binaries. Please use the guide on FRAMED to learn how to <a href="https://framedsc.github.io/GeneralGuides/steam_update_guide.htm" target="_blank">Revert Game Update using Steam Console</a>. After the first step you can download the necessary binaries using this code: <code>download_depot 379720 379721 907965064786099828</code>. Then you need to copy these files to your game folder. (explained at step 6) </p>
+<p>To use the camera tools, you'll need to downgrade the game's binaries. Please reference our guide to learn how to <a href="https://framedsc.github.io/GeneralGuides/steam_update_guide.htm" target="_blank">Revert Game Update using Steam Console</a>. After the first step you can download the necessary binaries using this code: <code>download_depot 379720 379721 907965064786099828</code>. Then you need to copy these files to your game folder. (explained at step 6 in the guide) </p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Camera tools only work with <strong>OpenGL API</strong>. To change API go to <code>Settings &gt; Advanced &gt; Graphics API</code>.</p>
 </div><h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>First, run the camera tools as administrator. <strong>IF everything's fine, then you don't need to apply the steps below.</strong> </p>
+<p>First, run the camera tools as administrator. <strong>IF everything works, then you don't need to follow the steps below.</strong> </p>
 <ol>
 <li>
 <strong>Running the tools as administrator</strong>
@@ -332,7 +328,7 @@
 <li><strong>Disable Windows UAC</strong><br />
 You may need to disable Windows UAC. To do this use <a href="https://winaero.com/blog/how-to-turn-off-and-disable-uac-in-windows-10/" target="_blank">this guide on winaero.com</a>. You don't need to download the app, just apply <strong>Option one</strong>, and <strong>Option two</strong>.</li>
 <li><strong>Be patient</strong><br />
-Camera tools may not work as the game started. Kill some monsters, open the map, kill more monsters, spent some time, then try to start camera.  </li>
+Camera tools may not work on game startup. Kill some monsters, open the map, kill more monsters, spent some time, then try to start camera.  </li>
 </ol>
 <h2 id="hotsampling--custom-ar">Hotsampling &amp; Custom AR<a class="headerlink" href="#hotsampling--custom-ar" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>By default changing AR via SRWE will likely cause a stretched output. There are two ways to avoid it:</p>
@@ -346,9 +342,9 @@ Simply download the provided <a href="..\CheatTables\DOOMx64_DET.CT">CE Table by
 There shouldn't be any stretched output if you stick to your default AR. Simply multiply the current windowed resolution on SRWE by 3, 4 or higher depending on your PC specs to avoid stretching. For example if your windowed resolution is <code>1616x939</code> then <code>1616 x 4 = 6464</code> <code>939 x 4 = 3756</code> so <code>6464x3756</code> is your hotsampled resolution. Use <a href="https://github.com/Daodan317081/reshade-shaders/blob/master/Shaders/AspectRatioComposition.fx" target="_blank">AspectRatioComposition.fx made by Daodan317081</a> to preview in-game custom AR. Placing this shader at the bottom of the shader list and binding a key to toggle it, is highly recommended. After taking shot, you can crop it with your favorite image editor. (Photoshop and GIMP allows you to crop image by entering aspect ratios) </p>
 </li>
 </ol>
-<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Custom aspect ratios with DSR not tested.</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Custom aspect ratios with DSR have not been tested.</p>
 </div><h2 id="reshade--dof">Reshade &amp; DoF<a class="headerlink" href="#reshade--dof" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Reshade DoF was tested on the latest version of Reshade (4.4.1). Since there is no option to select a specific depth buffer on Reshade 4.4.1 for OpenGL, it may not work as expected every time. Resizing the window affects the depth buffer in both good and bad ways. If you are experiencing issues with the depth buffer, try resizing the resolution via SRWE.</p>
+<p>Reshade DoF was tested with Reshade 4.4.1. Since there is no option to select a specific depth buffer on Reshade 4.4.1 for OpenGL, it may not work as expected every time. Resizing the window affects the depth buffer in both good and bad ways. If you are experiencing issues with the depth buffer, try resizing the resolution via SRWE.</p>
 <h2 id="using-the-camera">Using the Camera<a class="headerlink" href="#using-the-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ol>
 <li>Enable the camera by pressing <code>Insert</code></li>
@@ -362,8 +358,8 @@ There shouldn't be any stretched output if you stick to your default AR. Simply 
 </ol>
 <div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Steps 4, 5, 6, 7 are not necessary if you go with DSR.</p>
 </div><h2 id="photo-mode">Photo Mode<a class="headerlink" href="#photo-mode" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>To use the photo mode, you need to have already beat the game at least once. You can then enable it via <code>Settings &gt; Game &gt; DOOM Photo Mode</code>. The photo mode only works on the three basic difficulty modes: I'm too young to die, Hurt me plenty and Ultra-violence. Once you enable the Photo Mode, press <code>\</code> key to open it. </p>
-<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Using the camera tools along with the photo mode, has not been tested.</p>
+<p>To use the photo mode, you need to have already beat the game at least once. You can then enable it via <code>Settings &gt; Game &gt; DOOM Photo Mode</code>. The photo mode only works on the three basic difficulty modes: <em>I'm too young to die</em>, <em>Hurt me plenty</em> and <strong>Ultra-violence</strong>. Once you enable the Photo Mode, press <code>\</code> key to open it. </p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Using the camera tools along with the photo mode has not been tested.</p>
 </div><h2 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://www.pcgamingwiki.com/wiki/Doom_(2016)" target="_blank">PC Gaming Wiki</a></li>

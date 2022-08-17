@@ -52,9 +52,9 @@
 
 <li class="tocentry"><a href="#tools">Tools</a></li>
 
-<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
+<li class="tocentry"><a href="#tips-and-tricks">Tips and Tricks</a></li>
 
-<li class="tocentry"><a href="#additional-notes">Additional Notes</a></li>
+<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
 
 </ul>
 <li class="tocentry"><a href="../GameGuides/matrixUE5-PC.htm">The Matrix Awakens (PC)</a>
@@ -269,68 +269,52 @@
 </tr>
 </tbody>
 </table>
-<h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This guide is for an Unreal Engine 4 game that can use the <a href="https://framedsc.com/GeneralGuides/universal_ue4_consoleunlocker.htm" target="_blank">Universal Unreal Unlocker</a>.  </p>
+</div><h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="..\CheatTables\MVCI_One3rd.CT">CE table - Camera by One3rd</a><br />
 <strong>Features</strong>: Camera Control, FoV, Tilt, Timestop</li>
 <li><a href="https://mega.nz/#!qMIQUQwC!RwVOwzeF_XRPmmo5OO-XUEq8S6PlLRGQb6XFow0VJqQ" target="_blank">HUD Toggle</a><br />
 <strong>Features</strong>: HUD Toggle, Effects Toggle</li>
 </ul>
-<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ul>
-<li><a href="https://pcgamingwiki.com/wiki/Marvel_vs._Capcom:_Infinite" target="_blank">PC Gaming Wiki</a></li>
-</ul>
-<h2 id="additional-notes">Additional Notes<a class="headerlink" href="#additional-notes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ul>
-<li>
-To remove Chromatic Aberration add the following to the end of the Engine.ini file located at ..\Steam\steamapps\common\MARVEL VS. CAPCOM INFINITE\MVCI\Saved\Config\WindowsNoEditor
-<pre class="nocode">[SystemSettings]
+<h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="removing-chromatic-aberration">Removing chromatic aberration<a class="headerlink" href="#removing-chromatic-aberration" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>To remove Chromatic Aberration add the following to the end of the Engine.ini file located at <code>..\Steam\steamapps\common\MARVEL VS. CAPCOM INFINITE\MVCI\Saved\Config\WindowsNoEditor</code>  </p>
+<pre><code>```
+[SystemSettings]
 r.SceneColorFringe.Max=0
 r.SceneColorFringeQuality=0
 r.VSync=0
-</pre></li>
-<li>
-<p>Cheat Table Notes</p>
+```
+</code></pre>
+
+<h3 id="cheat-table-notes">Cheat table notes<a class="headerlink" href="#cheat-table-notes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ol>
 <li>The anti cheat shuts down the game when Cheat Engine is opened. To get around this you can use a hex editor (such as <a href="https://mh-nexus.de/en/hxd/" target="_blank">HxD</a>) to change any references to &quot;Cheat Engine&quot; in the application. Open &quot;cheatengine-x86_64.exe&quot; in HxD, search and replace for &quot;Cheat Engine&quot; replacing it with &quot;i like cats!&quot;. There should be around 128 occurrences replaced. Save to a new filename such as &quot;ilikecats.exe&quot; and use this instead of the normal Cheat Engine application.</li>
 <li>When using this to attach the table to the game there may be two choices for MVCI.exe in the process list. Select one and if the &quot;static z&quot; addresses in the table show a value instead of ?? then that is the correct process, if not try the other one.</li>
 <li>Camera can be enable and disabled at any time with [Page Down]. Controlled with the keypad keys as shown in the table.</li>
 <li>
 You can use the main pause menu as timestop and then remove the HUD with the HUD toggle key [NUMPAD DECIMAL] or use the Pause script with [P]. Pause now works in cutscenes.
-  Key | Command
+Key | Command
 --|--
 P | Pause / Unpause
 </li>
 <li>You can use Cheat Engines speedhack to slow down the game. Go to Edit &gt; Settings &gt; Hotkeys and assign values and keys to Speedhack speed1, Speedhack speed2, etc...</li>
 </ol>
-</li>
-<li>
-<p>HUD Toggle Notes</p>
+<h3 id="hud-toggle-notes">HUD toggle notes<a class="headerlink" href="#hud-toggle-notes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ol>
-<li>HUD toggle is disabled using 3DMigoto. Extract the HUD Toggle files and copy everything into the games ..\Steam\SteamApps\common\MARVEL VS. CAPCOM INFINITE\MVCI\Binaries\Win64 folder.</li>
+<li>HUD toggle is disabled using 3DMigoto. Extract the HUD Toggle files and copy everything into the <code>..\Steam\SteamApps\common\MARVEL VS. CAPCOM INFINITE\MVCI\Binaries\Win64</code> folder.</li>
 <li>
-<p>The HUD Toggle freezes what looks to be the AO shader so when using this you will notice the AO doesn't update when the camera moves. To fix this just enable the HUD and then disable again once you have setup your shot. This will do the same thing on a window resize so if using SRWE for resolution changes you will need to enable then disable the HUD again otherwise the characters will be dark.</p>
-<table class="table table-bordered-all table-responsive">
-<thead>
-<tr>
-	<th>Key</th>
-	<th>Command</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-	<td>NUMPAD DECIMAL</td>
-	<td>Toggle Main Pause Menu and in-game HUD elements</td>
-</tr>
-<tr>
-	<td>1, 2, 3</td>
-	<td>Toggle specific effects</td>
-</tr>
-</tbody>
-</table>
+The HUD Toggle freezes what looks to be the AO shader so when using this you will notice the AO doesn't update when the camera moves. To fix this just enable the HUD and then disable again once you have setup your shot. This will do the same thing on a window resize so if using SRWE for resolution changes you will need to enable then disable the HUD again otherwise the characters will be dark.
+Key | Command
+--|--
+NUMPAD DECIMAL | Toggle Main Pause Menu and in-game HUD elements
+1, 2, 3 | Toggle specific effects
 </li>
 </ol>
-</li>
+<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ul>
+<li><a href="https://pcgamingwiki.com/wiki/Marvel_vs._Capcom:_Infinite" target="_blank">PC Gaming Wiki</a></li>
 </ul>
 
                     </div>
