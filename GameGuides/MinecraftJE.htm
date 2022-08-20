@@ -470,11 +470,13 @@ Visit <a href="https://wiki.shaderlabs.org/wiki/Shaderpacks" target="_blank">Sha
 <p><em>using Kappa v4.2, OptiFine 1.18.2 HD U H7.</em><br />
 <a href="https://www.curseforge.com/minecraft/texture-packs?filter-sort=2" target="_blank">Browse more resource packs</a>.</p>
 <h4 id="setting-up-shaders-for-resource-packs">Setting up shaders for resource packs<a class="headerlink" href="#setting-up-shaders-for-resource-packs" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
-<p>Kappa requires a bit of additional setup to get the resource packs to produce the results above.  </p>
+<p>Kappa requires a bit of additional setup to get the resource packs to produce the results above.  
+</p>
 <p>With Kappa running, from <i>Shader Options</i> &gt; <i>Terrain</i> &gt; <i>Reflections</i>:<br />
 <i>Resourcepack Reflections</i>: <b>ON</b><br />
 <i>Reflection Capture</i>: <b>ON</b><br />
-<i>Roughness Threshold</i>: <b>0.95</b>  </p>
+<i>Roughness Threshold</i>: <b>0.95</b>  
+</p>
 <p>Do check shader options for other shader packs to see if they need any additional configuration to make full use of PBR textures. Their modpages typically will guide you through the additional setup.</p>
 <h2 id="reshade">ReShade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <div class="alert alert-danger"><span class="alert-title"><i class="fa fa-times-circle"></i> Danger!</span><p>Do note that <strong>ReShade causes some pretty major visual artifacts</strong> in the game as of ReShade 5.1.0 and below. Use it at your own risk. <details><summary><i>How bad could it be?</i></summary></p>
@@ -493,7 +495,8 @@ Visit <a href="https://wiki.shaderlabs.org/wiki/Shaderpacks" target="_blank">Sha
   />
 </div>
 <div class="figure"><p>pretty bad :(</p></div>
-<p></details>   </p>
+<p></details>   
+</p>
 </div><p>Setting up ReShade for Minecraft is unique, since it uses a runtime executable that isn't immediately obvious and also deletes ReShade files on launch.</p>
 <ol>
 <li>
@@ -516,7 +519,8 @@ In the Minecraft Launcher, head to the <em>Installations</em> tab, hover over th
 <p>Minecraft should now launch with ReShade properly installed. </p>
 <h3 id="depth-buffer">Depth Buffer<a class="headerlink" href="#depth-buffer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>The depth buffer requires a bit of setup before it can be used by depth shaders. In the OpenGL tab (4.9.1 and below) / Add-ons &gt; Generic Depth (5.0+), <em>Copy depth buffer before clear operations</em> has to be ticked. Under <em>Edit global preprocessor definitions</em>, change <code>RESHADE_DEPTH_INPUT_IS_UPSIDE_DOWN</code> to <code>1</code>. </p>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>It seems ReShade cannot reliably grab the right depth buffer upon resolution changes, i.e. hotsampling. It may need to be refreshed by unticking and reticking <em>Copy depth buffer [...]</em> or may even be upside down, forcing you to change <code>RESHADE_DEPTH_INPUT_IS_UPSIDE_DOWN</code> back to <code>0</code>.  </p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>It seems ReShade cannot reliably grab the right depth buffer upon resolution changes, i.e. hotsampling. It may need to be refreshed by unticking and reticking <em>Copy depth buffer [...]</em> or may even be upside down, forcing you to change <code>RESHADE_DEPTH_INPUT_IS_UPSIDE_DOWN</code> back to <code>0</code>.  
+</p>
 </div><h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <h3 id="hotsampling">Hotsampling<a class="headerlink" href="#hotsampling" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>Minecraft hotsamples normally with SRWE. Look for <code>javaw.exe</code> under <em>Process Name</em>.</p>
