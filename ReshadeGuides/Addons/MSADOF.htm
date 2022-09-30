@@ -135,9 +135,10 @@
                 <div role="main">
                     <div class="section">
 <p><img src="../../Images/MSADOF/MSADOF_header.png" alt="MSADOF" class="shadowed autosize" width="896" height="180" /></p>
-<p><strong>Multi-sampled Accumulated Depth of Field</strong> (<strong>MSADOF</strong>) is an advanced DOF add-on for ReShade developed by murchalloo. It renders depth of field without using a depth buffer for the blurring process, greatly increasing the possibilities of defocused captures. This is an advanced guide that aims to cover the usage of MSADOF, as well as its setup process for you and other users.</p>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>MSADOF requires <strong>ReShade 5.2+ with full add-on support</strong> and supported <a href="https://patreon.com/Otis_Inf" target="_blank">Otis_Inf camera tools</a>. <em>All cameras newer than the 31st of May 2022 should have support for MSADOF, look for &quot;Supports IGCS Connector&quot; in the &quot;Versions and compatibility&quot; table of each <a href="https://opm.fransbouma.com/Gamespecificfunctionality.htm" target="_blank">game</a>.</em></p>
-</div><div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The add-on is currently in closed beta and is unavailable for public download.</p>
+<p><strong>Multi-sampled Accumulated Depth of Field</strong> (<strong>MSADOF</strong>) is an advanced DOF add-on for ReShade developed by <a href="https://twitter.com/murchalloo" target="_blank">murchalloo</a>. It renders depth of field without using a depth buffer for the blurring process, greatly increasing the possibilities of defocused captures. This is an advanced guide that aims to cover the usage of MSADOF, as well as its setup process for you and other users.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>MSADOF requires <strong>ReShade 5.2+ with <a href="../../Images/reshade_FullAddonSupport.png">full add-on support</a></strong> and supported <a href="https://patreon.com/Otis_Inf" target="_blank">Otis_Inf camera tools</a>. <em>All cameras newer than the 31st of May 2022 should have support for MSADOF, look for &quot;Supports IGCS Connector&quot; in the &quot;Versions and compatibility&quot; table of each <a href="https://opm.fransbouma.com/Gamespecificfunctionality.htm" target="_blank">game</a>.</em></p>
+</div><div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The add-on is currently in closed beta and is unavailable for public download.<br />
+<font size=-1><em>Are you a FRAMED Discord member? Try out the add-on from <a href="https://discord.com/channels/549986543650078722/982157397541937152/984446941775687680" target="_blank">this message</a></em>.</font></p>
 </div><hr />
 <h2 id="advantages">Advantages<a class="headerlink" href="#advantages" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>MSADOF works by manipulating the game camera around a certain plane in space and progressively blending the result to produce a defocused image that's depth-accurate. This results in:</p>
@@ -218,15 +219,16 @@
 <div class="figure"><p>Layered defocusing of transparent and translucent materials.</p></div>
 <hr />
 <h2 id="installation--initial-setup">Installation &amp; initial setup<a class="headerlink" href="#installation--initial-setup" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>MSADOF comprises of two files, <code>IgcsConnector.addon</code> and <code>MSADOF.fx</code>. The first of which is a ReShade add-on, and the second a ReShade shader. The ADDON file is installed in the same directory as your game EXE, while the FX file is installed to your <code>reshade-shaders\Shaders</code> folder.</p>
-<p>Once installed, upon opening the ReShade GUI, you will now see a new window. This is where you will control the bulk of MSADOF. You must also enable <code>MSADOF_ADDON</code> and drag it all the way to the bottom of your shaders list. Depth buffer access is necessary for the full functionality of the add-on.</p>
-<p>For the add-on to function as intended, it's typically necessary to enable vsync in your game. This ensures a more consistent frame pacing for better results. Motion blur should also be disabled.</p>
+<p>MSADOF comprises of two files, <code>IgcsConnector.addon</code> and <code>MSADOF.fx</code>. The first of which is a ReShade add-on, and the second a ReShade shader. Copy over <code>IgcsConnector.addon</code> to the same folder as your game's ReShade DLL for ReShade to be able to use it. <code>MSADOF.fx</code> is installed as a normal shader, placed in your <code>reshade-shaders\Shaders</code> folder.</p>
+<p>Once installed, upon opening the ReShade GUI, you will now see a new window. This is where you will control the bulk of MSADOF. You must also enable <code>MSADOF_ADDON</code> in your shaders list and drag it all the way to the bottom of the list. Depth buffer access is necessary for the full functionality of the add-on.</p>
+<p>The add-on should also show up under the <em>Add-ons</em> tab of the ReShade GUI.</p>
+<p>For the add-on to function as intended, it's typically necessary to enable vsync or an FPS cap of around 30 in your game. This ensures consistent frame pacing for clean results. Motion blur should also be disabled.</p>
 <hr />
 <h2 id="list-of-preconfigured-values">List of preconfigured values<a class="headerlink" href="#list-of-preconfigured-values" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>As setting MSADOF up from scratch can be tricky, this is a compilation of known MSADOF values for games that have been tested. With the GUI open, click on <strong>Switch Mode</strong> to switch from <code>Photography Mode</code> to <code>Tweaking Mode</code>. Scroll down and expand <strong>Game Adjustments</strong> to add these values. You may also have to change some values in <strong>DOF Settings</strong>.</p>
 <p><details><summary class=important>View list</summary></p>
 <div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The <em>Frames to skip</em> parameter is dependent on your own hardware and the current performance of the game. Do tweak the value if you notice that the image isn't sharp or if there are <a href="#calibrating-the-focus-plane">visible rings</a> forming.</p>
-</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>For all games tested you have to check <code>Flip X</code> and uncheck <code>Flip Y</code>. </p>
+</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>For all games tested so far, <code>Flip X</code> should be checked. Leave <code>Flip Y</code> unchecked. </p>
 </div><table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
@@ -379,7 +381,7 @@
 	<td>Death Stranding: Director's Cut</td>
 	<td>0.1123</td>
 	<td>180</td>
-	<td>✔</td>
+	<td></td>
 	<td>2</td>
 	<td>0.001</td>
 	<td>The game will crash after a render in photomode, near plane changes constantly in cutscenes and its recommended to turn on the 30fps cap.</td>
@@ -672,9 +674,9 @@
 <hr />
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>The add-on has two modes, <code>Photography Mode</code> and <code>Tweaking Mode</code>. <code>Photography Mode</code> offers a simple UI for controlling all the necessary values once the add-on is configured, while <code>Tweaking Mode</code> is a more advanced set of controls for configuration and tweaking.</p>
-<p>Once the add-on is set up, press <code>Ctrl+B</code> to begin the render. The final image is automatically saved to the same folder where your game EXE is located.</p>
-<p>The add-on also supports hotsampling! Simply start the render after hotsampling.</p>
-<hr />
+<p>Once the add-on is configured and with the freecam active, press <code>Ctrl+B</code> to begin a render. The final image is automatically saved to the same folder where your game EXE is located. <em>The add-on does not currently support saving the final image to another directory.</em></p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>The add-on also supports hotsampling! Simply start the render after hotsampling.</p>
+</div><hr />
 <h2 id="photography-mode">Photography Mode<a class="headerlink" href="#photography-mode" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>This is the mode for controlling the add-on in a simplified manner. The controls are similar to that of a real camera. Values set in <code>Tweaking Mode</code> override those set in this mode.</p>
 <h3 id="cameralens-settings">Camera/Lens Settings<a class="headerlink" href="#cameralens-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
@@ -813,20 +815,21 @@ Modifies the falloff of the darkening to sharpen the fringing.</p>
 <p>Raytracing / specular highlight noise is often the cause of 'dirty' bokeh circles.</p>
 <h3 id="preview-bokeh-size">Preview bokeh size<a class="headerlink" href="#preview-bokeh-size" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>You can perform a quick preview of how large your bokeh shape size will be by doing a render with a very low <em>Number of rings</em> or at a lower resolution.</p>
-<h3 id="undersampling">Undersampling<a class="headerlink" href="#undersampling" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>A DOF shader can be used as a blurring pass before rendering to help and smooth out undersampling artifacts. Simply align the DOF shader's focus point to that of the add-on's and make the DOF strength very subtle. <strong>Do not</strong> use autofocus here, as the autofocus point will slip due to the camera movements.</p>
 <h3 id="antialiasing--image-sharpness">Antialiasing &amp; image sharpness<a class="headerlink" href="#antialiasing--image-sharpness" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>The camera-based nature of the shader means it does its own antialiasing! AA can be entirely disabled in your game to get a sharper image. </p>
 <p>In titles where TAA is integral to shading (<em>Cyberpunk 2077</em> and its hair, for example), it can be left enabled at the cost of a slightly softer image. </p>
 <p>It is <strong>not</strong> recommended to have a sharpening pass prior to the render. Sharpening halos may become exaggerated and/or show up in the accumulation process.</p>
 <h3 id="have-fun-with-shaders">Have fun with shaders!<a class="headerlink" href="#have-fun-with-shaders" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>This add-on works great with ReShade shaders too! In fact, using a LUT prior to the render and saving the result in EXR can reduce colour banding, thanks to the stacking process. </p>
+<p>This add-on works great with ReShade shaders too! In fact, using a LUT prior to the render and saving the result in EXR can reduce colour banding, thanks to the stacking process. Lens distortion effects like the fantastic <a href="https://github.com/Fubaxiusz/fubax-shaders/blob/master/Shaders/PerfectPerspective.fx" target="_blank"><code>PerfectPerspective.fx</code></a> can also be captured by placing them below <code>MSADOF.fx</code> in the shaders list.</p>
 <hr />
 <h2 id="processing-saved-exrs">Processing saved EXRs<a class="headerlink" href="#processing-saved-exrs" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>The saved EXRs require gamma correction to look as they did on your screen, instead of a washed-out image. This is easiest done with Adobe Photoshop, however any editor that can open EXRs and perform gamma correction would also work.</p>
-<p>The EXRs are saved in linear gamma (gamma 1.0), so a simple gamma correction of 0.454545... (repeating) returns an image at the proper sRGB gamma of 2.2.</p>
-<p>This can be done with <em>Image</em> &gt; <em>Adjustments</em> &gt; <em>Exposure...</em> or with the Exposure adjustment layer in Photoshop.</p>
-<p><img src="../../Images/MSADOF/MSADOF_Addon_EXR-Processing.jpg" alt="Aspect Ratio" class="shadowed autosize" width="1245" height="400" /></p>
+<p>Saved EXRs are in linear gamma (gamma 1.0). This causes them to look 'washed-out' when viewed with an image viewer. Most image viewers &amp; converters will perform gamma correction for you when compressing them to an 8/16-bit format (e.g. opening it in Photoshop then immediately saving it as a PNG), resulting in an image with the expected colours. </p>
+<p>If you would like to edit these 32-bit colours, a simple gamma correction of 0.454545... (repeating) returns an image at the proper sRGB gamma of 2.2. This can be done with <em>Image</em> &gt; <em>Adjustments</em> &gt; <em>Exposure...</em> or with the Exposure adjustment layer in Photoshop, for example.</p>
+<div class="figure">
+<img src="../../Images/MSADOF/MSADOF_Addon_EXR-Processing.jpg" alt="Aspect Ratio" title="Some advanced editors like Nuke have viewport display gamma sliders that can be used instead." class="shadowed autosize" width="1245" height="400" />
+<p>Some advanced editors like Nuke have viewport display gamma sliders that can be used instead.</p>
+</div>
+<p>You can then perform your edits atop this correction layer. Remember to disable it before exporting your final result to prevent an overdarkened image.</p>
 
                     </div>
                 </div>
