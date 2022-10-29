@@ -703,33 +703,35 @@ Displays a progress bar.</p>
 <p><strong>Shape size</strong><br />
 This controls how large your bokeh will be. </p>
 <p><strong>Random point rendering</strong><br />
-Instead of a progressive spiral render, this causes the add-on sample randomly. This can be useful for previewing how large the resulting bokeh will be, or can be used to mitigate animating background elements interrupting the render.<br />
-<em>This feature is not currently working as intended and will produce ghosts of the focus plane.</em></p>
+Instead of a progressive spiral sampling path, this causes the add-on sample randomly. This can be useful for previewing how large the resulting bokeh will be, or can be used to mitigate animating background elements interrupting the render.<br />
+<em>This feature is not currently working as intended and occasionally produces ghosts of the focus plane.</em></p>
 <div class="figure">
 <img src="../../Images/MSADOF/MSADOF_Addon_Sampling.webp" alt="Animated image of the difference between the two sampling methods" title="This example has been sped up by 8x." class="shadowed autosize" />
 <p>This example has been sped up by 8x.</p>
 </div>
 <p><strong>Focus precise at close range</strong><br />
-This changes the scaling of the focus distance slider. Higher values mean that the focus distance slider can operate in even smaller steps. This is useful for portraits, where extra focus precision is desired.</p>
+This changes the scaling of the focus distance slider. Higher values mean that the focus distance slider can operate in even smaller steps closer to the camera. This is useful for portraits, where extra focus precision is desired.</p>
 <p><strong>Frames to skip</strong><br />
 Skips camera movement of every few frames to make accumulation more consistent. Depending on the performance of your game, this value might have to be changed. If you notice that the add-on is drawing rings/donuts on your focus plane, this value likely has to be changed.</p>
 <p><strong>Frames to wait</strong><br />
 Similar to above, this value should only be changed if you notice that the focus plane isn't properly sharp.</p>
 <h3 id="game-adjustments">Game Adjustments<a class="headerlink" href="#game-adjustments" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p><img src="../../Images/MSADOF/MSADOF_Addon_Settings_GameAdjustments.png" alt="Screenshot of the Game Adjustments UI" class="shadowed autosize" width="525" height="220" /></p>
-<p>This category is to be left alone, as it is for first time configuration of a new game. <a href="#adjusting-for-a-new-game">See the section below</a> on how to tweak it.</p>
+<p>This category can mostly be left alone, as it is for first time configuration of a new game. <a href="#adjusting-for-a-new-game">See the section below</a> on how to tweak it.</p>
 <p><strong>Camera movement multiplier</strong><br />
 Sets how fast the camera will move based on a multiplier applied to camera coordinate scale. Turn this up to exaggerate shape size, or turn it down to reduce it.</p>
 <p><strong>Max FOV Value</strong><br />
 The maximum FOV value that MSADOF will use for its calculations.</p>
 <p><strong>Variable near plane</strong><br />
-Changes how <em>Camera near plane</em> is calculated if a change in aspect ratio causes camera near plane to change as well.</p>
+Changes how <em>Camera near plane</em> is calculated if a change in aspect ratio causes <em>Camera near plane</em> to change as well.</p>
 <p><strong>Camera near plane</strong><br />
 Offsets the distance of the near plane from the in-game camera. This is primarily used in aligning the focus plane to a known focus distance.</p>
 <p><strong>Cache current value</strong><br />
 Writes the current near plane value to <code>MSADOF_CACHE.ini</code> and displays the cached values in a new list just directly above this category. This is useful for games that have changing <em>Camera near plane</em> values, like <em>The Witcher 3</em>.</p>
 <h4 id="unused-settings">Unused settings<a class="headerlink" href="#unused-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
-<p>This category has nothing that needs to be touched.</p>
+<p>This category does not need to be tweaked.</p>
+<p><strong>Flip X / Y</strong><br />
+Fixes bokeh shape based on camera movement axes. The default setting of flipped X and unflipped Y appears to be standard across all games.</p>
 <hr />
 <h2 id="shape-settings">Shape settings<a class="headerlink" href="#shape-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p><img src="../../Images/MSADOF/MSADOF_Addon_Settings_ShapeSettings.png" alt="Screenshot of the Shape UI" class="shadowed autosize" width="848" height="384" /></p>
@@ -865,8 +867,8 @@ Sets a multiplier to construct a higher resolution image out of the data accumul
 <h2 id="adjusting-for-a-new-game">Adjusting for a new game<a class="headerlink" href="#adjusting-for-a-new-game" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>If you're playing a game that does not have known values yet or the values produce wrong results on your end, this is the process of setting up the <em>Game Adjustments</em> tab.</p>
 <h4 id="max-fov-value">1. Max FOV Value<a class="headerlink" href="#max-fov-value" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
-<p>Set your game to run in a 1:1 aspect ratio. Switch the add-on UI to <code>Tweaking Mode</code> and expand <em>Additional info</em>, keeping your eye on FOV. With the tool's free camera active, zoom out until the image flips. Note the FOV value at which this occurs, that will be the <strong>Max FOV Value</strong>.</p>
-<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This value is typically 180 and shouldn't need to be tweaked unless you think something's up.</p>
+<p>Set your game to run in a 1:1 aspect ratio. With <em>Additional info</em> expanded, keep your eye on <em>FOV</em>. With the tool's free camera active, zoom out until the image flips. Note the FOV value at which the flip occurs - this is the <strong>Max FOV Value</strong>.</p>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This value is typically 180 and shouldn't need to be tweaked unless you figure something's wrong.</p>
 </div><h4 id="calibrating-the-focus-plane">2. Calibrating the focus plane<a class="headerlink" href="#calibrating-the-focus-plane" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
 <p>This step requires quite a bit of trial &amp; error, as it involves messing with <em>Focus distance</em> until the focus plane is found. A high amount of blur (large <em>Shape size</em> / <em>Camera movement multiplier</em>) is recommended to help pinpoint the focus point.</p>
 <p>If you're struggling to find an area in focus and the results are consistently blurry, you might have to configure <em>Frames to skip</em>. The add-on drawing rings/donuts is usually a tell-tale sign of this.</p>
@@ -888,9 +890,9 @@ Sets a multiplier to construct a higher resolution image out of the data accumul
 <p>To get the best possible result out of this add-on, it's best to find a game that can perfectly timestop with no significant jitter, foliage sway, or anything that could interrupt the render. </p>
 <p>Raytracing / specular highlight noise is often the cause of 'dirty' bokeh circles.</p>
 <h3 id="preview-bokeh-size">Preview bokeh size<a class="headerlink" href="#preview-bokeh-size" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>You can perform a quick preview of how large your bokeh shape size will be by doing a render with a very low <em>Number of rings</em> or at a lower resolution.</p>
+<p>You can perform a quick preview of how large your bokeh shape size will be by doing a render with a very low <em>Number of rings</em> or at a lower resolution. <em>Random point rendering</em> is also very useful for this.</p>
 <h3 id="antialiasing--image-sharpness">Antialiasing &amp; image sharpness<a class="headerlink" href="#antialiasing--image-sharpness" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>The camera-based nature of the shader means it does its own antialiasing! AA can be entirely disabled in your game to get a sharper image. </p>
+<p>The camera-based nature of the shader means it does its own antialiasing! AA can be entirely disabled in your game to get a sharper image. This also works great with games that have temporally-dependent shaders too, like <em>Cyberpunk 2077's</em> hair shading, as MSADOF is technically a temporal technique as well.</p>
 <p>It is <strong>not</strong> recommended to have a sharpening pass prior to the render. Sharpening halos may become exaggerated and/or show up in the accumulation process.</p>
 <h3 id="have-fun-with-shaders">Have fun with shaders!<a class="headerlink" href="#have-fun-with-shaders" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>This add-on works great with ReShade shaders too! In fact, using a LUT prior to the render and saving the result in EXR can reduce colour banding, thanks to the stacking process. Lens distortion effects like the fantastic <a href="https://github.com/Fubaxiusz/fubax-shaders/blob/master/Shaders/PerfectPerspective.fx" target="_blank"><code>PerfectPerspective.fx</code></a> can also be captured.</p>
@@ -904,9 +906,9 @@ Sets a multiplier to construct a higher resolution image out of the data accumul
 </div>
 <p>You can then perform your edits atop this correction layer. Remember to disable it before exporting your final result to prevent an overdarkened image.</p>
 <div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Nerd stuff: This isn't really an accurate process. Dividing gamma by 0.454545... only approximates the sRGB gamma curve, which is a little more complicated than gamma 2.2. If you really wanted an accurate conversion back to sRGB, you'd need to apply a colorspace transform from linear to sRGB. More advanced editors that deal in colorspaces will have a featureset to handle this. A profile can also be assigned to the image, such that it's always interpreted as an sRGB image. For the most part though, unless you <em>really need</em> the original authentic colours, I wouldn't go through all this hassle and do my colour grading work atop this basic gamma math.<br />
-<font size=-1>This is based off my rough understanding of the hell that is colorspaces :) it could potentially be wrong, and if you happen to be a nerd that knows about this stuff, I'd gladly be corrected.</font></p>
+<font size=-1>this is based off my rough understanding of the hell that is colorspaces :) if you think this is all wrong, i'd gladly be corrected.</font></p>
 </div><hr />
-<p><em>last updated 24th October 2022</em><br />
+<p><em>last updated 29th October 2022</em><br />
 <em>images provided and written by <a href="https://twitter.com/moyevka" target="_blank">moyevka</a></em>  </p>
 
                     </div>
