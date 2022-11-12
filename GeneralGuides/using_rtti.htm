@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Using RTTI info in a game exe - FRAMED. Screenshot Community</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/theme_20220814.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors_20220814.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/vs.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> FRAMED. Screenshot Community</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Home</a>
+</li>
+
+<li class="tocentry"><a href="../basics.htm">The Basics</a>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Gameguides.htm">Game guides</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../GeneralGuides/index.htm">General guides</a></span></li>
+
+<li class="tocentry"><a href="../GeneralGuides/anselguide.htm">Ansel</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/uuu_motionblur.htm">Creating Motion Blur with UUU camera paths</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/tinyplanetsguide.htm">Creating Tiny Planets</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/custom_dsr_resolutions.htm">Custom DSR Resolutions</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/cyberlit.htm">CyberLit for CyberPunk 2077 user guide</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/relit.htm">RELit for RE Engine games</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/steam_update_guide.htm">Revert Steam Game Updates</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/ue4guide.htm">Tweaking Unreal Engine 4 Games</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/universal_unity_freecam.htm">UnityExplorer and Freecam</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/universal_ue4_consoleunlocker.htm">Universal Unreal Engine 4 Unlocker</a>
+</li>
+<li class="tocentry"><a href="../GeneralGuides/cheat_engine_tables.htm">Using Cheat Engine Tables</a>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../GeneralGuidesAdvanced.htm">Advanced</a></span></li>
+<li class="tocentry current"><a class="current" href="../GeneralGuides/using_rtti.htm">Using RTTI info in a game exe</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#using-the-type-names">Using the type names</a></li>
+
+
+
+</ul>
+
+</ul>
+</li>
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../PhotographyGuides/index.htm">Photography guides</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../ReshadeGuides/index.htm">Reshade guides</a></span>
+</li>
+<li class="tocentry"><a href="../cheattablearchive.htm">Cheat Table Archive</a>
+</li>
+<li class="tocentry"><a href="../contribute.htm">Contribute to the site!</a>
+</li>
+</ul>
+				<br/>
+				<ul>
+					<li class="tocentry">
+						<ul>
+							<li>
+								<span class="navigationgroup">Galleries</span>
+							</li>
+							<li class="tocentry">
+								<a href="/HallOfFramed/" target="_blank">Hall of Framed</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">FRAMED. Screenshot Community</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../GeneralGuides/index.htm">General guides</a></li> / <li><a href="../GeneralGuidesAdvanced.htm">Advanced</a></li> / <li><a href="../GeneralGuides/using_rtti.htm">Using RTTI info in a game exe</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="using-rtti-info-in-a-game-exe">Using RTTI info in a game exe<a class="headerlink" href="#using-rtti-info-in-a-game-exe" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>(Information distilled from an excellent video by Hatti.)</p>
+<p>The first action is to search for <code>.?AV</code> as string in the game exe using cheat engine. Do a search on the .exe alone, by selecting
+the exe in the combobox in Memory Scan options. Set Scan type to string, Writable and CopyOnWrite set to a filled checkbox. If you find more than
+a 1000 entries, it's usable and types of the game are in RTTI info in the exe. If you find just a few hundred, forget it. </p>
+<p>After you've found all entries, select them all in the top pane of CE and click the red arrow to add them all to the table area. Select them all, press 
+<code>alt-enter</code> and increase the width of the screen type to e.g. 50 or more. </p>
+<p>Then select <code>Table-&gt;Show Cheat Table Lua Script</code>, and run the following Lua:</p>
+<pre><code class="lua">local al = getAddressList()
+local vals = {}
+for i=0, al.Count-1 do
+    vals[#vals+1] = al[i].Value
+end
+writeToClipboard(table.concat(vals, '\n'))
+</code></pre>
+
+<p>This will copy all string values to the clipboard. Open notepad++ and press <code>ctrl-v</code> to paste the contents. You now have all the type names
+available through RTTI, and can start finding the types one by one using the steps described below.</p>
+<h2 id="using-the-type-names">Using the type names<a class="headerlink" href="#using-the-type-names" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>After you've ran the script and pasted the info into notepad, you can search for a given type, e.g. everything with 'Camera' in it. We'll use the 
+example of Rise of the Tomb Raider. After using the steps above, we find a lot of names and one of them is <code>.?AVCameraComponent@@</code>. Searching again
+on the .exe with the same settings we find just 1 entry. Clear the table area and add the one entry we found. The entry we found is at address 
+<code>0x140f3D218</code>.</p>
+<p>Bring up the windows calculator, set it to 'programmer' as you can then work with hexadecimal values. The type descriptor for the CameraComponent here
+starts at the address 0x10 earlier, so <code>0x140f3D218 - 0x10</code> which is <code>0x140f3D208</code>.</p>
+<h3 id="object-locator">Object locator<a class="headerlink" href="#object-locator" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>To find the object locator we have to take the address we calculated, <code>0x140f3D208</code>, and substract the module start address, which is the start address
+of the exe in memory. Here that's <code>0x140000000</code>, so we can just keep <code>0xf3d208</code>.
+Scan for that, in the exe, 4 Bytes hex scan, and from the entries you find, pick the one ending with <code>0xC</code>. Now, that address, subtract <code>0xC</code> from that
+which is just changing the end C with 0. Here however the address isn't ending with a C, but with a 4: <code>0x140DF8D14</code>. </p>
+<h3 id="finding-the-vtable-and-instances">Finding the VTable and instances<a class="headerlink" href="#finding-the-vtable-and-instances" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>We substract C from that, which will give us <code>0x140DF8D08</code>. We do a new scan, this time for 8 bytes hex, and scan for that value, <code>0x140DF8D08</code>. This 
+gives us 1 address, which is the VTable of the type we searched for, which in this case is located at <code>0x140CDF4D8</code>. With the VTable we can find all
+instances of the type we searched for, as the instances point to the vtable in memory. To do that, add <code>0x8</code> to the address of the start of the VTable
+which results here in <code>0x140CDF4E0</code> and we scan for this, 8 byte hex, in the complete memory, so not only inside the game exe. We'll end up with a couple
+of instances and we can now browse the memory of these and look inside them to see if they contain any values we can use. </p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+&copy 2019-2022 FRAMED. All rights reserved.
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/comparisons.js"></script>
+
+</body>
+</html>
