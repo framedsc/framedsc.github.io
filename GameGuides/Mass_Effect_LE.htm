@@ -70,12 +70,6 @@
 
 <li class="tocentry"><a href="#mass-effect-1">Mass Effect 1</a></li>
 
-<li class="tocentry"><a href="#mass-effect-2">Mass Effect 2</a></li>
-
-<li class="tocentry"><a href="#mass-effect-3">Mass Effect 3</a></li>
-
-<li class="tocentry"><a href="#fix-shadow-banding-in-the-trilogy">Fix Shadow Banding in the Trilogy</a></li>
-
 <li class="tocentry"><a href="#tips-and-tricks">Tips and Tricks</a></li>
 
 <li class="tocentry"><a href="#alternative-to-cheat-table-useage-photomode-enhancement-mods">Alternative to Cheat Table useage: Photomode Enhancement Mods</a></li>
@@ -338,23 +332,86 @@
 <li>During gameplay you can disable the HUD by typing in <code>show scaleform</code>. You may choose to bind it to specific key as well. </li>
 </ol>
 <h2 id="mass-effect-1">Mass Effect 1<a class="headerlink" href="#mass-effect-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Locate the <code>BioInput.ini</code> under <code>Your Documents\Bioware\Mass Effect\Config</code> or under <code>\Steam\steamapps\common\Mass Effect Legendary Edition\Game\ME1\BioGame\Config</code> and add the following command lines under the section <code>BIOC_Base.Bio.PlayerInput</code>:</p>
-<pre class="nocode">Bindings=(Name=&quot;NumPadOne&quot;,Command=&quot;show scaleform&quot;)
-Bindings=(Name=&quot;NumPadTwo&quot;,Command=&quot;FOV 0&quot;)
-Bindings=(Name=&quot;NumPadThree&quot;,Command=&quot;FOV 70&quot;)
-Bindings=(Name=&quot;NumPadFour&quot;,Command=&quot;SloMo 0.5&quot;)
-Bindings=(Name=&quot;NumPadFive&quot;,Command=&quot;SloMo 1&quot;)
-Bindings=(Name=&quot;NumPadSeven&quot;,Command=&quot;ghost&quot;)
-Bindings=(Name=&quot;NumPadEight&quot;,Command=&quot;walk&quot;)
-Bindings=(Name=&quot;NumPadNine&quot;,Command=&quot;ToggleFlyCam&quot;)
-Bindings=(Name=&quot;Multiply&quot;,Command=&quot;PlayersOnly&quot;)
-</pre><h2 id="mass-effect-2">Mass Effect 2<a class="headerlink" href="#mass-effect-2" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>This is where things will get a bit more tricky, but thanks to the updated Mod Manager, the process has become a lot easier. </p>
-<p>To unpack the Mass Effect 2 Coalesced, go to the folder <code>Mass Effect 2\BIOGame\CookedPCConsole</code> in your installation location of ME 2. </p>
-<p>Search for <code>Coalesced_Language.bin</code> or simply choose <code>Coalesced_INT.bin</code> - <strong>Do a back-up!</strong></p>
-<p>Drag the file into the ME3TweaksModManager, in the left bottom are of the program window you'll get the following message: &quot;Decompiled Coalesced file&quot;</p>
-<p>If you head into the location of your choosen Coalesced File, there will be a folder called the same name. Within that folder search for <code>BIOInput.ini</code>. Within that ini you need to perform multiple edits.</p>
-<pre class="nocode">[SFXGameModeBase]
+<p>To get the FlyCam working you need need the <code>ME3TweaksManager</code>and perform the following steps:  
+</p>
+<ol>
+<li>Locate the <code>Coalesced_INT.bin</code> file under <code>ME1/BioGame/CookedPCConsole</code> and create backup. Copy it over somewhere else to work with a seperate copy.</li>
+<li>Drag the <code>Coalesced_INT.bin</code> into the <code>ME3TweaksManager</code>and head to the location of the <code>Coalesced_INT.bin</code></li>
+<li>Open up the folder <code>Coalesced_INT</code> and locate the `BIOInput.ini</li>
+<li>Perform the following edits:
+ Above the line <code>[SFXGame.SFXGameModeDefault]</code> add the following lines
+ ```
+ [SFXGame.SFXGameModeFlycam]
+Bindings=(Name=&quot;Add&quot;,Command=&quot;PlayersOnly | ToggleFlycam | Show Scaleform&quot; )
+Bindings=(Name=&quot;MoveUp&quot;,Command=&quot;Axis aUp Speed=0.2&quot;)
+Bindings=(Name=&quot;MoveDown&quot;,Command=&quot;Axis aUp Speed=-0.2&quot;)
+Bindings=(Name=&quot;MoveForward&quot;,Command=&quot;Axis aBaseY Speed=0.2&quot;)
+Bindings=(Name=&quot;MoveBackward&quot;,Command=&quot;Axis aBaseY Speed=-0.2&quot;)
+Bindings=(Name=&quot;StrafeLeft&quot;,Command=&quot;Axis aStrafe Speed=-1.0&quot;)
+Bindings=(Name=&quot;StrafeRight&quot;,Command=&quot;Axis aStrafe Speed=+1.0&quot;)
+Bindings=(Name=&quot;Q&quot;,Command=&quot;MoveDown&quot;)
+Bindings=(Name=&quot;E&quot;,Command=&quot;MoveUp&quot;)
+Bindings=(Name=&quot;W&quot;,Command=&quot;MoveForward&quot;)
+Bindings=(Name=&quot;S&quot;,Command=&quot;MoveBackward&quot;)
+Bindings=(Name=&quot;S&quot;,Command=&quot;MoveBackward&quot;)
+Bindings=(Name=&quot;A&quot;,Command=&quot;StrafeLeft&quot;)
+Bindings=(Name=&quot;D&quot;,Command=&quot;StrafeRight&quot;)
+Bindings=(Name=&quot;MouseX&quot;,Command=&quot;Count bXAxis | Axis aMouseX&quot;)
+Bindings=(Name=&quot;MouseY&quot;,Command=&quot;Count bYAxis | Axis aMouseY&quot;)</li>
+</ol>
+<pre class="nocode">Inside `[SFXGame.SFXGameModeDefault]` place the lines
+</pre><p>Bindings=(Name=&quot;Add&quot;,Command=&quot;PlayersOnly | ToggleFlycam | Show Scaleform&quot; )
+Bindings=(Name=&quot;MoveUp&quot;,Command=&quot;Axis aUp Speed=0.2&quot;)
+Bindings=(Name=&quot;MoveDown&quot;,Command=&quot;Axis aUp Speed=-0.2&quot;)
+Bindings=(Name=&quot;MoveForward&quot;,Command=&quot;Axis aBaseY Speed=0.2&quot;)
+Bindings=(Name=&quot;MoveBackward&quot;,Command=&quot;Axis aBaseY Speed=-0.2&quot;)
+Bindings=(Name=&quot;StrafeLeft&quot;,Command=&quot;Axis aStrafe Speed=-1.0&quot;)
+Bindings=(Name=&quot;StrafeRight&quot;,Command=&quot;Axis aStrafe Speed=+1.0&quot;)
+Bindings=(Name=&quot;Q&quot;,Command=&quot;MoveDown&quot;)
+Bindings=(Name=&quot;E&quot;,Command=&quot;MoveUp&quot;)
+Bindings=(Name=&quot;W&quot;,Command=&quot;MoveForward&quot;)
+Bindings=(Name=&quot;S&quot;,Command=&quot;MoveBackward&quot;)
+Bindings=(Name=&quot;S&quot;,Command=&quot;MoveBackward&quot;)
+Bindings=(Name=&quot;A&quot;,Command=&quot;StrafeLeft&quot;)
+Bindings=(Name=&quot;D&quot;,Command=&quot;StrafeRight&quot;)
+Bindings=(Name=&quot;MouseX&quot;,Command=&quot;Count bXAxis | Axis aMouseX&quot;)
+Bindings=(Name=&quot;MouseY&quot;,Command=&quot;Count bYAxis | Axis aMouseY&quot;)</p>
+<pre class="nocode">Inside `[SFXGame.SFXGameModeVehicle]` place the lines
+</pre><p>Bindings=(Name=&quot;Add&quot;,Command=&quot;PlayersOnly | ToggleFlycam | Show Scaleform&quot; )</p>
+<pre class="nocode">Within the section `[SFXGame.SFXGameModeConversation]` add
+</pre><p>Bindings=(Name=&quot;Add&quot;,Command=&quot;PlayersOnly | ToggleFlycam | Show Scaleform&quot; )
+Bindings=(Name=&quot;MoveUp&quot;,Command=&quot;Axis aUp Speed=0.2&quot;)
+Bindings=(Name=&quot;MoveDown&quot;,Command=&quot;Axis aUp Speed=-0.2&quot;)
+Bindings=(Name=&quot;MoveForward&quot;,Command=&quot;Axis aBaseY Speed=0.2&quot;)
+Bindings=(Name=&quot;MoveBackward&quot;,Command=&quot;Axis aBaseY Speed=-0.2&quot;)
+Bindings=(Name=&quot;StrafeLeft&quot;,Command=&quot;Axis aStrafe Speed=-1.0&quot;)
+Bindings=(Name=&quot;StrafeRight&quot;,Command=&quot;Axis aStrafe Speed=+1.0&quot;)
+Bindings=(Name=&quot;Q&quot;,Command=&quot;MoveDown&quot;)
+Bindings=(Name=&quot;E&quot;,Command=&quot;MoveUp&quot;)
+Bindings=(Name=&quot;W&quot;,Command=&quot;MoveForward&quot;)
+Bindings=(Name=&quot;S&quot;,Command=&quot;MoveBackward&quot;)
+Bindings=(Name=&quot;S&quot;,Command=&quot;MoveBackward&quot;)
+Bindings=(Name=&quot;A&quot;,Command=&quot;StrafeLeft&quot;)
+Bindings=(Name=&quot;D&quot;,Command=&quot;StrafeRight&quot;)
+Bindings=(Name=&quot;MouseX&quot;,Command=&quot;Count bXAxis | Axis aMouseX&quot;)
+Bindings=(Name=&quot;MouseY&quot;,Command=&quot;Count bYAxis | Axis aMouseY&quot;)</p>
+<pre class="nocode">5. Save the file `BIOInput.ini` and drag the file `mele.extractedbin` within the `Coalesced_INT` folder back into the `ME3TweaksManager`
+6. Place the newly created `Coalesced_INT.bin` under `ME1/BioGame/CookedPCConsole`. If asked replace the existing file.
+
+The FlyCam should work now. Method by munchyfly found here: [https://hackmd.io/@munchyfly/ByiK4X5dc]
+
+## Mass Effect 2
+This is where things will get a bit more tricky, but thanks to the updated Mod Manager, the process has become a lot easier. 
+
+To unpack the Mass Effect 2 Coalesced, go to the folder `Mass Effect 2\BIOGame\CookedPCConsole` in your installation location of ME 2. 
+
+Search for `Coalesced_Language.bin` or simply choose `Coalesced_INT.bin` - **Do a back-up!**
+
+Drag the file into the ME3TweaksModManager, in the left bottom are of the program window you'll get the following message: &quot;Decompiled Coalesced file&quot;
+
+If you head into the location of your choosen Coalesced File, there will be a folder called the same name. Within that folder search for `BIOInput.ini`. Within that ini you need to perform multiple edits.
+
+</pre><p>[SFXGameModeBase]
 (Name=&quot;F12&quot;,Command=&quot;Show Scaleform&quot;)
 (Name=&quot;F11&quot;,Command=&quot;PlayersOnly&quot;)
 (Name=&quot;F10&quot;,Command=&quot;ToggleFlyCam&quot;)
@@ -362,9 +419,8 @@ Bindings=(Name=&quot;Multiply&quot;,Command=&quot;PlayersOnly&quot;)
 (Name=&quot;O&quot;,Command=&quot;set materialeffect bshowingame false&quot;)
 (Name=&quot;U&quot;,Command=&quot;set materialeffect bshowingame true&quot;)
 (Name=&quot;i&quot;,Command=&quot;FOV 70&quot;)
-(Name=&quot;l&quot;,Command=&quot;FOV 0&quot;)
-
-[SFXGameModeCinematic]
+(Name=&quot;l&quot;,Command=&quot;FOV 0&quot;)</p>
+<p>[SFXGameModeCinematic]
 (Name=&quot;MoveUp&quot;,Command=&quot;Axis aUp Speed=0.2&quot;)
 (Name=&quot;MoveDown&quot;,Command=&quot;Axis aUp Speed=0.2&quot;)
 (Name=&quot;MoveForward&quot;,Command=&quot;Axis aBaseY Speed=0.2&quot;)
@@ -387,9 +443,8 @@ Bindings=(Name=&quot;Multiply&quot;,Command=&quot;PlayersOnly&quot;)
 (Name=&quot;LeftShift&quot;,Command=&quot;MoreSpeed | OnRelease NormalSpeed&quot;,Control=False,Shift=False,Alt=False)
 (Name=&quot;Multiply&quot;, Command=&quot;SloMo 1&quot;)
 (Name=&quot;Subtract&quot;, Command=&quot;SloMo 0.5&quot;)
-(Name=&quot;Add&quot;, Command=&quot;SloMo 0.01&quot;)
-
-[SFXGameModeConversation]
+(Name=&quot;Add&quot;, Command=&quot;SloMo 0.01&quot;)</p>
+<p>[SFXGameModeConversation]
 (Name=&quot;MoveUp&quot;,Command=&quot;Axis aUp Speed=0.2&quot;)
 (Name=&quot;MoveDown&quot;,Command=&quot;Axis aUp Speed=0.2&quot;)
 (Name=&quot;MoveForward&quot;,Command=&quot;Axis aBaseY Speed=0.2&quot;)
@@ -411,24 +466,30 @@ Bindings=(Name=&quot;Multiply&quot;,Command=&quot;PlayersOnly&quot;)
 (Name=&quot;LeftShift&quot;,Command=&quot;MoreSpeed | OnRelease NormalSpeed&quot;,Control=False,Shift=False,Alt=False)
 (Name=&quot;Multiply&quot;, Command=&quot;SloMo 1&quot;)
 (Name=&quot;Subtract&quot;, Command=&quot;SloMo 0.5&quot;)
-(Name=&quot;Add&quot;, Command=&quot;SloMo 0.01&quot;)
-
-[SFXGameModeDefault]
+(Name=&quot;Add&quot;, Command=&quot;SloMo 0.01&quot;)</p>
+<p>[SFXGameModeDefault]
 (Name=&quot;F3&quot;,Command=&quot;God&quot;)
 (Name=&quot;F8&quot;,Command=&quot;Ghost&quot;)
-(Name=&quot;F4&quot;,Command=&quot;Walk&quot;)
-</pre><p>When you finished adding the commands, save the file and close it. Now, search within the previously mentioned folder (where you grabbed the .ini from) and locate the following file: <code>mele.extractedbin</code>. Drag that file into the ME3TweaksModManager and in the bottom left, the following message should appear [Compiled Coalesced File]. Within the folder you should find the new Coalesced. Drag this one into the <code>Mass Effect 2\BIOGame\CookedPCConsole</code>.</p>
-<h2 id="mass-effect-3">Mass Effect 3<a class="headerlink" href="#mass-effect-3" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>For Mass Effect 3, the process is a bit more straightforward, however it's up to you if you want to perform the edits by hand in Notepad etc. according to the previously mentioned process for ME2 or if you want to use the Wenched Coalesced Editor which allows you to directly edit the file without unpacking it first.</p>
-<p>Either way, the initial steps are the same.</p>
-<ol>
-<li>Navigate to <code>Mass Effect 3\BIOGame\CookedPCConsole</code></li>
-<li>Locate the <code>Coalesced.bin</code> file</li>
-</ol>
-<p>Perform the unpacking steps mentioned above, or open up the file with the Coalesced Editor.
-If you choose the Editor: start it and then load the file <code>Bioinput.ini</code> and within that file go to the <code>SFXGAME</code> tab.</p>
-<p>Add the following commands under each named section:</p>
-<pre class="nocode">[SFXGameModeCinematic]
+(Name=&quot;F4&quot;,Command=&quot;Walk&quot;)</p>
+<pre class="nocode">
+
+When you finished adding the commands, save the file and close it. Now, search within the previously mentioned folder (where you grabbed the .ini from) and locate the following file: `mele.extractedbin`. Drag that file into the ME3TweaksModManager and in the bottom left, the following message should appear [Compiled Coalesced File]. Within the folder you should find the new Coalesced. Drag this one into the `Mass Effect 2\BIOGame\CookedPCConsole`.
+
+## Mass Effect 3
+
+For Mass Effect 3, the process is a bit more straightforward, however it's up to you if you want to perform the edits by hand in Notepad etc. according to the previously mentioned process for ME2 or if you want to use the Wenched Coalesced Editor which allows you to directly edit the file without unpacking it first.
+
+Either way, the initial steps are the same.
+
+1. Navigate to `Mass Effect 3\BIOGame\CookedPCConsole`
+2. Locate the `Coalesced.bin` file
+
+Perform the unpacking steps mentioned above, or open up the file with the Coalesced Editor.
+If you choose the Editor: start it and then load the file `Bioinput.ini` and within that file go to the `SFXGAME` tab.
+
+Add the following commands under each named section:
+
+</pre><p>[SFXGameModeCinematic]
 (Name=&quot;MouseX&quot;, Command=&quot;PC_LookX&quot;)
 (Name=&quot;MouseY&quot;, Command=&quot;PC_LookY&quot;) 
 (Name=&quot;A&quot;, Command=&quot;PC_StrafeLeft&quot;) 
@@ -443,9 +504,8 @@ If you choose the Editor: start it and then load the file <code>Bioinput.ini</co
 (Name=&quot;Semicolon&quot;, Command=&quot;set HeightFogComponent bEnabled False&quot;) ( Name=&quot;Period&quot;, Command=&quot;set HeightFogComponent bEnabled True&quot;) 
 (Name=&quot;Comma&quot;, Command=&quot;set UberPostProcessEffect SceneHighlights (x=1.0,y=1.0,z=1.0) | set UberPostProcessEffect SceneShadows (x=0.0,y=0.0,z=0.0 | set UberPostProcessEffect SceneMidtones (x=1.0,y=1.0,z=1.0)&quot;) 
 (Name=&quot;Multiply&quot;, Command=&quot;FOV 70&quot;)
-( Name=&quot;Decimal&quot;, Command=&quot;FOV 0&quot;)
-
-[SFXGameModeConversation]
+( Name=&quot;Decimal&quot;, Command=&quot;FOV 0&quot;)</p>
+<p>[SFXGameModeConversation]
 (Name=&quot;MouseX&quot;, Command=&quot;PC_LookX&quot;)
 (Name=&quot;MouseY&quot;, Command=&quot;PC_LookY&quot;) 
 (Name=&quot;A&quot;, Command=&quot;PC_StrafeLeft&quot;) 
@@ -461,14 +521,13 @@ If you choose the Editor: start it and then load the file <code>Bioinput.ini</co
 (Name=&quot;Period&quot;, Command=&quot;set HeightFogComponent bEnabled True&quot;) 
 (Name=&quot;Comma&quot;, Command=&quot;set UberPostProcessEffect SceneHighlights (x=1.0,y=1.0,z=1.0) | set UberPostProcessEffect SceneShadows (x=0.0,y=0.0,z=0.0 | set UberPostProcessEffect SceneMidtones (x=1.0,y=1.0,z=1.0)&quot;)
 (Name=&quot;Multiply&quot;, Command=&quot;FOV 70&quot;)
-(Name=&quot;Decimal&quot;, Command=&quot;FOV 0&quot;)
-
-[SFXGameModeDefault]
+(Name=&quot;Decimal&quot;, Command=&quot;FOV 0&quot;)</p>
+<p>[SFXGameModeDefault]
 (Name=&quot;Home&quot;, Command=&quot;set SFXPawn_Player bCombatPawn true| QuickSave | QuickLoad&quot;)
 (Name=&quot;End&quot;, Command=&quot;set SFXPawn_Player bCombatPawn false | QuickSave | QuickLoad&quot;)
 (Name=&quot;LBracket&quot;, Command=&quot;ghost&quot;) 
 (Name=&quot;RBracket&quot;, Command=&quot;walk&quot;) 
-(Name=&quot;F12&quot;, Command=&quot;ToggleFlyCam&quot;  
+(Name=&quot;F12&quot;, Command=&quot;ToggleFlyCam&quot;<br />
 (Name=&quot;F3&quot;, Command=&quot;God&quot;) 
 (Name=&quot;F11&quot;, Command=&quot;playersonly&quot;) 
 (Name=&quot;F7&quot;, Command=&quot;SloMo 0.3 |  OnRelease SloMo 1&quot;)
@@ -478,16 +537,15 @@ If you choose the Editor: start it and then load the file <code>Bioinput.ini</co
 (Name=&quot;Period&quot;, Command=&quot;set HeightFogComponent bEnabled True&quot;) 
 (Name=&quot;Comma&quot;, Command=&quot;set UberPostProcessEffect SceneHighlights (x=1.0,y=1.0,z=1.0) | set UberPostProcessEffect SceneShadows (x=0.0,y=0.0,z=0.0 | set UberPostProcessEffect SceneMidtones (x=1.0,y=1.0,z=1.0)&quot;) 
 (Name=&quot;Multiply&quot;, Command=&quot;FOV 70&quot;)
-(Name=&quot;Decimal&quot;, Command=&quot;FOV 0&quot;)
-
-[SFXGameModeFlycam]
+(Name=&quot;Decimal&quot;, Command=&quot;FOV 0&quot;)</p>
+<p>[SFXGameModeFlycam]
 (Name=&quot;MouseX&quot;, Command=&quot;PC_LookX&quot;)
 (Name=&quot;MouseY&quot;, Command=&quot;PC_LookY&quot;)
 (Name=&quot;A&quot;, Command=&quot;PC_StrafeLeft&quot;)
 (Name=&quot;W&quot;, Command=&quot;PC_MoveForward&quot;)
 (Name=&quot;D&quot;, Command=&quot;PC_StrafeRight&quot;)
 (Name=&quot;S&quot;, Command=&quot;PC_MoveBackward&quot;)
-(Name=&quot;F12&quot;, Command=&quot;ToggleFlyCam&quot;)  
+(Name=&quot;F12&quot;, Command=&quot;ToggleFlyCam&quot;)<br />
 (Name=&quot;F11&quot;, Command=&quot;playersonly&quot;) 
 (Name=&quot;F7&quot;, Command=&quot;SloMo 0.3 |  OnRelease SloMo 1&quot;)
 (Name=&quot;F6&quot;, Command=&quot;set DOFAndBloomEffect bUseWorldSettings false&quot;) 
@@ -496,9 +554,8 @@ If you choose the Editor: start it and then load the file <code>Bioinput.ini</co
 (Name=&quot;Period&quot;, Command=&quot;set HeightFogComponent bEnabled True&quot;) 
 (Name=&quot;Comma&quot;, Command=&quot;set UberPostProcessEffect SceneHighlights (x=1.0,y=1.0,z=1.0) | set UberPostProcessEffect SceneShadows (x=0.0,y=0.0,z=0.0 | set UberPostProcessEffect SceneMidtones (x=1.0,y=1.0,z=1.0)&quot;) 
 (Name=&quot;Multiply&quot;, Command=&quot;FOV 70&quot;)
-(Name=&quot;Decimal&quot;, Command=&quot;FOV 0&quot;)
-
-[SFXDreamSequence]
+(Name=&quot;Decimal&quot;, Command=&quot;FOV 0&quot;)</p>
+<p>[SFXDreamSequence]
 (Name=&quot;LBracket&quot;, Command=&quot;ghost&quot;) 
 (Name=&quot;RBracket&quot;, Command=&quot;walk&quot;) 
 (Name=&quot;F12&quot;, Command=&quot;ToggleFlyCam&quot;) 
@@ -510,9 +567,8 @@ If you choose the Editor: start it and then load the file <code>Bioinput.ini</co
 (Name=&quot;Period&quot;, Command=&quot;set HeightFogComponent bEnabled True&quot;) 
 (Name=&quot;Comma&quot;, Command=&quot;set UberPostProcessEffect SceneHighlights (x=1.0,y=1.0,z=1.0) | set UberPostProcessEffect SceneShadows (x=0.0,y=0.0,z=0.0 | set UberPostProcessEffect SceneMidtones (x=1.0,y=1.0,z=1.0)&quot;) 
 (Name=&quot;Multiply&quot;, Command=&quot;FOV 70&quot;)
-(Name=&quot;Decimal&quot;, Command=&quot;FOV 0&quot;)
-
-[SFXGameModeBase]
+(Name=&quot;Decimal&quot;, Command=&quot;FOV 0&quot;)</p>
+<p>[SFXGameModeBase]
 (Name=&quot;Multiply&quot;, Command=&quot;FOV 70&quot;) 
 (Name=&quot;Decimal&quot;, Command=&quot;FOV 0&quot;) 
 (Name=&quot;F6&quot;, Command=&quot;set DOFAndBloomEffect bUseWorldSettings false&quot;) 
@@ -521,14 +577,16 @@ If you choose the Editor: start it and then load the file <code>Bioinput.ini</co
 (Name=&quot;Comma&quot;, Command=&quot;set UberPostProcessEffect SceneHighlights (x=1.0,y=1.0,z=1.0) | set UberPostProcessEffect SceneShadows (x=0.0,y=0.0,z=0.0 | set UberPostProcessEffect SceneMidtones (x=1.0,y=1.0,z=1.0)&quot;) 
 (Name=&quot;Semicolon&quot;, Command=&quot;set HeightFogComponent bEnabled False&quot;) 
 (Name=&quot;Period&quot;, Command=&quot;set HeightFogComponent bEnabled True&quot;)
-(Name=&quot;F1&quot;, Command=&quot;initcredits 9999999&quot;)
-</pre><h2 id="fix-shadow-banding-in-the-trilogy">Fix Shadow Banding in the Trilogy<a class="headerlink" href="#fix-shadow-banding-in-the-trilogy" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>In <code>BioEngine.ini</code> locate <code>SystemSettings</code> and add or change the following lines:</p>
-<pre class="nocode">bEnableVSMShadows=True
+(Name=&quot;F1&quot;, Command=&quot;initcredits 9999999&quot;)</p>
+<pre class="nocode">
+## Fix Shadow Banding in the Trilogy
+In `BioEngine.ini` locate `SystemSettings` and add or change the following lines:
+</pre><p>bEnableVSMShadows=True
 bEnableBranchingPCFShadows=False
 bAllowHardwareShadowFiltering=True
 ShadowDepthBias=0.100
-</pre><h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+```</p>
+<h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Obviously, you can change the keys for the above mentioned keys to your liking, but keep in mind that they need to look the same under every section.
 It's also possible to use the majority - if not all - of the binds via the console. </p>
 <h3 id="additional-commands">Additional-Commands<a class="headerlink" href="#additional-commands" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
