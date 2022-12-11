@@ -70,7 +70,7 @@
 
 <li class="tocentry"><a href="#unityexplorer-native-freecam">1 - UnityExplorer native freecam</a></li>
 
-<li class="tocentry"><a href="#use-freemoveinjector-freecam">Use FreeMoveInjector freecam</a></li>
+<li class="tocentry"><a href="#use-freemoveinjector-freecam">2 - Use FreeMoveInjector freecam</a></li>
 
 
 
@@ -244,7 +244,7 @@ The most common issue is a bad entrypoint.</p>
 <p>To do so, after checking the &quot;Use Game Camera?&quot; (and &quot;Begin Freecam&quot;) click on the &quot;Inspect Free Camera&quot; button, then on the Inspector window click on &quot;Inspected GameObject&quot; and disable the Cinemachine object. Remember to enable it again after finishing shooting the scene!</p>
 <p><img src="../Images/UUFGuide/gameplay_freecam.webp" alt="Disable cinemachine component on the gameplay camera" class="shadowed autosize" /></p>
 <p>There might be a way of adding the gameplay postprocessing effects camera to the one created by Unity Explorer, but I haven't tested it myself yet, and probably depends on the game.</p>
-<h3 id="controls">Controls<a class="headerlink" href="#controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<h3 id="controls-for-both-types-of-cameras">Controls (for both types of cameras)<a class="headerlink" href="#controls-for-both-types-of-cameras" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
@@ -281,7 +281,7 @@ The most common issue is a bad entrypoint.</p>
 </table>
 <p>Also, whenever you have to use this freecam again without the &quot;Use Game Camera?&quot; checked (meaning by following <a href="#using-unityexplorer-created-camera">1.1</a>), make sure to click the &quot;Reset&quot; button on the freecam window to go to the gameplay camera position.</p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>Even if this method is pretty straightforward, it has the problem which you can't move the camera position when the game is paused (with UnityExplorer's Time value or the TimeScaleController plugin). If you want to avoid this problem refer to the next section.</p>
-</div><h2 id="use-freemoveinjector-freecam">Use FreeMoveInjector freecam<a class="headerlink" href="#use-freemoveinjector-freecam" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+</div><h2 id="use-freemoveinjector-freecam">2 - Use FreeMoveInjector freecam<a class="headerlink" href="#use-freemoveinjector-freecam" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>If you want to be able to move the camera while the game is paused follow the steps below.</p>
 <ul>
 <li>
@@ -300,6 +300,7 @@ The most common issue is a bad entrypoint.</p>
 </li>
 </ul>
 <p><img src="../Images/UUFGuide/free_move.webp" alt="Using the FreeMoveInjector freecam" class="shadowed autosize" /></p>
+<h3 id="controls">Controls<a class="headerlink" href="#controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
