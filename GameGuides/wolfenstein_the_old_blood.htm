@@ -296,18 +296,15 @@
 <strong>Features</strong>: Camera control, tilt, unrestrict CVars and console commands.</li>
 </ul>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>First, you will need to check if you can access the in-game console once you have started the game and hooked the CT to the game process. To test, press the <code>~</code> key on your keyboard. If the console doesn't appear, add <code>+com_allowConsole 1</code> as a launch option via Steam then try again. This should do it.  
-</p>
+<p>First, you will need to check if you can access the in-game console once you have started the game and hooked the CT to the game process. To test, press the <code>~</code> key on your keyboard. If the console doesn't appear, add <code>+com_allowConsole 1</code> as a launch option via Steam then try again. This should do it.  </p>
 <p>Be sure to activate <code>Unrestrict CVars</code> and <code>Enable stripped console commands</code> by clicking on the box next to those entries. Without them, some of the commands in the next section of the guide are not going to be applied.</p>
 <div class="figure">
 <img src="../Images\wtob_cheattable.png" alt="Cheat table options" title="Cheat table options" class="shadowed autosize" width="371" height="98" />
 <p>Cheat table options</p>
 </div>
-<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The console can be also opened via <code>CTRL</code> + <code>~</code> even if <code>Patch the ConsoleKey to Tilde (~)</code> wasn't checked.  
-</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The console can be also opened via <code>CTRL</code> + <code>~</code> even if <code>Patch the ConsoleKey to Tilde (~)</code> wasn't checked.  </p>
 </div><h2 id="making-a-custom-config">Making a custom config<a class="headerlink" href="#making-a-custom-config" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>To make tweaking the game easier, we are going to make a custom configuration file that can be executed at each start of the game. Depending on your hardware, especially CPU and GPU, you might have to modify some of the variables in the commands below.  
-</p>
+<p>To make tweaking the game easier, we are going to make a custom configuration file that can be executed at each start of the game. Depending on your hardware, especially CPU and GPU, you might have to modify some of the variables in the commands below.  </p>
 <p>Save the commands in a new file that you could by example call <code>WolfCustomCfg.cfg</code> in <code>\steamapps\common\Wolfenstein The Old Blood\base</code> or <code>C:\Users\&lt;UserName&gt;\Saved Games\MachineGames\Wolfenstein The Old Blood\base</code></p>
 <p><details>
 <summary>Example config</summary></p>
@@ -346,14 +343,11 @@ vt_useCudaTranscode 2
 r_swapInterval 1                          
 vt_restart </pre><p></code>
 </details></p>
-<p>To apply this configuration, open the in-game console and type <code>exec [yourconfigname].cfg</code>. Alternatively, you can bind this command to a key so you can execute the configuration without having to open the console.  
-</p>
+<p>To apply this configuration, open the in-game console and type <code>exec [yourconfigname].cfg</code>. Alternatively, you can bind this command to a key so you can execute the configuration without having to open the console.  </p>
 <p><code>bind &quot;F11&quot; &quot;exec [yourconfigname].cfg&quot;</code></p>
 <h3 id="about-the-commands">About the commands<a class="headerlink" href="#about-the-commands" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>The commands starting with <code>vt_pageimagesize</code> increase the texture data stored in the VRAM. If you have 4GB or less, 8192 is recommended. Changing the <code>vt_pageimagesizevmtr</code> above 16384 could lead to a game crash.  
-</p>
-<p>For CPUs with 2 and 4 cores without hyperthreading, the <code>vt_maxPPF</code> should be set to 8. For CPUs above 4 cores and those with hyperthreading, you can go up to 64 or 128. Valid settings are: <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code> and <code>128</code>.  
-</p>
+<p>The commands starting with <code>vt_pageimagesize</code> increase the texture data stored in the VRAM. If you have 4GB or less, 8192 is recommended. Changing the <code>vt_pageimagesizevmtr</code> above 16384 could lead to a game crash.  </p>
+<p>For CPUs with 2 and 4 cores without hyperthreading, the <code>vt_maxPPF</code> should be set to 8. For CPUs above 4 cores and those with hyperthreading, you can go up to 64 or 128. Valid settings are: <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code> and <code>128</code>.  </p>
 <p>Any change made to a <code>vt_</code> variable will require a restart.</p>
 <h3 id="enabling-more-commands">Enabling more commands<a class="headerlink" href="#enabling-more-commands" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>Some default commands are already available, but are not working as intended. Add this set of keybinds to a file called <code>keybinds.cfg</code> in your game directory. By doing <code>exec keybinds.cfg</code> via the console, they will be permanently written to the correct file and postion. You will only need to do this once.</p>
@@ -451,11 +445,9 @@ FOV and tilt are not available in this mode. Only forward, backward, left and ri
 </table>
 <p>Some of these require the <code>keybinds.cfg</code> file from earlier to have been executed.</p>
 <h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>It's possible to skip one frame ahead while fully timestopped. To do this, stop the game and press <code>F12</code> to enter the dev GUI. Using a gamepad, press <font face="Controller">X</font> and go to <em>Time Control</em>. Press <font face="Controller">D</font> then <em>Advance Time One Frame When Stopped</em>. You can also bind <code>g_runframes 1</code> to an available key.  
-</p>
+<p>It's possible to skip one frame ahead while fully timestopped. To do this, stop the game and press <code>F12</code> to enter the dev GUI. Using a gamepad, press <font face="Controller">X</font> and go to <em>Time Control</em>. Press <font face="Controller">D</font> then <em>Advance Time One Frame When Stopped</em>. You can also bind <code>g_runframes 1</code> to an available key.  </p>
 <p>Removing the post-processing via <code>r_skippostprocess 1</code> will also disable the in-game DOF.
-This can give you better image quality.  
-</p>
+This can give you better image quality.  </p>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://www.pcgamingwiki.com/wiki/Wolfenstein:_The_Old_Blood" target="_blank">PC Gaming Wiki</a></li>
