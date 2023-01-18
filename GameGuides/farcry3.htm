@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Garry's Mod - FRAMED. Screenshot Community</title>
+    <title>Far Cry 3 - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/theme_20220814.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors_20220814.css" type="text/css" />
@@ -143,8 +143,23 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/TEW2.htm">The Evil Within 2</a>
 </li>
-<li class="tocentry"><a href="../GameGuides/farcry3.htm">Far Cry 3</a>
-</li>
+<li class="tocentry current"><a class="current" href="../GameGuides/farcry3.htm">Far Cry 3</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#summary">Summary</a></li>
+
+<li class="tocentry"><a href="#tools">Tools</a></li>
+
+<li class="tocentry"><a href="#controls">Controls</a></li>
+
+<li class="tocentry"><a href="#tips-and-tricks">Tips and Tricks</a></li>
+
+<li class="tocentry"><a href="#reshade">Reshade</a></li>
+
+<li class="tocentry"><a href="#optional">Optional</a></li>
+
+<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
+
+</ul>
 <li class="tocentry"><a href="../GameGuides/farcry5.htm">Far Cry 5</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/FarCryPrimal.htm">Far Cry Primal</a>
@@ -153,21 +168,8 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/FFXIV.htm">Final Fantasy XIV</a>
 </li>
-<li class="tocentry current"><a class="current" href="../GameGuides/garrys_mod.htm">Garry's Mod</a>
-<ul class="currentrelative">
-<li class="tocentry"><a href="#summary">Summary</a></li>
-
-<li class="tocentry"><a href="#console-commands">Console Commands</a></li>
-
-<li class="tocentry"><a href="#dsr">DSR</a></li>
-
-<li class="tocentry"><a href="#custom-aspect-ratios">Custom Aspect Ratios</a></li>
-
-<li class="tocentry"><a href="#useful-add-ons">Useful Add-ons</a></li>
-
-<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
-
-</ul>
+<li class="tocentry"><a href="../GameGuides/garrys_mod.htm">Garry's Mod</a>
+</li>
 <li class="tocentry"><a href="../GameGuides/generationzero.htm">Generation Zero</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/gow.htm">God of War</a>
@@ -254,14 +256,17 @@
             <div class="nav-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <div class="breadcrumbs">
-<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../A-L.htm">A-L</a></li> / <li><a href="../GameGuides/garrys_mod.htm">Garry's Mod</a></li></ul>
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../A-L.htm">A-L</a></li> / <li><a href="../GameGuides/farcry3.htm">Far Cry 3</a></li></ul>
 					
                     </div>
                     <hr />
                 </div>
                 <div role="main">
                     <div class="section">
-<p><img src="../Images\garrys_mod.png" alt="Garry's Mod" title="Shot by SammirLlm" width="896" height="180" />Shot by SammirLlm</p>
+<div class="figure">
+<img src="../Images\farcry3.png" alt="Far Cry 3" title="Shot by originalnicodr" class="shadowed autosize" width="896" height="180" />
+<p>Shot by originalnicodr</p>
+</div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
 <thead>
@@ -281,84 +286,110 @@
 </tr>
 <tr>
 	<td>DSR</td>
-	<td>Yes<a href="#dsr">¹</a></td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Custom Aspect Ratios</td>
-	<td>Yes<a href="#custom-aspect-ratios">²</a></td>
+	<td>No</td>
 </tr>
 <tr>
 	<td>Reshade</td>
-	<td>Yes (DX9)</td>
+	<td>Yes*</td>
 </tr>
 <tr>
 	<td>Ansel</td>
 	<td>No</td>
 </tr>
 <tr>
-	<td>DirectX versions</td>
-	<td>DirectX 9</td>
+	<td>Graphics API</td>
+	<td>DirectX 11</td>
 </tr>
 </tbody>
 </table>
-<h2 id="console-commands">Console Commands<a class="headerlink" href="#console-commands" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>In order to use console commands, you have to enable the Developer Console first. Start the game, open Settings and then the Keyboard section. Click on Advanced, and in the new window, tick the select box that says Enable Developer Console. By default, the tilde key is used to toggle the console window.</p>
+<h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ul>
+<li>
+<p><a href="..\CheatTables\FarCry3_Screenshooting.CT">Cheat Engine table by One3rd</a><br />
+<strong>Features</strong>: Freecam, FoV control, HUD toggle, timestop.</p>
+</li>
+<li>
+<p><a href="../ShaderTogglers/far_cry_3.ini">Hud toggle</a> requires Reshade 5+ with <a href="https://framedsc.com/ReshadeGuides/Addons/shader_toggler_repository.htm" target="_blank">Shader Toggler</a><br />
+<strong>Features</strong>: Map, ammunition, mission information, enemy marks, enemy silhouette trough walls, and enemy attention indicator toggles.</p>
+</li>
+</ul>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Select the game graphic API to dx11 in the video option for the table to work.</p>
+</div><h2 id="controls">Controls<a class="headerlink" href="#controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>There are two &quot;methods&quot; for the cheat table to get the freecam. I suggest trying the one with <code>F2</code> by default (backup freecam on the cheat table), and when that doesn't work use the freecam with <code>F1</code>. Also, the game has both keys binded to opening menus in-game, so you may want to rebind those.</p>
 <table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
 	<th>Command</th>
-	<th>Arguments</th>
-	<th>Description</th>
+	<th>Key</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-	<td>sv_cheats</td>
-	<td>0 / 1</td>
-	<td>Enables cheats</td>
+	<td>Toggle FreeCamera</td>
+	<td><code>F1</code> / <code>F2</code></td>
 </tr>
 <tr>
-	<td>hidehud</td>
-	<td>0 - 4</td>
-	<td>4 Hides HUD</td>
+	<td>Toggle HUD</td>
+	<td><code>Numpad 0</code></td>
 </tr>
 <tr>
-	<td>noclip</td>
-	<td>0 / 1</td>
-	<td>Toggles noclip (Default key is V)</td>
+	<td>Pause</td>
+	<td><code>P</code></td>
+	<td></td>
 </tr>
 <tr>
-	<td>r_drawviewmodel</td>
-	<td>0 / 1</td>
-	<td>Toggles viewmodel</td>
+	<td>Unpause</td>
+	<td><code>Shift</code> + <code>P</code></td>
 </tr>
 <tr>
-	<td>fov</td>
-	<td>1 - 100</td>
-	<td>Changes field of view</td>
+	<td>Change camera orientation</td>
+	<td><code>Mouse</code></td>
+</tr>
+<tr>
+	<td>Move the camera in the world coordinates</td>
+	<td><code>Numpad 4, 5, 6, 8</code></td>
+</tr>
+<tr>
+	<td>Move the camera downwards / upwards</td>
+	<td><code>Numpad 7</code> / <code>Numpad 9</code></td>
+</tr>
+<tr>
+	<td>Move the camera faster</td>
+	<td>Hold <code>Ctrl</code> while moving</td>
+</tr>
+<tr>
+	<td>Move the camera slower</td>
+	<td>Hold <code>Alt</code> while moving</td>
 </tr>
 </tbody>
 </table>
-<p>Console commands can be bound to hotkeys with the use of <code>bind &lt;key&gt; &lt;command&gt;</code> / <code>bindToggle &lt;key&gt; &lt;command&gt;</code> (latter is best for 0 / 1 commands) so the console doesn't have to be opened all the time.</p>
-<p>Here's an <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=170589737" target="_blank">in-depth guide</a> of every console command, though you should be good with the commands already mentioned above.</p>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>While Reshade works in this game, due to it being a multiplayer title access to the depth buffer will be locked. Use a version of Reshade that has network detection disabled to use depth effects.</p>
-</div><h2 id="dsr">DSR<a class="headerlink" href="#dsr" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Changing resolutions too often can cause a game hang, recommended to play at your shooting resolution</p>
-<h2 id="custom-aspect-ratios">Custom Aspect Ratios<a class="headerlink" href="#custom-aspect-ratios" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Aspect Ratio might have to be tweaked to see all your custom resolutions</p>
-<h2 id="useful-add-ons">Useful Add-ons<a class="headerlink" href="#useful-add-ons" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Since we are using the gameplay controls to move the camera orientation, we won't be able to change its orientation in cutscenes.</p>
+<p>To be able to change the camera orientation when the game is paused <a href="https://www.pcgamingwiki.com/wiki/Far_Cry_3#Negative_mouse_acceleration" target="_blank">disable negative mouse acceleration</a>.</p>
+<p>Even tho the cheat table has the option to turn off the HUD, I would still suggest using the shader toggler linked above (with <code>Caps Lock</code>) since it covers more stuff than just the minimap and ammunition.</p>
+<h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Change definitions on the fly may cause crashes.</p>
+<h2 id="reshade">Reshade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="depth-buffer">Depth Buffer<a class="headerlink" href="#depth-buffer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>The game has some faulty depth buffer detection at times, so you will probably have to reselect it before working on a shot.</p>
+<h3 id="shader-crash">Shader crash<a class="headerlink" href="#shader-crash" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>I encountered some crashes when trying to turn on a shader for the first time after a while of starting the game (for example, turning on Cinematic DOF). I have tried turning on the shaders that I want to use at least once just after starting the game to avoid crashing afterward.</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>I noticed that Reshade's screenshot functionality wasn't working without Reshade menu being open. So open the menu when taking a screenshot to make sure it's taken.</p>
+<h2 id="optional">Optional<a class="headerlink" href="#optional" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=493751477" target="_blank">Advanced Light Entities</a></li>
+<li><a href="https://discord.com/channels/846424998888734731/846426659250765894/939880964451090482" target="_blank">Scipt loader</a> from the <a href="https://discord.com/invite/B42Bqz5RQn" target="_blank">FarCry:Modding discord</a>. Use <a href="https://downloads.fcmodding.com/fc3/mod-installer/" target="_blank">this</a> to install it. You can see the available functions and example scripts <a href="https://www.unknowncheats.me/forum/far-cry/237567-cry-3-script-loader-norway-_-1999-pc.html" target="_blank">here</a>.</li>
+<li><a href="https://www.pcgamingwiki.com/wiki/Far_Cry_3#Disabling_post-processing_effects_separately" target="_blank">Disabling post-processing effects separately</a></li>
+<li><a href="https://www.nexusmods.com/farcry3/mods/219" target="_blank">Better HBAO</a></li>
+<li><a href="https://www.pcgamingwiki.com/wiki/Far_Cry_3#Ambient_occlusion" target="_blank">Force HBAO+</a></li>
 </ul>
-<p><em>Lets you spawn light entities, here's a <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1672569410" target="_blank">short guide</a> that could be useful.</em></p>
-<ul>
-<li><a href="https://steamcommunity.com/workshop/filedetails/?id=104575630" target="_blank">Ragdoll Mover</a> and <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=104576786" target="_blank">Standing Pose Tool</a></li>
-</ul>
-<p><em>Useful tools for posing ragdolls, here's a <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=420075442" target="_blank">guide</a> on how to use both tools.</em></p>
-<h3 id="section"><a class="headerlink" href="#section" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://www.pcgamingwiki.com/wiki/Garry%27s_Mod" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://www.pcgamingwiki.com/wiki/Far_Cry_3" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://www.nexusmods.com/farcry3" target="_blank">Nexus Mods</a> </li>
 </ul>
 
                     </div>
