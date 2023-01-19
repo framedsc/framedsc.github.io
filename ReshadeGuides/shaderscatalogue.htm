@@ -161,6 +161,43 @@
 <li><a href="https://github.com/crosire/reshade-shaders" target="_blank"><strong>Deband</strong></a>: Have you ever seen gradients that don't seamlessly blend into each other? That's called banding. It happens when there aren't enough tones available to recreate a seamless gradation. This shader is meant to fix that. Be sure to grab the one linked since it has an option to adjust the depth of where the shader should act (since most of the time it should be applied only in backgrounds). Deband is part of the official Reshade shaders the Reshade installer will install for you always.</li>
 <li><a href="https://github.com/martymcmodding/qUINT/blob/master/Shaders/qUINT_deband.fx" target="_blank"><strong>qUINT_deband.fx</strong></a>: Fixes blocky color gradients and breaks up crushed texture detail.</li>
 </ul>
+<h3 id="lighting-shaders">Lighting shaders<a class="headerlink" href="#lighting-shaders" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Maybe it's not right to call these shaders essentials, but I find that, if used right, these shaders can greatly increase a composition. What they do is basically simulate points of light in the scene, and they light up the scene while also drawing shadows. Extremely useful for giving more depth to portraits, but keep in mind that, given that it uses the depth buffer to &quot;understand&quot; the scene and lighting correctly, it won't behave exactly like vanilla, in-game light:</p>
+<ul>
+<li><a href="https://github.com/mj-ehsan/NiceGuy-Shaders/blob/main/Shaders/NiceGuy_Lamps.fx" target="_blank"><strong>NiceGuy Lamps</strong></a>: Add up to 4 point lights with customizable color, brightness, location, optional fog, and optional screen space shadows with customizable soft shadows. Fog intensity, Specular reflection intensity, and Specular reflection roughness are fully customizable. Reflection uses GGX (all credit to LVutner) and Diffuse light uses Lambert model. Fog is fake.</li>
+<li><a href="https://www.patreon.com/mcflypg" target="_blank"><strong>Marty's ReLight</strong></a>: Marty's spin on the concept. The shader benefits a lot with some smooth normal algorithms that make the lights look basically vanilla. And given Marty's years of experience with RTGI you can expect this to have as much, if not more, work behind how the lights should behave.</li>
+</ul>
+<div class="slider container" style="aspect-ratio: 16/9">
+  <div class="slider__img slider__img-after">
+    <p>after ReShade</p>
+    <img src="../Images/ShaderGuides/ShadersCatalogue/relight-after_1.png" />
+  </div>
+  <div class="slider__img slider__img-before">
+    <p>before ReShade</p>
+    <img src="../Images/ShaderGuides/ShadersCatalogue/relight-before_1.png" />
+  </div>
+  <input type="range" min="0" max="100" value="50" step="0.01" 
+    id="slider" class="slider__input" 
+    autocomplete="off" onwheel="this.blur()" 
+  />
+</div>
+<div class="figure"><p>Witcher 3 by <i>barkar-b</i></p></div>
+<p>test</p>
+<div class="slider container" style="aspect-ratio: 16/9">
+  <div class="slider__img slider__img-after">
+    <p>after ReShade</p>
+    <img src="../Images/ShaderGuides/ShadersCatalogue/relight-before_2.jpg" />
+  </div>
+  <div class="slider__img slider__img-before">
+    <p>before ReShade</p>
+    <img src="../Images/ShaderGuides/ShadersCatalogue/relight-after_2.jpg" />
+  </div>
+  <input type="range" min="0" max="100" value="50" step="0.01" 
+    id="slider" class="slider__input" 
+    autocomplete="off" onwheel="this.blur()" 
+  />
+</div>
+<div class="figure"><p>A Plague Tale: Requiem by <i>Dread</i></p></div>
 <h2 id="screenshotting">Screenshotting<a class="headerlink" href="#screenshotting" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <h3 id="composition-stuff">Composition Stuff<a class="headerlink" href="#composition-stuff" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>Shaders that are useful for composition and cropping.</p>
@@ -182,6 +219,8 @@
 <li><a href="https://github.com/Daodan317081/reshade-shaders/blob/master/Shaders/HotsamplingHelper.fx" target="_blank"><strong>HotsamplingHelper</strong></a>: As explained above, draws a scaled-down version of the image onto the screen. The size and position of the overlay are configurable.</li>
 <li><a href="https://github.com/originalnicodr/CorgiFX/blob/master/Shaders/FreezeShot.fx" target="_blank"><strong>FreezeShot</strong></a>: This one is similar to the previous shader whilst also adding the capability to rotate the thumbnail, so it's useful for seeing how a vertical shot will look after rotating it (in the case you are not using a vertical AR). The shader has more options that are irrelevant to the purpose stated here and will be touched on later. Be sure to turn on the Black Background option and use a value of 1 in the Layer Depth value for an easier hotsampling experience.</li>
 </ul>
+<h3 id="magnifyingglass">MagnifyingGlass<a class="headerlink" href="#magnifyingglass" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><a href="https://github.com/originalnicodr/CorgiFX/blob/master/Shaders/MagnifyingGlass.fx" target="_blank"><strong>MagnifyingGlass</strong></a>: Sometimes you may want to zoom in on a specific part of the screen to check stuff like banding for example. This shader allows you to do so.</p>
 <h2 id="graphics-improvements">Graphics improvements<a class="headerlink" href="#graphics-improvements" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>I am using quotes since the title can be deceptive. What I mean by it is that these shaders can be used in most situations since they can improve how a scene looks, especially in old titles.
 It's worth pointing out that most of these shaders are situational, so you will have to ask yourself if the scene benefits from the use of a specific shader.
@@ -208,7 +247,6 @@ But before listing the shaders I will first introduce you to one that can be use
 <li><a href="https://github.com/LordOfLunacy/Insane-Shaders/blob/master/Shaders/CMAA_2.fx" target="_blank"><strong>CMAA2 (LordOfLunacy implementation)</strong></a></li>
 <li><a href="https://github.com/JakobPCoder/ReshadeTFAA" target="_blank"><strong>TFAA</strong></a>: Make sure to follow the instructions in the readme.md</li>
 <li><a href="https://github.com/grebord/Fast-Adaptive-AA/blob/main/FAAA.fx" target="_blank"><strong>FAAA</strong></a>: Based on Timothy Lottes' PC FXAA v3.</li>
-<li><a href="https://github.com/brimson/brimsonFX/blob/master/shaders/cSMAA.fx" target="_blank"><strong>cSMAA</strong></a>: Minimalist version of SMAA, medium setting</li>
 </ul>
 <h3 id="raytracing">Raytracing<a class="headerlink" href="#raytracing" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>You probably stumbled across the term. Raytracing technology aims to simulate light and shadows more precisely. Even tho a game implementation of this kind of technology would be more accurate than a reshade implementation, most games don't do ray tracing within them and so these shaders can be useful, especially in old titles.</p>
@@ -229,13 +267,12 @@ But before listing the shaders I will first introduce you to one that can be use
 <li><a href="https://github.com/cyrie/Stormshade/blob/master/reshade-shaders/Shaders/MXAO.fx" target="_blank"><strong>MXAO</strong></a></li>
 <li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/SSAO.fx" target="_blank"><strong>SSAO (HBAO, RayAO, HBAO, SSGI, AO_SAO, SSAO)</strong></a>: The SSAO shader has all the ambient occlusion techniques in parenthesis.</li>
 <li><a href="https://github.com/Mortalitas/GShade/blob/8f52311f29608456d3db94fa56b6a36522904d02/Shaders/PPFX_SSDO.fx" target="_blank"><strong>PPFX_SSDO</strong></a></li>
-<li><a href="https://github.com/brimson/miscFX/blob/main/cPureDepthAO.fx" target="_blank"><strong>cPureDepthAO</strong></a>: Pure Depth Ambient Occlusion [WIP].</li>
 </ul>
 <h3 id="reflections">Reflections<a class="headerlink" href="#reflections" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
 <li><a href="https://github.com/martymcmodding/qUINT/blob/master/Shaders/qUINT_ssr.fx" target="_blank"><strong>qUINT_ssr</strong></a>: Adds reflections to the scene, using the data that is already available in the image. As a Screen-Space technique, it suffers like all similar implementations from the fact that nothing outside the screen can be reflected. It also cannot distinguish between reflective and non-reflective surfaces, so it will just cover everything with a reflection layer.</li>
 <li><a href="https://github.com/crosire/reshade-shaders/blob/master/Shaders/ReflectiveBumpMapping.fx" target="_blank"><strong>ReflectiveBumpMapping</strong></a>: previous version of qUINT_ssr (or so I understand). It's here for archival purposes, use the shader if possible.</li>
-<li><a href="https://github.com/mj-ehsan/NiceGuy-Shaders/blob/main/Scatter.fx" target="_blank">Scatter</a>: Add roughness to qUINT_SSR or to denoise DH_RTGI (<a href="https://imgsli.com/MTAzMzA4" target="_blank">screenshot comparison</a>). If you want to do both, make a copy of the shader file so you have two pairs of it in your stack. </li>
+<li><a href="https://github.com/mj-ehsan/NiceGuy-Shaders/blob/main/Scatter.fx" target="_blank"><strong>Scatter</strong></a>: Add roughness to qUINT_SSR or to denoise DH_RTGI (<a href="https://imgsli.com/MTAzMzA4" target="_blank">screenshot comparison</a>). If you want to do both, make a copy of the shader file so you have two pairs of it in your stack. DEPRECTAED: using NiceGuy Lighting instead is strongly recommended.</li>
 </ul>
 <h3 id="bloom">Bloom<a class="headerlink" href="#bloom" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>As they sound, bloom shaders are used to imitate bloom in a scene.</p>
@@ -251,7 +288,7 @@ But before listing the shaders I will first introduce you to one that can be use
 <li><a href="https://github.com/Heathen/Pirate-Shaders/blob/master/reshade-shaders/Shaders/Pirate_Bloom.fx" target="_blank"><strong>Pirate_Bloom</strong></a></li>
 <li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/PPFX_Bloom.fx" target="_blank"><strong>PPFX_Bloom</strong></a></li>
 <li><a href="https://github.com/Mortalitas/GShade/blob/8f52311f29608456d3db94fa56b6a36522904d02/Shaders/SimpleBloom.fx" target="_blank"><strong>SimpleBloom</strong></a></li>
-<li><a href="https://github.com/brimson/brimsonFX/blob/master/shaders/cBloom.fx" target="_blank"><strong>KinoBloom</strong></a></li>
+<li><a href="https://github.com/papadanku/CShade/blob/master/shaders/cBloom.fx" target="_blank"><strong>KinoBloom</strong></a></li>
 </ul>
 <h3 id="light-rays">Light Rays<a class="headerlink" href="#light-rays" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
@@ -283,7 +320,7 @@ But before listing the shaders I will first introduce you to one that can be use
 <li><a href="https://github.com/LordOfLunacy/Insane-Shaders/blob/master/Shaders/Halftone.fx" target="_blank"><strong>Halftone</strong></a>: Attempts to emulate an amplitude-based CMYK halftoning similar to that of offset printing.</li>
 <li><a href="https://github.com/FransBouma/OtisFX/blob/master/Shaders/Heightfog.fx" target="_blank"><strong>Height fog</strong></a>: Inserts a fog plane in the 3D scene which you can use to add a volumetric
 fog layer, which is fully configurable. See <a href="Shaders/heightfog.htm">the guide on this site</a>. </li>
-<li><a href="https://github.com/brimson/brimsonFX/blob/master/shaders/kMirror.fx" target="_blank"><strong>kMirror</strong></a>: Mirroring and kaleidoscope effect.</li>
+<li><a href="https://github.com/papadanku/CShade/blob/main/shaders/kMirror.fx" target="_blank"><strong>kMirror</strong></a>: Mirroring and kaleidoscope effect.</li>
 <li><a href="https://github.com/FransBouma/OtisFX/blob/master/Shaders/MagicBorder.fx" target="_blank"><strong>MagicBorder</strong></a>: If you want to add borders in your shot but want the subject to hover over said border then try this shader.</li>
 <li><a href="https://github.com/BlueSkyDefender/AstrayFX/blob/master/Shaders/Depth_Cues.fx" target="_blank"><strong>Monocular_Cues(Depth_Cues)</strong></a>: (Image Enhancement by Unsharp Masking the Depth Buffer)</li>
 <li><a href="https://github.com/luluco250/FXShaders/blob/master/Shaders/NormalMap.fx" target="_blank"><strong>NormalMap</strong></a>: It allows the use of a normal map texture to be applied on screen. You can find one of these on the internet, but it's often better to make your own with software like Substance Designer.</li>
@@ -318,7 +355,7 @@ It can also be used when you have a jitter depth buffer (sometimes caused by TAA
 <li><a href="https://github.com/AlucardDH/dh-reshade-shaders/blob/master/Shaders/dh_anime.fx" target="_blank"><strong>dh_anime</strong></a>: Outlines and some color stuff.</li>
 <li><a href="https://github.com/Daodan317081/reshade-shaders/blob/master/Shaders/MeshEdges.fx" target="_blank"><strong>MeshEdges</strong></a>: More outlines with some color regarding the outlines themselves and the possibility to use a plain color with the outlines on top.</li>
 <li><a href="https://github.com/EDCVBNM/ED-shaders/blob/main/Shaders/LumaLines.fx" target="_blank"><strong>LumaLines</strong></a>: Draws an outline depending on the difference in luma between the pixels.</li>
-<li><a href="https://github.com/brimson/brimsonFX/blob/master/shaders/kContour.fx" target="_blank"><strong>kContour</strong></a>: Contour line effect</li>
+<li><a href="https://github.com/papadanku/CShade/blob/main/shaders/kContour.fx" target="_blank"><strong>kContour</strong></a>: Contour line effect</li>
 </ul>
 <h2 id="lens-flare">Lens Flare<a class="headerlink" href="#lens-flare" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
@@ -379,7 +416,7 @@ It can also be used when you have a jitter depth buffer (sometimes caused by TAA
 <li><a href="https://github.com/BlueSkyDefender/AstrayFX/blob/master/Shaders/Clarity.fx" target="_blank"><strong>Clarity</strong></a></li>
 <li><a href="https://github.com/luluco250/FXShaders/blob/master/Shaders/ColorLab.fx" target="_blank"><strong>ColorLab</strong></a></li>
 <li><a href="https://github.com/LordOfLunacy/Insane-Shaders/blob/master/Shaders/ContrastStretch.fx" target="_blank"><strong>ContrastStretch</strong></a>: A histogram-based contrast stretching shader that adaptively adjusts the contrast of the image based on its contents.</li>
-<li><a href="https://github.com/brimson/brimsonFX/blob/master/shaders/cLuminance.fx" target="_blank"><strong>cLuminance</strong></a>: Various grayscale algorithms.</li>
+<li><a href="https://github.com/papadanku/CShade/blob/main/shaders/cLuminance.fx" target="_blank"><strong>cLuminance</strong></a>: Various grayscale algorithms.</li>
 <li><a href="https://github.com/LordOfLunacy/Insane-Shaders/blob/master/Shaders/LocalContrastCS.fx" target="_blank"><strong>LocalContrastCS</strong></a>: A histogram-based contrast stretching shader that locally adjusts the contrast of the image based on the contents of small regions of the image.</li>
 <li><a href="https://github.com/prod80/prod80-ReShade-Repository/blob/master/Shaders/PD80_01A_RT_Correct_Contrast.fx" target="_blank"><strong>PD80_01A_RT_Correct_Contrast</strong></a>: Automatic contrast correction when it finds a need to correct in the current scene. It works by adjusting white/black points and does not change color. Works like Photoshop &quot;Auto Contrast&quot;.</li>
 <li><a href="https://github.com/prod80/prod80-ReShade-Repository/blob/master/Shaders/PD80_01B_RT_Correct_Color.fx" target="_blank"><strong>PD80_01B_RT_Correct_Color</strong></a>: Removes the tint of a scene. Works exactly the same (with additional methods/options) as Photoshop &quot;Auto Tint&quot;.</li>
@@ -404,7 +441,7 @@ It can also be used when you have a jitter depth buffer (sometimes caused by TAA
 <li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/AdaptiveSharpen.fx" target="_blank"><strong>AdaptiveSharpen</strong></a></li>
 <li><a href="https://raw.githubusercontent.com/LordOfLunacy/Insane-Shaders/master/Shaders/BilateralCS.fx" target="_blank"><strong>BilateralCS</strong></a>: Adaptive IIR filter for sharpening and blurring.</li>
 <li><a href="https://github.com/CeeJayDK/SweetFX/blob/master/Shaders/CAS.fx" target="_blank"><strong>CAS (ContrastAdaptiveSharpen)</strong></a>: AMD FidelityFX Contrast Adaptive Sharpening. Sharpens the image, making details easier to see.</li>
-<li><a href="https://github.com/brimson/brimsonFX/blob/master/shaders/cShard.fx" target="_blank"><strong>cShard</strong></a>: Simple unmask sharpening.</li>
+<li><a href="https://github.com/papadanku/CShade/blob/main/shaders/cShard.fx" target="_blank"><strong>cShard</strong></a>: Simple unmask sharpening.</li>
 <li><a href="https://github.com/guestrr/ReshadeShaders/blob/master/FastSharpen.fx" target="_blank"><strong>FastSharpen</strong></a></li>
 <li><a href="https://github.com/Fubaxiusz/fubax-shaders/blob/master/Shaders/FilmicAnamorphSharpen.fx" target="_blank"><strong>FilmicAnamorphicSharpen</strong></a></li>
 <li><a href="https://github.com/Fubaxiusz/fubax-shaders/blob/master/Shaders/FilmicSharpen.fx" target="_blank"><strong>FilmicSharpen</strong></a></li>
@@ -427,7 +464,7 @@ It can also be used when you have a jitter depth buffer (sometimes caused by TAA
 </ul>
 <h3 id="film-grain">Film grain<a class="headerlink" href="#film-grain" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
-<li><a href="https://github.com/brimson/brimsonFX/blob/master/shaders/cFilmGrain.fx" target="_blank"><strong>cFilmGrain</strong></a>: Film grain without copying texture.</li>
+<li><a href="https://github.com/papadanku/CShade/blob/main/shaders/cFilmGrain.fx" target="_blank"><strong>cFilmGrain</strong></a>: Film grain without copying texture.</li>
 <li><a href="https://github.com/CeeJayDK/SweetFX/blob/master/Shaders/FilmGrain.fx" target="_blank"><strong>FilmGrain</strong></a></li>
 <li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/FilmGrain2.fx" target="_blank"><strong>FilmGrain2</strong></a></li>
 <li><a href="https://github.com/prod80/prod80-ReShade-Repository/blob/master/Shaders/PD80_06_Film_Grain.fx" target="_blank"><strong>PD80_06_Film_Grain</strong></a></li>
@@ -436,7 +473,7 @@ It can also be used when you have a jitter depth buffer (sometimes caused by TAA
 <h3 id="chromatic-aberration">Chromatic Aberration<a class="headerlink" href="#chromatic-aberration" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
 <li><a href="https://reshade.me/forum/shader-presentation/2990-ported-reshade-2-x-effects" target="_blank"><strong>CA</strong></a></li>
-<li><a href="https://github.com/brimson/brimsonFX/blob/master/shaders/cAbberation.fx" target="_blank"><strong>cAbberation</strong></a></li>
+<li><a href="https://github.com/papadanku/CShade/blob/main/shaders/cAbberation.fx" target="_blank"><strong>cAbberation</strong></a></li>
 <li><a href="https://github.com/CeeJayDK/SweetFX/blob/master/Shaders/ChromaticAberration.fx" target="_blank"><strong>ChromaticAberration</strong></a></li>
 <li><a href="https://github.com/luluco250/FXShaders/blob/master/Shaders/FlexibleCA.fx" target="_blank"><strong>FlexibleCA</strong></a></li>
 <li><a href="https://github.com/prod80/prod80-ReShade-Repository/blob/master/Shaders/PD80_06_Chromatic_Aberration.fx" target="_blank"><strong>PD80_06_Chromatic_Aberration</strong></a></li>
