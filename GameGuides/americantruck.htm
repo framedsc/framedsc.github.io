@@ -302,15 +302,15 @@
 </tr>
 <tr>
 	<td>Game version</td>
-	<td>1.45</td>
+	<td>1.46</td>
 </tr>
 </tbody>
 </table>
 <div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Everything in this guide applies to <em>Euro Truck Simulator 2</em> as well!</p>
 </div><h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://mega.nz/file/wNU0CbCb#UyrcytyubnV69z4FNCM93R8mVwKZXtl4OC-vmfVxJmQ" target="_blank">Photo Mode Unlock by tripps</a><br />
-<strong>Features</strong>: Unlocks camera distance limitations, increases FOV distance, removes viewfinder overlay</li>
+<li><a href="https://mega.nz/file/cAMQwSxR#CJGqIOVh3BoJE7dzSU9Vpft6RWwFji8ElBOUK4O82bg" target="_blank">Photo Mode Unlock by tripps</a><br />
+<strong>Features</strong>: Unlocks camera distance limitations, increases FOV distance, removes viewfinder overlay (included HUD toggle version)</li>
 </ul>
 <h2 id="photo-mode">Photo Mode<a class="headerlink" href="#photo-mode" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>The game has a built-in photo mode which also allows you to change the weather, time, FOV, DOF.</p>
@@ -332,19 +332,27 @@
 </tr>
 <tr>
 	<td>Z, C</td>
-	<td>Tilt Camera Left/Right</td>
+	<td>Roll Camera Left/Right</td>
 </tr>
 <tr>
 	<td>Scroll Wheel</td>
 	<td>Change FOV</td>
 </tr>
 <tr>
+	<td>Space</td>
+	<td>Photo Settings</td>
+</tr>
+<tr>
+	<td>H</td>
+	<td>Hide HUD</td>
+</tr>
+<tr>
 	<td>R</td>
 	<td>Reset Camera</td>
 </tr>
 <tr>
-	<td>L</td>
-	<td>Lights Menu</td>
+	<td>M</td>
+	<td>Gallery</td>
 </tr>
 </tbody>
 </table>
@@ -409,6 +417,7 @@
 </tr>
 </tbody>
 </table>
+<p>For the full console command list, go <a href="https://modding.scssoft.com/wiki/Documentation/Engine/Console/Commands" target="_blank">here</a></p>
 <h3 id="reshade">Reshade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>Note that the game uses an upside-down depth buffer. You will need to go to the global processor definitions and change <code>RESHADE_DEPTH_INPUT_IS_UPSIDE_DOWN</code> from 0 to 1. This is essential and otherwise depth shaders will not work properly.</p>
 <div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Your game may need to have the depth buffer picked manually for depth shaders to work properly, this is done in the D3D11 (ReShade 4.0 and below) / Add-ons (ReShade 5+) tab. This has to be done everytime the resolution is changed.</p>

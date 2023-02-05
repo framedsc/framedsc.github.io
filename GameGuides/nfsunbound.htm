@@ -86,9 +86,9 @@
 
 <li class="tocentry"><a href="#tools">Tools</a></li>
 
-<li class="tocentry"><a href="#controls">Controls</a></li>
+<li class="tocentry"><a href="#photo-mode-controls">Photo mode controls</a></li>
 
-<li class="tocentry"><a href="#tips-and-tricks">Tips and Tricks</a></li>
+<li class="tocentry"><a href="#camtool-controls">Camtool controls</a></li>
 
 <li class="tocentry"><a href="#reshade">Reshade</a></li>
 
@@ -242,8 +242,8 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../Images\nfsunbound.png" alt="Need For Speed Unbound" title="Shot by tripps" class="shadowed autosize" width="896" height="180" />
-<p>Shot by tripps</p>
+<img src="../Images\nfsunbound.png" alt="Need For Speed Unbound" title="Shot by pvp" class="shadowed autosize" width="896" height="180" />
+<p>Shot by pvp</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
@@ -280,21 +280,57 @@
 </tr>
 <tr>
 	<td>Graphics API</td>
-	<td>DirectX 11</td>
+	<td>DirectX 12</td>
 </tr>
 </tbody>
 </table>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li>
-<p><a href="https://nfsmods.xyz/mod/4364" target="_blank">Camera tools by Archie</a><br />
-<strong>Features</strong>: Camera control, FoV control, HUD toggle, timestop/gamespeed, Dof Control</p>
+<p><a href="https://nfsmods.xyz/mod/4364" target="_blank">Camera toolkit by ARCHIE</a><br />
+<strong>Features</strong>: Tool to control in-game camera and its various features.</p>
 </li>
 <li>
-<p><a href="https://framedsc.com/ShaderTogglers/nfs_unbound.ini" target="_blank">Hud toggle and Carton Effect Disable</a> requires Reshade 5+ with <a href="https://framedsc.com/ReshadeGuides/Addons/shader_toggler_repository.htm" target="_blank">Shader Toggler</a></p>
+<p><a href="https://framedsc.com/ShaderTogglers/nfs_unbound.ini" target="_blank">Hud toggle and Cartoon Effect disable</a> requires Reshade 5+ with <a href="../ReshadeGuides/Addons/shader_toggler_repository.htm">Shader Toggler</a></p>
 </li>
 </ul>
-<h2 id="controls">Controls<a class="headerlink" href="#controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="photo-mode-controls">Photo mode controls<a class="headerlink" href="#photo-mode-controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Key</th>
+	<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>TAB menu option</code></td>
+	<td>Toggle camera</td>
+</tr>
+<tr>
+	<td><code>Q</code> / <code>E</code></td>
+	<td>Move up / down</td>
+</tr>
+<tr>
+	<td><code>R</code> / <code>F</code></td>
+	<td>Zoom in / out</td>
+</tr>
+<tr>
+	<td><code>WASD</code></td>
+	<td>Move camera around</td>
+</tr>
+<tr>
+	<td><code>Shift</code></td>
+	<td>Camera effects</td>
+</tr>
+<tr>
+	<td><code>U</code></td>
+	<td>Hide UI</td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The Photo Mode uses a different depth-buffer compared to in-game, you may have to pick it manually for depth shaders to work properly, this is done in the Add-ons (ReShade 5+) tab.</p>
+</div><h2 id="camtool-controls">Camtool controls<a class="headerlink" href="#camtool-controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
@@ -313,47 +349,32 @@
 </tr>
 <tr>
 	<td><code>Caps Lock</code></td>
-	<td>Toggle Hud</td>
+	<td>Toggle HUD</td>
 </tr>
 <tr>
 	<td><code>F5</code></td>
 	<td>Pause Game</td>
 </tr>
 <tr>
-	<td><code>Y</code></td>
-	<td>Camera Up</td>
+	<td><code>Y, H</code></td>
+	<td>Camera Up / Down</td>
 </tr>
 <tr>
-	<td><code>H</code></td>
-	<td>Camera Down</td>
+	<td><code>J, L</code></td>
+	<td>Camera Left / Right</td>
 </tr>
 <tr>
-	<td><code>J</code></td>
-	<td>Camera Left</td>
-</tr>
-<tr>
-	<td><code>L</code></td>
-	<td>Camera Right</td>
-</tr>
-<tr>
-	<td><code>I</code></td>
-	<td>Camera Forward</td>
-</tr>
-<tr>
-	<td><code>K</code></td>
-	<td>Camera Backward</td>
+	<td><code>I, K</code></td>
+	<td>Camera Forward / Backward</td>
 </tr>
 </tbody>
 </table>
-<h2 id="tips-and-tricks">Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<h3 id="change-normal-keybinds">Change Normal Keybinds<a class="headerlink" href="#change-normal-keybinds" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>You can change the normal keybinds by finding the keycodes of the keys you want to use <a href="https://www.toptal.com/developers/keycode" target="_blank">here</a> and changing them inside &quot;CameraToolKit.ini&quot;.</p>
-<h2 id="reshade">Reshade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span></div><h2 id="reshade">Reshade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>When hotsampling your depth-buffer might change which will require you to manually reselect the correct depth-buffer.</p>
 </div><h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://www.pcgamingwiki.com/wiki/Need_for_Speed_Unbound" target="_blank">PC Gaming Wiki</a></li>
-<li><a href="https://www.nexusmods.com/needforspeedunbound?tab=popular+%28all+time%29" target="_blank">Nexus Mods</a> </li>
+<li><a href="https://www.nexusmods.com/needforspeedunbound" target="_blank">Nexus Mods</a> </li>
 <li><a href="https://nfsmods.xyz/search?search=NFS&amp;game=18" target="_blank">NFS Mods</a></li>
 </ul>
 
