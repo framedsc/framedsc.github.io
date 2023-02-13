@@ -266,7 +266,7 @@ But before listing the shaders I will first introduce you to one that can be use
 <li><a href="https://github.com/ConstantineRudenko/Shaders/blob/master/reshade/Shaders/MC_SSAO.fx" target="_blank"><strong>MC_SSAO</strong></a></li>
 <li><a href="https://github.com/cyrie/Stormshade/blob/master/reshade-shaders/Shaders/MXAO.fx" target="_blank"><strong>MXAO</strong></a></li>
 <li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/SSAO.fx" target="_blank"><strong>SSAO (HBAO, RayAO, HBAO, SSGI, AO_SAO, SSAO)</strong></a>: The SSAO shader has all the ambient occlusion techniques in parenthesis.</li>
-<li><a href="https://github.com/Mortalitas/GShade/blob/8f52311f29608456d3db94fa56b6a36522904d02/Shaders/PPFX_SSDO.fx" target="_blank"><strong>PPFX_SSDO</strong></a></li>
+<li><a href="https://github.com/dddfault/reshade-shaders/blob/master/Shaders/PPFX_SSDO.fx" target="_blank"><strong>PPFX_SSDO</strong></a></li>
 </ul>
 <h3 id="reflections">Reflections<a class="headerlink" href="#reflections" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
@@ -279,20 +279,20 @@ But before listing the shaders I will first introduce you to one that can be use
 <ul>
 <li><a href="https://pastebin.com/Lnmrmb3v" target="_blank"><strong>AmbientLight</strong></a>: Bloom mixed with eye adaptation and lens dirt. The linked version of the shader has a toggle for using dither, since having it turned on can produce artifacts. It's highly recommended to turn off the dither. If the shader gets updated you won't find the latest version in this link.</li>
 <li><a href="https://github.com/LordOfLunacy/Insane-Shaders/blob/master/Shaders/Bessel_Bloom.fx" target="_blank"><strong>BesselBloom</strong></a>: Instead of using the typical Gaussian filter used by bloom, an approximate is implemented instead of using a 2nd order Bessel IIR filter.</li>
-<li><a href="https://github.com/Mortalitas/GShade/blob/8f52311f29608456d3db94fa56b6a36522904d02/Shaders/MagicBloom.fx" target="_blank"><strong>MagicBloom</strong></a></li>
+<li><a href="https://github.com/Otakumouse/stormshade/blob/master/v4.X/reshade-shaders/Shader%20Library/Recommended/MagicBloom.fx" target="_blank"><strong>MagicBloom</strong></a></li>
 <li><a href="https://github.com/luluco250/FXShaders/blob/master/Shaders/NeoBloom.fx" target="_blank"><strong>NeoBloom</strong></a></li>
 <li><a href="https://github.com/prod80/prod80-ReShade-Repository/blob/master/Shaders/PD80_02_Bloom.fx" target="_blank"><strong>PD80_02_Bloom</strong></a>:  Bloom shader based on scene luminosity. It uses a Gaussian blur applied on the fly. It blends the bloom with the rest using the Screen blending method.</li>
 <li><a href="https://github.com/martymcmodding/qUINT/blob/master/Shaders/qUINT_bloom.fx" target="_blank"><strong>qUINT_bloom</strong></a>: Filter that adds a glow around bright screen areas, adapting to the current scene brightness.</li>
 <li><a href="https://github.com/luluco250/FXShaders/blob/master/Shaders/ArcaneBloom.fx" target="_blank"><strong>ArcaneBloom</strong></a></li>
 <li><a href="https://github.com/BlueSkyDefender/AstrayFX/blob/master/Shaders/BloomingHDR.fx" target="_blank"><strong>BloomingHDR</strong></a></li>
 <li><a href="https://github.com/Heathen/Pirate-Shaders/blob/master/reshade-shaders/Shaders/Pirate_Bloom.fx" target="_blank"><strong>Pirate_Bloom</strong></a></li>
-<li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/PPFX_Bloom.fx" target="_blank"><strong>PPFX_Bloom</strong></a></li>
-<li><a href="https://github.com/Mortalitas/GShade/blob/8f52311f29608456d3db94fa56b6a36522904d02/Shaders/SimpleBloom.fx" target="_blank"><strong>SimpleBloom</strong></a></li>
+<li><a href="https://github.com/dddfault/reshade-shaders/blob/master/Shaders/PPFX_Bloom.fx" target="_blank"><strong>PPFX_Bloom</strong></a></li>
+<li><a href="https://github.com/Fubaxiusz/fubax-shaders-dev" target="_blank"><strong>SimpleBloom</strong></a></li>
 <li><a href="https://github.com/papadanku/CShade/blob/master/shaders/cBloom.fx" target="_blank"><strong>KinoBloom</strong></a></li>
 </ul>
 <h3 id="light-rays">Light Rays<a class="headerlink" href="#light-rays" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
-<li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/PPFX_Godrays.fx" target="_blank"><strong>PPFX_Godrays</strong></a>: If you want to add godrays to a scene then this shader can help you with that.</li>
+<li><a href="https://github.com/dddfault/reshade-shaders/blob/master/Shaders/PPFX_Godrays.fx" target="_blank"><strong>PPFX_Godrays</strong></a>: If you want to add godrays to a scene then this shader can help you with that.</li>
 <li><a href="https://github.com/luluco250/FXShaders/blob/master/Shaders/TrackingRays.fx" target="_blank"><strong>TrackingRays</strong></a>: Similar to the previous shader but the orientation of the rays is automatic.</li>
 </ul>
 <h2 id="fun-effects">Fun effects<a class="headerlink" href="#fun-effects" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
@@ -330,7 +330,7 @@ fog layer, which is fully configurable. See <a href="Shaders/heightfog.htm">the 
 <li><a href="https://github.com/prod80/prod80-ReShade-Repository/blob/master/Shaders/PD80_06_Depth_Slicer.fx" target="_blank"><strong>PD80_06_Depth_Slicer</strong></a>: Similar to AdaptiveFog but with blending mods and other a couple more options.</li>
 <li><a href="https://github.com/LordKobra/CobraFX/blob/master/Shaders/RealLongExposure.fx" target="_blank"><strong>RealLongExposure</strong></a>: Enables you to capture changes over time, like in long-exposure photography. If you filter by brightness, it will have the most similar effect to real-world photography, but try Freeze on a static scene with the brightness turned off and not moving the camera to receive the most interesting results. Keep in mind that having low fps (that being because of hotsampling or using expensive shaders for example) would decrease the number of samples the shader makes, thus resulting in a low-quality result. If the tools that you are using to shoot a game allow you to control the velocity of the game then slow down said velocity for better results.
 It can also be used when you have a jitter depth buffer (sometimes caused by TAA or other noisy effects like SSR or raytracing) to accumulate and produce a cleaner image.</li>
-<li><a href="https://github.com/luluco250/FXShaders/blob/master/Shaders/RetroFog.fx" target="_blank"><strong>Retrofog</strong></a></li>
+<li><a href="https://github.com/luluco250/FXShaders" target="_blank"><strong>Retrofog</strong></a></li>
 <li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/RetroFog2.fx" target="_blank"><strong>Retrofog2</strong></a></li>
 <li><a href="https://github.com/mj-ehsan/NiceGuy-Shaders/blob/main/Shaders/Rim.fx" target="_blank"><strong>Rim</strong></a>: Aims to reproduce a Rim Light effect using the game's depth buffer.</li>
 <li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/ThinFilm.fx" target="_blank"><strong>ThinFilm</strong></a></li>
@@ -454,10 +454,10 @@ It can also be used when you have a jitter depth buffer (sometimes caused by TAA
 <h3 id="tonemapping-and-color-grading">Tonemapping and color grading<a class="headerlink" href="#tonemapping-and-color-grading" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
 <li><a href="https://github.com/CeeJayDK/SweetFX/blob/master/Shaders/DPX.fx" target="_blank"><strong>DPX</strong></a>: Makes the image look like it was converted from film to Cineon DPX. Can be used to create a &quot;sunny&quot; look.</li>
-<li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/FilmicPass.fx" target="_blank"><strong>FilmicPass</strong></a>: Applies some common color adjustments to mimic a more cinema-like look.</li>
+<li><a href="https://github.com/byxor/thug-pro-reshade/blob/master/THUG%20Pro/reshade-shaders/Shaders/FilmicPass.fx" target="_blank"><strong>FilmicPass</strong></a>: Applies some common color adjustments to mimic a more cinema-like look.</li>
 <li><a href="https://github.com/prod80/prod80-ReShade-Repository/blob/master/Shaders/PD80_03_Filmic_Adaptation.fx" target="_blank"><strong>PD80_01_Filmic_Adaptation</strong></a></li>
 <li><a href="https://github.com/prod80/prod80-ReShade-Repository/blob/master/Shaders/PD80_04_Technicolor.fx" target="_blank"><strong>PD80_04_Technicolor</strong></a></li>
-<li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/Reinhard.fx" target="_blank"><strong>Reinhard</strong></a></li>
+<li><a href="https://github.com/Zackin5/Filmic-Tonemapping-ReShade/blob/master/Reinhard.fx" target="_blank"><strong>Reinhard</strong></a></li>
 <li><a href="https://github.com/CeeJayDK/SweetFX/blob/master/Shaders/Technicolor.fx" target="_blank"><strong>Technicolor</strong></a>: Makes the image look like it was processed using a three-strip Technicolor process - see http://en.wikipedia.org/wiki/Technicolor</li>
 <li><a href="https://github.com/CeeJayDK/SweetFX/blob/master/Shaders/Technicolor.fx" target="_blank"><strong>Technicolor2</strong></a></li>
 <li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/WatchDogs.fx" target="_blank"><strong>WatchDogsTonemapping</strong></a></li>
@@ -466,7 +466,7 @@ It can also be used when you have a jitter depth buffer (sometimes caused by TAA
 <ul>
 <li><a href="https://github.com/papadanku/CShade/blob/main/shaders/cFilmGrain.fx" target="_blank"><strong>cFilmGrain</strong></a>: Film grain without copying texture.</li>
 <li><a href="https://github.com/CeeJayDK/SweetFX/blob/master/Shaders/FilmGrain.fx" target="_blank"><strong>FilmGrain</strong></a></li>
-<li><a href="https://github.com/Mortalitas/GShade/blob/master/Shaders/FilmGrain2.fx" target="_blank"><strong>FilmGrain2</strong></a></li>
+<li><a href="https://github.com/byxor/thug-pro-reshade/blob/master/THUG%20Pro/reshade-shaders/Shaders/FilmGrain2.fx" target="_blank"><strong>FilmGrain2</strong></a></li>
 <li><a href="https://github.com/prod80/prod80-ReShade-Repository/blob/master/Shaders/PD80_06_Film_Grain.fx" target="_blank"><strong>PD80_06_Film_Grain</strong></a></li>
 <li><a href="https://github.com/Fubaxiusz/fubax-shaders/blob/master/Shaders/SimpleGrain.fx" target="_blank"><strong>SimpleGrain</strong></a></li>
 </ul>
