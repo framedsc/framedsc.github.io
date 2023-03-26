@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>What Remains of Edith Finch - FRAMED. Screenshot Community</title>
+    <title>The Unfinished Swan - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/theme_20220814.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors_20220814.css" type="text/css" />
@@ -146,29 +146,23 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/SplinterCellBlacklist.htm">Tom Clancy's Splinter Cell: Blacklist</a>
 </li>
-<li class="tocentry"><a href="../GameGuides/the_unfinished_swan.htm">The Unfinished Swan</a>
-</li>
+<li class="tocentry current"><a class="current" href="../GameGuides/the_unfinished_swan.htm">The Unfinished Swan</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#summary">Summary</a></li>
+
+<li class="tocentry"><a href="#workflow">Workflow</a></li>
+
+<li class="tocentry"><a href="#notes">Notes</a></li>
+
+<li class="tocentry"><a href="#useful-links">Useful links</a></li>
+
+</ul>
 <li class="tocentry"><a href="../GameGuides/Watch_Dogs.htm">Watch_Dogs</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/Watch_Dogs2.htm">Watch_Dogs 2</a>
 </li>
-<li class="tocentry current"><a class="current" href="../GameGuides/edithfinch.htm">What Remains of Edith Finch</a>
-<ul class="currentrelative">
-<li class="tocentry"><a href="#summary">Summary</a></li>
-
-<li class="tocentry"><a href="#tools">Tools</a></li>
-
-<li class="tocentry"><a href="#controls">Controls</a></li>
-
-<li class="tocentry"><a href="#disable-chromatic-aberration">Disable chromatic aberration</a></li>
-
-<li class="tocentry"><a href="#hotsampling">Hotsampling</a></li>
-
-<li class="tocentry"><a href="#custom-resolution">Custom Resolution</a></li>
-
-<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
-
-</ul>
+<li class="tocentry"><a href="../GameGuides/edithfinch.htm">What Remains of Edith Finch</a>
+</li>
 <li class="tocentry"><a href="../GameGuides/thewitcher3.htm">The Witcher 3: Wild Hunt</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/wolfenstein_the_new_order.htm">Wolfenstein: The New Order</a>
@@ -238,7 +232,7 @@
             <div class="nav-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <div class="breadcrumbs">
-<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../M-Z.htm">M-Z</a></li> / <li><a href="../GameGuides/edithfinch.htm">What Remains of Edith Finch</a></li></ul>
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../M-Z.htm">M-Z</a></li> / <li><a href="../GameGuides/the_unfinished_swan.htm">The Unfinished Swan</a></li></ul>
 					
                     </div>
                     <hr />
@@ -246,8 +240,8 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../Images\edithfinch.png" alt="What Remains of Edith Finch" title="Shot by Originalnicodr" class="shadowed autosize" width="896" height="180" />
-<p>Shot by Originalnicodr</p>
+<img src="../Images\unfinished_swan_header.png" alt="Inside" title="Shot by cHota gAbbar" class="shadowed autosize" width="896" height="180" />
+<p>Shot by cHota gAbbar</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
@@ -264,15 +258,15 @@
 </tr>
 <tr>
 	<td>Hotsampling</td>
-	<td>Yes (<a href="#hotsampling">see notes</a>)</td>
-</tr>
-<tr>
-	<td>DSR</td>
 	<td>No</td>
 </tr>
 <tr>
+	<td>DSR</td>
+	<td>Yes (through Desktop)</td>
+</tr>
+<tr>
 	<td>Custom Aspect Ratios</td>
-	<td>Yes</td>
+	<td>No</td>
 </tr>
 <tr>
 	<td>Reshade</td>
@@ -286,57 +280,25 @@
 	<td>Graphics API</td>
 	<td>DirectX 11</td>
 </tr>
+<tr>
+	<td>Game version</td>
+	<td></font> <font face="Stores"> S </font> 1.0.0.1</td>
+</tr>
 </tbody>
 </table>
-<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This guide is for an Unreal Engine 4 game that can use the <a href="https://framedsc.com/GeneralGuides/universal_ue4_consoleunlocker.htm" target="_blank">Universal Unreal Unlocker</a>. Do keep in mind that only the 3.x version of the unlocker works (4.x crashes the game upon injection). Moreover, no free-camera functionality is available, only the timestop works.</p>
-</div><h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>You need to use <a href="https://github.com/FransBouma/ShaderToggler" target="_blank">ShaderToggler</a> addon for Reshade to hide the UI elements. The UI elements that may be on your screen at a time are:-</p>
+<ol>
+<li>Dot crosshair in the center of the screen.</li>
+<li>Balloon Radar at the bottom left of the screen (provided you have unlocked the Toy).</li>
+</ol>
+<p>The game uses a handful of vertex and pixel shaders. Create a ShaderGroup and add the two pixel shaders corresponding to the aforementioned two UI elements. Toggle them off and take the shot.</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The game uses MSAA and thus has no depth-buffer access.</p>
+</div><h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The in-game resolution settings caps out at your desktop resolution. If you want to play at higher resolutions (like 4K), set your desktop resolution to the corresponding value; only then the in-game settings show the higher resolutions.</p>
+<h2 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="..\CheatTables\FinchGame12_inter.CT">Cheat Table by Smithfield01 and IDK31FC</a><br />
-<strong>Features</strong>: Free Camera, FOV, DOF control, RGB editor, Custom Aspect Ratio, Blackbars remover</li>
-</ul>
-<h2 id="controls">Controls<a class="headerlink" href="#controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ul>
-<li>
-Move camera position:
-<ul>
-<li>Num 4: Left</li>
-<li>Num 6: Right</li>
-<li>Num 8: Forwards</li>
-<li>Num 5: Backwards</li>
-<li>Num 9: Upwards</li>
-<li>Num 7: Downards</li>
-</ul>
-</li>
-<li>Move camera position: Mouse</li>
-<li>
-FOV control:
-<ul>
-<li>+: Increase</li>
-<li>-: Decrease</li>
-</ul>
-</li>
-<li>
-Camera tilt:
-<ul>
-<li>Num 1: Tilt the camera left</li>
-<li>Num 3: Tilt the camera right</li>
-</ul>
-</li>
-</ul>
-<p>Keep in mind that in order to use any of the buttons above, you will have to freeze said values so the games doesn't change them back. You will see a &quot;fov stop&quot;,&quot;xy stop&quot;, etc. boxes in the cheat engine table that need to be ticked in order to change the values correctly with the controls. I would suggest making a hotkey with all &quot;stop&quot; boxes so you can activate them all at once (don't freeze rot stop or you won't be able to look around with the mouse).</p>
-<p>If you need to move faster, you can edit the table or modify the values directly in the table.</p>
-<h2 id="disable-chromatic-aberration">Disable chromatic aberration<a class="headerlink" href="#disable-chromatic-aberration" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Go to the configuration file(s) location (that is <code>%LOCALAPPDATA%\FinchGame\Saved\Config\WindowsNoEditor\</code> in windows and
-<code>&lt;Steam-folder&gt;/steamapps/compatdata/501300/pfx/</code> in linux). Open the <code>Engine.ini</code> file and add the following lines:</p>
-<pre class="nocode">[/Script/Engine.RendererSettings]
-r.SceneColorFringe.Max=0
-</pre><h2 id="hotsampling">Hotsampling<a class="headerlink" href="#hotsampling" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Hotsampling works with the game, the only problem comes after resizing the window and alt-tabing back to the game, which causes it to resize again to the previous resolution. For taking shots, I suggest using MSI Afterburner (and installing RivaTurner that comes with the installation) which will allow you to take photos without being focused on the game (be sure to configure the desired hotkey in MSI Afterburner).</p>
-<h2 id="custom-resolution">Custom Resolution<a class="headerlink" href="#custom-resolution" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>For custom resolutions you have to edit the file in the following location: <code>C:\Users\Username\AppData\Local\FinchGame\Saved\Config\WindowsNoEditor\GameUserSettings.ini</code></p>
-<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ul>
-<li><a href="https://www.pcgamingwiki.com/wiki/What_Remains_of_Edith_Finch" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://www.pcgamingwiki.com/wiki/The_Unfinished_Swan" target="_blank">PC Gaming wiki</a></li>
 </ul>
 
                     </div>
