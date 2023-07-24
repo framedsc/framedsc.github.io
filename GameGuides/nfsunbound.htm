@@ -86,9 +86,11 @@
 
 <li class="tocentry"><a href="#tools">Tools</a></li>
 
+<li class="tocentry"><a href="#modifications">Modifications</a></li>
+
 <li class="tocentry"><a href="#photo-mode-controls">Photo mode controls</a></li>
 
-<li class="tocentry"><a href="#camtool-controls">Camtool controls</a></li>
+<li class="tocentry"><a href="#camtool-default-controls">Camtool default controls</a></li>
 
 <li class="tocentry"><a href="#reshade">Reshade</a></li>
 
@@ -246,8 +248,8 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../Images\nfsunbound.png" alt="Need For Speed Unbound" title="Shot by pvp" class="shadowed autosize" width="896" height="180" />
-<p>Shot by pvp</p>
+<img src="../Images\nfsunbound.png" alt="Need For Speed Unbound" title="Shot by tripps" class="shadowed autosize" width="896" height="180" />
+<p>Shot by tripps</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
@@ -286,19 +288,37 @@
 	<td>Graphics API</td>
 	<td>DirectX 12</td>
 </tr>
+<tr>
+	<td>Game version</td>
+	<td>Vol.3</td>
+</tr>
 </tbody>
 </table>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
+<li><a href="https://nfsmods.xyz/mod/4364" target="_blank">Camera toolkit by ARCHIE</a><br />
+<strong>Features</strong>: Tool to control in-game camera and its various features.</li>
+<li><a href="https://github.com/CadeEvs/FrostyToolsuite/tree/1.0.7" target="_blank">Frosty Mod Manager 1.0.7</a>
+<strong>Feature</strong>: Utility program that allows you to organize and manage mods.</li>
+<li><a href="https://github.com/Dyvinia/DatapathFixPlugin/releases" target="_blank">DatapathFix</a>
+<strong>Feature</strong>: Plugin for FMM to fix an issue with modding the game.</li>
+</ul>
+<h2 id="modifications">Modifications<a class="headerlink" href="#modifications" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ul>
+<li><a href="https://www.nexusmods.com/needforspeedunbound/mods/29" target="_blank">Unbound Remix</a><br />
+<strong>Features</strong>: Game enhancement mod for enhancing the customization and gameplay experience.</li>
+<li><a href="https://nfsmods.xyz/mod/4801" target="_blank">Unlock Everything</a><br />
+<strong>Features</strong>: Unlocks every in-game item.</li>
 <li>
-<p><a href="https://nfsmods.xyz/mod/4364" target="_blank">Camera toolkit by ARCHIE</a><br />
-<strong>Features</strong>: Tool to control in-game camera and its various features.</p>
+<p><a href="https://www.nexusmods.com/needforspeedunbound/mods/3" target="_blank">Ultimate Customization</a><br />
+<strong>Features</strong>: Adds hidden parts and improves other customization options.</p>
 </li>
 <li>
-<p><a href="https://framedsc.com/ShaderTogglers/nfs_unbound.ini" target="_blank">Hud toggle and Cartoon Effect disable</a> requires Reshade 5+ with <a href="../ReshadeGuides/Addons/shader_toggler_repository.htm">Shader Toggler</a></p>
+<p><a href="https://framedsc.com/ShaderTogglers/nfs_unbound.ini" target="_blank">Hud Toggle and Cartoon Effect disable</a> requires Reshade 5+ with <a href="../ReshadeGuides/Addons/shader_toggler_repository.htm">Shader Toggler</a></p>
 </li>
 </ul>
-<h2 id="photo-mode-controls">Photo mode controls<a class="headerlink" href="#photo-mode-controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>The game requires you to use 1.0.7+ version of Frosty Mod Manager otherwise it's an instant crash during loading.</p>
+</div><h2 id="photo-mode-controls">Photo mode controls<a class="headerlink" href="#photo-mode-controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
@@ -334,7 +354,7 @@
 </tbody>
 </table>
 <div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The Photo Mode uses a different depth-buffer compared to in-game, you may have to pick it manually for depth shaders to work properly, this is done in the Add-ons (ReShade 5+) tab.</p>
-</div><h2 id="camtool-controls">Camtool controls<a class="headerlink" href="#camtool-controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+</div><h2 id="camtool-default-controls">Camtool default controls<a class="headerlink" href="#camtool-default-controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
@@ -360,21 +380,22 @@
 	<td>Pause Game</td>
 </tr>
 <tr>
-	<td><code>Y, H</code></td>
+	<td><code>Y</code> / <code>H</code></td>
 	<td>Camera Up / Down</td>
 </tr>
 <tr>
-	<td><code>J, L</code></td>
+	<td><code>J</code> / <code>L</code></td>
 	<td>Camera Left / Right</td>
 </tr>
 <tr>
-	<td><code>I, K</code></td>
+	<td><code>I</code> / <code>K</code></td>
 	<td>Camera Forward / Backward</td>
 </tr>
 </tbody>
 </table>
-<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span></div><h2 id="reshade">Reshade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>When hotsampling your depth-buffer might change which will require you to manually reselect the correct depth-buffer.</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>All of the keybinds can be rebound inside the Cam Toolkit.</p>
+</div><h2 id="reshade">Reshade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>When hotsampling in built-in photo mode your depth-buffer might change which will require you to manually reselect the correct depth-buffer.</p>
 </div><h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://www.pcgamingwiki.com/wiki/Need_for_Speed_Unbound" target="_blank">PC Gaming Wiki</a></li>
