@@ -103,13 +103,9 @@
 <ul class="currentrelative">
 <li class="tocentry"><a href="#summary">Summary</a></li>
 
-<li class="tocentry"><a href="#tools">Tools</a></li>
-
 <li class="tocentry"><a href="#essential-mods">Essential Mods</a></li>
 
 <li class="tocentry"><a href="#mods-for-setting-up-screenshots">Mods for Setting Up Screenshots</a></li>
-
-<li class="tocentry"><a href="#graphical-tweaks">Graphical Tweaks</a></li>
 
 <li class="tocentry"><a href="#tips-and-tricks">Tips and Tricks</a></li>
 
@@ -300,7 +296,7 @@
 </tr>
 <tr>
 	<td>Reshade</td>
-	<td>Yes (4.9.1+)</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Ansel</td>
@@ -311,15 +307,21 @@
 	<td>DirectX 12</td>
 </tr>
 <tr>
-	<td>Game version</td>
-	<td>1.52</td>
+	<td>Guide checked for Game version</td>
+	<td>2.02</td>
 </tr>
 </tbody>
 </table>
-<h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>## Tools</p>
 <ul>
-<li><a href="https://patreon.com/Otis_Inf" target="_blank">Camera Tools with Cyberlit by Otis_Inf</a> <br />
-<strong><a href="https://opm.fransbouma.com/Cameras/cyberpunk2077.htm" target="_blank">Features</a></strong>: Camera control, FoV control, HUD toggle, timestop/gamespeed, hotsampling, time of day, camera paths, photomode posing tools and custom lights.  </li>
+<li>
+<p><a href="https://patreon.com/Otis_Inf" target="_blank">Camera Tools with Cyberlit by Otis_Inf</a> <br />
+<strong><a href="https://opm.fransbouma.com/Cameras/cyberpunk2077.htm" target="_blank">Features</a></strong>: Camera control, FoV control, HUD toggle, timestop/gamespeed, hotsampling, time of day, camera paths, IGCSDOF support, photomode posing tools and custom lights.</p>
+</li>
+<li>
+<p><a href="https://www.nexusmods.com/cyberpunk2077/mods/4319" target="_blank">Photomode Unlocker2.0 XL</a>
+  Removes most restrictions of photomode whilst adding support for pose packs-</p>
+</li>
 </ul>
 <h2 id="essential-mods">Essential Mods<a class="headerlink" href="#essential-mods" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
@@ -335,15 +337,8 @@
 <li><a href="https://www.nexusmods.com/cyberpunk2077/mods/780" target="_blank">Freefly</a><br />
 <strong>Features</strong>: Enable noclip to fly V to places you wouldn't normally be able to reach.</li>
 <li><a href="https://www.nexusmods.com/cyberpunk2077/mods/3850" target="_blank">Appearance Change Unlocker</a> with <a href="https://www.nexusmods.com/cyberpunk2077/mods/3930" target="_blank">Character Customization Anywhere</a><br />
-<strong>Features</strong>: allows editing of your V while in-game. The first mod unlocks full character customisation at apartment mirrors and the second mod enables that feature to be activated anywhere with a hotkey. This replaces the CyberCAT save editor.</li>
-</ul>
-<h2 id="graphical-tweaks">Graphical Tweaks<a class="headerlink" href="#graphical-tweaks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ul>
-<li><a href="https://www.tomshardware.com/uk/news/how-to-unlock-cyberpunk-2077-cinematic-rtx-mode" target="_blank">Cinematic RTX</a> <br />
-<strong>Features</strong>: Boosts raytracing quality.</li>
-<li><a href="https://www.nexusmods.com/cyberpunk2077/mods/2332" target="_blank">Settings Manager</a> <br />
-<strong>Features</strong>: Save your games graphics settings to presets, and switch between them anytime.<br />
-NOTE: If you have a preset from an older version of the game, you may need to create new presets to avoid crashes.</li>
+<strong>Features</strong>: allows editing of your V while in-game. The first mod unlocks full character customisation at apartment mirrors and the second mod enables that feature to be activated anywhere with a hotkey. </li>
+<li><a href="https://www.nexusmods.com/cyberpunk2077/mods/8176" target="_blank">CharLi - Character Lighting Suite</a> Spawn premade lighting setups </li>
 </ul>
 <h3 id="writing-custom-.inis">Writing custom .inis<a class="headerlink" href="#writing-custom-.inis" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>Cyberpunk 2077 allows further customisation of in-game settings through .ini tweaks. The .ini files can have any names so long as they are placed in <code>\Cyberpunk 2077\engine\config\platform\pc</code>.  </p>
@@ -370,8 +365,8 @@ Bloom = False
 <p>There can often be lots of artifacting around hair textures and these are amplified when using various Reshade depth effects. One way to minimise this is to use <a href="../ReshadeGuides/RealLongExposure.htm">RealLongExposure.fx from CobraFX</a> to create a 'long exposure' which helps to blend together the issues. This is less of an issue with DLSS enabled.</p>
 <p>If you find Reshade is causing performance issues, enable <code>Copy depth buffer before clear operations</code> until it's time to compose a shot.</p>
 <h3 id="cyberlit">CyberLit<a class="headerlink" href="#cyberlit" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>Otis_Inf's tools for Cyberpunk include CyberLit, a powerful lighting tool that can be used to light scenes almost any way you want. A full guide to all its controls can be found <a href="../GeneralGuides/cyberlit.htm">here</a>.</p>
-<p>Camera positions can be saved using CyberLit. Create a 0 intensity light to use as your camera anchor point then use 'Move camera to light' to quickly get back to your shot angle. The same can be done by using ICGS camera paths to create multiple camera points.</p>
+<p>Otis_Inf's tools for Cyberpunk include CyberLit, a powerful reshade addon lighting tool that can be used to light scenes almost any way you want. A full guide to all its controls can be found <a href="../GeneralGuides/cyberlit.htm">here</a>.</p>
+<p>Camera positions can be saved using ICGS camera paths to create multiple camera points.</p>
 <h3 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>In the event of another game update breaking lots of mods, you can make a copy of your <code>Cyberpunk 2077</code> game folder before the update and play it outside of Steam/GOG whilst you wait for mod updates, or if you prefer to stick to a certain version of the game. </p>
 <h3 id="custom-look-ats">Custom Look-ats<a class="headerlink" href="#custom-look-ats" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
