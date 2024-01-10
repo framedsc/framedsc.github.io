@@ -85,6 +85,8 @@
 
 <li class="tocentry"><a href="#accumulation-buffer-based-depth-of-field">Accumulation buffer based Depth of Field</a></li>
 
+<li class="tocentry"><a href="#adjustable-shutter-speed-for-long-exposure">Adjustable shutter speed for long exposure</a></li>
+
 
 
 </ul>
@@ -254,6 +256,9 @@
 <h2 id="accumulation-buffer-based-depth-of-field">Accumulation buffer based Depth of Field<a class="headerlink" href="#accumulation-buffer-based-depth-of-field" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>A lot of real-time DOF solutions look great nowadays (<a href="https://docs.unrealengine.com/5.0/en-US/cinematic-depth-of-field-in-unreal-engine/" target="_blank">see Epic's Unreal Cinematic DOF for example</a>). However, they come with limitations, like fake bleed of near plane objects, particles, and alpha effects not interacting with the blur correctly, or reflections just straight up not following physics.</p>
 <p>Ideally, an accumulation buffer based DOF solution like the one on Forza Horizon 4 and 5 would be the best approach to handling all of the problems mentioned above, as shown in <a href="ReshadeGuides/Addons/MSADOF.htm#advantages">here</a>.</p>
+<h2 id="adjustable-shutter-speed-for-long-exposure">Adjustable shutter speed for long exposure<a class="headerlink" href="#adjustable-shutter-speed-for-long-exposure" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Having the option to adjust the shutter speed, even in nonracing games, can be useful for many reasons, one of which is allowing the user to take long exposure photos (like trails of cars passing by). Keep in mind tho that you would also need an option to unpause the game while being inside the pm for this to make sense.</p>
+<p>On another hand, decreasing shutter speed might have other benefits specific to games. Some of these can be read about in <a href="ReshadeGuides/RealLongExposure.htm">here</a>.</p>
 <h1 id="final-notes-and-further-reading">Final notes and further reading<a class="headerlink" href="#final-notes-and-further-reading" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
 <p>As you can see, the different mods and tools we use can be quite varied and complex, and getting the right control scheme and UI is definitely a challenge. That's why when it comes to controls, UI, and QoL we recommend checking out what Otis_Inf has been doing with his tools. They all share the same base system that Frans has been iterating on for years now, so it's a good idea to give them a look. For example, if you need a control scheme that is pretty much standardized nowadays I recommend following <a href="https://opm.fransbouma.com/generalconfiguration.htm#controls" target="_blank">the one Otis_Inf describes for his tools here</a>.</p>
