@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>The Unfinished Swan - FRAMED. Screenshot Community</title>
+    <title>Persona 5 Royal - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/theme_20220814.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors_20220814.css" type="text/css" />
@@ -98,8 +98,23 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/theouterworlds.htm">The Outer Worlds</a>
 </li>
-<li class="tocentry"><a href="../GameGuides/persona5royal.htm">Persona 5 Royal</a>
-</li>
+<li class="tocentry current"><a class="current" href="../GameGuides/persona5royal.htm">Persona 5 Royal</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#summary">Summary</a></li>
+
+<li class="tocentry"><a href="#tools">Tools</a></li>
+
+<li class="tocentry"><a href="#requirements-for-depth-buffer-support">Requirements for Depth Buffer support</a></li>
+
+<li class="tocentry"><a href="#mod-menu---navigation">Mod Menu - Navigation</a></li>
+
+<li class="tocentry"><a href="#mod-menu---free-camera">Mod Menu - Free Camera</a></li>
+
+<li class="tocentry"><a href="#script-functions">Script Functions</a></li>
+
+<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
+
+</ul>
 <li class="tocentry"><a href="../GameGuides/persona5strikers.htm">Persona 5 Strikers</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/portal.htm">Portal</a>
@@ -158,17 +173,8 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/SplinterCellBlacklist.htm">Tom Clancy's Splinter Cell: Blacklist</a>
 </li>
-<li class="tocentry current"><a class="current" href="../GameGuides/the_unfinished_swan.htm">The Unfinished Swan</a>
-<ul class="currentrelative">
-<li class="tocentry"><a href="#summary">Summary</a></li>
-
-<li class="tocentry"><a href="#workflow">Workflow</a></li>
-
-<li class="tocentry"><a href="#notes">Notes</a></li>
-
-<li class="tocentry"><a href="#useful-links">Useful links</a></li>
-
-</ul>
+<li class="tocentry"><a href="../GameGuides/the_unfinished_swan.htm">The Unfinished Swan</a>
+</li>
 <li class="tocentry"><a href="../GameGuides/Watch_Dogs.htm">Watch_Dogs</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/Watch_Dogs2.htm">Watch_Dogs 2</a>
@@ -259,7 +265,7 @@
             <div class="nav-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <div class="breadcrumbs">
-<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../M-Z.htm">M-Z</a></li> / <li><a href="../GameGuides/the_unfinished_swan.htm">The Unfinished Swan</a></li></ul>
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../M-Z.htm">M-Z</a></li> / <li><a href="../GameGuides/persona5royal.htm">Persona 5 Royal</a></li></ul>
 					
                     </div>
                     <hr />
@@ -267,8 +273,8 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../Images\unfinished_swan_header.png" alt="Inside" title="Shot by cHota gAbbar" class="shadowed autosize" width="896" height="180" />
-<p>Shot by cHota gAbbar</p>
+<img src="../Images\persona5royal_header.png" alt="Persona 5 Royal" title="Shot by ashcorpdev" class="shadowed autosize" width="896" height="180" />
+<p>Shot by ashcorpdev</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
@@ -289,15 +295,15 @@
 </tr>
 <tr>
 	<td>DSR</td>
-	<td>Yes (through Desktop)</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Custom Aspect Ratios</td>
-	<td>No</td>
+	<td>Yes (with tools)*</td>
 </tr>
 <tr>
 	<td>Reshade</td>
-	<td>Yes</td>
+	<td>Yes (DX11)</td>
 </tr>
 <tr>
 	<td>Ansel</td>
@@ -308,24 +314,178 @@
 	<td>DirectX 11</td>
 </tr>
 <tr>
-	<td>Game version</td>
-	<td></font> <font face="Stores"> S </font> 1.0.0.1</td>
+	<td>Game Version</td>
+	<td>1.03B <font face="Stores"> S </font></td>
 </tr>
 </tbody>
 </table>
-<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>You need to use <a href="https://github.com/FransBouma/ShaderToggler" target="_blank">ShaderToggler</a> addon for Reshade to hide the UI elements. The UI elements that may be on your screen at a time are:-</p>
-<ol>
-<li>Dot crosshair in the center of the screen.</li>
-<li>Balloon Radar at the bottom left of the screen (provided you have unlocked the Toy).</li>
-</ol>
-<p>The game uses a handful of vertex and pixel shaders. Create a ShaderGroup and add the two pixel shaders corresponding to the aforementioned two UI elements. Toggle them off and take the shot.</p>
-<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The game uses MSAA and thus has no depth-buffer access.</p>
-</div><h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>The in-game resolution settings caps out at your desktop resolution. If you want to play at higher resolutions (like 4K), set your desktop resolution to the corresponding value; only then the in-game settings show the higher resolutions.</p>
-<h2 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>* <em>Custom Aspect Ratios can be set in the mod menu, but may not rescale the image correctly.</em></p>
+<h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://www.pcgamingwiki.com/wiki/The_Unfinished_Swan" target="_blank">PC Gaming wiki</a></li>
+<li><a href="https://github.com/Zolika1351/Persona5ScriptHook/releases/" target="_blank">Persona5ScriptHook</a></li>
+<li><a href="https://zolika1351.pages.dev/mods/persona5menu" target="_blank">ZMenu</a></li>
+</ul>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>Development on the mod menu has finished according to the author; as such, the guide may become outdated following a game update. If so, as an alternative, you can roll back to a previous version of the game following <a href="../GeneralGuides/steam_update_guide.htm">this guide</a>.</p>
+</div><h2 id="requirements-for-depth-buffer-support">Requirements for Depth Buffer support<a class="headerlink" href="#requirements-for-depth-buffer-support" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>The game writes HUD and menu data to the depth buffer. </p>
+<p>Disabling the HUD is <strong>required</strong> for the depth buffer to work. See <a href="#script-functions">Scripts Functions</a> section for how to disable the HUD.</p>
+</div><p>For depth buffer support, set the following pre-processor definitions:</p>
+<ul>
+<li><code>RESHADE_DEPTH_LINEARIZATION_FAR_PLANE</code> to <code>100.0</code></li>
+<li><code>RESHADE_DEPTH_INPUT_IS_UPSIDE_DOWN</code> to <code>0</code></li>
+<li><code>RESHADE_DEPTH_INPUT_IS_REVERSED</code> to <code>0</code></li>
+<li><code>RESHADE_DEPTH_INPUT_IS_LOGARITHMIC</code> to <code>1</code></li>
+</ul>
+<p>Select the following options for the 'Generic Depth' add-on:
+- <code>Copy before clears</code> to <code>1</code>.</p>
+<h2 id="mod-menu---navigation">Mod Menu - Navigation<a class="headerlink" href="#mod-menu---navigation" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Bindings can be adjusted in the <code>ZMenuP5R.ini</code> file in the root directory of the game.</p>
+<h3 id="default-bindings">Default Bindings<a class="headerlink" href="#default-bindings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Key</th>
+	<th>Description</th>
+	<th>KeyCode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Numpad 8</td>
+	<td>Menu Up</td>
+	<td>104</td>
+</tr>
+<tr>
+	<td>Numpad 2</td>
+	<td>Menu Down</td>
+	<td>98</td>
+</tr>
+<tr>
+	<td>Numpad 4</td>
+	<td>Menu Left</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>Numpad 6</td>
+	<td>Menu Right</td>
+	<td>102</td>
+</tr>
+<tr>
+	<td>Numpad 5</td>
+	<td>Menu Enter</td>
+	<td>101</td>
+</tr>
+<tr>
+	<td>Numpad 0</td>
+	<td>Menu Back</td>
+	<td>96</td>
+</tr>
+<tr>
+	<td>F7</td>
+	<td>Menu Toggle</td>
+	<td>118</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommended-bindings">Recommended Bindings<a class="headerlink" href="#recommended-bindings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Especially helpful for those without a numpad. </p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Key</th>
+	<th>Description</th>
+	<th>KeyCode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Up Arrow</td>
+	<td>Menu Up</td>
+	<td>38</td>
+</tr>
+<tr>
+	<td>Down Arrow</td>
+	<td>Menu Down</td>
+	<td>40</td>
+</tr>
+<tr>
+	<td>Left Arrow</td>
+	<td>Menu Left</td>
+	<td>37</td>
+</tr>
+<tr>
+	<td>Right Arrow</td>
+	<td>Menu Right</td>
+	<td>39</td>
+</tr>
+<tr>
+	<td>Enter</td>
+	<td>Menu Enter</td>
+	<td>13</td>
+</tr>
+<tr>
+	<td>Backspace</td>
+	<td>Menu Back</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>F7</td>
+	<td>Menu Toggle</td>
+	<td>118</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mod-menu---free-camera">Mod Menu - Free Camera<a class="headerlink" href="#mod-menu---free-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ol>
+<li>Navigate to <code>Options &gt; Game Tweaks</code> and ensure that <code>Disable Keyboard Input</code> and <code>Disable Mouse Input</code> are enabled.</li>
+<li>Navigate to <code>Options &gt; Camera Options &gt; Custom Cameras &gt; Freecam</code> and set <code>Enabled</code> to <code>On</code>.</li>
+<li>Set <code>Custom Mouse Rotation</code> to <code>On</code>.</li>
+<li>Move camera with <code>WASD</code> and the mouse.</li>
+</ol>
+<h2 id="script-functions">Script Functions<a class="headerlink" href="#script-functions" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>To change these values, you'll need to open the mod menu (Default: <code>F7</code>) and navigate to <code>Experimental &gt; Script Functions</code>. </p>
+<p>Select <code>Search</code> and type in <code>DISP</code>. Select <code>Search</code> from that menu and hit <code>Enter</code> and you should see a selection of functions. </p>
+<p>Once you've done so, select one of the functions from the table below. Go back to the previous menu (<code>Experimental &gt; Scription Functions</code>) and you'll be prompted with some parameters that can be edited by pressing left or right on the values that say <code>&lt;0&gt;</code>.</p>
+<p>Simply change the values based on the guides below and then select <code>Execute</code> to trigger them.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Function</th>
+	<th>Description</th>
+	<th>Parameters</th>
+	<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>DATE_DISP</code></td>
+	<td>Toggles the date/time indicator in top-left of HUD.</td>
+	<td><code>P1</code>: <code>0</code> is hidden, <code>1</code> is shown.</td>
+	<td><strong>Must be hidden for depth buffer to work correctly.</strong></td>
+</tr>
+<tr>
+	<td><code>FLD_PANEL_DISP</code></td>
+	<td>Toggles the main controls HUD/Minimap etc.</td>
+	<td><code>P1</code>: <code>0</code> is hidden, <code>1</code> is shown.</td>
+	<td><strong>Must be hidden for depth buffer to work correctly.</strong></td>
+</tr>
+<tr>
+	<td><code>FLD_NPC_UNDISP</code></td>
+	<td>Toggles NPC visibility.</td>
+	<td><code>P1</code>: Leave at <code>0</code>. <code>P2</code>: <code>0</code> is hidden, <code>1</code> is shown.</td>
+	<td><em>Optional.</em></td>
+</tr>
+<tr>
+	<td><code>FLD_NPC_TALKICON_FORCEDISP_FBNID</code></td>
+	<td>Toggles the NPC 'chat' bubble icons above their heads.</td>
+	<td><code>P1</code>: Leave at <code>0</code>. <code>P2</code>: <code>0</code> is hidden, <code>1</code> is shown.</td>
+	<td><em>Optional.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ul>
+<li><a href="https://www.pcgamingwiki.com/wiki/Persona_5_Royal" target="_blank">PC Gaming Wiki</a></li>
 </ul>
 
                     </div>
