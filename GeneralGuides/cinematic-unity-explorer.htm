@@ -407,13 +407,14 @@
 <p><img src="../Images/CinematicUnityExplorerGuide/freecam-panel.png" alt="Freecam Panel" class="shadowed autosize" width="450" height="750" /></p>
 <h2 id="gameplay-camera">Gameplay camera<a class="headerlink" href="#gameplay-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>If you need these postprocessing effects you would need to check the &quot;Use Game Camera?&quot; checkbox in the Freecam panel. This will let you control the gameplay camera instead of creating a new one to control.</p>
-<p>When doing this, the Cinematic Unity Explorer will attempt to disable the component that controls this gameplay camera, but in the same cases, it won't be able to find the right component to disable and unlock the camera from the game. So if you cannot move or rotate the gameplay camera do the following:</p>
+<p>When doing this, the Cinematic Unity Explorer will attempt to disable the component that controls this gameplay camera, but in some cases, it won't be able to find the right component to disable and unlock the camera from the game. So if you cannot move or rotate the gameplay camera do the following:</p>
 <ul>
 <li>Click on the &quot;Inspect Free Camera&quot; button at the end of the Freecam panel.</li>
 <li>On the Inspector window click on the &quot;Inspect GameObject&quot; button.</li>
 <li>Try disabling the components in the bottom right list by clicking on each component checkbox.</li>
 <li>If disabling a component still doesn't let you move or rotate the camera, turn it on again and try the next component on the list. You will eventually reach the component that controls the camera.</li>
 </ul>
+<p>If the steps listed above fail, go to the camera parent game object (by clicking on &quot;◄ View Parent&quot; on the top left) and try the components there. If that doesn't work then you can try entering other children's gameobjects from this parent and disabling their components. As a last resource, you can try deleting the components instead of just disabling them, but beware since that might block you from returning to normal gameplay (and might even crash the game).</p>
 <p>Remember to enable it again when you have to return to gameplay, so the game can come back to properly handle it.</p>
 <p>The <em>CineMachine</em> component (a common Unity class used for controlling a gameplay camera) gets automatically disabled by Cinematic Unity Explorer, but some games (e.g. Haven) turn this <em>CineMachine</em> component back on whenever it gets disabled, and the only solution for dealing with it is to straight up delete the component. It's advised to go back to the menu or reload the level in some capacity to get this component back once you finish your shooting session.</p>
 <p><img src="../Images/CinematicUnityExplorerGuide/disable-camera-components.webp" alt="Disable another component on the gameplay camera" class="shadowed autosize" /></p>
@@ -499,13 +500,14 @@
 <p>Setting a specific frame on an animation we like would look like the following.</p>
 <ul>
 <li>Pause the entities you want to force animations on.</li>
-<li>Reduce the timescale for slow motion.</li>
-<li>Play animations on a specific entity until you find one you like.</li>
+<li>Go to the Inspector tab, click on mouse inspector on the top right, and then click on &quot;world&quot;.</li>
+<li>Click over the character you want to change the animation from. Look at the top field next to the &quot;◄ View Parent&quot; button, it will describe all of the parent hierarchy. The first element on that name will probably have the same name as one inside the list in the animator's panel (these names are often the character names, or something like &quot;enemy-5&quot; or &quot;enemy(Clone)&quot;).</li>
+<li>Once you know which row in the Animators panel refers to the character you want to change the animation, select the animation you want to play from the dropdown and click on the &quot;Play&quot; button.</li>
 <li>When you find the right frame pause the animator by clicking on the first checkbox of the entity row.</li>
 <li>Make the entity animator ignore the master toggle.</li>
 </ul>
 <p>The Animator panel also allows you to freeze all characters in a scene all at once, alongside giving you control over which characters should ignore this master toggler, which is assigned to <code>Numpad 0</code> by default. That way you can make the playable character avoid getting frozen, or avoid un-freezing NPCs or enemies that already have the animations you want them to have.</p>
-<p>Once you are done with shooting tho, you should reset the animators of the entities that you manually played animations on. If you can't recall which entities you played animations on or you just forced animations on a lot of entities you can click on &quot;Refresh Animators&quot; and all of the non-deleted existing entities will get their animatiors reset.</p>
+<p>Once you are done with shooting tho, you should reset the animators of the entities that you manually played animations on. If you can't recall which entities you played animations on or you just forced animations on a lot of entities you can click on &quot;Reset Animators&quot; and all of the non-deleted existing entities will get their animatiors reset.</p>
 <p>Alongside all of this, you can also open each character game object by clicking on their names, so you can move, rotate, scale them around, disable them, or further edit their properties and child objects. More on this in the<a href="#how-to-modify-a-game-objects-spatial-property">&quot;How to modify a game object's spatial property&quot;</a> section.</p>
 <h1 id="post-processing-panel">Post-processing panel<a class="headerlink" href="#post-processing-panel" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
@@ -547,7 +549,7 @@
 <p>Think of these as two different bags in which you can play around with their elements, with a couple of differences:</p>
 <ul>
 <li>The children's game objects can have, at the same time, their own children, generating a sort of hierarchical family tree.</li>
-<li>Given a game object with a parent game object, if the latter moves then the former will move as well. Making it so that children's game objects move relatively to their father.</li>
+<li>Given a game object with a parent game object, if the latter moves then the former will move as well. Making it so that children's game objects move relatively to their father. Also, disabling a game object will also disable all of their children's game objects.</li>
 <li>You can see these hierarchical relationships in the scene itself on the Object Explorer, as well as in the bottom left section of a game object Inspector tab.</li>
 <li>A group of children's game objects is necessary to always be of the same type, a Game Object, but components can be of different types.</li>
 <li>These components can have variables and functions inside of them, but they always represent something, even if that something is abstract (e.g. a light is a Game Object that exists in the game world, which has a <code>Light</code> component that holds all of the properties of the light).</li>
