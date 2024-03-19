@@ -46,9 +46,9 @@
 <ul class="currentrelative">
 <li class="tocentry"><a href="#identifying-the-type-of-unity-game">Identifying the type of Unity game</a></li>
 
-<li class="tocentry"><a href="#mono-games">Mono games</a></li>
+<li class="tocentry"><a href="#melonloader-for-mono-and-il2cpp-games">MelonLoader (for Mono and IL2CPP games)</a></li>
 
-<li class="tocentry"><a href="#il2cpp">IL2CPP</a></li>
+<li class="tocentry"><a href="#bepinex-for-mono-games">BepInEx (for Mono games)</a></li>
 
 
 
@@ -224,7 +224,7 @@
 </p>
 <p><em>If you ever get lost in this guide I suggest watching the video above for visual aid, even tho it's about installing the original Unity Explorer.</em></p>
 <h2 id="identifying-the-type-of-unity-game">Identifying the type of Unity game<a class="headerlink" href="#identifying-the-type-of-unity-game" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>To know what files you have to install you first need to understand if the game is a <code>Mono</code> or an <code>IL2CPP</code> game and if it's 32 or 64-bit.</p>
+<p>To know what files you have to install you first need to understand if the game is a <code>Mono</code> or an <code>IL2CPP</code> game.</p>
 <h3 id="mono-or-il2cpp">Mono or IL2CPP<a class="headerlink" href="#mono-or-il2cpp" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>To identify if a game is <code>Mono</code> or <code>IL2CPP</code> open the game folder:</p>
 <ul>
@@ -233,55 +233,21 @@
 </ul>
 <div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>If the game is on Steam, you can check the file structure before downloading by going to the <a href="https://steamdb.info" target="_blank">SteamDB</a> page of the game, <code>Depots</code> section, and from the table in there, click the ID number on the game's depot (usually the one with the bigger file size).</p>
 </div><p>If you happen to need it for something the Unity Engine version number can be found by going to the game's folder, right-click on <code>UnityPlayer.dll</code>, clicking on Properties, and heading over to the Details tab. But this info shouldn't be relevant to the guide.</p>
-<h2 id="mono-games">Mono games<a class="headerlink" href="#mono-games" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Some games (noticeably the ones published by EA) have encrypted game objects on runtime or something along those lines. Fortunately, MelonLoader is able to get through this encryption, but BepInEx won't work.</p>
-</div><h3 id="bit-or-64-bit">32-bit or 64-bit<a class="headerlink" href="#bit-or-64-bit" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>In Mono games, you have to make an extra distinction between 32 and 64 bits. To do so, launch the game and use the Task Manager to check if your game is 32-bit or 64-bit (if it is 32-bit, it will have &quot;32-bit&quot; next to the process name).  </p>
-<p><img src="../Images/CinematicUnityExplorerGuide/TaskManager01.png" alt="TaskManager01" class="shadowed autosize" width="197" height="26" /></p>
-<p>Alternatively, you can look up the games page on the <a href="https://www.pcgamingwiki.com/wiki/Main_Page" target="_blank">pcgamingwiki</a>.</p>
-<h3 id="downloading-bepinex-and-cinematic-unity-explorer">Downloading BepInEx and Cinematic Unity Explorer<a class="headerlink" href="#downloading-bepinex-and-cinematic-unity-explorer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>Download the appropriate version of each, depending if the game is 32 or 64-bit.</p>
-<ul>
-<li>
-<a href="https://github.com/BepInEx/BepInEx/releases/tag/v5.4.22" target="_blank">BepInEx 5</a>
-<ul>
-<li><strong>64 bit</strong>: BepInEx_x64_5.X</li>
-<li><strong>32 bit (x86)</strong>: BepInEx_x86_5.X</li>
-</ul>
-</li>
-<li><a href="https://github.com/originalnicodr/CinematicUnityExplorer/releases" target="_blank">CinematicUnityExplorer.BepInEx5.Mono</a></li>
-</ul>
-<p>Even tho there is a BepInEx v6 (which is a patcher/plug-in framework for Unity games) for Mono games, it is still recommended to use v5 since Mono support in v6 is still untested.</p>
-<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>If the game is using a DRM like Steam make sure you are launching said game through Steam and not opening the .exe directly. Some games won't start otherwise and this error might be confused with a problem caused by a wrong mod or mod loader installation.</p>
-</div><ul>
-<li>
-<p>Extract the contents of the BepInEx zip into the game folder. Launch the game.</p>
-<p>You should see more folders created inside the <code>BepInEx</code> folder besides the <code>core</code> folder, and a <code>LogOutput.log</code> file, signaling that the mod loader has been installed correctly. As an alternative to know if the mod loader is working correctly, you can go to <code>BepInEx\config\BepInex.cfg</code> and under <code>[Logging.Console]</code> change <code>Enabled</code> from <code>false</code> to <code>true</code> to display the console at startup.</p>
-<p>If you don't see the mentioned folders or console then try doing the things listed below one by one and try running the game after each one:</p>
-<ul>
-<li>Rename <code>winhttp.dll</code> in <code>version.dll</code>.</li>
-<li>Double-check that the game architecture matches the downloaded BepInex mod loader (32 or 64 bit).</li>
-<li><a href="https://docs.bepinex.dev/articles/user_guide/troubleshooting.html" target="_blank">More troubleshooting tips</a>.</li>
-</ul>
-</li>
-<li>
-<p>Extract the CinematicUnityExplorer zip inside the game's <code>BepInEx</code> folder. Launch the game. You should be able to see the Cinematic Unity Explorer menu pop up on startup (it might take a while for it to start, so be patient and look at the logs).</p>
-<p>If you don't see such a thing and want to verify you can go to the <code>BepInEx\plugins\CinematicUnityExplorer</code> folder. You should be able to see a <code>Logs</code> and <code>Scripts</code> folder in there. You can also check the mod loader logs generated on <code>BepInEx\LogOutput.log</code> and try to read if there is any error. In either case, if the mod is not loading try the steps below one by one and try running the game after each one:</p>
-<ul>
-<li>Change the preloader entry point (mostly for games running under Unity 5.X). Go to <code>BepInEx\config\BepInex.cfg</code>, and under <code>[Preloader.Entrypoint]</code> change <code>Type</code> from <code>Application</code> to <code>MonoBehaviour</code>.</li>
-<li><a href="https://docs.bepinex.dev/articles/user_guide/troubleshooting.html" target="_blank">More troubleshooting tips</a>.</li>
-</ul>
-</li>
-</ul>
-<h2 id="il2cpp">IL2CPP<a class="headerlink" href="#il2cpp" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>For IL2CPP, even tho you can technically use BepInEx as a mod loader, we have had more luck getting MelonLoader to work instead, so we proceed to describe the download and installation process for it below.</p>
+<h2 id="melonloader-for-mono-and-il2cpp-games">MelonLoader (for Mono and IL2CPP games)<a class="headerlink" href="#melonloader-for-mono-and-il2cpp-games" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Even tho you can technically use BepInEx as a mod loader for Mono games, we have had more luck getting MelonLoader to work instead, so we proceed to describe the download and installation process for it below.</p>
+<p>If you need to use other mods that are only compatible with BepInEx (or just couldn't make MelonLoader work for whatever reason) you can check out the <a href="#bepinex-for-mono-games">BepInEx section</a>.</p>
 <h3 id="downloading-melonloader-and-cinematic-unity-explorer">Downloading MelonLoader and Cinematic Unity Explorer<a class="headerlink" href="#downloading-melonloader-and-cinematic-unity-explorer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
 <li>Download <a href="https://melonwiki.xyz/#/?id=automated-installation" target="_blank">MelonLoader.Installer.exe</a> (make sure you have the requirements described on the site installed).</li>
-<li><a href="https://github.com/originalnicodr/CinematicUnityExplorer/releases" target="_blank">CinematicUnityExplorer.Standalone.IL2CPP</a></li>
+<li>
+<a href="https://github.com/originalnicodr/CinematicUnityExplorer/releases" target="_blank">Cinematic Unity Explorer</a> (depending on the game, check <a href="#mono-or-il2cpp">this section</a>):
+<ul>
+<li><strong>Mono games</strong>: CinematicUnityExplorer.MelonLoader.Mono</li>
+<li><strong>IL2CPP games</strong>: CinematicUnityExplorer.MelonLoader.IL2CPP</li>
 </ul>
-<h3 id="installation-1">Installation<a class="headerlink" href="#installation-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+</li>
+</ul>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>If the game is using a DRM like Steam make sure you are launching said game through Steam and not opening the .exe directly. Some games won't start otherwise and this error might be confused with a problem created while trying to install the mod loader or another mod.</p>
 </div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Both MelonLoader and BepInEx download some necessary .dlls when first launched with an IL2CPP game, so make sure you have internet access when following the steps below.</p>
 </div><ul>
@@ -304,7 +270,49 @@
 </li>
 </ul>
 <div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>If you do not want MelonLoader splash screen every time you start the game go to <code>game_root\UserData\MelonStartScreen\Config.cfg</code> and under <code>[General]</code> change <code>Enabled</code> from <code>true</code> to <code>false</code>.</p>
-</div><h1 id="hotkeys">Hotkeys<a class="headerlink" href="#hotkeys" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+</div><h2 id="bepinex-for-mono-games">BepInEx (for Mono games)<a class="headerlink" href="#bepinex-for-mono-games" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>If you can't use MelonLoader or need to use BepInEx for whatever reason follow the steps below. However, if you already installed MelonLoader and Cinematic Unity Explorer with it then you can skip this section.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Some games (noticeably the ones published by EA) have encrypted game objects on runtime or something along those lines. Fortunately, MelonLoader is able to get through this encryption, but BepInEx won't work.</p>
+</div><h3 id="bit-or-64-bit">32-bit or 64-bit<a class="headerlink" href="#bit-or-64-bit" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>When using BepInEx, you have to make an extra distinction between 32 and 64 bits. To do so, launch the game and use the Task Manager to check if your game is 32-bit or 64-bit (if it is 32-bit, it will have &quot;32-bit&quot; next to the process name).  </p>
+<p><img src="../Images/CinematicUnityExplorerGuide/TaskManager01.png" alt="TaskManager01" class="shadowed autosize" width="197" height="26" /></p>
+<p>Alternatively, you can look up the games page on the <a href="https://www.pcgamingwiki.com/wiki/Main_Page" target="_blank">pcgamingwiki</a>.</p>
+<h3 id="downloading-bepinex-and-cinematic-unity-explorer">Downloading BepInEx and Cinematic Unity Explorer<a class="headerlink" href="#downloading-bepinex-and-cinematic-unity-explorer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Download the appropriate version of each, depending if the game is 32 or 64-bit.</p>
+<ul>
+<li>
+<a href="https://github.com/BepInEx/BepInEx/releases/tag/v5.4.22" target="_blank">BepInEx 5</a>
+<ul>
+<li><strong>64 bit</strong>: BepInEx_x64_5.X</li>
+<li><strong>32 bit (x86)</strong>: BepInEx_x86_5.X</li>
+</ul>
+</li>
+<li><a href="https://github.com/originalnicodr/CinematicUnityExplorer/releases" target="_blank">CinematicUnityExplorer.BepInEx5.Mono</a></li>
+</ul>
+<p>Even tho there is a BepInEx v6 (which is a patcher/plug-in framework for Unity games) for Mono games, it is still recommended to use v5 since Mono support in v6 is still untested.</p>
+<h3 id="installation-1">Installation<a class="headerlink" href="#installation-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>If the game is using a DRM like Steam make sure you are launching said game through Steam and not opening the .exe directly. Some games won't start otherwise and this error might be confused with a problem caused by a wrong mod or mod loader installation.</p>
+</div><ul>
+<li>
+<p>Extract the contents of the BepInEx zip into the game folder. Launch the game.</p>
+<p>You should see more folders created inside the <code>BepInEx</code> folder besides the <code>core</code> folder, and a <code>LogOutput.log</code> file, signaling that the mod loader has been installed correctly. As an alternative to know if the mod loader is working correctly, you can go to <code>BepInEx\config\BepInex.cfg</code> and under <code>[Logging.Console]</code> change <code>Enabled</code> from <code>false</code> to <code>true</code> to display the console at startup.</p>
+<p>If you don't see the mentioned folders or console then try doing the things listed below one by one and try running the game after each one:</p>
+<ul>
+<li>Rename <code>winhttp.dll</code> in <code>version.dll</code>.</li>
+<li>Double-check that the game architecture matches the downloaded BepInex mod loader (32 or 64 bit).</li>
+<li><a href="https://docs.bepinex.dev/articles/user_guide/troubleshooting.html" target="_blank">More troubleshooting tips</a>.</li>
+</ul>
+</li>
+<li>
+<p>Extract the CinematicUnityExplorer zip inside the game's <code>BepInEx</code> folder. Launch the game. You should be able to see the Cinematic Unity Explorer menu pop up on startup (it might take a while for it to start, so be patient and look at the logs).</p>
+<p>If you don't see such a thing and want to verify you can go to the <code>BepInEx\plugins\CinematicUnityExplorer</code> folder. You should be able to see a <code>Logs</code> and <code>Scripts</code> folder in there. You can also check the mod loader logs generated on <code>BepInEx\LogOutput.log</code> and try to read if there is any error. In either case, if the mod is not loading try the steps below one by one and try running the game after each one:</p>
+<ul>
+<li>Change the preloader entry point (mostly for games running under Unity 5.X). Go to <code>BepInEx\config\BepInex.cfg</code>, and under <code>[Preloader.Entrypoint]</code> change <code>Type</code> from <code>Application</code> to <code>MonoBehaviour</code>.</li>
+<li><a href="https://docs.bepinex.dev/articles/user_guide/troubleshooting.html" target="_blank">More troubleshooting tips</a>.</li>
+</ul>
+</li>
+</ul>
+<h1 id="hotkeys">Hotkeys<a class="headerlink" href="#hotkeys" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
 <p>The table below describes all of the default hotkeys. You can edit them to your liking by going to the Options panel inside the mod menu, changing the hotkeys you want, and saving the settings (or manually replacing them by editing the <code>BepInEx\config\com.originalnicodr.cinematicunityexplorer.cfg</code> file).</p>
 <table class="table table-bordered-all table-responsive">
