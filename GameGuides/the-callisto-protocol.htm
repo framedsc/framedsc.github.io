@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Prey - FRAMED. Screenshot Community</title>
+    <title>The Callisto Protocol - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/theme_20220814.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors_20220814.css" type="text/css" />
@@ -106,23 +106,8 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/portal2.htm">Portal 2</a>
 </li>
-<li class="tocentry current"><a class="current" href="../GameGuides/prey.htm">Prey</a>
-<ul class="currentrelative">
-<li class="tocentry"><a href="#summary">Summary</a></li>
-
-<li class="tocentry"><a href="#tools">Tools</a></li>
-
-<li class="tocentry"><a href="#installation">Installation</a></li>
-
-<li class="tocentry"><a href="#usage">Usage</a></li>
-
-<li class="tocentry"><a href="#console">Console</a></li>
-
-<li class="tocentry"><a href="#notes">Notes</a></li>
-
-<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
-
-</ul>
+<li class="tocentry"><a href="../GameGuides/prey.htm">Prey</a>
+</li>
 <li class="tocentry"><a href="../GameGuides/pop_sandsoftime.htm">Prince of Persia: The Sands of Time</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/Quantum_Break.htm">Quantum Break</a>
@@ -165,8 +150,17 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/SFVAE.htm">Street Fighter V: Arcade Edition</a>
 </li>
-<li class="tocentry"><a href="../GameGuides/the-callisto-protocol.htm">The Callisto Protocol</a>
-</li>
+<li class="tocentry current"><a class="current" href="../GameGuides/the-callisto-protocol.htm">The Callisto Protocol</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#summary">Summary</a></li>
+
+<li class="tocentry"><a href="#features-of-the-uuu-that-arent-supported">Features of the UUU that aren't supported</a></li>
+
+<li class="tocentry"><a href="#workflow">Workflow</a></li>
+
+<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
+
+</ul>
 <li class="tocentry"><a href="../GameGuides/thesurge2.htm">The Surge 2</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/thief.htm">Thief</a>
@@ -267,7 +261,7 @@
             <div class="nav-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <div class="breadcrumbs">
-<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../M-Z.htm">M-Z</a></li> / <li><a href="../GameGuides/prey.htm">Prey</a></li></ul>
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../M-Z.htm">M-Z</a></li> / <li><a href="../GameGuides/the-callisto-protocol.htm">The Callisto Protocol</a></li></ul>
 					
                     </div>
                     <hr />
@@ -275,8 +269,8 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../Images\prey.png" alt="Prey" title="Shot by originalnicodr" class="shadowed autosize" width="896" height="180" />
-<p>Shot by originalnicodr</p>
+<img src="../Images\thecallistoprotocol.png" alt="The Callisto Protocol" title="Shot by IronGauntlet" class="shadowed autosize" width="896" height="180" />
+<p>Shot by IronGauntlet</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
@@ -289,11 +283,11 @@
 <tbody>
 <tr>
 	<td>Vanilla Photo Mode</td>
-	<td>No</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Hotsampling</td>
-	<td>No</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>DSR</td>
@@ -301,7 +295,7 @@
 </tr>
 <tr>
 	<td>Custom Aspect Ratios</td>
-	<td>No</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Reshade</td>
@@ -309,100 +303,32 @@
 </tr>
 <tr>
 	<td>Ansel</td>
-	<td>No</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Graphics API</td>
-	<td>DirectX 11</td>
+	<td>DirectX 11/12</td>
 </tr>
 <tr>
 	<td>Game version</td>
-	<td></font> <font face="Stores"> S </font> 1.0.1.0 <a href="#notes">*</a></td>
+	<td>4.27.2.0</td>
 </tr>
 </tbody>
 </table>
-<h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This guide is for an Unreal Engine 4 game that can use the <a href="../GeneralGuides/universal_ue4_consoleunlocker.htm">Universal Unreal Unlocker</a></p>
+</div><h2 id="features-of-the-uuu-that-arent-supported">Features of the UUU that aren't supported<a class="headerlink" href="#features-of-the-uuu-that-arent-supported" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Console, HUD removal, both types of pauses (world paused/slowmo), lights.</p>
+<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ol>
+<li>Inject tools as soon as you start the game. </li>
+<li>Open Photomode (through the pause menu). </li>
+<li>Press F to disable HUD. Now you can enable the UUU freecam.</li>
+</ol>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>Moving too far away with the UUU cam might cause in-game lighting to break (especially the flickering ones). So try not to move too far away and keep an eye out for glitches.</p>
+</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>The game suffers from severe stuttering issues. Many of these have been addressed in the latest patch but it is still very noticeable. Some users report better performance with DirectX 12 than DirectX11.</p>
+</div><h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://github.com/thelivingdiamond/Chairloader/releases" target="_blank">Chairloader by thelivingdiamond</a><br />
-<strong>Free Features</strong>: 
-Free camera, console, entity editor and spawner, and more.</li>
-<li><a href="../ShaderTogglers/prey.ini">HUD toggle</a> requires Reshade 5+ with <a href="https://framedsc.com/ReshadeGuides/Addons/shader_toggler_repository.htm" target="_blank">Shader Toggler</a>.</li>
-</ul>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ul>
-<li>Install Reshade 5+ with addon support. Then follow the guide <a href="https://framedsc.com/ReshadeGuides/Addons/shader_toggler_repository.htm" target="_blank">here</a> to install the Shader Toggler addon and the HUD toggle .ini above.</li>
-<li>After following the installation instructions, open Chairloader, click on the &quot;options&quot; button on the lower right, and enable &quot;Load Chariloader&quot;, &quot;Load Editor&quot; and &quot;Dev Mode&quot;.</li>
-<li>Launch the game from the Chairloader.</li>
-</ul>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<table class="table table-bordered-all table-responsive">
-<thead>
-<tr>
-	<th>Feature</th>
-	<th>Key</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-	<td>Turn on freecam</td>
-	<td>F4</td>
-</tr>
-<tr>
-	<td>Pause</td>
-	<td>P</td>
-</tr>
-<tr>
-	<td>Allows camera movement</td>
-	<td>Right Mouse Click</td>
-</tr>
-<tr>
-	<td>Camera orientation</td>
-	<td>Right Mouse</td>
-</tr>
-<tr>
-	<td>Move forward, backward, left, right</td>
-	<td>W, A, S, D (while right mouse click)</td>
-</tr>
-<tr>
-	<td>Move up, down</td>
-	<td>Q, E (while right mouse click)</td>
-</tr>
-<tr>
-	<td>Faster movement</td>
-	<td>Shift</td>
-</tr>
-<tr>
-	<td>HUD toggle</td>
-	<td>Caps Lock</td>
-</tr>
-</tbody>
-</table>
-<h2 id="console">Console<a class="headerlink" href="#console" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>To open the console press <code>F1</code> to bring the mod menu, and click &quot;Chairloader&quot; on the top left, &quot;Show Console&quot;.</p>
-<p>If you want to change the FOV of the editor freecam enter the command <code>ed_ViewFov X</code> where X is the new fov value you want to use.</p>
-<p>In this console you can also modify the speed of the freecam with the <code>ed_ViewMaxSpeed</code> and <code>ed_ViewMinSpeed</code> CVars.</p>
-<p>For more CVars and commands you can dump the available ones by going to the mod menu, clicking on the Console menu, and then clicking on &quot;Dump Commands to the console&quot; and &quot;Dump CVars to file&quot;.</p>
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ul>
-<li>
-<p>It is recommended to load your save after a screenshoting session just in case messing with the editor caused some kind of problem to your save (soft blocking, save corruption, etc.).</p>
-</li>
-<li>
-<p><a href="https://www.nexusmods.com/prey2017/mods/22" target="_blank">Real Lights plus Ultra Graphics Mod</a>, at the time of writing is not compatible with Chairloader. Even after following <a href="https://forums.nexusmods.com/index.php?showtopic=12760767/#entry123085836" target="_blank">these instructions</a>. It will load but it won't look good (excessive exposure of some lights, no real-time shadows, wrong materials for glass). I would suggest looking up if someone made the mod compatible with Chairloader, but in the meantime, I would suggest against using this.</p>
-</li>
-<li>
-<p>Even tho I tested this on the latest version on Steam, the mod patches the .exe to be like the one in the Epic Game Store, so this guide should function equally no matter the store.</p>
-</li>
-<li>
-<p>The editor allows a ton of freedom, like spawning enemies and NPCs, moving objects around, and more. Feel free to play around with it and collaborate with this guide if you feel like it!</p>
-</li>
-<li>
-<p>Beware of not leaving the in-game mouse visible. You can put it over one of the mod menu elements (which will be hidden with the HUD toggle) or outside of the screen.</p>
-</li>
-</ul>
-<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ul>
-<li><a href="https://www.pcgamingwiki.com/wiki/Prey_(2017)" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://pcgamingwiki.com/wiki/The_Callisto_Protocol" target="_blank">PC Gaming Wiki</a></li>
 </ul>
 
                     </div>
