@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contrast - FRAMED. Screenshot Community</title>
+    <title>Dead Island 2 - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/theme_20220814.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors_20220814.css" type="text/css" />
@@ -101,19 +101,8 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/codevein.htm">Code Vein</a>
 </li>
-<li class="tocentry current"><a class="current" href="../GameGuides/Contrast.htm">Contrast</a>
-<ul class="currentrelative">
-<li class="tocentry"><a href="#summary">Summary</a></li>
-
-<li class="tocentry"><a href="#tools">Tools</a></li>
-
-<li class="tocentry"><a href="#controls">Controls</a></li>
-
-<li class="tocentry"><a href="#reshade">Reshade</a></li>
-
-<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
-
-</ul>
+<li class="tocentry"><a href="../GameGuides/Contrast.htm">Contrast</a>
+</li>
 <li class="tocentry"><a href="../GameGuides/control.htm">Control</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/Cyberpunk_2077.htm">Cyberpunk 2077</a>
@@ -128,8 +117,17 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/deadlight.htm">Deadlight: Director's Cut</a>
 </li>
-<li class="tocentry"><a href="../GameGuides/DeadIsland2.htm">Dead Island 2</a>
-</li>
+<li class="tocentry current"><a class="current" href="../GameGuides/DeadIsland2.htm">Dead Island 2</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#summary">Summary</a></li>
+
+<li class="tocentry"><a href="#tools">Tools</a></li>
+
+<li class="tocentry"><a href="#known-issues">Known issues</a></li>
+
+<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
+
+</ul>
 <li class="tocentry"><a href="../GameGuides/DeadRising4.htm">Dead Rising 4</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/DeadSpace.htm">Dead Space</a>
@@ -289,7 +287,7 @@
             <div class="nav-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <div class="breadcrumbs">
-<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../A-L.htm">A-L</a></li> / <li><a href="../GameGuides/Contrast.htm">Contrast</a></li></ul>
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../A-L.htm">A-L</a></li> / <li><a href="../GameGuides/DeadIsland2.htm">Dead Island 2</a></li></ul>
 					
                     </div>
                     <hr />
@@ -297,8 +295,8 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../Images\contrast.png" alt="Contrast" title="Shot by Antic Owl" class="shadowed autosize" width="896" height="180" />
-<p>Shot by Antic Owl</p>
+<img src="../Images\dead_island_2_header.png" alt="Dead Island 2" title="Shot by Dehy" class="shadowed autosize" width="896" height="180" />
+<p>Shot by Dehy</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
@@ -315,7 +313,7 @@
 </tr>
 <tr>
 	<td>Hotsampling</td>
-	<td>No</td>
+	<td>Yes (Use windowed fullscreen)</td>
 </tr>
 <tr>
 	<td>DSR</td>
@@ -323,7 +321,7 @@
 </tr>
 <tr>
 	<td>Custom Aspect Ratios</td>
-	<td>No</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Reshade</td>
@@ -335,87 +333,32 @@
 </tr>
 <tr>
 	<td>Graphics API</td>
-	<td>DirectX 9</td>
+	<td>DirectX 12</td>
+</tr>
+<tr>
+	<td>Game version</td>
+	<td>1.2.0.0</td>
 </tr>
 </tbody>
 </table>
-<h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Go to <code>C:\Users\&lt;Username&gt;\Documents\My Games\Contrast\ContrastGame\Config\</code>
-Edit the file called <code>ContrastInput.ini</code> and add the following lines at the end of the <code>[Engine.PlayerInput]</code> section.
-Save the file.</p>
-<pre class="nocode">Bindings=(Name=&quot;Divide&quot;,Command=&quot;ToggleHUD&quot;)
-Bindings=(Name=&quot;Add&quot;,Command=&quot;Pause&quot;)
-Bindings=(Name=&quot;Subtract&quot;,Command=&quot;PlayersOnly&quot;)
-Bindings=(Name=&quot;Home&quot;,Command=&quot;Toggledebugcamera&quot;)
-Bindings=(Name=&quot;F2&quot;,Command=&quot;show camfrustums&quot;)
-Bindings=(Name=&quot;Decimal&quot;,Command=&quot;Ghost&quot;)
-Bindings=(Name=&quot;Decimal&quot;,Command=&quot;Walk&quot;,Control=False,Shift=False,Alt=True)
-Bindings=(Name=&quot;NumPadOne&quot;,Command=&quot;FOV 10&quot;,Control=False,Shift=False,Alt=False,bIgnoreCtrl=False,bIgnoreShift=False,bIgnoreAlt=False)
-Bindings=(Name=&quot;NumPadTwo&quot;,Command=&quot;FOV 20&quot;,Control=False,Shift=False,Alt=False,bIgnoreCtrl=False,bIgnoreShift=False,bIgnoreAlt=False)
-Bindings=(Name=&quot;NumPadThree&quot;,Command=&quot;FOV 30&quot;,Control=False,Shift=False,Alt=False,bIgnoreCtrl=False,bIgnoreShift=False,bIgnoreAlt=False)
-Bindings=(Name=&quot;NumPadFour&quot;,Command=&quot;FOV 40&quot;,Control=False,Shift=False,Alt=False,bIgnoreCtrl=False,bIgnoreShift=False,bIgnoreAlt=False)
-Bindings=(Name=&quot;NumPadFive&quot;,Command=&quot;FOV 50&quot;,Control=False,Shift=False,Alt=False,bIgnoreCtrl=False,bIgnoreShift=False,bIgnoreAlt=False)
-Bindings=(Name=&quot;NumPadSix&quot;,Command=&quot;FOV 60&quot;,Control=False,Shift=False,Alt=False,bIgnoreCtrl=False,bIgnoreShift=False,bIgnoreAlt=False)
-Bindings=(Name=&quot;NumPadSeven&quot;,Command=&quot;FOV 70&quot;,Control=False,Shift=False,Alt=False,bIgnoreCtrl=False,bIgnoreShift=False,bIgnoreAlt=False)
-Bindings=(Name=&quot;NumPadEight&quot;,Command=&quot;FOV 75&quot;,Control=False,Shift=False,Alt=False,bIgnoreCtrl=False,bIgnoreShift=False,bIgnoreAlt=False)
-Bindings=(Name=&quot;NumPadNine&quot;,Command=&quot;FOV 0&quot;,Control=False,Shift=False,Alt=False,bIgnoreCtrl=False,bIgnoreShift=False,bIgnoreAlt=False)
-</pre><h2 id="controls">Controls<a class="headerlink" href="#controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<h3 id="free-cam-controls-keyboard-and-mouse--joystcik">Free Cam controls (keyboard and mouse / joystcik)<a class="headerlink" href="#free-cam-controls-keyboard-and-mouse--joystcik" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<table class="table table-bordered-all table-responsive">
-<thead>
-<tr>
-	<th>Key</th>
-	<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-	<td>Substract (-)</td>
-	<td>Freeze everything but the player</td>
-</tr>
-<tr>
-	<td>Add (+)</td>
-	<td>Pause Game</td>
-</tr>
-<tr>
-	<td>Divide (/)</td>
-	<td>Toggle HUD</td>
-</tr>
-<tr>
-	<td>Home</td>
-	<td>Toggle the Debug Camera</td>
-</tr>
-<tr>
-	<td>F2</td>
-	<td>Toggle camfrustums</td>
-</tr>
-<tr>
-	<td>Numpad 1 - 9</td>
-	<td>Change FOV (default FOV - Numpad 9)</td>
-</tr>
-<tr>
-	<td>Decimal (.)</td>
-	<td>Enable Noclip</td>
-</tr>
-<tr>
-	<td>Alt+Decimal (Alt+.)</td>
-	<td>Disable Noclip</td>
-</tr>
-</tbody>
-</table>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>To hide the camfrustums (in-game camera lines), you need to press F2 before pausing the game and/or activating the camera.</p>
-</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>The FOV needs to be changed before pausing the game and/or activating the camera.</p>
-</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>To exit the debug camera, you need to press RS twice.</p>
-</div><h3 id="notes">NOTES<a class="headerlink" href="#notes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>To disable the in-game DoF, change <code>DepthOfField=True</code> to <code>False</code> in <code>ContrastEngine.ini</code>.
-It is located in the same folder as <code>ContrastInput.ini</code>.
-Camera rotation is not available in debug camera.
-Heavily modifying the <code>ContrastEngine.ini</code> could lead to crash when playing</p>
-<h2 id="reshade">Reshade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>If using DSR the correct depth buffer needs to be selected.</p>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This guide is for an Unreal Engine 4 game that can use the <a href="https://framedsc.com/GeneralGuides/universal_ue4_consoleunlocker.htm" target="_blank">Universal Unreal Unlocker</a>.  </p>
+</div><h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ul>
+<li><a href="https://patreon.com/Otis_Inf" target="_blank">UUU v4.x by Otis_Inf</a><br />
+<strong><a href="https://opm.fransbouma.com/uuuv4.htm" target="_blank">Features</a></strong>: Camera control,  HUD toggle, timestop/gamespeed, hotsampling, custom lights, in-game dev console</li>
+<li><a href="../CheatTables/DeadIsland2_FoVHack.CT">Cheat Table by Otis_Inf</a><br />
+  Features: FOV Control. It's hardcoded for the steam release. </li>
+</ul>
+<h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ul>
+<li>FOV slider in Universal Unreal Unlocker v4 doesn't work</li>
+<li>Your character is always visible through walls when in freecam. To work around this you can set your character scale down to 0 within the camera tools.<br />
+<strong>Note:</strong> Not setting the scale back to 1 can cause issues with movement when exiting out of freecam</li>
+</ul>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://www.pcgamingwiki.com/wiki/Contrast" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://pcgamingwiki.com/wiki/Dead_Island_2" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://www.nexusmods.com/deadisland2" target="_blank">Nexusmods</a></li>
 </ul>
 
                     </div>
