@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dragon's Dogma II - FRAMED. Screenshot Community</title>
+    <title>Battlefield 1 - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/theme_20220814.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors_20220814.css" type="text/css" />
@@ -77,8 +77,17 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/batman_arkhamknight.htm">Batman: Arkham Knight</a>
 </li>
-<li class="tocentry"><a href="../GameGuides/battlefield-1.htm">Battlefield 1</a>
-</li>
+<li class="tocentry current"><a class="current" href="../GameGuides/battlefield-1.htm">Battlefield 1</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#summary">Summary</a></li>
+
+<li class="tocentry"><a href="#tools">Tools</a></li>
+
+<li class="tocentry"><a href="#controls">Controls</a></li>
+
+<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
+
+</ul>
 <li class="tocentry"><a href="../GameGuides/bf3.htm">Battlefield 3</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/Bayonetta.htm">Bayonetta</a>
@@ -157,23 +166,8 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/dragon_ball_figtherz.htm">Dragon Ball FighterZ</a>
 </li>
-<li class="tocentry current"><a class="current" href="../GameGuides/dd2.htm">Dragon's Dogma II</a>
-<ul class="currentrelative">
-<li class="tocentry"><a href="#summary">Summary</a></li>
-
-<li class="tocentry"><a href="#tools">Tools</a></li>
-
-<li class="tocentry"><a href="#installing-reshade">Installing Reshade</a></li>
-
-<li class="tocentry"><a href="#hotsampling">Hotsampling</a></li>
-
-<li class="tocentry"><a href="#shooting-without-igcs">Shooting without IGCS</a></li>
-
-<li class="tocentry"><a href="#emv-engine">EMV Engine</a></li>
-
-<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
-
-</ul>
+<li class="tocentry"><a href="../GameGuides/dd2.htm">Dragon's Dogma II</a>
+</li>
 <li class="tocentry"><a href="../GameGuides/EldenRing.htm">Elden Ring</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/ELEX.htm">ELEX</a>
@@ -299,7 +293,7 @@
             <div class="nav-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <div class="breadcrumbs">
-<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../A-L.htm">A-L</a></li> / <li><a href="../GameGuides/dd2.htm">Dragon's Dogma II</a></li></ul>
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../A-L.htm">A-L</a></li> / <li><a href="../GameGuides/battlefield-1.htm">Battlefield 1</a></li></ul>
 					
                     </div>
                     <hr />
@@ -307,8 +301,8 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../Images\dd2_header.png" alt="Dragon's Dogma 2" title="Shot by moyevka" class="shadowed autosize" width="896" height="180" />
-<p>Shot by moyevka</p>
+<img src="../Images\battlefield-1.png" alt="Battlefield 1" title="Shot by IronGauntlet" class="shadowed autosize" width="896" height="180" />
+<p>Shot by IronGauntlet</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
@@ -321,11 +315,11 @@
 <tbody>
 <tr>
 	<td>Vanilla Photo Mode</td>
-	<td>Yes (lol)</td>
+	<td>No</td>
 </tr>
 <tr>
 	<td>Hotsampling</td>
-	<td>Yes¹</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>DSR</td>
@@ -333,11 +327,11 @@
 </tr>
 <tr>
 	<td>Custom Aspect Ratios</td>
-	<td>Yes¹</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Reshade</td>
-	<td>Yes¹</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Ansel</td>
@@ -345,79 +339,65 @@
 </tr>
 <tr>
 	<td>Graphics API</td>
-	<td>DirectX 12</td>
+	<td>DirectX 11</td>
+</tr>
+<tr>
+	<td>Game version</td>
+	<td>1.0.57.44284</td>
 </tr>
 </tbody>
 </table>
-<p>¹ - requires REFramework</p>
+<p> </p>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://www.nexusmods.com/dragonsdogma2/mods/8" target="_blank">REFramework by praydog</a><br />
-Features: A mod framework, scripting platform, and modding tool for RE Engine games</li>
-<li><a href="https://patreon.com/Otis_Inf" target="_blank">Camera tools by Otis_Inf</a><br />
-<a href="https://opm.fransbouma.com/Cameras/dd2.htm" target="_blank">Features</a>: Camera control, FoV control, HUD toggle, timestop/gamespeed, hotsampling, in-game DoF toggle, better shadow filtering, higher LODs</li>
-<li><a href="https://github.com/originalnicodr/RELit" target="_blank">RELit by Originalnicodr and Otis_inf</a><br />
-<a href="../GeneralGuides/relit.htm">Features</a>: Custom lights, global light control, exposure control</li>
+<li><a href="https://www.mediafire.com/file/xwdlapa506w5a73/CT_BF1_20181022.rar/file" target="_blank">Cinematic Tools by HattiWatti</a>: password is <code>CinematicTools</code><br />
+<strong>Features</strong>: Camera control, FoV control, HUD toggle, timestop/gamespeed, DOF control, camera paths, object spawn/control</li>
 </ul>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>REFramework is necessary in order to use any tools including Reshade. If you run into troubles with the public releases of REFramework, <a href="https://github.com/praydog/REFramework-nightly/releases" target="_blank">try its nightly releases.</a></p>
-</div><h2 id="installing-reshade">Installing Reshade<a class="headerlink" href="#installing-reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>The installation process for Reshade and its shaders is slightly different in Dragon's Dogma 2, as REFramework makes its own changes as to how external files are loaded to the game. REFramework creates a <code>_storage_</code> folder to which all external files, such as DLLs and ADDONs, are copied into. If you're unable to get any addons, such as ShaderToggler or IGCSDOF, to install correctly, try dropping them directly into this <code>_storage_</code> folder instead. </p>
-<p>Reshade shaders and textures can also fail to be found due to this change in file structure. You will have to manually point Reshade to your shaders and textures folders for them to load in correctly.</p>
-<h2 id="hotsampling">Hotsampling<a class="headerlink" href="#hotsampling" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>The game needs to run in <strong>windowed mode</strong> in order for the game to hotsample correctly to different aspect ratios. Hotsampling in borderless windowed will cause black bars to appear.</p>
-<h2 id="shooting-without-igcs">Shooting without IGCS<a class="headerlink" href="#shooting-without-igcs" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>If you don't have access to the Otis_Inf camera tools, it is still possible to take shots of the game using REFramework's built-in features.</p>
-<h3 id="timescale--freecam">Timescale &amp; Freecam<a class="headerlink" href="#timescale--freecam" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>REFramework has its own freecam and gamespeed controls. FOV control can be found under the Camera dropdown, check Use Custom Global FOV to enable use of the slider. </p>
-<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The freecam will not move when timescale is set to <code>0</code>. The minimum value is <code>0.0001</code> - the game is still in motion, but it should give you enough time to compose a shot.</p>
-</div><h3 id="hotsampling-with-srwe">Hotsampling with SRWE<a class="headerlink" href="#hotsampling-with-srwe" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>REFramework includes rendering fixes under its Graphics dropdown which do force the game to render correctly to different aspect ratios while running in borderless windowed.</p>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>...however, having these boxes ticked will cause FOV changes (with both REFramework and IGCS) to be extremely buggy!</p>
-</div><h2 id="emv-engine">EMV Engine<a class="headerlink" href="#emv-engine" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Dragon's Dogma 2, through REFramework, supports the <a href="https://github.com/alphazolam/EMV-Engine" target="_blank">Enhanced Model Viewer Engine</a> repository of scripts. You can use these scripts to hide characters from a scene, pose them, move them around, and so much more. <a href="../GeneralGuides/emv_engine.htm">Read our site guide</a> on the scripts on how you can use these scripts in your shots.</p>
-<p>Here is a small list of some useful IDs:</p>
+<h2 id="controls">Controls<a class="headerlink" href="#controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
-	<th>ID</th>
-	<th>Character</th>
+	<th>Key</th>
+	<th>Command</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-	<td><code>ch000000_00</code></td>
-	<td>Player</td>
+	<td><code>F5</code></td>
+	<td>Toggle tool UI</td>
 </tr>
 <tr>
-	<td><code>ch100000_00</code></td>
-	<td>Main Pawn</td>
+	<td><code>Insert</code></td>
+	<td>Toggle camera</td>
 </tr>
 <tr>
-	<td><code>ch111xxx</code></td>
-	<td>other pawns in your party</td>
+	<td><code>Delete</code></td>
+	<td>Hide HUD</td>
 </tr>
 <tr>
-	<td><code>ch110xxx</code></td>
-	<td>other pawns in the world</td>
+	<td><code>W</code> / <code>S</code></td>
+	<td>Move camera forward / backward</td>
+</tr>
+<tr>
+	<td><code>A</code> / <code>D</code></td>
+	<td>Move camera left / right</td>
+</tr>
+<tr>
+	<td><code>Space</code> / <code>Ctrl</code></td>
+	<td>Move camera up / down</td>
+</tr>
+<tr>
+	<td><code>Page up</code> / <code>Page down</code></td>
+	<td>Increase/ decrease focal length</td>
 </tr>
 </tbody>
 </table>
-<h3 id="poser-quickstart-guide">Poser Quickstart Guide<a class="headerlink" href="#poser-quickstart-guide" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>A good use of EMV's poser is to edit eye rotations so your subjects look a little less dead.</p>
-<ol>
-<li>open Script Generated UI</li>
-<li>open Collection</li>
-<li>click Detach Window</li>
-<li>click Search, no need to change any settings</li>
-<li>choose an ID</li>
-<li>dropdown the same ID again</li>
-<li>expand Poser</li>
-<li>for Filter, type <code>eye</code></li>
-<li><code>L_Eye</code> and <code>R_Eye</code> are at the bottom of the results</li>
-</ol>
-<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>To avoid crashes, inject the tools after loading a level.</p>
+</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>Moving the camera to the player character or any NPC might remove the character from the scene. You'll have to unpause the scene to retrieve them.</p>
+</div><h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://www.pcgamingwiki.com/wiki/Dragon's_Dogma_II" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://pcgamingwiki.com/wiki/Battlefield_1" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://www.unknowncheats.me/forum/battlefield-v/316864-settings-editor.html" target="_blank">Engine settings</a></li>
 </ul>
 
                     </div>
