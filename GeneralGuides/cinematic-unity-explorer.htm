@@ -84,6 +84,10 @@
 
 
 
+<li class="tocentry"><a href="#bones-panel">Bones Panel</a></li>
+
+
+
 <li class="tocentry"><a href="#hud-toggle">HUD toggle</a></li>
 
 <li class="tocentry"><a href="#force-high-lods">Force High LODs</a></li>
@@ -437,10 +441,50 @@ Boot the game again, through the Modded play button. You should see an overlay w
 </tr>
 </tbody>
 </table>
+<p>The mod also allows controller input.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Feature</th>
+	<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Move the camera forward/left/right/backward</td>
+	<td><font face="Controller">&lt;</font></td>
+</tr>
+<tr>
+	<td>Move the camera upwards/downwards</td>
+	<td><font face="Controller">{/}</font></td>
+</tr>
+<tr>
+	<td>Speed up/down movement</td>
+	<td><font face="Controller">x/y</font></td>
+</tr>
+<tr>
+	<td>Change freecam orientation</td>
+	<td><font face="Controller">&gt;</font></td>
+</tr>
+<tr>
+	<td>Tilt left/right</td>
+	<td><font face="Controller">A/D</font></td>
+</tr>
+<tr>
+	<td>Increase/Decrease FOV</td>
+	<td><font face="Controller">W/X</font></td>
+</tr>
+<tr>
+	<td>Reset FOV</td>
+	<td><font face="Controller">b</font></td>
+</tr>
+</tbody>
+</table>
 <h1 id="freecam">Freecam<a class="headerlink" href="#freecam" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
 <p>The freecam can be enabled from the &quot;Freecam&quot; panel on the mods menu or with the <code>Insert</code> hotkey. However, there are two kinds of freecams, as explained in the two following subsections.</p>
 <p><img src="../Images/CinematicUnityExplorerGuide/sidebyside.jpg" alt="sidebyside" class="shadowed autosize" width="900" height="253" /></p>
+<p>You can also control the freecam using a controller. You can select the controller to do so in the panel as shown above but do know that some games will read input from all controllers, so you might not be able to play with one controller and move the camera with the other.</p>
 <h2 id="new-camera">New Camera<a class="headerlink" href="#new-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Without checking the &quot;Use Game Camera?&quot; checkbox on the Freecam panel, the mod will create a new camera object for you to control. This means that some post-processing effects won't be displayed (because they are being applied to the game's camera, not the new one), making the game look &quot;ugly&quot;.</p>
 <p>However, we would like this to be the case in some games if the gameplay camera happens to bring unwanted effects (like in Somerville, where the gameplay camera didn't render behind the black bars, but this new camera did).</p>
@@ -470,6 +514,7 @@ Boot the game again, through the Modded play button. You should see an overlay w
 <p>You can enable or disable the game input when the freecam is enabled by clicking the &quot;Enable game input&quot; checkbox on the Freecam panel or pressing the <code>Numpad .</code> hotkey by default. This is enabled by default to avoid moving the character when moving the freecam.</p>
 <p>This can be used in conjunction with the &quot;Block freecam&quot; to freeze the freecam in a specific, nongameplay place, while you move the character around.</p>
 <p>Do keep in mind tho that this feature only works if the developers use Unity's Legacy Input system for their game. If the game uses a custom solution or the latest Unity system then this won't work. Implementing this for Unity's new system is in the backlog, so if you find a game using it (should say <code>Initialized new InputSystem support.</code> on the logs) then please let me know on the <a href="https://github.com/originalnicodr/CinematicUnityExplorer/issues" target="_blank">repository issues page</a> so I can implement it using that game!</p>
+<p>Also, know that blocking game input coming from a controller isn't supported at the time of writing.</p>
 <p>In the meantime, if you need to disable the game input and the mod isn't doing so automatically you can try looking for the right game object or component to disable. Follow the steps described in the <a href="#gameplay-camera">gameplay camera section</a> to do so.</p>
 <h2 id="follow-object">Follow object<a class="headerlink" href="#follow-object" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Following world objects can be useful for recording video, by creating <a href="#cam-paths">camera paths</a> that are relative to objects.</p>
@@ -540,22 +585,38 @@ Boot the game again, through the Modded play button. You should see an overlay w
 <p>Go to the Misc panel and toggle the &quot;Make all meshes cast and receive shadows&quot; toggle. It's still possible for the light to not cast shadows on specific meshes even with this toggled on (e.g. Dredge), but it's not that common.</p>
 <h1 id="animator">Animator<a class="headerlink" href="#animator" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
-<p>The Animator panel allows you to manually play and pause animations on the current characters and NPCs loaded in a scene. This should be pretty useful for getting the right animation on each enemy to set up a composition.</p>
-<p><img src="../Images/CinematicUnityExplorerGuide/animator-panel.png" alt="Animator panel" class="shadowed autosize" width="900" height="564" /></p>
+<p>The Animator panel allows you to manually pause and play animations as well as select specific animation keyframes on the current characters and NPCs loaded in a scene. This should be pretty useful for getting the right animation on each enemy to set up a composition.</p>
+<p><img src="../Images/CinematicUnityExplorerGuide/animator-panel.png" alt="Animator panel" class="shadowed autosize" width="1300" height="278" /></p>
 <p>Favorite animations appear first on the dropdown list by clicking on the star button with the animation selected.</p>
-<p>The way the animator works is that it will replace the animation the entity is doing when the user hit the &quot;Play&quot; button.</p>
+<p>The way the animator works is that it will replace the animation the entity is doing when the user hits the &quot;Play&quot; button or selects a keyframe using the slider.</p>
+<p>The Animator panel also offers a way to hide each NPC individually to help you identify which animator belongs to each NPC if the name isn't enough to figure out. This could also be used to momentarily hide NPCs in a scene. Just make sure to turn them on again when you continue playing if you don't want to fight invisible enemies.</p>
 <p>Setting a specific frame on an animation we like would look like the following.</p>
 <ul>
-<li>Pause the entities you want to force animations on.</li>
-<li>Go to the Inspector tab, click on mouse inspector on the top right, and then click on &quot;world&quot;.</li>
-<li>Click over the character you want to change the animation from. Look at the top field next to the &quot;◄ View Parent&quot; button, it will describe all of the parent hierarchy. The first element on that name will probably have the same name as one inside the list in the animator's panel (these names are often the character names, or something like &quot;enemy-5&quot; or &quot;enemy(Clone)&quot;).</li>
-<li>Once you know which row in the Animators panel refers to the character you want to change the animation, select the animation you want to play from the dropdown and click on the &quot;Play&quot; button.</li>
+<li>Pause the game with the <a href="#timedilation">timedilation widget</a> (or hotkey).</li>
+<li>Go to the Animator Panel, and click on &quot;Refresh Animators&quot;. This will list every NPC with an animator.</li>
+<li>
+If none of the names listed gives you a hint on which belongs to the character you want to animate then try hiding them one by one.
+<ul>
+<li>Alternatively, you can go to the Inspector tab, click on mouse inspector on the top right, and then click on &quot;world&quot;. Then click over the character you want to change the animation from. Look at the top field next to the &quot;◄ View Parent&quot; button, it will describe all of the parent hierarchy. The first element on that name will probably have the same name as one inside the list in the Animator panel (these names are often the character names, or something like &quot;enemy-5&quot; or &quot;enemy(Clone)&quot;).</li>
+</ul>
+</li>
+<li>
+Once you know which row in the Animators panel refers to the character you want to change the animation, select the animation you want to play from the dropdown and move the slider to get the keyframe you want.
+<ul>
+<li>You can also un-pause the game and click on the &quot;Play&quot; button instead.</li>
+</ul>
+</li>
 <li>When you find the right frame pause the animator by clicking on the first checkbox of the entity row.</li>
 <li>Make the entity animator ignore the master toggle.</li>
 </ul>
 <p>The Animator panel also allows you to freeze all characters in a scene all at once, alongside giving you control over which characters should ignore this master toggler, which is assigned to <code>Numpad 0</code> by default. That way you can make the playable character avoid getting frozen, or avoid un-freezing NPCs or enemies that already have the animations you want them to have.</p>
 <p>Once you are done with shooting tho, you should reset the animators of the entities that you manually played animations on. If you can't recall which entities you played animations on or you just forced animations on a lot of entities you can click on &quot;Reset Animators&quot; and all of the non-deleted existing entities will get their animatiors reset.</p>
-<p>Alongside all of this, you can also open each character game object by clicking on their names, so you can move, rotate, scale them around, disable them, or further edit their properties and child objects. More on this in the<a href="#how-to-modify-a-game-objects-spatial-property">&quot;How to modify a game object's spatial property&quot;</a> section.</p>
+<p>Alongside all of this, you can also open each character game object by clicking on their names, so you can move, rotate, scale them around, disable them, or further edit their properties and child objects. More on this in the <a href="#how-to-modify-a-game-objects-spatial-property">&quot;How to modify a game object's spatial property&quot;</a> section.</p>
+<h2 id="bones-panel">Bones Panel<a class="headerlink" href="#bones-panel" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>For each animator, you can also spawn a Bones Panel. This panel will list all of the character's bones and meshes, and provide easy-to-access toggles to disable them and sliders to move them around, allowing you to pose a character to your liking.</p>
+<p><img src="../Images/CinematicUnityExplorerGuide/bones-panel.png" alt="Bones panel" class="shadowed autosize" width="1000" height="400" /></p>
+<p>Do take in mind that to move an NPC bones around you will need to disable the animator (done at the top of the Bones Panel). This will get activated again automatically once you reset all of the animators. Also, you will probably only be able to disable certain meshes that aren't bones (like accessories such as a scarf or sunglasses). If you want to hide a certain element that is a bone and can't be toggled you can try reducing its scale to 0.</p>
+<p>Also, certain elements such as clothes or hair might get weird physics when posing the character. If you want them to adapt to the new character pose try skipping one or two frames with the <a href="#skipframe">skipframe</a> hotkey.</p>
 <h1 id="post-processing-panel">Post-processing panel<a class="headerlink" href="#post-processing-panel" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
 <p>It loads all the current vanilla post-processing effects being used when clicking on &quot;Refresh Effects&quot; and offers togglers to disable them. It also lets you inspect the postprocessing objects yourself if you want to edit their parameters instead.</p>
