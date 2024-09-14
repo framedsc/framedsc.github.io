@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>The Callisto Protocol - FRAMED. Screenshot Community</title>
+    <title>Rage - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/theme_20220814.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors_20220814.css" type="text/css" />
@@ -112,8 +112,21 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/Quantum_Break.htm">Quantum Break</a>
 </li>
-<li class="tocentry"><a href="../GameGuides/rage.htm">Rage</a>
-</li>
+<li class="tocentry current"><a class="current" href="../GameGuides/rage.htm">Rage</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#summary">Summary</a></li>
+
+<li class="tocentry"><a href="#useful-console-commands">Useful Console Commands</a></li>
+
+<li class="tocentry"><a href="#installing-reshade">Installing Reshade</a></li>
+
+<li class="tocentry"><a href="#hotsampling">Hotsampling</a></li>
+
+<li class="tocentry"><a href="#graphic-tweaks">Graphic tweaks</a></li>
+
+<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
+
+</ul>
 <li class="tocentry"><a href="../GameGuides/rdr2.htm">Red Dead Redemption 2</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/remember_me.htm">Remember Me</a>
@@ -152,17 +165,8 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/SFVAE.htm">Street Fighter V: Arcade Edition</a>
 </li>
-<li class="tocentry current"><a class="current" href="../GameGuides/the-callisto-protocol.htm">The Callisto Protocol</a>
-<ul class="currentrelative">
-<li class="tocentry"><a href="#summary">Summary</a></li>
-
-<li class="tocentry"><a href="#features-of-the-uuu-that-arent-supported">Features of the UUU that aren't supported</a></li>
-
-<li class="tocentry"><a href="#workflow">Workflow</a></li>
-
-<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
-
-</ul>
+<li class="tocentry"><a href="../GameGuides/the-callisto-protocol.htm">The Callisto Protocol</a>
+</li>
 <li class="tocentry"><a href="../GameGuides/thesurge2.htm">The Surge 2</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/thief.htm">Thief</a>
@@ -269,7 +273,7 @@
             <div class="nav-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <div class="breadcrumbs">
-<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../M-Z.htm">M-Z</a></li> / <li><a href="../GameGuides/the-callisto-protocol.htm">The Callisto Protocol</a></li></ul>
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../M-Z.htm">M-Z</a></li> / <li><a href="../GameGuides/rage.htm">Rage</a></li></ul>
 					
                     </div>
                     <hr />
@@ -277,8 +281,8 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../Images\thecallistoprotocol.png" alt="The Callisto Protocol" title="Shot by IronGauntlet" class="shadowed autosize" width="896" height="180" />
-<p>Shot by IronGauntlet</p>
+<img src="../Images\rage.png" alt="Game Title" title="Shot by pino44io" class="shadowed autosize" width="896" height="180" />
+<p>Shot by pino44io</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
@@ -291,7 +295,7 @@
 <tbody>
 <tr>
 	<td>Vanilla Photo Mode</td>
-	<td>Yes</td>
+	<td>No</td>
 </tr>
 <tr>
 	<td>Hotsampling</td>
@@ -311,32 +315,103 @@
 </tr>
 <tr>
 	<td>Ansel</td>
-	<td>Yes</td>
+	<td>No</td>
 </tr>
 <tr>
 	<td>Graphics API</td>
-	<td>DirectX 11/12</td>
+	<td>DirectX 11</td>
 </tr>
 <tr>
 	<td>Game version</td>
-	<td>4.27.2.0</td>
+	<td><font face="Stores"> S </font> 1.0.0.1.</td>
 </tr>
 </tbody>
 </table>
-<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This guide is for an Unreal Engine 4 game that can use the <a href="../GeneralGuides/universal_ue4_consoleunlocker.htm">Universal Unreal Unlocker</a></p>
-</div><h2 id="features-of-the-uuu-that-arent-supported">Features of the UUU that aren't supported<a class="headerlink" href="#features-of-the-uuu-that-arent-supported" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Console, HUD removal, both types of pauses (world paused/slowmo), lights.</p>
-<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<ol>
-<li>Inject tools as soon as you start the game. </li>
-<li>Open Photomode (through the pause menu). </li>
-<li>Press F to disable HUD. Now you can enable the UUU freecam.</li>
-</ol>
-<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>Moving too far away with the UUU cam might cause in-game lighting to break (especially the flickering ones). So try not to move too far away and keep an eye out for glitches.</p>
-</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>The game suffers from severe stuttering issues. Many of these have been addressed in the latest patch but it is still very noticeable. Some users report better performance with DirectX 12 than DirectX11.</p>
-</div><h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Steam offers you two versions of the game to launch. Choose <strong>RAGE 64-bit with Mods (unsupported)</strong></p>
+</div><h2 id="useful-console-commands">Useful Console Commands<a class="headerlink" href="#useful-console-commands" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Right-click the game icon in your Steam library and select Properties, then click on Set Launch Options and enter <code>+set com_allowconsole 1</code>. In-game press Tilde (`) to open up the console.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Command</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>toggle g_showhud</code></td>
+	<td>Toggles the HUD</td>
+</tr>
+<tr>
+	<td><code>toggle hands_show</code></td>
+	<td>Togglles the protagonist's hands</td>
+</tr>
+<tr>
+	<td><code>toggle g_stoptime 1 0</code></td>
+	<td>Toggles timestop. The protagonist can still move around</td>
+</tr>
+<tr>
+	<td><code>noclip</code></td>
+	<td>Enables noclip mode</td>
+</tr>
+<tr>
+	<td><code>pm_noclipspeed X</code></td>
+	<td>Controls the noclip Mode speed, e.g. <code>pm_noclipspeed 150</code></td>
+</tr>
+<tr>
+	<td><code>g_fov X</code></td>
+	<td>Controls the Field of View. Default is 80</td>
+</tr>
+<tr>
+	<td><code>cvaradd g_fov 1</code></td>
+	<td>Increases Field of View</td>
+</tr>
+<tr>
+	<td><code>cvaradd g_fov -1</code></td>
+	<td>Decreases Field of View</td>
+</tr>
+<tr>
+	<td><code>cvaradd pm_thirdperson 1</code></td>
+	<td>Enables third-person model</td>
+</tr>
+<tr>
+	<td><code>cvaradd pm_thirdperson -1</code></td>
+	<td>Disables third-person model</td>
+</tr>
+<tr>
+	<td><code>cvaradd pm_thirdpersonrange 1</code></td>
+	<td>Increases the camera range in third-person</td>
+</tr>
+<tr>
+	<td><code>cvaradd pm_thirdpersonrange -1</code></td>
+	<td>Decreases the camera range in third-person</td>
+</tr>
+<tr>
+	<td><code>cvaradd pm_thirdpersonclip -1</code></td>
+	<td>Removes the clipping of the third-person camera</td>
+</tr>
+<tr>
+	<td><code>r_skipglare 1/0</code></td>
+	<td>Disables post-processing effects. Default values is 0</td>
+</tr>
+<tr>
+	<td><code>notarget</code></td>
+	<td>Enables invisibility</td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>You can bind the commands to specific keys. For example, <code>bind F1 &quot;toggle g_showhud&quot;</code>. Also, you can combine them, like <code>bind F1 &quot;toggle g_showhud;toggle hands_show&quot;</code></p>
+</div><h2 id="installing-reshade">Installing Reshade<a class="headerlink" href="#installing-reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Please be sure to inject the <strong><em>Rage Tool Kit (Rage64.exe)</em></strong> process.</p>
+<h2 id="hotsampling">Hotsampling<a class="headerlink" href="#hotsampling" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The game needs to run in windowed mode in order to hotsample correctly to different aspect ratios. You can use <a href="https://github.com/dtgDTGdtg/SRWE" target="_blank">SRWE</a> or <a href="https://www.patreon.com/Otis_Inf" target="_blank">Universal Unreal Engine 4 Unlocker</a>.</p>
+<h2 id="graphic-tweaks">Graphic tweaks<a class="headerlink" href="#graphic-tweaks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>To increase texture buffer, right-click the game icon in your Steam library and select <em>Properties</em>, then click on Set Launch Options and enter the following:</p>
+<pre class="nocode">*+fc maxcachememoryMB 1024 +vt_maxPPF &quot;16&quot; +vt_pageimagesizevmtr 16384 +vt_pageImageSizeUnique 16384 +vt_pageImageSizeUniqueDiffuseOnly 16384 +vt_pageImageSizeUniqueDiffuseOnly2 16384*
+</pre><h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://pcgamingwiki.com/wiki/The_Callisto_Protocol" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://www.pcgamingwiki.com/wiki/RAGE" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://rage.fandom.com/wiki/Tweaks" target="_blank">Rage Wiki</a></li>
 </ul>
 
                     </div>
