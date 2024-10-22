@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShaderToggler - FRAMED. Screenshot Community</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../css/theme_20220814.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/theme_colors_20220814.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/styles/vs.css">
+    <link rel="stylesheet" href="../../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../../index.htm"><i class="fa fa-home"></i> FRAMED. Screenshot Community</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../../index.htm">Home</a>
+</li>
+
+<li class="tocentry"><a href="../../basics.htm">The Basics</a>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../Gameguides.htm">Game guides</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../GeneralGuides/index.htm">General guides</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../PhotographyGuides/index.htm">Photography guides</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../../ReshadeGuides/index.htm">Reshade guides</a></span></li>
+
+<li class="tocentry"><a href="../../ReshadeGuides/setupreshade.htm">Setting up reshade</a>
+</li>
+<li class="tocentry"><a href="../../ReshadeGuides/shaderscatalogue.htm">Shaders Catalogue</a>
+</li>
+<li class="tocentry"><a href="../../ReshadeGuides/lutgenguide.htm">LUT Generation</a>
+</li>
+<li class="tocentry"><a href="../../ReshadeGuides/reshadeuwp.htm">Injecting ReShade in UWP games</a>
+</li>
+<li class="tocentry"><a href="../../ReshadeGuides/depthguide.htm">Exporting Depth Buffers with Reshade</a>
+</li>
+<li class="tocentry"><a href="../../ReshadeGuides/RealLongExposure.htm">Using RLE to hide temporal issues</a>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../ReshadeGuidesShaderguides.htm">Shader guides</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../../ReshadeGuidesAddonguides.htm">Addon guides</a></span></li>
+<li class="tocentry current"><a class="current" href="../../ReshadeGuides/Addons/shader_toggler_repository.htm">ShaderToggler</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#installation">Installation</a></li>
+
+<li class="tocentry"><a href="#example-usage-hud-removal">Example usage: HUD removal</a></li>
+
+<li class="tocentry"><a href="#repository">Repository</a></li>
+
+</ul>
+<li class="tocentry"><a href="../../ReshadeGuides/Addons/MSADOF.htm">MSADOF</a>
+</li>
+
+</ul>
+</li>
+</ul>
+</li>
+<li class="tocentry"><a href="../../cheattablearchive.htm">Cheat Table Archive</a>
+</li>
+<li class="tocentry"><a href="../../the_photomode_wishlist.htm">The Photomode Wishlist</a>
+</li>
+<li class="tocentry"><a href="../../contribute.htm">Contribute to the site!</a>
+</li>
+</ul>
+				<br/>
+				<ul>
+					<li class="tocentry">
+						<ul>
+							<li>
+								<span class="navigationgroup">Projects</span>
+							</li>
+                            <li class="tocentry">
+                                <a href="/HOFWallpaper/" target="_blank">HOF Wallpaper</a>
+                            </li>
+                            <li class="tocentry">
+                                <a href="/framed-wrapped/" target="_blank">A year of Framed</a>
+                            </li>
+						</ul>
+					</li>
+					<li class="tocentry">
+						<ul>
+							<li>
+								<span class="navigationgroup">Galleries</span>
+							</li>
+							<li class="tocentry">
+								<a href="/HallOfFramed/" target="_blank">Hall of Framed</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../../index.htm">FRAMED. Screenshot Community</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../../index.htm">Home</a></li> / <li><a href="../../ReshadeGuides/index.htm">Reshade guides</a></li> / <li><a href="../../ReshadeGuidesAddonguides.htm">Addon guides</a></li> / <li><a href="../../ReshadeGuides/Addons/shader_toggler_repository.htm">ShaderToggler</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<p><img src="../../Images/ShaderToggler/ShaderToggler_header.png" alt="ShaderToggler" class="shadowed autosize" width="896" height="180" /></p>
+<p><a href="https://github.com/FransBouma/ShaderToggler" target="_blank"><strong>ShaderToggler</strong></a> is an add-on for ReShade written by Otis_Inf. It allows you turn off and on in-game shaders, like <a href="https://nohud.fandom.com/wiki/Creation_of_Hudtoggle_Mods" target="_blank">3DMigoto</a>. This page is a brief guide on how you can use it to toggle shaders, and is also a repository for the toggle groups that people have contributed for various games.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>ShaderToggler requires <strong>Reshade 5.1+ with <a href="../../Images/reshade_FullAddonSupport.png">full add-on support</a></strong>.</p>
+</div><hr />
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p><a href="https://github.com/FransBouma/ShaderToggler/releases" target="_blank">On the releases page</a>, there are two relevant files available for download.</p>
+<ul>
+<li><code>ShaderToggler_v101.zip</code> is for 64-bit games, i.e. the majority of modern releases.</li>
+<li><code>ShaderToggler_x86_101.zip</code> is for 32-bit games, typically older titles running in DX9 for example.</li>
+</ul>
+<p>Download the appropriate file and unzip it. Copy over <code>ShaderToggler.addon</code> to the same folder as your game's ReShade DLL for ReShade to be able to use it.</p>
+<p>Launch your game, open the ReShade GUI, and head to the <em>Add-ons</em> tab. You should now see <em>Shader Toggler</em> in the list of installed add-ons.</p>
+<p><img src="../../Images/ShaderToggler/ShaderTogglerUI.png" alt="Screenshot of the UI" class="shadowed autosize" width="435" height="305" /></p>
+<hr />
+<h2 id="example-usage-hud-removal">Example usage: HUD removal<a class="headerlink" href="#example-usage-hud-removal" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>While ShaderToggler can be used to hide many parts and elements of a game scene (including geometry!), it is probably most useful in removing the HUDs of games.</p>
+<p>In this example, we'll be using the add-on to remove the HUD from <em>The Witcher 3</em>.</p>
+<h4 id="step-1-creating-a-new-toggle-group">Step 1: Creating a new toggle group<a class="headerlink" href="#step-1-creating-a-new-toggle-group" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p><img src="../../Images/ShaderToggler/Usage-New-toggle-group.png" alt="New toggle group" class="shadowed autosize" width="435" height="212" /></p>
+<p>Start by clicking the <em>New</em> button under <em>List of toggle groups</em>. This should create a new entry with a number next to it. Click on the <em>Edit</em> button and edit it to your liking. This group will be named &quot;HUD&quot;, since we're removing the HUD, and it'll be bound to <code>Delete</code>, the common keybind for hiding the HUD in tools.</p>
+<h4 id="step-2-marking-shaders">Step 2: Marking shaders<a class="headerlink" href="#step-2-marking-shaders" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>With our new toggle group set up, it's time to start marking shaders. These shaders will be added to the toggle group, and on activation, will be hidden from the scene.</p>
+<p>Click on <em>Change shaders</em> and wait for the frame collection process (that should appear in the top left) to complete.</p>
+<p>Once the frames are collected, use <code>Numpad 1</code> and <code>Numpad 2</code> to step through the available pixel shaders. These tend to be what HUDs are. As you step through the pixel shaders, note which of them cause the HUD to disappear. Mark these with <code>Numpad 3</code>.</p>
+<p><img src="../../Images/ShaderToggler/ShaderMarking.webp" alt="Marking shaders" class="shadowed autosize" /></p>
+<p>Once you've marked all the shaders, click on <em>Done</em> to register the toggle group. If done right, when you use your key shortcut, it should now hide all the marked shaders at once, giving you a perfect HUD hide!</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p><strong>Save all Toggle Groups!</strong> <br />
+Or suffer the pain of having to do everything over again on next launch!<br />
+This creates a <code>ShaderToggler.ini</code> file in the same directory as the ADDON file. We encourage contributing this to our repository below.</p>
+</div><h3 id="doing-even-more">Doing even more!<a class="headerlink" href="#doing-even-more" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>HUD hiding is only one thing possible with ShaderToggler. The process above can easily be used to hide so much more, from various post-processing effects to whole render passes with pixel shader toggles, and even characters or foliage from a scene with vertex shader toggles.</p>
+<p>Do note that the add-on does not intercept compute shaders. This is why some effects, like some UE4 DOF implementations, can't be removed with ShaderToggler.</p>
+<h3 id="video-example">Video example<a class="headerlink" href="#video-example" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<div class="figure">
+<a href="https://youtu.be/DjXn2kIxFjc" target="_blank"><img src="https://i.ytimg.com/vi_webp/DjXn2kIxFjc/maxresdefault.webp" alt="Shader Toggler Addon Video" /></a>
+</div>
+<hr />
+<h2 id="repository">Repository<a class="headerlink" href="#repository" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>These files need to be renamed to <code>ShaderToggler.ini</code> and placed in the same folder as <code>ShaderToggler.addon</code> for the add-on to pick them up correctly.</p>
+</div><table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Game</th>
+	<th>Features</th>
+	<th>Extra Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><a href="../../ShaderTogglers/abzu.ini">Abzû</a></td>
+	<td>- Toggle HUD Elements (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/assassins_creed_origins.ini">Assassin's Creed: Origins</a></td>
+	<td>- Remove head distortion (<code>Shift</code> + <code>6</code>)<br> - Chromatic aberration (<code>Shift</code> + <code>7</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/assassins_creed_syndicate.ini">Assassin's Creed: Syndicate</a></td>
+	<td>- Ingame HUD toggle (<code>Caps Lock</code>) <br> - Jack the Ripper DLC CA toggle (<code>Numpad .</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/assassins_creed_valhalla.ini">Assassin's Creed: Valhalla</a></td>
+	<td>- HUD (<code>Caps Lock</code>)<br> - Eivor, NPCs and animals (<code>Shift</code> + <code>F4</code>)<br> - Vertical line markers in the world (<code>Shift</code> + <code>F5</code>)<br> - Rain (<code>Shift</code> + <code>F6</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/atomic_heart.ini">Atomic Heart</a></td>
+	<td>- Ingame HUD toggle (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/batman_arkham_knight.ini">Batman: Arkham Knight</a></td>
+	<td>Rain and rain bounce toggle (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/battlefleet_gothic_armada.ini">Battlefleet Gothic: Armada</a></td>
+	<td>HUD (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/battlefleet_gothic_armada_2.ini">Battlefleet Gothic: Armada 2</a></td>
+	<td>HUD not caught by UUU (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/bayonetta.ini">Bayonetta</a></td>
+	<td>Pause menu + In Game UI + Effects (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/call_of_juarez_gunslinger.ini">Call of Juarez: Gunslinger</a></td>
+	<td>- HUD/Border (<code>F2</code>) <br> - Color Correction (<code>F3</code>) <br> - Cell Shading Toggle (<code>F4</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/century_age_of_ashes.ini">Century: Age of Ashes</a></td>
+	<td>-HUD (<code>Caps Lock</code>)<br> - Various effects/pickup icons (<code>Numpad 1</code> and <code>Numpad 2</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/control.ini">CONTROL</a></td>
+	<td>HUD Toggle (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/cyberpunk_2077.ini">Cyberpunk 2077</a></td>
+	<td>HUD  (and some advertisement displays) (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/death_stranding_directors_cut.ini">Death Stranding: Director's Cut</a></td>
+	<td>Screen dirt, HUD, Odradek ping effects, Chiral Network boundary lines, Lost parcel glow, location lines, destination guide lines and footsteps (<code>F3</code>)</td>
+	<td>Player added icons dont hide for some reason</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/destroyallhumans.ini">Destroy All Humans!</a></td>
+	<td>Full HUD Toggle (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/dredge.ini">DREDGE</a></td>
+	<td>HUD (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/dying_light_2.ini">Dying Light 2</a></td>
+	<td>- Lens flare and screen dirt (<code>Caps Lock</code>)<br> - Hides air vents and floaty debris (but also inadvertently hides some other smoke and fire sources) (<code>F2</code>) <br> - Hides Distant Birds (<code>F3</code>) <br> - Hides HUD (<code>F4</code>) <br> - Just floaty debris (<code>F5</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/elden_ring.ini">Elden Ring</a></td>
+	<td>- Hides Sites Of Grace (<code>Caps Lock</code>)<br>- Hides rain, floaty leaves(?) and (SPOILER) end game ash (<code>F2</code>)<br> - Hides gold and grey fog walls (<code>F3</code>)<br> - HUD (<code>K</code>) <br> - Fog (<code>Caps Lock</code>)<br> - Bloom (<code>[</code>) <br> - Direct lighting/character back lighting (<code>]</code>)</td>
+	<td>Hiding Sites Of Grace also hides some other light sources such as candles and torches, cant be avoided.</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/everspace2.ini">Everspace 2</a></td>
+	<td>Cursor Toggle (<code>F11</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/evil_dead_the_game.ini">Evil Dead: The Game</a></td>
+	<td>- HUD toggle (<code>Caps Lock</code>)<br> - Rain toggle (<code>Shift</code>+<code>Ctrl</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/FFVIIR.ini">Far Cry 3</a></td>
+	<td>Map, ammunition, mission information, enemy marks, enemy silhouette trough walls, and enemy attention indicator toggles. (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/FFVIIR.ini">Final Fantasy VII Remake</a></td>
+	<td>HUD (<code>Del</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/forspoken.ini">Forspoken</a></td>
+	<td>HUD toggle (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/ghostwire_tokyo.ini">Ghostwire: Tokyo</a></td>
+	<td>HUD and DOF toggle (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/god_of_war.ini">God of War</a></td>
+	<td>Snow toggle (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/hi-fi-rush.ini">Hi-Fi Rush</a></td>
+	<td>- HUD and Menu DOF toggle (<code>Caps Lock</code>) <br> - Some hit effects (<code>Tab</code>)<br> - Allows some pattern to be drawn in characters and objects (<code>P</code>)<br> - Character comic lines (<code>C</code>)</td>
+	<td>I recommend using the pause menu for shooting cutscenes, otherwise the audio doesn't stop.</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/horizon_zero_dawn.ini">Horizon Zero Dawn</a></td>
+	<td>- Rain: (<code>Caps Lock</code>) <br> - Bloom (<code>Shift</code> + <code>X</code>) <br> - HUD (<code>Shift</code> + <code>Q</code>)</td>
+	<td>- Rain: Could not find and remove the raindrops bouncing off of the ground <br> - Bloom: Both from fire sources and machines <br> - HUD: Both the main game ones and also the item drops / loot HUD popups</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/lego_star_wars_skywalker_saga.ini">LEGO Star Wars: The Skywalker Saga</a></td>
+	<td>- HUD (<code>K</code>) <br> - Object outlines (may hide some tiny cubemaps) (<code>L</code>) <br>  - Coins &amp; their shadows (may hide other shadows) (<code>;</code>) <br> - Lens flares (<code>Numpad 7</code>)<br> - Hide characters (WIP due to massive variety) (<code>Shift</code> + <code>2</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/matrix_awakens.ini">Matrix Awakens</a></td>
+	<td>HUD Toggle (<code>Caps Lock</code>)</td>
+	<td>Hide the speedo whilst driving</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/nfshotpursuitremastered.ini">Need for Speed Hot Pursuit Remastered</a></td>
+	<td>- Driver toggle (<code>D</code>)</td>
+	<td>The game has a lot of shaders (vignette, tonemapping, motion blur, lens flare) melted into a single shader, so turning it off might not be recommended.</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/nfs_unbound.ini">Need for Speed Unbound</a></td>
+	<td>- HUD toggle (<code>Caps lock</code>)<br> - Cartoon effects toggle (<code>Numpad *</code>)</td>
+	<td>The cartoon effects toggle doesn't turn off all the effects, but it gets most of them.</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/prey.ini">Prey</a></td>
+	<td>HUD Toggle (<code>Caps Lock</code>)</td>
+	<td>Also toggles the Chairloader menu windows.</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/sekiro_shadows_die_twice.ini">Sekiro: Shadows Die Twice</a></td>
+	<td>HUD (<code>Del</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/SOTTR.ini">Shadow of the Tomb Raider</a></td>
+	<td>HUD Toggle (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/sherlock_holmes_devils_daughter.ini">Sherlock Holmes: The Devil's Daughter</a></td>
+	<td>HUD and DOF toggle (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/singularity.ini">Singularity</a></td>
+	<td>- HUD toggle (<code>Capslock</code>)<br> - Rain toggle (<code>Ctrl</code>+<code>1</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/somerville.ini">Somerville</a></td>
+	<td>- Hide menu and black bars (while free camera is enabled) (<code>Caps Lock</code>) <br> - Hide text from menu (<code>ALT</code>+<code>0</code>)</td>
+	<td>For the game to render where the black bars used to be you have to use <a href="../../GeneralGuides/cinematic-unity-explorer.md">Cinematic Unity Explorer freecam</a>.</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/space_hulk_deathwing.ini">Space Hulk: Deathwing</a></td>
+	<td>HUD + Party Markers (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/spider_man_remastered.ini">Spider-Man Remastered</a></td>
+	<td>Complete HUD Toggle (<code>Delete</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/star_wars_jedi_survivor.ini">Star Wars Jedi: Survivor</a></td>
+	<td>- HUD, force outlines, other distracting elements (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/submerged_hidden_depths.ini">Submerged: Hidden Depths</a></td>
+	<td>Rain and raindrops (<code>Caps Lock</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/thequarry.ini">The Quarry</a></td>
+	<td>Toggles only the glowing shader pillar and sprite at the top, the mouse icon is handled by UUU HUD Toggle. (<code>F1</code>)</td>
+	<td>Remember to turn it back on otherwise it's easy to miss key items.</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/v_rising.ini">V Rising</a></td>
+	<td>HUD (<code>Del</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/vanishing_ethan_carter_redux.ini">The Vanishing of Ethan Carter Redux</a></td>
+	<td>- Hide blue mist (<code>Y</code>)<br> - Hide floating texts (<code>X</code>)<br> - Hide fog (<code>V</code>)<br> - Hide main menu (<code>Del</code>)</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/yakuza_0.ini">Yakuza 0</a></td>
+	<td>HUD (<code>Del</code>)</td>
+	<td>Turns off HUD elements during free roam. Minigames are not included yet.</td>
+</tr>
+<tr>
+	<td><a href="../../ShaderTogglers/yakuza_kiwami.ini">Yakuza Kiwami</a></td>
+	<td>HUD (<code>Del</code>)</td>
+	<td>Turns off HUD elements during free roam. Minigames are not included yet.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Have a shader toggler that you want to include? Head up to the <a href="https://github.com/framedsc/Sitesource/issues" target="_blank">issue site page</a> and create an issue with your shader toggler, or <a href="https://framedsc.com/index.htm" target="_blank">contact one of the mods</a>.</em></p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+&copy 2019-2024 FRAMED. All rights reserved.
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/modernizr-2.8.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/comparisons.js"></script>
+
+</body>
+</html>

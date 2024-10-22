@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MSADOF - FRAMED. Screenshot Community</title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../css/theme_20220814.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/theme_colors_20220814.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/styles/vs.css">
+    <link rel="stylesheet" href="../../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../../index.htm"><i class="fa fa-home"></i> FRAMED. Screenshot Community</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../../index.htm">Home</a>
+</li>
+
+<li class="tocentry"><a href="../../basics.htm">The Basics</a>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../Gameguides.htm">Game guides</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../GeneralGuides/index.htm">General guides</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../PhotographyGuides/index.htm">Photography guides</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../../ReshadeGuides/index.htm">Reshade guides</a></span></li>
+
+<li class="tocentry"><a href="../../ReshadeGuides/setupreshade.htm">Setting up reshade</a>
+</li>
+<li class="tocentry"><a href="../../ReshadeGuides/shaderscatalogue.htm">Shaders Catalogue</a>
+</li>
+<li class="tocentry"><a href="../../ReshadeGuides/lutgenguide.htm">LUT Generation</a>
+</li>
+<li class="tocentry"><a href="../../ReshadeGuides/reshadeuwp.htm">Injecting ReShade in UWP games</a>
+</li>
+<li class="tocentry"><a href="../../ReshadeGuides/depthguide.htm">Exporting Depth Buffers with Reshade</a>
+</li>
+<li class="tocentry"><a href="../../ReshadeGuides/RealLongExposure.htm">Using RLE to hide temporal issues</a>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../ReshadeGuidesShaderguides.htm">Shader guides</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../../ReshadeGuidesAddonguides.htm">Addon guides</a></span></li>
+<li class="tocentry"><a href="../../ReshadeGuides/Addons/shader_toggler_repository.htm">ShaderToggler</a>
+</li>
+<li class="tocentry current"><a class="current" href="../../ReshadeGuides/Addons/MSADOF.htm">MSADOF</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#advantages">Advantages</a></li>
+
+<li class="tocentry"><a href="#installation--initial-setup">Installation &amp; initial setup</a></li>
+
+<li class="tocentry"><a href="#list-of-preconfigured-values">List of preconfigured values</a></li>
+
+<li class="tocentry"><a href="#usage">Usage</a></li>
+
+<li class="tocentry"><a href="#photography-mode">Photography Mode</a></li>
+
+<li class="tocentry"><a href="#tweaking-mode">Tweaking Mode</a></li>
+
+<li class="tocentry"><a href="#shape-settings">Shape settings</a></li>
+
+<li class="tocentry"><a href="#settings">Settings</a></li>
+
+<li class="tocentry"><a href="#shader-settings">Shader settings</a></li>
+
+<li class="tocentry"><a href="#adjusting-for-a-new-game">Adjusting for a new game</a></li>
+
+<li class="tocentry"><a href="#tips--tricks">Tips &amp; Tricks</a></li>
+
+<li class="tocentry"><a href="#processing-saved-exrs">Processing saved EXRs</a></li>
+
+</ul>
+
+</ul>
+</li>
+</ul>
+</li>
+<li class="tocentry"><a href="../../cheattablearchive.htm">Cheat Table Archive</a>
+</li>
+<li class="tocentry"><a href="../../the_photomode_wishlist.htm">The Photomode Wishlist</a>
+</li>
+<li class="tocentry"><a href="../../contribute.htm">Contribute to the site!</a>
+</li>
+</ul>
+				<br/>
+				<ul>
+					<li class="tocentry">
+						<ul>
+							<li>
+								<span class="navigationgroup">Projects</span>
+							</li>
+                            <li class="tocentry">
+                                <a href="/HOFWallpaper/" target="_blank">HOF Wallpaper</a>
+                            </li>
+                            <li class="tocentry">
+                                <a href="/framed-wrapped/" target="_blank">A year of Framed</a>
+                            </li>
+						</ul>
+					</li>
+					<li class="tocentry">
+						<ul>
+							<li>
+								<span class="navigationgroup">Galleries</span>
+							</li>
+							<li class="tocentry">
+								<a href="/HallOfFramed/" target="_blank">Hall of Framed</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../../index.htm">FRAMED. Screenshot Community</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../../index.htm">Home</a></li> / <li><a href="../../ReshadeGuides/index.htm">Reshade guides</a></li> / <li><a href="../../ReshadeGuidesAddonguides.htm">Addon guides</a></li> / <li><a href="../../ReshadeGuides/Addons/MSADOF.htm">MSADOF</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<p><img src="../../Images/MSADOF/MSADOF_header.png" alt="MSADOF" class="shadowed autosize" width="896" height="180" /></p>
+<p><strong>Multi-sampled Accumulated Depth of Field</strong> (<strong>MSADOF</strong>) is an advanced DOF add-on for ReShade developed by murchalloo. It renders depth of field without using a depth buffer for the blurring process, greatly increasing the possibilities of defocused captures. This is an advanced guide that aims to cover the usage of MSADOF, as well as its setup process for you and other users.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Since the guide was written, Otis_inf has developed his own accumulated DOF, which works very similarly to MSADOF with a more user-friendly workflow (meaning that the <a href="#advantages">advantages</a> also apply to it). However, differently from MSADOF, IGCSDOF has been released to the public.</p>
+<p>You can get it from <a href="https://opm.fransbouma.com/igcsdof.htm" target="_blank">here</a>, as well as read about how it works and how to use it.</p>
+</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>MSADOF requires <strong>ReShade 5.4.2+ with <a href="../../Images/reshade_FullAddonSupport.png">full add-on support</a></strong> and supported <a href="https://patreon.com/Otis_Inf" target="_blank">Otis_Inf camera tools</a>. <em>All cameras newer than the 31st of May 2022 should have support for MSADOF, look for &quot;Supports IGCS Connector&quot; in the &quot;Versions and compatibility&quot; table of each <a href="https://opm.fransbouma.com/Gamespecificfunctionality.htm" target="_blank">game</a>.</em></p>
+</div><div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>MSADOF Beta 0.9.2 is currently in closed beta and is unavailable for public download.  </p>
+</div><hr />
+<h2 id="advantages">Advantages<a class="headerlink" href="#advantages" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>MSADOF works by manipulating the game camera around a certain plane in space and progressively blending the result to produce a defocused image that's depth-accurate. This results in:</p>
+<div class="slider container" style="aspect-ratio: 43/18">
+  <div class="slider__img slider__img-after">
+    <p>MSADOF</p>
+    <img src="../../Images/MSADOF/comp_nearplane_MSADOF.jpg" />
+  </div>
+  <div class="slider__img slider__img-before">
+    <p>Traditional depth-based DOF</p>
+    <img src="../../Images/MSADOF/comp_nearplane_CineDOF.jpg" />
+  </div>
+  <input type="range" min="0" max="100" value="50" step="0.01" 
+    id="slider" class="slider__input" 
+    autocomplete="off" onwheel="this.blur()" 
+  />
+</div>
+<div class="figure"><p>Accurate near-plane bleed.</p></div>
+<div class="slider container" style="aspect-ratio: 43/18">
+  <div class="slider__img slider__img-after">
+    <p>MSADOF</p>
+    <img src="../../Images/MSADOF/comp_hair_MSADOF.jpg" />
+  </div>
+  <div class="slider__img slider__img-before">
+    <p>Traditional depth-based DOF</p>
+    <img src="../../Images/MSADOF/comp_hair_CineDOF.jpg" />
+  </div>
+  <input type="range" min="0" max="100" value="50" step="0.01" 
+    id="slider" class="slider__input" 
+    autocomplete="off" onwheel="this.blur()" 
+  />
+</div>
+<div class="figure"><p>Alpha hair in DOF!</p></div>
+<div class="slider container" style="aspect-ratio: 43/18">
+  <div class="slider__img slider__img-after">
+    <p>MSADOF</p>
+    <img src="../../Images/MSADOF/comp_pfx_MSADOF.jpg" />
+  </div>
+  <div class="slider__img slider__img-before">
+    <p>Traditional depth-based DOF</p>
+    <img src="../../Images/MSADOF/comp_pfx_CineDOF.jpg" />
+  </div>
+  <input type="range" min="0" max="100" value="50" step="0.01" 
+    id="slider" class="slider__input" 
+    autocomplete="off" onwheel="this.blur()" 
+  />
+</div>
+<div class="figure"><p>Particle & alpha effects in DOF.</p></div>
+<div class="slider container" style="aspect-ratio: 43/18">
+  <div class="slider__img slider__img-after">
+    <p>MSADOF</p>
+    <img src="../../Images/MSADOF/comp_refl_MSADOF.jpg" />
+  </div>
+  <div class="slider__img slider__img-before">
+    <p>Traditional depth-based DOF</p>
+    <img src="../../Images/MSADOF/comp_refl_CineDOF.jpg" />
+  </div>
+  <input type="range" min="0" max="100" value="50" step="0.01" 
+    id="slider" class="slider__input" 
+    autocomplete="off" onwheel="this.blur()" 
+  />
+</div>
+<div class="figure"><p>Depth-accurate reflections.</p></div>
+<div class="slider container" style="aspect-ratio: 43/18">
+  <div class="slider__img slider__img-after">
+    <p>MSADOF</p>
+    <img src="../../Images/MSADOF/comp_trefl_MSADOF.jpg" />
+  </div>
+  <div class="slider__img slider__img-before">
+    <p>Traditional depth-based DOF</p>
+    <img src="../../Images/MSADOF/comp_trefl_CineDOF.jpg" />
+  </div>
+  <input type="range" min="0" max="100" value="50" step="0.01" 
+    id="slider" class="slider__input" 
+    autocomplete="off" onwheel="this.blur()" 
+  />
+</div>
+<div class="figure"><p>Layered defocusing of transparent and translucent materials.</p></div>
+<hr />
+<h2 id="installation--initial-setup">Installation &amp; initial setup<a class="headerlink" href="#installation--initial-setup" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p><code>MSADOF_Beta_0.9.2.rar</code> contains one file and two folders:</p>
+<ul>
+<li><code>MSADOF.addon</code> is the add-on itself. </li>
+<li><code>reshade-shaders</code> is a folder that contains necessary ReShade shaders for the add-on to function.</li>
+<li><code>MSADOF</code> is a folder that contains some default extras for MSADOF to use.</li>
+</ul>
+<p><strong>Standard install:</strong>  </p>
+<ol>
+<li>Merge all files into the same folder as your ReShade DLL.</li>
+<li>Launch game.</li>
+</ol>
+<p><strong>Custom install:</strong>  </p>
+<ul>
+<li>Merge <code>MSADOF.addon</code> to the same folder as your ReShade DLL.  </li>
+<li>Merge <code>MSADOF.fx</code> and <code>MSADOF.fxh</code>, both found in <code>reshade-shaders</code>, to your custom ReShade install.  </li>
+<li>The <code>MSADOF</code> folder can be placed anywhere convenient. It is also entirely optional to install, as the add-on can be configured to find / use any other folder on your system.  </li>
+</ul>
+<p>Once installed, upon opening the ReShade GUI, you will now see a new window. This is where you will control the bulk of MSADOF. You must also enable <code>MSADOF_ADDON [MSADOF.fx]</code> in your shaders list and drag it all the way to the bottom of the list. Depth buffer access is necessary for the full functionality of the add-on. The add-on should also show up under the <em>Add-ons</em> tab of the ReShade GUI.</p>
+<p>For the add-on to function as intended, it's typically necessary to enable VSync or an FPS cap of around 30 in your game. This ensures consistent frame pacing for clean results. Motion blur should also be disabled.</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p><code>MSADOF.addon</code> must be renamed to <code>IgcsConnector.addon</code> to work in <em>The Witcher 3: Wild Hunt</em>. This is currently the only known occurrence of this exception.  </p>
+</div><hr />
+<h2 id="list-of-preconfigured-values">List of preconfigured values<a class="headerlink" href="#list-of-preconfigured-values" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>As setting MSADOF up from scratch can be tricky, this is a compilation of known MSADOF values for games that have been tested. With the GUI open, switch from the <code>Photography Mode</code> tab to the <code>Tweaking Mode</code> tab. Scroll down and expand <strong>Game Adjustments</strong> to add these values. You may also have to change some values in <strong>DOF Settings</strong>.</p>
+<p><details><summary class=important>View list</summary></p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The <em>Frames to skip</em> parameter is dependent on your own hardware and the current performance of the game. Tweak the value if you notice that the image isn't sharp or if there are <a href="#calibrating-the-focus-plane">visible rings</a> forming.</p>
+</div><table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Game</th>
+	<th>Near Plane</th>
+	<th>FOV</th>
+	<th>Variable</br>Near Plane</th>
+	<th>Camera</br>Multiplier</th>
+	<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>A Plague Tale: Requiem</td>
+	<td>0.0490</td>
+	<td>180</td>
+	<td></td>
+	<td>0.001</td>
+	<td>The near plane value only works reliably in photomode.</td>
+</tr>
+<tr>
+	<td>Ace Combat 7: Skies Unknown</td>
+	<td>1.0000</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Aliens: Fireteam Elite</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Assassin's Creed Odyssey</td>
+	<td>0.0995</td>
+	<td>180</td>
+	<td></td>
+	<td>0.001</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Atomic Heart</td>
+	<td>2.0000</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Assassin's Creed Origins</td>
+	<td>0.0995</td>
+	<td>180</td>
+	<td></td>
+	<td>0.001</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Assassin's Creed Valhalla</td>
+	<td>0.0995</td>
+	<td>180</td>
+	<td></td>
+	<td>0.001</td>
+	<td>TAA can only be disabled via <a href="https://www.pcgamingwiki.com/wiki/Assassin%27s_Creed_Valhalla#Anti-aliasing_.28AA.29" target="_blank">HxD</a>.</td>
+</tr>
+<tr>
+	<td>Batman: Arkham Knight</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Beyond a Steel Sky</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Borderlands 3</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Blind Fate: Edo no Yami</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Century: Age of Ashes</td>
+	<td>5.625</td>
+	<td>180</td>
+	<td></td>
+	<td>0.1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Chernobylite</td>
+	<td>1.0000</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CHORVS</td>
+	<td>56.500</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Close to the Sun</td>
+	<td>1.0000</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.001</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Code Vein</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>CRISIS CORE –FINAL FANTASY VII– REUNION</td>
+	<td><details><summary class=important> <font size="-1">View values by chapter</font></summary>Prologue cutscenes: 10 <br>Prologue gameplay: 0.65248 <br>Chapter 1 cutscenes: 27.95 <br>Chapter 2 cutscenes: 16.9 <br>Chapter 2 gameplay: 0.562970 <br>Chapter 3 cutscenes city: 22.7 <br>Chapter 3 Mako reactor: 84.5 / 16.76</details></td>
+	<td><details><summary class=important> <font size="-1">View values by chapter</font></summary>Prologue cutscenes: 130 <br>Prologue gameplay: 180 </details></td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td>The near plane value (as well as the fov value) changes between chapters and between gameplay and cutscenes, so change the values accordingly. Also, chapter 2 has a higher chance of crashing when hotsampling.</td>
+</tr>
+<tr>
+	<td>Cyberpunk 2077</td>
+	<td>0.0200</td>
+	<td>180</td>
+	<td></td>
+	<td>0.001</td>
+	<td>Might require raytracing / a low framerate under VSync targets.</td>
+</tr>
+<tr>
+	<td>Days Gone</td>
+	<td>9.9500</td>
+	<td>320</td>
+	<td></td>
+	<td>0.100</td>
+	<td>Setting AA to 0 will result in a loss of HUD and console access.</td>
+</tr>
+<tr>
+	<td>Dead Island 2</td>
+	<td>9.9950</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Dead Space Remake</td>
+	<td>0.055168</td>
+	<td>180</td>
+	<td></td>
+	<td>0.001</td>
+	<td>The Frames to Skip can vary a bit but usually its 1 - 3.</td>
+</tr>
+<tr>
+	<td>Death Stranding: Director's Cut</td>
+	<td>0.1123</td>
+	<td>180</td>
+	<td></td>
+	<td>0.001</td>
+	<td>The game will crash after a render in photomode, near plane changes constantly in cutscenes and its recommended to turn on the 30fps cap.</td>
+</tr>
+<tr>
+	<td>Draugen</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ECHO</td>
+	<td>0.5600</td>
+	<td>180</td>
+	<td></td>
+	<td>0.100</td>
+	<td>No custom AR possible.</td>
+</tr>
+<tr>
+	<td>Elden Ring</td>
+	<td>0.0500</td>
+	<td>180</td>
+	<td></td>
+	<td>0.001</td>
+	<td>Camera multiplier can change from area to area. <strong>In-game antialiasing can cause blurry results</strong>.</td>
+</tr>
+<tr>
+	<td>Final Fantasy VII Remake Intergrade</td>
+	<td>5.6250</td>
+	<td>180</td>
+	<td></td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Harvestella</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.1-1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Hellblade: Senua's Sacrifice</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Hogwarts Legacy</td>
+	<td>9.9950</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.101</td>
+	<td>It is recommended to turn off VSync.</td>
+</tr>
+<tr>
+	<td>Kena: Bridge of Spirits</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td>The near plane value only works reliably in photomode.</td>
+</tr>
+<tr>
+	<td>Life is Strange: True Colors</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Marvel's Spider-Man Remastered</td>
+	<td>0.0775</td>
+	<td>140</td>
+	<td>✔</td>
+	<td>0.001</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Mortal Shell</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MotoGP 19</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Observer: System Redux</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Omno</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>OverDrift Festival</td>
+	<td>5.624</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Resident Evil 2	(DX12)</td>
+	<td>0.0100</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.001</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Resident Evil 3	(DX12)</td>
+	<td>0.0100</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.001</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Resident Evil 4</td>
+	<td>0.0100</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.001</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Returnal</td>
+	<td>9.9950</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td>Works at 16:9, different AR's need different frameskips.</td>
+</tr>
+<tr>
+	<td>SCARLET NEXUS</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Scorn</td>
+	<td>3.0000</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.010</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Sifu</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Space Hulk: Deathwing</td>
+	<td>5.0</td>
+	<td>180</td>
+	<td></td>
+	<td>0.100</td>
+	<td>May need to play with the FramesToSkip value per situation. I found that setting of 1 worked most times but 0 was sometimes required to stop the fuzzy donuts.</td>
+</tr>
+<tr>
+	<td>Spirit of the North</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Star Wars Jedi: Fallen Order</td>
+	<td>9.9995</td>
+	<td>180</td>
+	<td></td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Stray</td>
+	<td>0.5625</td>
+	<td>180</td>
+	<td></td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Tales of Arise</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Tell Me Why</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>The Ascent</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>The Last of Us Part I</td>
+	<td>0.135000</td>
+	<td>180</td>
+	<td></td>
+	<td>0.001</td>
+	<td>For cutscenes and photomode you might want to use 0.121500 as a near plane value. Also make sure to disable TAA.</td>
+</tr>
+<tr>
+	<td>The Medium</td>
+	<td>2.0000</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>The Outer Worlds</td>
+	<td>1.2700</td>
+	<td>180</td>
+	<td></td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>The Pathless</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>The Shore</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>The Sojourn</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>The Witcher 3: Wild Hunt</td>
+	<td>0.2000</td>
+	<td>180</td>
+	<td></td>
+	<td>0.001</td>
+	<td>Near plane may switch to 0.4 in cutscenes.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Twin Mirror</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Uncharted 4</td>
+	<td><details><summary class=important> <font size="-1">View values by chapter</font></summary>Chapter 1: 0.2385 <br>Chapter 2: 0.2400 <br>Chapter 3: 0.1000 <br>Chapter 4: 0.2400 <br>Chapter 5: 0.2400 <br>Chapter 6: 0.2400 <br>Chapter 7: 0.2400 <br>Chapter 15: 0.2400 <br>Chapter 16: 0.2400 <br>Chapter 17: 0.27-0.29 <br>Chapter 18: 0.235-0.24 <br>Chapter 20: 0.235-0.24 <br>Chapter 22: 0.20 <br>Epilogue: 0.20</details></td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td>The near plane values change between chapters (and sometimes even so within the same chapter), so change the value accordingly. Also, the value might change when using different aspect ratios. If the results are blurry when changing AR, make sure to uncheck and recheck the variable near plane box, and then refocus. If that doesn't fix it then start playing with the near plane value itself.</td>
+</tr>
+<tr>
+	<td>Vampire: The Masquerade - Swansong</td>
+	<td>1.0000</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Visage</td>
+	<td>9.9965</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Way of the Hunter</td>
+	<td>1.0000</td>
+	<td>180</td>
+	<td>✔</td>
+	<td>0.100</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Have some game adjustments values that you want to include? Head up to the <a href="https://github.com/framedsc/Sitesource/issues" target="_blank">issue site page</a> and create an issue with the values, or <a href="https://framedsc.com/index.htm" target="_blank">contact one of the mods</a>.</em>
+</details></p>
+<p>If you have to setup &amp; adjust for a new game, follow the <a href="#adjusting-for-a-new-game">advanced setup section</a> further below.</p>
+<hr />
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The add-on has four tabs in total. <code>Photography Mode</code> and <code>Tweaking Mode</code> are where you can expect to spend most of your time. <code>Photography Mode</code> offers a simple UI for controlling all the necessary values once the add-on is configured, while <code>Tweaking Mode</code> is a more advanced set of controls for configuration and tweaking. <code>Shape Settings</code> and <code>Settings</code> are additional configuration tabs for setting up bokeh shape and general setup for the add-on itself.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Don't see all four tabs? The camera tools have to be injected first!  </p>
+</div><p>Once the add-on is configured and with the freecam active, press <code>Ctrl+B</code> to begin a render. The final image is automatically saved to the same folder where your game EXE is located, but a custom save path can be set in the <code>Settings</code> tab.</p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>The add-on also supports hotsampling! Simply start the render after hotsampling.</p>
+</div><hr />
+<h2 id="photography-mode">Photography Mode<a class="headerlink" href="#photography-mode" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>This is the tab for controlling the add-on in a simplified manner. The controls are similar to that of a real camera. Values set in <code>Tweaking Mode</code> override those set in this mode.</p>
+<h3 id="cameralens-settings">Camera/Lens Settings<a class="headerlink" href="#cameralens-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Settings_CameraLens.png" alt="Screenshot of the Camera/Lens UI" class="shadowed autosize" width="525" height="381" /></p>
+<p><strong>Focal Length</strong><br />
+The add-on translates the FOV it receives from the camera tool to focal length in 35mm equivalent. Useful for approximating real life focal lengths.</p>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p><strong>This isn't an accurate value!</strong><br />
+The camera tools, and by extension MSADOF itself, have no knowledge of the game world's scale in relation to real life. Game engines also rarely make obvious whether its primary FOV component is horizontal or vertical (or even diagonal!). This means that while MSADOF is physically-based, it cannot accurately reproduce real-world figures and would be unreliable in use as a real-world simulation.</p>
+</div><p><strong>Aperture Size</strong><br />
+A readout of how large the bokeh size will be. Translates to <em>Shape size</em> in <code>Tweaking Mode</code>.</p>
+<p><strong>Sensor Size</strong><br />
+This is a dropdown list of sensor sizes for the add-on to simulate. Acts as a 'multiplier' to aperture size, picking a smaller sensor with a higher crop factor (CF value) makes bokeh circles smaller and vice versa. </p>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Sensor-Size-01.jpg" alt="Sensor Sizes" class="shadowed autosize" width="1680" height="700" /></p>
+<p><strong>Aspect Ratio</strong><br />
+This is a dropdown list of some common filmic aspect ratios. These affect the shape of your bokeh circles. Useful for quickly switching from spherical bokeh to anamorphic oval bokeh.</p>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Aspect-Ratio-01.jpg" alt="Aspect Ratio" class="shadowed autosize" width="1680" height="700" /></p>
+<p><strong>f-Number</strong><br />
+This sets the aperture size. A smaller f-Number means larger bokeh.</p>
+<p><strong>Autofocus (Middle Mouse Button)</strong><br />
+This toggle sets an autofocus point when the middle mouse button is held down. The add-on will continue to autofocus on that spot as long as the ReShade GUI is open.</p>
+<p><strong>Focus distance</strong><br />
+This sets the focal plane, allowing you to focus manually. The arrows on the right change the step size of the slider.</p>
+<p><strong>Blur Quality</strong><br />
+This sets how many samples are taken by the add-on, drastically affecting render times. Increase it if you notice undersampling (each point is clearly visible), decrease it if render times are taking too long. Translates to <em>Number of rings</em> in <code>Tweaking Mode</code>.</p>
+<h3 id="helpers-settings">Helpers Settings<a class="headerlink" href="#helpers-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><strong>Show focus plane</strong><br />
+Overlays a plane on screen. Where the plane cuts the scene is where the focus distance is set.</p>
+<p><strong>Show rendering progress</strong><br />
+Displays a progress bar.</p>
+<hr />
+<h2 id="tweaking-mode">Tweaking Mode<a class="headerlink" href="#tweaking-mode" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>This is the tab for controlling the add-on in an advanced manner. </p>
+<h3 id="dof-settings">DOF Settings<a class="headerlink" href="#dof-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Settings_DOF.png" alt="Screenshot of the DOF UI" class="shadowed autosize" width="525" height="147" /></p>
+<p><strong>Shape size</strong><br />
+This controls how large your bokeh will be. </p>
+<p><strong>Random point rendering</strong><br />
+Instead of a progressive spiral sampling path, this causes the add-on sample randomly. This can be useful for previewing how large the resulting bokeh will be, or can be used to mitigate animating background elements interrupting the render.<br />
+<em>This feature is not currently working as intended and occasionally produces ghosts of the focus plane.</em></p>
+<div class="figure">
+<img src="../../Images/MSADOF/MSADOF_Addon_Sampling.webp" alt="Animated image of the difference between the two sampling methods" title="This example has been sped up by 8x." class="shadowed autosize" />
+<p>This example has been sped up by 8x.</p>
+</div>
+<p><strong>Focus precise at close range</strong><br />
+This changes the scaling of the focus distance slider. Higher values mean that the focus distance slider can operate in even smaller steps closer to the camera. This is useful for portraits, where extra focus precision is desired.</p>
+<p><strong>Frames to skip</strong><br />
+Skips camera movement of every few frames to make accumulation more consistent. Depending on the performance of your game, this value might have to be changed. If you notice that the add-on is drawing rings/donuts on your focus plane, this value likely has to be changed.</p>
+<p><strong>Frames to wait</strong><br />
+Similar to above, this value should only be changed if you notice that the focus plane isn't properly sharp.</p>
+<h3 id="game-adjustments">Game Adjustments<a class="headerlink" href="#game-adjustments" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Settings_GameAdjustments.png" alt="Screenshot of the Game Adjustments UI" class="shadowed autosize" width="525" height="220" /></p>
+<p>This category can mostly be left alone, as it is for first time configuration of a new game. <a href="#adjusting-for-a-new-game">See the section below</a> on how to tweak it.</p>
+<p><strong>Camera movement multiplier</strong><br />
+Sets how fast the camera will move based on a multiplier applied to camera coordinate scale. Turn this up to exaggerate shape size, or turn it down to reduce it.</p>
+<p><strong>Max FOV Value</strong><br />
+The maximum FOV value that MSADOF will use for its calculations.</p>
+<p><strong>Variable near plane</strong><br />
+Changes how <em>Camera near plane</em> is calculated if a change in aspect ratio causes <em>Camera near plane</em> to change as well.</p>
+<p><strong>Camera near plane</strong><br />
+Offsets the distance of the near plane from the in-game camera. This is primarily used in aligning the focus plane to a known focus distance.</p>
+<p><strong>Cache current value</strong><br />
+Writes the current near plane value to <code>MSADOF_CACHE.ini</code> and displays the cached values in a new list just directly above this category. This is useful for games that have changing <em>Camera near plane</em> values, like <em>The Witcher 3</em>.</p>
+<h4 id="unused-settings">Unused settings<a class="headerlink" href="#unused-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>This category does not need to be tweaked.</p>
+<p><strong>Flip X / Y</strong><br />
+Fixes bokeh shape based on camera movement axes. The default setting of flipped X and unflipped Y appears to be standard across all games.</p>
+<hr />
+<h2 id="shape-settings">Shape settings<a class="headerlink" href="#shape-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Settings_ShapeSettings.png" alt="Screenshot of the Shape UI" class="shadowed autosize" width="848" height="384" /></p>
+<p>This tab configures the shape of the bokeh circles. A preview of the shape can be seen on the right side of the UI.</p>
+<p><strong>Preview size</strong><br />
+Changes the scale of each point only in the preview window beside it.</p>
+<p><strong>Points on first ring</strong><br />
+This sets the density of the points on each ring. This affects render time.</p>
+<p><strong>Number of rings</strong><br />
+Changes the number of rings in each bokeh circle. This value affects render time. Increase it if you notice undersampling (each point is clearly visible), decrease it if render times are taking too long.</p>
+<p><strong>Anamorphic scale</strong><br />
+Stretches/squashes the bokeh circle. Useful for replicating oval bokeh characteristic of anamorphic lenses.</p>
+<p><strong>Offset value / Offset type</strong><br />
+Affects the alignment of every point relative to the previous ring. Tweak if there's an obvious pattern forming in your bokeh.</p>
+<p><strong>HDR Log Whitepoint</strong><br />
+Affects how bright pixels stack atop each other during the accumulation process. The default value of 2.0 provides the most natural highlighting.</p>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Whitepoint-01.jpg" alt="HDR Log Whitepoint" class="shadowed autosize" width="1680" height="700" /></p>
+<p><strong>Use custom shape image</strong><br />
+Checking this allows MSADOF to sample custom images that drive fringing and bokeh shape, allowing you to mimic bladed apertures or other more creative effects.</p>
+<div class="figure">
+<img src="../../Images/MSADOF/MSADOF_Addon_Bokeh_Hex.jpg" alt="hexagonal bokeh" title="6-bladed aperture shape input." class="shadowed autosize" width="1720" height="720" />
+<p>6-bladed aperture shape input.</p>
+</div>
+<div class="figure">
+<img src="../../Images/MSADOF/MSADOF_Addon_Bokeh_Hearts.jpg" alt="heart bokeh!" title="Custom heart shape input." class="shadowed autosize" width="1720" height="720" />
+<p>Custom heart shape input.</p>
+</div>
+<p>A higher ring count is typically necessary for detailed shapes to be accurately sampled. The shape preview on the right is useful for determining if the shape is sufficiently detailed.</p>
+<p>Due to how the add-on works, shaped bokeh in the near plane will be upside-down.</p>
+<p><strong>Use colors</strong><br />
+When this is checked, the render will sample the input colors of the bokeh shape. This can be used to introduce chromatic fringing to bokeh, or with certain inputs, some unique depth separation effects.</p>
+<div class="slider container" style="aspect-ratio: 43/18">
+  <div class="slider__img slider__img-after">
+    <p></p>
+    <img src="../../Images/MSADOF/comp_Use-colors_Y.jpg" />
+  </div>
+  <div class="slider__img slider__img-before">
+    <p></p>
+    <img src="../../Images/MSADOF/comp_Use-colors_N.jpg" />
+  </div>
+  <input type="range" min="0" max="100" value="50" step="0.01" 
+    id="slider" class="slider__input" 
+    autocomplete="off" onwheel="this.blur()" 
+  />
+</div>
+<div class="figure"><p>It might be hard to spot, but the bokeh circles now have a subtle blue fringe.</p></div>
+<div class="figure">
+<img src="../../Images/MSADOF/MSADOF_Addon_Bokeh_CMY.jpg" alt="colorful bokeh!" title="A cyan-magenta-yellow 'tri-aperture' input was used here to create... whatever this is." class="shadowed autosize" width="1720" height="720" />
+<p>A cyan-magenta-yellow 'tri-aperture' input was used here to create... whatever this is.</p>
+</div>
+<p><strong>Shape search path</strong><br />
+The file path to the folder that MSADOF will look for images in.</p>
+<p><strong>Shape name</strong><br />
+The name of the image file for MSADOF to load as a custom shape. The file must be in PNG, JPG or BMP format.</p>
+<p><strong>Load shape</strong><br />
+This button must be pressed to load the image into MSADOF. The preview window on the right will update accordingly.</p>
+<p><strong>Black threshold</strong><br />
+The luminance value of the darkest pixel that MSADOF will sample. Anything darker than this value will be skipped in the render to save on render time.</p>
+<h3 id="more-bokeh-shapes">More bokeh shapes<a class="headerlink" href="#more-bokeh-shapes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>While the standard MSADOF download comes with a few custom shapes for you to try out, this is a pack of additional shapes curated by moyevka for you to play with!</p>
+<p><strong>Fun shapes!</strong><br />
+The <code>bokeh_shapes\Fun</code> folder includes a handful of creative shapes such as the fringed heart seen above and some common &quot;bokeh kit&quot; shapes like stars and other symbols. Also included are some tinted multi-apertures to recreate anaglyph-style images. </p>
+<div class="figure">
+<img src="../../Images/MSADOF/MSADOF_Addon_Bokeh_Anaglyph.jpg" alt="trippy bokeh!" title="For that one guy that still owns a pair of those cellophane 3D glasses." class="shadowed autosize" width="1720" height="720" />
+<p>For that one guy that still owns a pair of those cellophane 3D glasses.</p>
+</div>
+<p><strong>Lens Samples</strong><br />
+The <code>bokeh_shapes\Lens Samples</code> folder is a set of inputs sampled from real lenses at different focal lengths and apertures, curating a repository of realistic bladed aperture shapes and bokeh fringes. </p>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Aperture_Sampling.jpg" alt="Custom aperture sampling" class="shadowed autosize" width="1680" height="700" /></p>
+<p><center> <a href="https://mega.nz/file/jJMGwQSQ#TuXZHXUBfBE0ygQigpTp61fPdvIFluyhALs8LNjIh18" target="_blank"><b>Download</b></a> </center></p>
+<p><em>Bokeh measurements by <a href="https://www.flickr.com/photos/46852257@N07/albums" target="_blank">MattGunn2010 on Flickr</a>, from <a href="https://www.pentaxforums.com/forums/10-pentax-slr-lens-discussion/81530-lens-bokeh-research-help.html#post943257" target="_blank">PentaxForums</a>. The sets have been edited to ensure complete compatibility with MSADOF.</em></p>
+<h4 id="making-your-own-custom-shapes">Making your own custom shapes<a class="headerlink" href="#making-your-own-custom-shapes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>MSADOF accepts any square image as a custom shape input, however it has to fit within the bounds of a circle that fits within the square. </p>
+<p><img src="../../Images/MSADOF/bokeh_shapes_circle.png" alt="An off-center heart and reuleaux triangle that are revealed to fit within a circle" class="shadowed autosize smaller" width="1024" height="512" /></p>
+<p>These heart and reuleaux triangle inputs may look strangely off-centered compared to their bounding squares, but circle overlays reveal that they fit nicely within the circular bounds that MSADOF will consider during custom image sampling.</p>
+<h3 id="additional-info">Additional info<a class="headerlink" href="#additional-info" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Settings_AddInfo.png" alt="Screenshot of the Additional Info category" class="shadowed autosize" width="311" height="106" /></p>
+<p>This category displays miscellanous information.</p>
+<p><strong>FOV</strong><br />
+Field of view value as obtained through the camera tools.</p>
+<p><strong>Global opacity</strong><br />
+This controls the global opacity of all ReShade windows (overrides <em>Global alpha</em> in the ReShade Settings tab).<br />
+<em>This value is not written to <code>ReShade.ini</code> and reloading ReShade will restore your initial Global alpha value.</em> </p>
+<hr />
+<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p><img src="../../Images/MSADOF/MSADOF_Addon_Settings_Settings.png" alt="Screenshot of the Settings tab" class="shadowed autosize" width="540" height="188" /></p>
+<p>This is the tab where the add-on can be further configured.</p>
+<p><strong>Enable shape preview</strong><br />
+Toggles the shape preview window on the right.</p>
+<p><strong>Show focus plane</strong><br />
+Overlays a plane on screen. Where the plane cuts the scene is where the focus distance is set.</p>
+<p><strong>Show rendering progress</strong><br />
+Displays a progress bar.</p>
+<p><strong>Save 32-bit EXR</strong><br />
+As the accumulation process can introduce banding, this option stacks the accumulated frames into a higher-precision buffer. This buffer is saved into a high bit-depth (32-bit) EXR, which is able to store 65536x more colours than the standard BMP. This results in much smoother gradients with zero banding, and comes with the added benefit of having much more colour data for colour grading in post. The saved EXR requires <a href="#processing-saved-exrs">further post-processing</a> to produce the intended result.</p>
+<div class="slider container" style="aspect-ratio: 43/18">
+  <div class="slider__img slider__img-after">
+    <p>Processed EXR</p>
+    <img src="../../Images/MSADOF/comp_capture-EXR.png" />
+  </div>
+  <div class="slider__img slider__img-before">
+    <p>BMP capture</p>
+    <img src="../../Images/MSADOF/comp_capture-BMP.png" />
+  </div>
+  <input type="range" min="0" max="100" value="50" step="0.01" 
+    id="slider" class="slider__input" 
+    autocomplete="off" onwheel="this.blur()" 
+  />
+</div>
+<div class="figure"><p>A colour-graded shot from <i>Stray</i>. Banding is visible in the left half of the image.</p></div>
+<p><strong>Screenshot path</strong><br />
+A custom screenshot save path can be pasted here. <strong>The path has to end with <code>\</code>.</strong></p>
+<hr />
+<h2 id="shader-settings">Shader settings<a class="headerlink" href="#shader-settings" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p><img src="../../Images/MSADOF/MSADOF_Shader_Settings.png" alt="Screenshot of the MSADOF shader UI" class="shadowed autosize" width="896" height="261" /></p>
+<p><code>MSADOF_ADDON [MSADOF.fx]</code> includes additional controls that affect the accumulation process as well as some basic quality of life features.</p>
+<p><strong>Max Distance</strong><br />
+Max distance used by the add-on. Not necessary to tweak.</p>
+<p><strong>Progress Bar Position</strong><br />
+This adjusts the position of the progress bar when <em>Show rendering progress</em> is toggled. Useful for monitoring rendering progress with hotsampled windows, for example.</p>
+<p><strong>Pixel Interpolation</strong><br />
+Switches accumulation interpolation type to pixel. Affects the look of sampled points in bokeh, especially at a low blur quality.</p>
+<p><strong>Focus Plane Color</strong><br />
+Adjusts the color and opacity of the focus plane when <em>Show focus plane</em> is toggled.</p>
+<p><strong>Brightness Threshold for colored bokeh shape</strong><br />
+Sets a threshold for the brightest pixel sampled from a colored bokeh shape. This affects the brightness of accumulated bokeh.</p>
+<p><strong><code>LINEAR_INTERPOLATION</code></strong><br />
+Switches accumulation interpolation type to linear. Affects the look of sampled points in bokeh, especially at a low blur quality.</p>
+<p><strong><code>SAMPLING_RES_MULT</code></strong><br />
+Sets a multiplier to construct a higher resolution image out of the data accumulated from the camera movements. Affects file save times.<br />
+<em>This feature is currently experimental and does not necessarily result in higher image quality.</em></p>
+<hr />
+<h2 id="adjusting-for-a-new-game">Adjusting for a new game<a class="headerlink" href="#adjusting-for-a-new-game" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>If you're playing a game that does not have known values yet or the values produce wrong results on your end, this is the process of setting up the <em>Game Adjustments</em> tab.</p>
+<h4 id="max-fov-value">1. Max FOV Value<a class="headerlink" href="#max-fov-value" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>Set your game to run in a 1:1 aspect ratio. With <em>Additional info</em> expanded, keep your eye on <em>FOV</em>. With the tool's free camera active, zoom out until the image flips. Note the FOV value at which the flip occurs - this is the <strong>Max FOV Value</strong>.</p>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This value is typically 180 and shouldn't need to be tweaked unless you figure something's wrong.</p>
+</div><h4 id="calibrating-the-focus-plane">2. Calibrating the focus plane<a class="headerlink" href="#calibrating-the-focus-plane" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>This step requires quite a bit of trial &amp; error, as it involves messing with <em>Focus distance</em> until the focus plane is found. A high amount of blur (large <em>Shape size</em> / <em>Camera movement multiplier</em>) is recommended to help pinpoint the focus point.</p>
+<p>If you're struggling to find an area in focus and the results are consistently blurry, you might have to configure <em>Frames to skip</em>. The add-on drawing rings/donuts is usually a tell-tale sign of this.</p>
+<p><img src="../../Images/MSADOF/ringing.png" alt="ringing example" class="shadowed autosize" width="237" height="244" /></p>
+<p>Once you've managed to find the focus plane, adjust <strong>Camera near plane</strong> with <em>Show focus plane</em> ticked until the focus helper plane aligns with the actual focus plane. </p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>Motion blur (and some TAA implementations) can interfere with this part, causing your results to be blurry no matter what. Be sure to disable them if you're still having trouble.</p>
+</div><h4 id="variable-near-plane">3. Variable Near Plane<a class="headerlink" href="#variable-near-plane" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>This checkbox should be ticked if the focus helper no longer aligns with the focus distance when the aspect ratio is changed. </p>
+<h4 id="done">Done!<a class="headerlink" href="#done" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>This process acts as calibration of the focus helper plane to the actual focus plane, so it can be used to help you set a focus point.</p>
+<h3 id="video-example">Video Example<a class="headerlink" href="#video-example" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<div class="figure">
+<a href="https://youtu.be/63B-9VJBut0" target="_blank"><img src="https://i.ytimg.com/vi_webp/63B-9VJBut0/maxresdefault.webp" alt="MSADOF example video" style="aspect-ratio:43/18; object-fit:cover; width:100%" /></a>
+<p>Does not cover <i>Max FOV Value</i> or <i>Variable near plane</i>.</p>
+</div>
+<hr />
+<h2 id="tips--tricks">Tips &amp; Tricks<a class="headerlink" href="#tips--tricks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="best-case-scenario">Best-case scenario<a class="headerlink" href="#best-case-scenario" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>To get the best possible result out of this add-on, it's best to find a game that can perfectly timestop with no significant jitter, foliage sway, or anything that could interrupt the render. </p>
+<p>Raytracing / specular highlight noise is often the cause of 'dirty' bokeh circles.</p>
+<h3 id="preview-bokeh-size">Preview bokeh size<a class="headerlink" href="#preview-bokeh-size" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>You can perform a quick preview of how large your bokeh shape size will be by doing a render with a very low <em>Number of rings</em> or at a lower resolution. <em>Random point rendering</em> is also very useful for this.</p>
+<h3 id="antialiasing--image-sharpness">Antialiasing &amp; image sharpness<a class="headerlink" href="#antialiasing--image-sharpness" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>The camera-based nature of the shader means it does its own antialiasing! AA can be entirely disabled in your game to get a sharper image. This also works great with games that have temporally-dependent shaders too, like <em>Cyberpunk 2077's</em> hair shading, as MSADOF is technically a temporal technique as well.</p>
+<p>It is <strong>not</strong> recommended to have a sharpening pass prior to the render. Sharpening halos may become exaggerated and/or show up in the accumulation process.</p>
+<h3 id="have-fun-with-shaders">Have fun with shaders!<a class="headerlink" href="#have-fun-with-shaders" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>This add-on works great with ReShade shaders too! In fact, using a LUT prior to the render and saving the result in EXR can reduce colour banding, thanks to the stacking process. Lens distortion effects like the fantastic <a href="https://github.com/Fubaxiusz/fubax-shaders/blob/master/Shaders/PerfectPerspective.fx" target="_blank"><code>PerfectPerspective.fx</code></a> can also be captured.</p>
+<hr />
+<h2 id="processing-saved-exrs">Processing saved EXRs<a class="headerlink" href="#processing-saved-exrs" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Saved EXRs are in linear gamma (gamma 1.0). This causes them to look 'washed-out' when viewed with an image viewer. Most image viewers &amp; converters will perform gamma correction for you when compressing them to an 8/16-bit format (e.g. opening it in Photoshop then immediately saving it as a PNG), resulting in an image with the expected colours. </p>
+<p>If you would like to edit these 32-bit colours, a simple gamma correction of 0.454545... (repeating) returns an image at gamma 2.2, which is close enough to the original colours. This can be done with <em>Image</em> &gt; <em>Adjustments</em> &gt; <em>Exposure...</em> or with the Exposure adjustment layer in Photoshop, for example.</p>
+<div class="figure">
+<img src="../../Images/MSADOF/MSADOF_Addon_EXR-Processing.jpg" alt="Aspect Ratio" title="Some advanced editors like Nuke have viewport display gamma sliders that can be used instead." class="shadowed autosize" width="1245" height="400" />
+<p>Some advanced editors like Nuke have viewport display gamma sliders that can be used instead.</p>
+</div>
+<p>You can then perform your edits atop this correction layer. Remember to disable it before exporting your final result to prevent an overdarkened image.</p>
+<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Nerd stuff: This isn't really an accurate process. Dividing gamma by 0.454545... only approximates the sRGB gamma curve, which is a little more complicated than gamma 2.2. If you really wanted an accurate conversion back to sRGB, you'd need to apply a colorspace transform from linear to sRGB. More advanced editors that deal in colorspaces will have a featureset to handle this. A profile can also be assigned to the image, such that it's always interpreted as an sRGB image. For the most part though, unless you <em>really need</em> the original authentic colours, I wouldn't go through all this hassle and do my colour grading work atop this basic gamma math.<br />
+<font size=-1>this is based off my rough understanding of the hell that is colorspaces :) if you think this is all wrong, i'd gladly be corrected.</font></p>
+</div><hr />
+<p><em>last updated 29th October 2022</em><br />
+<em>images provided and written by <a href="https://twitter.com/moyevka" target="_blank">moyevka</a></em>  </p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+&copy 2019-2024 FRAMED. All rights reserved.
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/modernizr-2.8.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/comparisons.js"></script>
+
+</body>
+</html>
