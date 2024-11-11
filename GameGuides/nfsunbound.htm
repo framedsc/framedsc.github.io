@@ -96,6 +96,8 @@
 
 <li class="tocentry"><a href="#reshade">Reshade</a></li>
 
+<li class="tocentry"><a href="#modding-troubleshooting">Modding troubleshooting</a></li>
+
 <li class="tocentry"><a href="#useful-links">Useful Links</a></li>
 
 </ul>
@@ -329,7 +331,7 @@
 </tr>
 <tr>
 	<td>Game version</td>
-	<td>Vol.3</td>
+	<td>Vol.8</td>
 </tr>
 </tbody>
 </table>
@@ -337,20 +339,23 @@
 <ul>
 <li><a href="https://nfsmods.xyz/mod/4364" target="_blank">Camera toolkit by ARCHIE</a><br />
 <strong>Features</strong>: Tool to control in-game camera and its various features.</li>
-<li><a href="https://github.com/CadeEvs/FrostyToolsuite/tree/1.0.7" target="_blank">Frosty Mod Manager 1.0.7</a>
-<strong>Feature</strong>: Utility program that allows you to organize and manage mods.</li>
-<li><a href="https://github.com/Dyvinia/DatapathFixPlugin/releases" target="_blank">DatapathFix</a>
-<strong>Feature</strong>: Plugin for FMM to fix an issue with modding the game.</li>
+<li><a href="https://github.com/CadeEvs/FrostyToolsuite/tree/1.0.7" target="_blank">Frosty Mod Manager 1.0.7</a><br />
+<strong>Features</strong>: Utility program that allows you to organize and manage mods.</li>
+<li><a href="https://github.com/Dyvinia/DatapathFixPlugin/releases" target="_blank">DatapathFix</a><br />
+<strong>Features</strong>: Plugin for FMM to fix an issue with modding the game.</li>
 </ul>
 <h2 id="modifications">Modifications<a class="headerlink" href="#modifications" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
+<li><a href="https://nfsmods.xyz/mod/2106" target="_blank">UNITE Unbound</a><br />
+<strong>Features</strong>: A modpack combining the best mods that improve your game drastically.</li>
 <li><a href="https://www.nexusmods.com/needforspeedunbound/mods/29" target="_blank">Unbound Remix</a><br />
 <strong>Features</strong>: Game enhancement mod for enhancing the customization and gameplay experience.</li>
-<li><a href="https://nfsmods.xyz/mod/4801" target="_blank">Unlock Everything</a><br />
-<strong>Features</strong>: Unlocks every in-game item.</li>
+<li><a href="https://www.nexusmods.com/needforspeedunbound/mods/3" target="_blank">Ultimate Customization</a><br />
+<strong>Features</strong>: Adds hidden parts and improves other customization options.</li>
+<li><a href="https://www.nexusmods.com/needforspeedunbound/mods/251" target="_blank">No Visual Damages</a></li>
 <li>
-<p><a href="https://www.nexusmods.com/needforspeedunbound/mods/3" target="_blank">Ultimate Customization</a><br />
-<strong>Features</strong>: Adds hidden parts and improves other customization options.</p>
+<p><a href="https://www.nexusmods.com/needforspeedunbound/mods/11" target="_blank">Teleport Anywhere</a>  
+</p>
 </li>
 <li>
 <p><a href="https://framedsc.com/ShaderTogglers/nfs_unbound.ini" target="_blank">Hud Toggle and Cartoon Effect disable</a> requires Reshade 5+ with <a href="../ReshadeGuides/Addons/shader_toggler_repository.htm">Shader Toggler</a></p>
@@ -433,8 +438,12 @@
 </tbody>
 </table>
 <div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>All of the keybinds can be rebound inside the Cam Toolkit.</p>
+</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Freezing the game with Cam Toolkit and hotsampling to a portrait aspect ratio will break the ground reflections, make sure to unfreeze/refreeze the game after hotsampling.</p>
 </div><h2 id="reshade">Reshade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>When hotsampling in built-in photo mode your depth-buffer might change which will require you to manually reselect the correct depth-buffer.</p>
+</div><h2 id="modding-troubleshooting">Modding troubleshooting<a class="headerlink" href="#modding-troubleshooting" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>If you have updated your game <code>together</code> with your mods but it still crashes on loading, delete <code>ModData</code> folder from the main game folder and <code>NFSUnboundSDK.dll</code> from <code>Frosty Mod Manager\Profiles</code> to force it to update the profile SDK (if it hasn't done it automatically).</p>
+</div><div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>If your game doesn't launch (opens EA app and closes), put the game folder as an exclusion in Windows Defender. (this is only one of many work-arounds, it may or may not help your situation).</p>
 </div><h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li><a href="https://www.pcgamingwiki.com/wiki/Need_for_Speed_Unbound" target="_blank">PC Gaming Wiki</a></li>
