@@ -60,11 +60,17 @@
 
 <li class="tocentry"><a href="#gameplay-camera">Gameplay camera</a></li>
 
+<li class="tocentry"><a href="#cloned-camera">Cloned camera</a></li>
+
+<li class="tocentry"><a href="#forcedmatrix-camera">ForcedMatrix camera</a></li>
+
 <li class="tocentry"><a href="#far-and-near-clipping-plane">Far and near clipping plane</a></li>
 
 <li class="tocentry"><a href="#block-input">Block input</a></li>
 
 <li class="tocentry"><a href="#follow-object">Follow object</a></li>
+
+<li class="tocentry"><a href="#look-at-object">Look At object</a></li>
 
 
 
@@ -73,6 +79,8 @@
 <li class="tocentry"><a href="#skipframe">Skipframe</a></li>
 
 
+
+<li class="tocentry"><a href="#serialization">Serialization</a></li>
 
 <li class="tocentry"><a href="#visualizer">Visualizer</a></li>
 
@@ -222,7 +230,7 @@
                 <div role="main">
                     <div class="section">
 <p align="center">
-  <img src="../Images/CinematicUnityExplorerGuide/toplogo.png">
+  <img src="../Images/CinematicUnityExplorerGuide/toplogo.png">
 </p>
 <div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p><strong>Engine versions supported:</strong> Cinematic Unity Explorer supports most Unity versions from 5.2 to 2021+ (IL2CPP and Mono)</p>
 </div><p>The <a href="https://github.com/originalnicodr/CinematicUnityExplorer" target="_blank">Cinematic Unity Explorer</a> is a fork of the excellent UnityExplorer mod made by sinai-dev focused on providing tools for creating marketing material for Unity games, which includes an improved freecam, light control, animators control, LOD and shadows improvements, camera paths, and more.</p>
@@ -246,14 +254,15 @@
 <h2 id="thunderstore">Thunderstore<a class="headerlink" href="#thunderstore" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Depending on the game, there may be <a href="https://www.overwolf.com/app/thunderstore-thunderstore_mod_manager" target="_blank">Thunderstore Mod Manager</a> support. If so, many of the steps below regarding selecting the right BepInEx/MelonLoader may be avoidable, providing a more streamlined process for installation.
 Most, if not all, games that can be managed through Thunderstore have their BepInEx version already chosen by other players, making installation of CUE as simple as installing BepInEx through the manager, and dragging CUE into the BepInEx folder.</p>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Please note, you still need to identify the type of Unity game so that you download the correct CUE version for your game.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Please note that you still need to identify the type of Unity game so that you download the correct CUE version for your game.</p>
 </div><h2 id="identifying-the-type-of-unity-game">Identifying the type of Unity game<a class="headerlink" href="#identifying-the-type-of-unity-game" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>To know what files you have to install you first need to understand if the game is a <code>Mono</code> or an <code>IL2CPP</code> game.</p>
 <h3 id="mono-or-il2cpp">Mono or IL2CPP<a class="headerlink" href="#mono-or-il2cpp" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>To identify if a game is <code>Mono</code> or <code>IL2CPP</code> open the game folder:</p>
 <ul>
 <li>Mono games have a <code>Managed</code> folder in the gamedata folder. They also might have a folder with <code>Mono</code> on its name.</li>
-<li>IL2CPP games have a <code>GameAssembly.dll</code> in the game folder and an <code>il2cpp_data</code> folder in the gamedata folder.</li>
+<li>IL2CPP games have a <code>GameAssembly.dll</code> in the game folder and an <code>il2cpp_data</code> folder in the gamedata folder.
+ </li>
 </ul>
 <div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>If the game is on Steam, you can check the file structure before downloading by going to the <a href="https://steamdb.info" target="_blank">SteamDB</a> page of the game, <code>Depots</code> section, and from the table in there, click the ID number on the game's depot (usually the one with the bigger file size).</p>
 </div><p>If you happen to need it for something the Unity Engine version number can be found by going to the game's folder, right-click on <code>UnityPlayer.dll</code>, clicking on Properties, and heading over to the Details tab. But this info shouldn't be relevant to the guide.</p>
@@ -285,6 +294,7 @@ Most, if not all, games that can be managed through Thunderstore have their BepI
 <p>If you don't see a MelonLoader splash screen when starting the game or any console then there might be a problem with the mod loader. To fix it try the steps described below one by one and start the game again after trying each of them:</p>
 <ul>
 <li>Rename <code>version.dll</code> in <code>winhttp.dll</code></li>
+<li>Try the latest version of MelonLoader instead of v0.5.7.</li>
 </ul>
 </li>
 <li>
@@ -293,12 +303,13 @@ Most, if not all, games that can be managed through Thunderstore have their BepI
 <p>Most games work with ML 0.5.7 by default and do not need any changes. Still, there might be a small chance some games (e.g. Tormented Souls) won't work once Cinematic Unity Explorer is installed, and it can lead to a crash. If that happens, we recommend giving <a href="https://builds.bepinex.dev/projects/bepinex_be" target="_blank">BepInEx 6</a> for IL2CPP a try. If that's the case go to the linked page, scroll down to &quot;Artifacts&quot;, and download <code>BepInEx Unity (IL2CPP) for Windows x86</code> or <code>x64</code> depending on the game (follow the <a href="#Mono">Mono section</a> of this guide to know which one). If even that fails try so with <code>BepInEx NET (CoreCLR net6.0) for Windows</code>.</p>
 </li>
 </ul>
-<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>If you do not want MelonLoader splash screen every time you start the game go to <code>game_root\UserData\MelonStartScreen\Config.cfg</code> and under <code>[General]</code> change <code>Enabled</code> from <code>true</code> to <code>false</code>.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>If the game is fairly recent (post 2022) chances are you would need to use <code>CinematicUnityExplorer.MelonLoader.IL2CPP.CoreCLR.zip</code> instead. You may also need to use MelonLoader latest version aswell.</p>
+</div><div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>If you do not want MelonLoader splash screen every time you start the game go to <code>game_root\UserData\MelonStartScreen\Config.cfg</code> and under <code>[General]</code> change <code>Enabled</code> from <code>true</code> to <code>false</code>.</p>
 </div><h2 id="bepinex-for-mono-games">BepInEx (for Mono games)<a class="headerlink" href="#bepinex-for-mono-games" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>If you can't use MelonLoader or need to use BepInEx for whatever reason follow the steps below. However, if you already installed MelonLoader and Cinematic Unity Explorer with it then you can skip this section.</p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Some games (noticeably the ones published by EA) have encrypted game objects on runtime or something along those lines. Fortunately, MelonLoader is able to get through this encryption, but BepInEx won't work.</p>
 </div><h3 id="bit-or-64-bit">32-bit or 64-bit<a class="headerlink" href="#bit-or-64-bit" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>When using BepInEx, you have to make an extra distinction between 32 and 64 bits. To do so, launch the game and use the Task Manager to check if your game is 32-bit or 64-bit (if it is 32-bit, it will have &quot;32-bit&quot; next to the process name).  </p>
+<p>When using BepInEx, you have to make an extra distinction between 32 and 64 bits. To do so, launch the game and use the Task Manager to check if your game is 32-bit or 64-bit (if it is 32-bit, it will have &quot;32-bit&quot; next to the process name).</p>
 <p><img src="../Images/CinematicUnityExplorerGuide/TaskManager01.png" alt="TaskManager01" class="shadowed autosize" width="197" height="26" /></p>
 <p>Alternatively, you can look up the games page on the <a href="https://www.pcgamingwiki.com/wiki/Main_Page" target="_blank">pcgamingwiki</a>.</p>
 <h3 id="downloading-bepinex-and-cinematic-unity-explorer">Downloading BepInEx and Cinematic Unity Explorer<a class="headerlink" href="#downloading-bepinex-and-cinematic-unity-explorer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
@@ -340,14 +351,14 @@ Most, if not all, games that can be managed through Thunderstore have their BepI
 <p>First, download and install <a href="https://www.overwolf.com/app/thunderstore-thunderstore_mod_manager" target="_blank">Thunderstore Mod Manager</a>.
 Once the manager is installed, find your game in the options available, and click 'Select Game'.
 In the profile screen, either select Default, or create your own if you'd prefer. Click 'Select Profile' to move on to the main section of the manager.
-On the left hand side, you will see a 'Get Mods' tab, open this and search for BepInEx. Select the BepInEx result, and click 'Download'. The mod manager will then automatically download and install the version required for your chosen game.</p>
+On the left-hand side, you will see a 'Get Mods' tab, open this and search for BepInEx. Select the BepInEx result, and click 'Download'. The mod manager will then automatically download and install the version required for your chosen game.</p>
 <div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Some games will have multiple results when searching for BepInEx, depending on their popularity. You can often find a 'Pinned' release when this is the case, which will be the main install option you need.</p>
 </div><p>Now that BepInEx is installed, boot up the game by clicking the 'Modded' play button in the top right of the window. If all has gone well, you should see a console load up. 
 You can now close the game, and move on to installing CUE.
 In Thunderstore, navigate to the Settings tab, and select 'Browse profile folder'. This will take you to the location Thunderstore keeps the mods you install.
 Open a separate explorer window and find your CUE download. Open the downloaded ZIP folder, and copy the 'Plugins' folder. 
 Move back to the window with the game profile, open the BepInEx folder, and paste the CUE plugin folder.
-Boot the game again, through the Modded play button. You should see an overlay when the game window appears, meaning CUE has installed correctly.</p>
+Boot the game again, through the Modded play button. You should see an overlay when the game window appears, meaning CUE has been installed correctly.</p>
 <h1 id="hotkeys">Hotkeys<a class="headerlink" href="#hotkeys" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
 <p>The table below describes all of the default hotkeys. You can edit them to your liking by going to the Options panel inside the mod menu, changing the hotkeys you want, and saving the settings (or manually replacing them by editing the <code>BepInEx\config\com.originalnicodr.cinematicunityexplorer.cfg</code> file).</p>
@@ -443,15 +454,16 @@ Boot the game again, through the Modded play button. You should see an overlay w
 </table>
 <h1 id="freecam">Freecam<a class="headerlink" href="#freecam" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
-<p>The freecam can be enabled from the &quot;Freecam&quot; panel on the mods menu or with the <code>Insert</code> hotkey. However, there are two kinds of freecams, as explained in the two following subsections.</p>
-<p><img src="../Images/CinematicUnityExplorerGuide/sidebyside.jpg" alt="sidebyside" class="shadowed autosize" width="900" height="253" /></p>
+<p>The freecam can be enabled from the &quot;Freecam&quot; panel on the mods menu or with the <code>Insert</code> hotkey. However, there are different kinds of freecams, as explained in the following subsections.</p>
+<p><img src="../Images/CinematicUnityExplorerGuide/freecam-panel.png" alt="Freecam Panel" class="shadowed autosize" width="454" height="750" /></p>
 <h2 id="new-camera">New Camera<a class="headerlink" href="#new-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Without checking the &quot;Use Game Camera?&quot; checkbox on the Freecam panel, the mod will create a new camera object for you to control. This means that some post-processing effects won't be displayed (because they are being applied to the game's camera, not the new one), making the game look &quot;ugly&quot;.</p>
+<p>When selecting &quot;New&quot; in the Camera Mode dropdown on the Freecam panel, the mod will create a new camera object for you to control. This mode will give you a controllable freecam almost every time, but chances are some (if not most) post-processing effects won't be displayed (because they are being applied to the game's camera, not the new one), making the game look &quot;ugly&quot;.</p>
+<p><img src="../Images/CinematicUnityExplorerGuide/sidebyside.jpg" alt="sidebyside" class="shadowed autosize" width="900" height="253" /></p>
 <p>However, we would like this to be the case in some games if the gameplay camera happens to bring unwanted effects (like in Somerville, where the gameplay camera didn't render behind the black bars, but this new camera did).</p>
-<p><img src="../Images/CinematicUnityExplorerGuide/freecam-panel.png" alt="Freecam Panel" class="shadowed autosize" width="450" height="750" /></p>
 <h2 id="gameplay-camera">Gameplay camera<a class="headerlink" href="#gameplay-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>If you need these postprocessing effects you would need to check the &quot;Use Game Camera?&quot; checkbox in the Freecam panel. This will let you control the gameplay camera instead of creating a new one to control.</p>
-<p>When doing this, the Cinematic Unity Explorer will attempt to disable the component that controls this gameplay camera, but in some cases, it won't be able to find the right component to disable and unlock the camera from the game. So if you cannot move or rotate the gameplay camera do the following:</p>
+<p>If you need these postprocessing effects you would need to choose any of the other Camera Modes in the dropdown. In the case of the &quot;Gameplay&quot; camera mod, it will let you control the gameplay camera instead of creating a new one to control.</p>
+<p>When doing this, the Cinematic Unity Explorer will attempt to disable the component that controls this gameplay camera, but in some cases, it won't be able to find the right component to disable and unlock the camera from the game. In such cases in which you cannot move or rotate the gameplay camera we suggest trying the <a href="#cloned-camera">Cloned</a> or <a href="#forcedmatrix-camera">ForcedMatrix</a> camera modes, but if those don't work for whatever reason or the postprocessing effects get butchered you can try the following:</p>
+<h3 id="gameplay-camera-troubleshooting">Gameplay Camera troubleshooting<a class="headerlink" href="#gameplay-camera-troubleshooting" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
 <li>Click on the &quot;Inspect Free Camera&quot; button at the end of the Freecam panel.</li>
 <li>On the Inspector window click on the &quot;Inspect GameObject&quot; button.</li>
@@ -459,12 +471,18 @@ Boot the game again, through the Modded play button. You should see an overlay w
 <li>If disabling a component still doesn't let you move or rotate the camera, turn it on again and try the next component on the list. You will eventually reach the component that controls the camera.</li>
 </ul>
 <p>If the steps listed above fail, go to the camera parent game object (by clicking on &quot;◄ View Parent&quot; on the top left) and try the components there. If that doesn't work then you can try entering other children's game objects from this parent and disabling their components. You can also go up in the parent hierarchy until you find the right game object and component or don't have more parent game objects to go to.</p>
-<p>If all of that fails you can also try going to the Object Explorer panel and search for game objects with the word &quot;cam&quot;, &quot;controller&quot; or &quot;input&quot; on their names (might need to test different scenes if the game has many) in the Scene Explorer. Alternatively, you can also look up these words on the Object Search tab, but expect to get a lot of unhelpful results.</p>
+<p>If all of that fails you can also try going to the Object Explorer panel and search for game objects with the word &quot;cam&quot;, &quot;controller&quot; or &quot;input&quot; on their names (might need to test different scenes if the game has many) in the Scene Explorer. Alternatively, you can also look up these words on the Object Search tab but expect to get a lot of unhelpful results.</p>
 <p>As a last resource, you can try deleting the components instead of just disabling them, but beware since that might block you from returning to normal gameplay (and might even crash the game).</p>
 <p>To understand better what a game object is, what a component is and their differences head over to the <a href="#playing-around-with-game-objects">playing around with game objects section</a>.</p>
 <p>Remember to enable whatever component or game object you disabled again when you have to return to gameplay, so the game can come back to properly handle the camera.</p>
 <p>The <em>CineMachine</em> component (a common Unity class used for controlling a gameplay camera) gets automatically disabled by Cinematic Unity Explorer, but some games (e.g. Haven) turn this <em>CineMachine</em> component back on whenever it gets disabled, and the only solution for dealing with it is to straight up delete the component. It's advised to go back to the menu or reload the level in some capacity to get this component back once you finish your shooting session.</p>
 <p><img src="../Images/CinematicUnityExplorerGuide/disable-camera-components.webp" alt="Disable another component on the gameplay camera" class="shadowed autosize" /></p>
+<h2 id="cloned-camera">Cloned camera<a class="headerlink" href="#cloned-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>It clones the game object that has the gameplay camera. By doing this instead of using the original gameplay camera we can take control of the camera in case there is an external game object or component that was controlling it, as the game won't have a a reference to this new camera, like when you create a new camera. The difference is that we are also copying all the components that are inside of this game object, which may include postprocessing effects if they are not in another game object.</p>
+<p>There are some cases in which postprocessing effects aren't on the same game object but on a parent game object or an external one, meaning that for them to render properly we would need to use one of the following methods.</p>
+<h2 id="forcedmatrix-camera">ForcedMatrix camera<a class="headerlink" href="#forcedmatrix-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Forces the projection and worldToCamera matrices of the original gameplay camera with our own. This way we can override what the camera renders without the game logic getting in the way.</p>
+<p>This isn't a silver bullet solution as there are some games that may have some problems with this approach (the ones that use the HD rendering pipeline package mainly), but it's very possible that it will work for most games.</p>
 <h2 id="far-and-near-clipping-plane">Far and near clipping plane<a class="headerlink" href="#far-and-near-clipping-plane" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>If you encounter the game world stop rendering after a certain point, you can increase the Far clip plane in the Freecam panel to see far-away meshes.</p>
 <p>Similarly, if you want to move the camera closer to an object and it gets cut out because of the camera being near it you can decrease the Near clip plane in the Freecam panel.</p>
@@ -478,9 +496,11 @@ Boot the game again, through the Modded play button. You should see an overlay w
 <p>In the meantime, if you need to disable the game input and the mod isn't doing so automatically you can try looking for the right game object or component to disable. Follow the steps described in the <a href="#gameplay-camera">gameplay camera section</a> to do so.</p>
 <h2 id="follow-object">Follow object<a class="headerlink" href="#follow-object" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Following world objects can be useful for recording video, by creating <a href="#cam-paths">camera paths</a> that are relative to objects.</p>
-<p>Also, by checking the &quot;Follow object rotation&quot; checkbox the camera is &quot;physically&quot; bounded to the gameobject, allowing us to do things like recording on the side of a car, changing the &quot;gameplay camera&quot; by freezing the freecam in non-gameplay positions and unlocking the games input, or do motion blur shots when using it alongside a long exposure Reshade Shader. However, for the latter, it's recommended to also decrease the time dilation as explained in the following section, for smoother blur.</p>
+<p>Also, by checking the &quot;Follow object rotation&quot; checkbox the camera is &quot;physically&quot; bounded to the game object, allowing us to do things like recording on the side of a car, changing the &quot;gameplay camera&quot; by freezing the freecam in non-gameplay positions and unlocking the games input, or do motion blur shots when using it alongside a long exposure Reshade Shader. However, for the latter, it's recommended to also decrease the time dilation as explained in the following section, for smoother blur.</p>
 <p>You can make the freecam follow a game object in the world by clicking on the &quot;Follow Object&quot; button in the &quot;Freecam&quot; panel and clicking the object on the screen.</p>
 <p>If you want more granular control over the following object (like the head of a character, or a wheel in a car) and have the parent object open in the inspector, you can go through its children (list of objects on the bottom left) and once you identify the object you want to follow click on it to open it on another inspector tab and click on the &quot;Follow Object&quot; button on the top left.</p>
+<h2 id="look-at-object">Look At object<a class="headerlink" href="#look-at-object" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>As an alternative to the follow object mode, you can also select a gameplay object to follow with the camera. It might be very situational as it will maintain the object in the middle of the screen, which might not be ideal composition-wise but could still be useful for, for example, racing-replay-like cinematics.</p>
 <h1 id="timedilation">TimeDilation<a class="headerlink" href="#timedilation" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
 <p>You can modify the timescale of the game (aka make it go in slow motion, or faster than normal) by clicking the &quot;Override&quot; checkbox on the mods menu navbar to take control of the timescale from the game and moving the TimeScale slider or writing on the input field the desired speed.</p>
@@ -493,7 +513,7 @@ Boot the game again, through the Modded play button. You should see an overlay w
 <h1 id="cam-paths">Cam paths<a class="headerlink" href="#cam-paths" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
 <p>The Camera path panel allows the user to set up camera nodes (which hold camera position, orientation, and FOV) all over a scene as keyframes, and make the camera move alongside the curve created by these nodes to record cinematics or promotional video. You can specify the amount of time it takes the camera to complete the current path, which would move alongside it at a constant speed (make sure the game is running at capped 60fps by enabling VSync).</p>
-<p><img src="../Images/CinematicUnityExplorerGuide/camera-paths.png" alt="Camera paths" class="shadowed autosize" width="726" height="300" /></p>
+<p><img src="../Images/CinematicUnityExplorerGuide/camera-paths.png" alt="Camera paths" class="shadowed autosize" width="725" height="300" /></p>
 <p>Among the things the camera paths can currently do, there is:</p>
 <ul>
 <li>Add and delete camera path nodes.</li>
@@ -508,6 +528,14 @@ Boot the game again, through the Modded play button. You should see an overlay w
 <li>Control over the tension and alpha values of the path, which are curve constants that change the resulting path created from the nodes. Their effect can be clearly seen when visualizing the path, as explained below.</li>
 </ul>
 <p>As a side note, the mod UI will be disabled once the path starts, to ease video recording.</p>
+<h2 id="serialization">Serialization<a class="headerlink" href="#serialization" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The panel allows you to save and load camera paths, to be able to use and iterate paths across different game sessions (and even different games). The following things are saved in a path:
+* Nodes
+* Is a closed path
+* Path time
+* Tension
+* Alpha</p>
+<p>You can also load a camera path relative to your current camera position and rotation to be able to use your path in a new level/scene, or if you just want to move the same path as a whole around the same scene.</p>
 <h2 id="visualizer">Visualizer<a class="headerlink" href="#visualizer" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>You can visualize a camera path with in-world arrows, whose origin and orientation represent the position and orientation that the camera will have at that point in the curve. To enable this click on the &quot;Visualize path&quot; checkbox on the Cam Path panel. Keep in mind that this will be turned off once the path starts playing since its purpose is to help the user set up the path itself.</p>
 <h1 id="light-manager">Light manager<a class="headerlink" href="#light-manager" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
@@ -527,7 +555,7 @@ Boot the game again, through the Modded play button. You should see an overlay w
 <p>There also is a default intensity input field on the panel. Since the way the intensity of a light works varies a lot from game to game you have to increase/decrease this property on a light until it looks right, and once you figure out a value that works for your game you can write it as the default intensity and don't have to edit it on the new lights you spawn from that point onwards.</p>
 <h3 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <ul>
-<li><a href="https://docs.unity3d.com/es/530/Manual/class-Light.html" target="_blank">Unity Light class</a>  </li>
+<li><a href="https://docs.unity3d.com/es/530/Manual/class-Light.html" target="_blank">Unity Light class</a>  </li>
 <li><a href="https://docs.unity3d.com/Manual/Lighting.html" target="_blank">Unity Lighting</a></li>
 </ul>
 <h2 id="visualizer-1">Visualizer<a class="headerlink" href="#visualizer-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
@@ -546,7 +574,7 @@ Boot the game again, through the Modded play button. You should see an overlay w
 <h1 id="animator">Animator<a class="headerlink" href="#animator" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
 <p>The Animator panel allows you to manually pause and play animations as well as select specific animation keyframes on the current characters and NPCs loaded in a scene. This should be pretty useful for getting the right animation on each enemy to set up a composition.</p>
-<p><img src="../Images/CinematicUnityExplorerGuide/animator-panel.png" alt="Animator panel" class="shadowed autosize" width="1300" height="278" /></p>
+<p><img src="../Images/CinematicUnityExplorerGuide/animator-panel.png" alt="Animator panel" class="shadowed autosize" width="1301" height="299" /></p>
 <p>Favorite animations appear first on the dropdown list by clicking on the star button with the animation selected.</p>
 <p>The way the animator works is that it will replace the animation the entity is doing when the user hits the &quot;Play&quot; button or selects a keyframe using the slider.</p>
 <p>The Animator panel also offers a way to hide each NPC individually to help you identify which animator belongs to each NPC if the name isn't enough to figure out. This could also be used to momentarily hide NPCs in a scene. Just make sure to turn them on again when you continue playing if you don't want to fight invisible enemies.</p>
@@ -574,9 +602,12 @@ Once you know which row in the Animators panel refers to the character you want 
 <p>Alongside all of this, you can also open each character game object by clicking on their names, so you can move, rotate, scale them around, disable them, or further edit their properties and child objects. More on this in the <a href="#how-to-modify-a-game-objects-spatial-property">&quot;How to modify a game object's spatial property&quot;</a> section.</p>
 <h2 id="bones-panel">Bones Panel<a class="headerlink" href="#bones-panel" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>For each animator, you can also spawn a Bones Panel. This panel will list all of the character's bones and meshes, and provide easy-to-access toggles to disable them and sliders to move them around, allowing you to pose a character to your liking.</p>
-<p><img src="../Images/CinematicUnityExplorerGuide/bones-panel.png" alt="Bones panel" class="shadowed autosize" width="1000" height="400" /></p>
+<p><img src="../Images/CinematicUnityExplorerGuide/bones-panel.png" alt="Bones panel" class="shadowed autosize" width="1000" height="800" /></p>
+<p>All bones are shown on a tree-like structure to more easily identify the main bones and make posing easier, as well as also reflect the bone's parent-son relationships to tweak smaller bones according to the user's needs.</p>
+<p>You can also easily filter through bone names using the search field at the top if you need, for example, to quickly get the eye bones to rotate them towards your camera.</p>
 <p>Do take in mind that to move an NPC bones around you will need to disable the animator (done at the top of the Bones Panel). This will get activated again automatically once you reset all of the animators. Also, you will probably only be able to disable certain meshes that aren't bones (like accessories such as a scarf or sunglasses). If you want to hide a certain element that is a bone and can't be toggled you can try reducing its scale to 0.</p>
 <p>Also, certain elements such as clothes or hair might get weird physics when posing the character. If you want them to adapt to the new character pose try skipping one or two frames with the <a href="#skipframe">skipframe</a> hotkey.</p>
+<p>Besides all of the mentioned features, you can save and load poses across different game sessions. And, if the game uses the same skeletons for all characters, you should be able to load poses saved from one character into another.</p>
 <h1 id="post-processing-panel">Post-processing panel<a class="headerlink" href="#post-processing-panel" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
 <p>It loads all the current vanilla post-processing effects being used when clicking on &quot;Refresh Effects&quot; and offers togglers to disable them. It also lets you inspect the postprocessing objects yourself if you want to edit their parameters instead.</p>
@@ -625,24 +656,26 @@ Once you know which row in the Animators panel refers to the character you want 
 <li>Download <a href="https://github.com/originalnicodr/CinematicUnityExplorer/releases/latest/download/UnityIGCSConnector.dll" target="_blank">UnityIGCSConnector.dll</a> and put it in the same folder as the games .exe.</li>
 <li>Install IGSCConnector by following the instructions <a href="https://opm.fransbouma.com/igcsdof.htm#installation" target="_blank">here</a>.</li>
 </ul>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Be sure to select <code>Classic (slower)</code> mode instead of <code>Fast</code>, as the latter one seems to render the image out of focus in most games. However <code>Fast</code> might still work in some, so it's still worth giving it a try.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>If the game is 32 bits make sure to download <a href="https://github.com/originalnicodr/CinematicUnityExplorer/releases/latest/download/UnityIGCSConnector.32.dll" target="_blank">UnityIGCSConnector.32.dll</a> instead, as well as the 32 bits version of the IgcsConnector.</p>
+</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>Be sure to select <code>Classic (slower)</code> mode instead of <code>Fast</code>, as the latter one seems to render the image out of focus in most games. However <code>Fast</code> might still work in some, so it's still worth giving it a try.</p>
 </div><h1 id="tips-tricks-and-common-questions">Tips, tricks, and common questions<a class="headerlink" href="#tips-tricks-and-common-questions" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <hr />
 <h2 id="why-are-the-lights-and-changes-i-made-on-one-session-not-appearing-when-launching-the-game-again">Why are the lights and changes I made on one session not appearing when launching the game again<a class="headerlink" href="#why-are-the-lights-and-changes-i-made-on-one-session-not-appearing-when-launching-the-game-again" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Because the changes done with this mod are purely on runtime. Meaning that we are modifying the info of the game in memory, and not serializing it and picking it up in future sessions of the game. However, serializing some things to be able to load them on another session is in the backlog for some features.</p>
 <h1 id="playing-around-with-game-objects">Playing around with game objects<a class="headerlink" href="#playing-around-with-game-objects" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <p>Before explaining some things, I believe it's a good idea to first have a grasp of some of the concepts Unity (and Oriented Object Programming) uses.</p>
-<p>Every object in the game world is what is called a &quot;Game Object&quot;. Each game object can have other game objects as &quot;children&quot;, as well as other type of objects called &quot;components&quot;, as we will explain in a bit.</p>
+<p>Every object in the game world is what is called a &quot;Game Object&quot;. Each game object can have other game objects as &quot;children&quot;, as well as another type of object called &quot;components&quot;, as we will explain in a bit.</p>
+<p><img src="../Images/CinematicUnityExplorerGuide/inspector-panel.png" alt="Object Inspector panel" class="shadowed autosize" width="810" height="829" /></p>
 <p>Think of these as two different bags in which you can play around with their elements, with a couple of differences:</p>
 <ul>
 <li>The children's game objects can have, at the same time, their own children, generating a sort of hierarchical family tree.</li>
 <li>Given a game object with a parent game object, if the latter moves then the former will move as well. Making it so that children's game objects move relatively to their father. Also, disabling a game object will also disable all of their children's game objects.</li>
-<li>You can see these hierarchical relationships in the scene itself on the Object Explorer, as well as in the bottom left section of a game object Inspector tab.</li>
+<li>You can see these hierarchical relationships in the scene itself on the Object Explorer, as well as in the bottom left section of an Object Inspector panel.</li>
 <li>A group of children's game objects is necessary to always be of the same type, a Game Object, but components can be of different types.</li>
 <li>These components can have variables and functions inside of them, but they always represent something, even if that something is abstract (e.g. a light is a Game Object that exists in the game world, which has a <code>Light</code> component that holds all of the properties of the light).</li>
 </ul>
-<p>So for example, if we wanted to make the head of a character bigger (assuming the character's body parts are in different Game Objects instead of the whole body in a single Game Object) we would first need to find the character game object from the Animator panel or the mouse inspector. Once we have the game object inspector tab open for the character we can start disabling children Game Objects on its tree in the bottom left section. Whenever the head disappears then it would have meant we found our desired Game Object, so we can click on it (instead of disabling it) and modify the game object's uniform scale slider.</p>
-<h2 id="how-to-modify-a-game-objects-spatial-property">How to modify a game object's spatial property<a class="headerlink" href="#how-to-modify-a-game-objects-spatial-property" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>If you want to more easily move objects around a scene, once you have the Inspector panel open for the object you want to move, move the camera where you want the object to move to and just click on &quot;Move to Camera&quot; button on the Inspector panel.</p>
+</div><h2 id="how-to-modify-a-game-objects-spatial-property">How to modify a game object's spatial property<a class="headerlink" href="#how-to-modify-a-game-objects-spatial-property" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>As explained above, all objects in a scene are Game Objects, and Game Objects have the following properties, between others:</p>
 <ul>
 <li>Position</li>
@@ -680,23 +713,23 @@ GameObject sonObj = null;
 // Find objects
 var objects = RuntimeHelper.FindObjectsOfTypeAll&lt;UnityEngine.GameObject&gt;();
 foreach(GameObject obj in objects)
-{   
-    if (obj.GetInstanceID() == parentID){
-        parentObj = obj;
-        Log(parentObj);
-    }
-    if (obj.GetInstanceID() == sonID){
-        sonObj = obj;
-        Log(sonObj);
-    }
+{   
+    if (obj.GetInstanceID() == parentID){
+ parentObj = obj;
+        Log(parentObj);
+ }
+    if (obj.GetInstanceID() == sonID){
+ sonObj = obj;
+        Log(sonObj);
+ }
 }
 
 if (parentObj != null &amp;&amp; sonObj != null){
-    sonObj.transform.SetParent(parentObj.transform);
+    sonObj.transform.SetParent(parentObj.transform);
 }
 else{
-    if (parentObj == null) Log(&quot;Couldn't find parent&quot;);
-    if (sonObj == null) Log(&quot;Couldn't find son&quot;);
+    if (parentObj == null) Log(&quot;Couldn't find parent&quot;);
+    if (sonObj == null) Log(&quot;Couldn't find son&quot;);
 }
 </code></pre>
 
@@ -704,6 +737,7 @@ else{
 <h2 id="additional-tips">Additional tips<a class="headerlink" href="#additional-tips" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
 <li>Most Unity games (if not almost all of them) let you <a href="../basics.htm#hotsampling">hotsample</a>, and even let you use custom ARs.</li>
+<li>If the game doesn't have a windowed mode add <code>-screen-fullscreen 0 -popupwindow</code> as launch parameters in Steam or a shortcut.</li>
 <li>If the game is exclusively fullscreen and doesn't have the option to play windowed for hotsampling, press <code>Alt</code> + <code>Enter</code> to go out of fullscreen into windowed.</li>
 <li>It's generally recommended to disable any overlays you have as they may conflict with the keybindings.</li>
 </ul>
@@ -715,7 +749,7 @@ If you have any suggestions or problems you want to report please head over to t
 <ul>
 <li><a href="https://www.pcgamingwiki.com/wiki/Engine:Unity" target="_blank">PCGamingWiki Unity page</a></li>
 <li><a href="https://steamdb.info/tech/Engine/Unity" target="_blank">Games on Steam made with Unity</a></li>
-<li><a href="https://docs.bepinex.dev/master/articles/user_guide/installation/index.html" target="_blank">BepInEx Documentation</a> - Extensive installation, configuration, and troubleshooting site</li>
+<li><a href="https://docs.bepinex.dev/master/articles/user_guide/installation/index.html" target="_blank">BepInEx Documentation</a>: Extensive installation, configuration, and troubleshooting site</li>
 </ul>
 
                     </div>
