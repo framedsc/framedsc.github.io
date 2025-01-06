@@ -325,7 +325,7 @@
 <tbody>
 <tr>
 	<td>Vanilla Photo Mode</td>
-	<td>No</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Hotsampling</td>
@@ -369,11 +369,30 @@ Enable script, use [ ] keys to change time of day or hold ctrl for bigger change
 <code>r.customdepth 0</code><br />
 Show white outlines:<br />
 <code>r.customdepth 3</code>  </p>
+<h3 id="tweaks">Tweaks<a class="headerlink" href="#tweaks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>The tweaks below will likely harm performance in the game, so try to use only the ones that work well with your hardware. It's probably wise to create a
+series of commands with the default values that the cvars have by default. To get these values, type in the cvar without a value on the console. Open the console's 
+bigger view (press the open console key twice) to see the value. This might sound tedious but as you can concat all these cvars to one big line where you separate the cvars with <code>|</code> 
+characters and you can copy/paste the line into the console, you have to this just once. This way you can flip back and forth between a set of values that work during gameplay 
+and a set of values that make the game look really good but have a serious impact on performance. </p>
+<p>To make the game look the best it can be, use these:</p>
+<pre class="nocode">r.maxanisotropy 16|r.Streaming.LimitPoolSizeToVRAM 0| r.Streaming.MaxTempMemoryAllowed 4096|r.SceneColorFringe.Max 0| r.StaticMeshLODDistanceScale 0.001 | foliage.LODDistanceScale 6 | r.LightFunctionQuality 2 | r.gbufferformat 5 | r.VolumetricFog.HistoryMissSupersampleCount 16 | r.RayTracing.Reflections.ScreenPercentage 70 | r.Shadow.DistanceScale 2 | r.tonemapper.sharpen 0.5 | r.MipMapLODBias -1 | r.RayTracing.Reflections.SamplesPerPixel 1| r.RayTracing.AmbientOcclusion.Intensity 1 |  r.RayTracing.Reflections.ScreenPercentage 70 | r.RayTracing.Reflections.MaxRoughness 1.0 | r.Reflections.Denoiser.ReconstructionSamples 8 | r.Reflections.Denoiser 2 | r.Shadow.WholeSceneShadowCacheMb 1024 | r.RayTracing.Shadows.Lights.Directional 1 | LightCullingRenderThread.MaxRTShadowedLights 32 | LightCullingRenderThread.MaxDynamicShadowedLights 32 | r.VT.MaxUploadsPerFrame 24 | r.VT.MaxContinuousUpdatesPerFrame 24 | r.Streaming.PoolSize 2500 | r.Streaming.PoolSizeForMeshes 1500 | r.NGX.DLSS.DenoiserMode 1 | r.RayTracing.Reflections.ExperimentalDeferred.SmoothBias 1 | r.RayTracing.Shadows.FarObjectsNormalBias 0
+</pre><p>A lot of these tweak raytracing, and especially reflections, it's therefore key to enable raytracing in the game's settings. </p>
+<p>You don't have to look up all these cvars and switch back/forth for gameplay/shots. The biggest performance hogs are: <code>r.StaticMeshLODDistanceScale</code>, <code>foliage.LODDistanceScale</code>, <code>r.Shadow.DistanceScale</code>, <code>LightCullingRenderThread.MaxRTShadowedLights</code>, <code>LightCullingRenderThread.MaxDynamicShadowedLights</code>. </p>
+<p>To help with performance, the following tweaks can be used at any time to switch to a look that's more shot friendly but will likely run slow:</p>
+<ul>
+<li>Switch DLSS type: <code>r.NGX.DLSS.Quality &lt;value&gt;</code>, where <code>&lt;value&gt;</code> is e.g. <code>1</code> for <code>Quality</code> and <code>3</code> for <code>DLAA</code>. So to go from DLSS Quality (1) to native res, type <code>r.NGX.DLSS.Quality 3</code> and to go back to 
+  DLSS Quality, type <code>r.NGX.DLSS.Quality 1</code>. <code>&lt;value&gt;</code> can also be <code>2</code> for <code>Ultra Quality</code> which is less good than <code>Quality</code>, <code>0</code> for <code>Performance</code> and <code>-1</code> for <code>Ultra performance</code>. </li>
+<li>Switch on/off raytraced reflections: <code>r.RayTracing.Reflections 1</code> for on and <code>r.RayTracing.Reflections 0</code> for off. </li>
+</ul>
+<p>Additionally, for outdoor environments (you can try this indoors, but it'll look awful), you can switch on raytracing on the skylight (sun). To switch it on and calibrate the shadow darkness, use:
+<code>r.RayTracing.Skylight 1 | r.SkylightIntensityMultiplier 0.3</code> and to switch back use: <code>r.RayTracing.Skylight 0 | r.SkylightIntensityMultiplier 1</code>. Try different values for the multiplier, the lower
+the darker. </p>
 <h3 id="change-seasons-without-uuu">Change seasons without UUU<a class="headerlink" href="#change-seasons-without-uuu" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
 <p>Download and install this mod (requires another mod to be installed first).
 <a href="https://www.nexusmods.com/hogwartslegacy/mods/57?tab=description" target="_blank">https://www.nexusmods.com/hogwartslegacy/mods/57?tab=description</a> </p>
-<p>Installing is easy, just drag some files to a folder for both mods. Follow the instructions to enable the mod in-game. After entering &quot;UETools&quot; into the mod window in-game, you never have to do that again. </p>
-<p>Now you can use the normal console to use the weather commands.</p>
+<p>Follow the installation instructions on the mod page how to install it, and setting it up. After properly installing the mod, you can 
+use the normal console to use the weather commands.</p>
 <pre class="nocode">HL_ChangeSeason spring
 HL_ChangeSeason fall
 HL_ChangeSeason winter
