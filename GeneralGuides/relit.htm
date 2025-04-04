@@ -72,7 +72,7 @@
 
 <li class="tocentry"><a href="#point-lights">Point lights</a></li>
 
-<li class="tocentry"><a href="#spot-lights">Spot lights</a></li>
+<li class="tocentry"><a href="#spotlights">Spotlights</a></li>
 
 
 
@@ -112,7 +112,7 @@
 
 <li class="tocentry"><a href="#shadow-blur">Shadow Blur</a></li>
 
-<li class="tocentry"><a href="#shadow-lod-bias">Shadow lod bias</a></li>
+<li class="tocentry"><a href="#shadow-lod-bias">Shadow LOD bias</a></li>
 
 <li class="tocentry"><a href="#shadow-depth-bias">Shadow Depth Bias</a></li>
 
@@ -206,8 +206,8 @@
                 <div role="main">
                     <div class="section">
 <p><img src="../Images\relit\relit_header.png" alt="Lights!" class="shadowed autosize" width="896" height="180" /></p>
-<p>RELit is a powerful tool to create spotlight and pointlights in RE powered games. RELit was written by <a href="https://github.com/originalnicodr" target="_blank">Originalnicodr</a> and <a href="https://github.com/FransBouma" target="_blank">Otis_inf</a>.</p>
-<p>At the time of writing, the supported games are <em>Devil May Cry 5</em>, <em>Monster Hunter Rise</em>, <em>Resident Evil 2 Remake</em>, <em>Resident Evil 3 Remake</em>, <em>Resident Evil 7</em> and <em>Resident Evil Village</em>, but we would expect future Capcom games that run on the RE Engine and are supported by REFramework to work as well.</p>
+<p>RELit is a powerful tool to create spotlights and pointlights in RE-powered games. RELit was written by <a href="https://github.com/originalnicodr" target="_blank">Originalnicodr</a> and <a href="https://github.com/FransBouma" target="_blank">Otis_inf</a>.</p>
+<p>At the time of writing the supported games are <em>Devil May Cry 5</em>, <em>Monster Hunter Rise</em>, <em>Resident Evil 2 Remake</em>, <em>Resident Evil 3 Remake</em>, <em>Resident Evil 7</em> and <em>Resident Evil Village</em>, <em>Resident Evil 4</em>, <em>Dragon's Dogma 2</em>, and <em>Monster Hunter Wilds</em>. But we would expect future Capcom games that run on the RE Engine and are supported by REFramework to work as well.</p>
 <hr />
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <ul>
@@ -219,7 +219,7 @@
 </li>
 <li>
 <p>After downloading the REFramework zip for your game, unpack that zip into a folder. Then copy the <code>dinput8.dll</code> file and the <code>reframework</code> folder into the game's folder, where the exe is (so e.g. in the case of DMC5, you download the DMC5.zip from the REFramework releases, 
-unpack it into a folder, and then copy the <code>dinput8.dll</code> file and the<code>reframework</code> folder to the DMC5 game folder, which is <code>&lt;steam folder&gt;\common\Devil May Cry 5</code>.</p>
+unpack it into a folder, and then copy the <code>dinput8.dll</code> file and the<code>reframework</code> folder to the DMC5 game folder, which is <code>&lt;steam folder&gt;\common\Devil May Cry 5</code>).</p>
 </li>
 </ul>
 </li>
@@ -233,9 +233,9 @@ Alternatively, you can download the RELit.lua file from the repo and put the fil
 </li>
 </ul>
 <h1 id="configuring-relit-and-reframework">Configuring RELit and REFramework<a class="headerlink" href="#configuring-relit-and-reframework" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
-<p>The default key to open the REFramework gui is the <code>Insert</code> key. If you use the Otis_Inf cameras you'd like to rebind this key in REFramework
+<p>The default key to open the REFramework GUI is the <code>Insert</code> key. If you use the Otis_Inf cameras you'd like to rebind this key in REFramework
 to another key, e.g. scroll lock. When the REFramework GUI is open, go to configuration and rebind the menu key there, by clicking <code>Menu key</code>
-and then press the key you want to use, e.g. scroll lock, to open the REFramework gui.</p>
+and then press the key you want to use, e.g. scroll lock, to open the REFramework GUI.</p>
 <p>When the REFramework GUI is open, click on <code>Script Generated UI</code>, and you'll see the <code>Show RELit UI</code> checkbox. Checking it will open the 
 RELit window. It has an initial width and height, you can resize it which will be remembered for the next sessions.</p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>If the spawned lights don't show up in cutscenes, enable the REFramework freecam first.</p>
@@ -246,15 +246,19 @@ RELit window. It has an initial width and height, you can resize it which will b
 <p>In the RELit GUI, click on <code>Lights</code> to open the menu to create custom lights.</p>
 <ul>
 <li>
-<p>To create a light, click on the <code>Add new spotlight</code> or <code>Add new pointlight</code> buttons to create 
-a light of that type. The light is created at the position of the camera.</p>
+<p>To create a light, click on the <code>Add new spotlight</code> or <code>Add new pointlight</code> buttons to create a light of that type. The light is created at the position of the camera.</p>
 </li>
 <li>
-<p>To edit a light's properties, click on the <code>Edit</code> button next to the light in the 
-list of lights, which appears after creating a light.</p>
+<p>To edit a light's properties, click on the <code>Edit</code> button next to the light in the list of lights, which appears after creating a light.</p>
+</li>
+<li>
+<p>You can also return a property to its default value by right-clicking on the slider and pressing &quot;Reset to Default&quot;.</p>
 </li>
 <li>
 <p>The lights can also be moved to the camera position again by clicking <code>Move to camera</code>, or be tied to the camera by checking the <code>Attach to camera</code> checkbox.</p>
+</li>
+<li>
+<p>You can also click on &quot;Show Gizmo&quot; to display a gizmo representing the light's position and rotation, which you can interact with to better tweak the light.</p>
 </li>
 <li>
 <p>To delete a light, click on the <code>Delete</code> button.</p>
@@ -263,13 +267,13 @@ list of lights, which appears after creating a light.</p>
 <p>You can also disable the light by clicking the checkbox next to its name. Doing that turns the light off without the need to delete it.</p>
 </li>
 <li>
-<p>You can also copy a light's property into another light by clicking the <code>Copy</code> button. This will create a new light on the camera's position with the same properties as the original light.</p>
+<p>You can also copy a light's property into another light by clicking the <code>Copy</code> button. This will create a new light in the camera's position with the same properties as the original light.</p>
 </li>
 </ul>
 <h2 id="managing-scene-lights">Managing scene lights<a class="headerlink" href="#managing-scene-lights" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>In the RELit GUI, clicking the <code>Scene Lights</code> header opens the scene lights menu, which lets you turn off and on the lights the game spawned by itself. You can obtain the list of current scene lights by clicking the <code>Update scene lights</code> button.</p>
 <ul>
-<li>You can switch the currently switched on lights off with the <code>Switch off scene lights</code> button. To turn the lights on again click on the <code>Switch scene lights back on</code> button. </li>
+<li>You can switch the currently switched-on lights off with the <code>Switch off scene lights</code> button. To turn the lights on again click on the <code>Switch scene lights back on</code> button. </li>
 </ul>
 <div class="slider container" style="aspect-ratio: 16/9">
   <div class="slider__img slider__img-after">
@@ -312,7 +316,7 @@ list of lights, which appears after creating a light.</p>
 <h1 id="light-types">Light Types<a class="headerlink" href="#light-types" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <h2 id="point-lights">Point lights<a class="headerlink" href="#point-lights" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Radiate light in all directions from a single point in 3D space. It's best used for environmental lighting due to its omnidirectionality.</p>
-<h2 id="spot-lights">Spot lights<a class="headerlink" href="#spot-lights" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="spotlights">Spotlights<a class="headerlink" href="#spotlights" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Shoot a cone of light in a specified direction, also from a single point in 3D space. This is best used for lighting portraits, as it can be aimed at certain parts of a face.</p>
 <h1 id="light-properties">Light Properties<a class="headerlink" href="#light-properties" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
 <h2 id="position">Position<a class="headerlink" href="#position" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
@@ -364,7 +368,7 @@ list of lights, which appears after creating a light.</p>
 </div>
 <p><br></p>
 <h2 id="volumetric-scattering-intensity">Volumetric Scattering Intensity<a class="headerlink" href="#volumetric-scattering-intensity" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>This is the amount the light affects the fog that's in the world. It might be this option doesn't do anything, because there's no fog volume in the game at the light's location.</p>
+<p>This is how much the light affects the in-world volumetric fog. It might be this option doesn't do anything, because there's no fog volume in the game at the light's location.</p>
 <h2 id="radius">Radius<a class="headerlink" href="#radius" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>This controls how far the light can travel, likely in in-game meters. Keep in mind that, for the light to be able to render farther it will increase its &quot;intensity&quot; closer to the origin (like a real-life light would do).</p>
 <div class="slider container" style="aspect-ratio: 16/9">
@@ -383,7 +387,7 @@ list of lights, which appears after creating a light.</p>
 </div>
 <p><br></p>
 <h2 id="illuminance-threshold---spotlight-only">Illuminance Threshold - Spotlight only<a class="headerlink" href="#illuminance-threshold---spotlight-only" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Seems to be another, &quot;harder&quot;,  kind of falloff of the light.</p>
+<p>Seems to be another, &quot;harder&quot;,  kind of falloff of the light.</p>
 <div class="slider container" style="aspect-ratio: 16/9">
   <div class="slider__img slider__img-after">
     <p>Illuminance Threshold = 20</p>
@@ -455,7 +459,7 @@ list of lights, which appears after creating a light.</p>
 <p>This checkbox toggles shadow rendering of the light. Off means no shadows at all.</p>
 <h2 id="shadow-bias">Shadow Bias<a class="headerlink" href="#shadow-bias" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>At 0, shadows will start at their caster surface but there will be many self-shadowing artifacts. With larger values, shadows will start further from their caster and there won't be self-shadowing artifacts but the object might appear to fly or float above a surface.</p>
-<p>In general, if the light is close to the object that's shadowed, setting this to a lower value gives sharper shadows and no banding.</p>
+<p>In general, if the light is close to the object that's being occluded, setting this to a lower value gives sharper shadows and no banding.</p>
 <h2 id="shadow-blur">Shadow Blur<a class="headerlink" href="#shadow-blur" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>It's actually &quot;Shadow Variance&quot;. Using a value of 0 will give you very defined shadows, but sometimes some can be very blocky (especially with self-shadow casting), and introducing a bit of &quot;variance&quot; could help.</p>
 <div class="slider container" style="aspect-ratio: 16/9">
@@ -473,8 +477,8 @@ list of lights, which appears after creating a light.</p>
   />
 </div>
 <p><br></p>
-<h2 id="shadow-lod-bias">Shadow lod bias<a class="headerlink" href="#shadow-lod-bias" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Unkown by the time of writing. I suppose it's related to the shadows cast on objects far away from the player, but haven't noticed much difference with it.</p>
+<h2 id="shadow-lod-bias">Shadow LOD bias<a class="headerlink" href="#shadow-lod-bias" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Unknown by the time of writing. I suppose it's related to the shadows cast on objects far away from the player, but haven't noticed much difference with it.</p>
 <h2 id="shadow-depth-bias">Shadow Depth Bias<a class="headerlink" href="#shadow-depth-bias" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>It controls how far should the occlusion start happening from the object that caused said occlusion.</p>
 <div class="slider container" style="aspect-ratio: 16/9">
@@ -495,7 +499,7 @@ list of lights, which appears after creating a light.</p>
 <h2 id="shadow-slope-bias">Shadow Slope Bias<a class="headerlink" href="#shadow-slope-bias" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <p>Works in addition to Shadow Depth Bias in controlling how accurate self-shadowing of whole scene shadows from this light is. It works by increasing the amount of bias depending on the slope of a given surface.</p>
 <h2 id="shadow-near-plane">Shadow Near Plane<a class="headerlink" href="#shadow-near-plane" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>It controls the distance from which the light starts casting shadows. We usually want this to be as low as possible so it casts shadows everywhere.</p>
+<p>It controls the distance from which the light starts casting shadows. We usually want this to be as low as possible so it casts shadows everywhere, but if the light source is not close to the object then it won't cast shadows either. You will have to play around with it a bit to see what a good range for this value is to cast shadows on the subject.</p>
 <div class="slider container" style="aspect-ratio: 16/9">
   <div class="slider__img slider__img-after">
     <p>Shadow Near Plane = 1.5</p>
@@ -512,7 +516,7 @@ list of lights, which appears after creating a light.</p>
 </div>
 <p><br></p>
 <h2 id="detail-shadow---spotlight-only">Detail shadow - Spotlight only<a class="headerlink" href="#detail-shadow---spotlight-only" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Looks to be the definition of the shadow. As with the other properties, results using different values might variate from game to game.</p>
+<p>Looks to be the resolution of the shadow. As with the other properties, results using different values might vary from game to game.</p>
 <div class="slider container" style="aspect-ratio: 16/9">
   <div class="slider__img slider__img-after">
     <p>Detail shadow = 0.2</p>
@@ -534,13 +538,13 @@ list of lights, which appears after creating a light.</p>
 <p>Sometimes a spotlight will stop rendering when moving it around or modifying some of its properties (or it might not even be rendered when first created). This looks to be an engine error, and the only workaround we have found so far is to move the light or the value of its properties just slightly until it gets rendered.</p>
 </li>
 <li>
-<p>Not seeing any shadows when creating a spotlight it's likely due to the <code>Shadow Near Plane</code> value being too low/wrong. Go into the light editor and increase the Shadow near plane value to a higher value till you see the shadows appear and they look OK.</p>
+<p>Not seeing any shadows when creating a spotlight it's likely due to the <code>Shadow Near Plane</code> value being too low/wrong. Go into the light editor and increase the Shadow near plane value to a higher value till you see the shadows appear and they look ok.</p>
 </li>
 <li>
-<p>If you see big stripes in the shadows when creating a light, it might be due to the default <code>Shadow Bias</code> value. To correct these stripes, increase (or decrease) <code>Shadow Bias</code> value until they are gone.</p>
+<p>If you see big stripes in the shadows when creating a light, it might be due to the default <code>Shadow Bias</code> value. To correct these stripes, increase (or decrease) the <code>Shadow Bias</code> value until they are gone.</p>
 </li>
 <li>
-<p>As with other imgui-based applications, you can move sliders slower or faster by pressing <code>Control</code> or <code>Alt</code> respectively when moving them. You can also edit the value of the slider itself with <code>Control</code> + <code>Mouse Click</code>, even outside of the slider boundaries. We recommend you to stick to these, but since we are still experimenting with these values (and every game might behave around them differently) feel free to experiment.</p>
+<p>As with other imgui-based applications, you can move sliders slower or faster by pressing <code>Control</code> or <code>Alt</code> respectively when moving them. You can also edit the value of the slider itself with <code>Control</code> + <code>Mouse Click</code>, even outside of the slider boundaries. We recommend you stick to these, but since we are still experimenting with these values (and every game might behave around them differently) feel free to experiment.</p>
 </li>
 <li>
 <p>As with other light systems, lights can be mixed to simulate dispersed light.</p>
@@ -548,10 +552,15 @@ list of lights, which appears after creating a light.</p>
 </ul>
 <p><img src="../Images\relit\mixed_lights.jpg" alt="AddingLights" class="shadowed autosize" width="1920" height="1080" /></p>
 <ul>
-<li>Altho it might not cause problems, it would be a good idea to delete spawned lights once they are not needed anymore to avoid making the game run into unpredicted behavior.</li>
+<li>
+<p>Although it might not cause problems, it would be a good idea to delete spawned lights once they are not needed anymore to avoid making the game run into unpredicted behavior.</p>
+</li>
+<li>
+<p>Users have reported having problems making the spawned lights interact with subjects on cutscenes in some Resident Evil Remakes.</p>
+</li>
 </ul>
 <hr />
-<p><em>Last updated 8th July 2022</em>  </p>
+<p><em>Last updated 3rd April 2025</em></p>
 
                     </div>
                 </div>
