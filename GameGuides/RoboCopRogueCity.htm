@@ -150,9 +150,9 @@
 
 <li class="tocentry"><a href="#tools">Tools</a></li>
 
-<li class="tocentry"><a href="#igcs-depth-of-field-quirks">IGCS Depth of Field quirks</a></li>
+<li class="tocentry"><a href="#posing">Posing:</a></li>
 
-<li class="tocentry"><a href="#known-issues">Known issues</a></li>
+<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
 
 </ul>
 <li class="tocentry"><a href="../GameGuides/sekiro.htm">Sekiro: Shadows Die Twice</a>
@@ -299,8 +299,8 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../Images\robocop_rogue_city_header.png" alt="RoboCop: Rogue City" title="Shot by Dogmod" class="shadowed autosize" width="896" height="180" />
-<p>Shot by Dogmod</p>
+<img src="../Images\robocop_rogue_city_header.png" alt="RoboCop: Rogue City" title="Shot by ItsYFP" class="shadowed autosize" width="896" height="180" />
+<p>Shot by ItsYFP</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
@@ -317,11 +317,11 @@
 </tr>
 <tr>
 	<td>Hotsampling</td>
-	<td>Yes (use windowed fullscreen)</td>
+	<td>Yes (use windowed mode)</td>
 </tr>
 <tr>
 	<td>DSR</td>
-	<td>Yes</td>
+	<td>Probably</td>
 </tr>
 <tr>
 	<td>Custom Aspect Ratios</td>
@@ -341,41 +341,45 @@
 </tr>
 <tr>
 	<td>Game version</td>
-	<td><font face="Stores">S</font> 1.1.1.0</td>
+	<td><font face="Stores">S</font> 1.7.0.0</td>
 </tr>
 </tbody>
 </table>
-<div class="alert alert-neutral"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This guide is for an Unreal Engine 5 game that can use the <a href="https://opm.fransbouma.com/uuuv5.htm" target="_blank">Universal Unreal Unlocker</a>.  </p>
-</div><h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://opm.fransbouma.com/uuuv5.htm" target="_blank">Unreal Engine 5 Unlocker</a><br />
-<strong>Features</strong>: Camera, HUD toggle, Hotsampling, Console, Timestop, Slowmo, Custom lights, Post-processing </li>
+<li><a href="https://www.patreon.com/posts/83234146" target="_blank">Unreal Engine Unlocker v5.4.11 or higher</a> (Not free, available on Patreon)<br />
+<strong><a href="https://opm.fransbouma.com/uuuv5.htm" target="_blank">Features</a></strong>: Camera control, FoV control, HUD toggle, game speed, pause/timestop, hotsampling, post processing, camera paths, pose tools</li>
 </ul>
-<p>All features are tested and working on the release version of the game (<font face="Stores">S</font> 1.1.1.0)</p>
-<h2 id="igcs-depth-of-field-quirks">IGCS Depth of Field quirks<a class="headerlink" href="#igcs-depth-of-field-quirks" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Generally, IGCS Depth of Field works great with RoboCop. However, achieving extreme levels of DOF requires inputting 
-<strong>Max. bokeh size</strong> manually in Reshade. By default, <strong>Max. bokeh size</strong> is capped at 10.000. For RoboCop this 
-may not be enough in some cases. To input a bigger value, double click the <strong>Max. bokeh size</strong> number and input whatever
-value you need. </p>
-<p>When using upscaling with IGCS Depth of Field, images may turn out blurry. To avoid this,
-set <strong>Number of frames to wait per frame</strong> to 5. This will increase the time it takes to complete a shot, but
-the focal point will be correct.</p>
-<h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<h3 id="arm-rig-visible-when-camera-is-active">Arm rig visible when camera is active<a class="headerlink" href="#arm-rig-visible-when-camera-is-active" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>When hiding the HUD using Unreal Engine 5 Unlocker, arm rig remains visible in the scene.</p>
-<p>To fix this, check <strong>Toggle player visibility</strong> in <strong>Misc. adjustments</strong> in Unreal Engine 5 Unlocker.</p>
-<h3 id="possible-crash-when-issuing-a-ticket">Possible crash when issuing a ticket<a class="headerlink" href="#possible-crash-when-issuing-a-ticket" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>If Unreal Engine 5 Unlocker is injected when issuing a car ticket in game (part of Serve and Protect side quest),
-the game may throw an exception and crash.</p>
-<p>Reloading a level from the beginning may solve the issue (using saves the game creates at the beginning of every mission).</p>
-<p>If you don't want to reload, this can somewhat be avoided by closing Unreal Engine 5 Unlocker before issuing the ticket. 
-The game will not crash right away, but injecting Unreal Engine 5 Unlocker later will cause the exception again. You can ignore the window and reach
-a checkpoint to save the game, but camera tools will not work and pressing <strong>OK</strong> in the exception window will crash the game.</p>
-<p>Issuing a ticket, saving, then reopening the game and injecting Unreal Engine 5 Unlocker should not crash the game.</p>
-<p>Rarely, this crash may also occur when reinjecting Unreal Engine 5 Unlocker.</p>
-<h3 id="camera-in-cutscenes">Camera in cutscenes<a class="headerlink" href="#camera-in-cutscenes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
-<p>Currently, you can't control the camera in cutscenes. However, camera control does work in the main menu 
-and can be used for photos with full Robocop model.</p>
+<h2 id="posing">Posing:<a class="headerlink" href="#posing" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>RoboCop specifically does not have a player model available during normal gameplay. However, you can use it through the &quot;Experimental Options&quot; in the UUU Interface.</p>
+<p><strong>How to:</strong></p>
+<ul>
+<li>Enable the Free Camera (<code>Insert</code>)</li>
+<li>Open the in-game UUU Interface (<code>CTRL</code>+<code>Insert</code>)</li>
+<li>Click on RoboCop (you will only see his 2 arms) to get his model show up in the list.</li>
+<li>Now click on &quot;Experimental Options&quot; in the UUU interface, just below the &quot;Show Pose Editor&quot; button.</li>
+<li>Select <strong>SK_RoboCop</strong> in &quot;Skeletal Mesh&quot; to have his model available anywhere you want, just be aware that some bones in the &quot;Bone Tree&quot; seem to use a different name (for example, the &quot;Head&quot; is actually <code>spine_02</code>). </li>
+</ul>
+<p>You can also access his model and use poses during (specific) cutscenes. There are 2 types of cutscenes happening. </p>
+<ul>
+<li><strong>Cinematics with Black Bars</strong>: Here you can access his model and move it around but not pose it. </li>
+<li><strong>Conversations with NPCs</strong>: In these you are also able to access his model, move it around but also be able to pose it. If you want to have RoboCop in any city location available in your screenshot, you can use these <strong>Conversation with NPCs</strong> too, the city as a whole is fully accessible and rendered in free camera.</li>
+</ul>
+<p><strong>How to:</strong></p>
+<ul>
+<li>Play a story mission</li>
+<li>Get into conversations with an NPC</li>
+<li>Pause the game (<code>Numpad 0</code>)</li>
+<li>Enable the Free Camera (<code>Insert</code>)</li>
+<li>Open the in-game UUU Interface (<code>CTRL</code>+<code>Insert</code>)</li>
+<li>Click on RoboCop to get his model show up in the list</li>
+<li>Click on &quot;Show Pose Editor&quot;</li>
+</ul>
+<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ul>
+<li><a href="https://www.pcgamingwiki.com/wiki/RoboCop:_Rogue_City" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://www.nexusmods.com/games/robocoproguecity" target="_blank">Nexus Mods</a></li>
+</ul>
 
                     </div>
                 </div>
