@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Monster Hunter Rise - FRAMED. Screenshot Community</title>
+    <title>Silent Hill f - FRAMED. Screenshot Community</title>
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/theme_20250102.css" type="text/css" />
     <link rel="stylesheet" href="../css/theme_colors_20220814.css" type="text/css" />
@@ -80,29 +80,8 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/mecatalyst.htm">Mirror's Edge Catalyst</a>
 </li>
-<li class="tocentry current"><a class="current" href="../GameGuides/mhrise.htm">Monster Hunter Rise</a>
-<ul class="currentrelative">
-<li class="tocentry"><a href="#summary">Summary</a></li>
-
-<li class="tocentry"><a href="#tools">Tools</a></li>
-
-<li class="tocentry"><a href="#installation">Installation</a></li>
-
-<li class="tocentry"><a href="#custom-aspect-ratios">Custom Aspect Ratios</a></li>
-
-<li class="tocentry"><a href="#hud-toggle">HUD toggle</a></li>
-
-<li class="tocentry"><a href="#time-scale">Time Scale</a></li>
-
-<li class="tocentry"><a href="#controls">Controls</a></li>
-
-<li class="tocentry"><a href="#reshade">Reshade</a></li>
-
-<li class="tocentry"><a href="#tips">Tips</a></li>
-
-<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
-
-</ul>
+<li class="tocentry"><a href="../GameGuides/mhrise.htm">Monster Hunter Rise</a>
+</li>
 <li class="tocentry"><a href="../GameGuides/mhwilds.htm">Monster Hunter Wilds</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/MutantYearZero.htm">Mutant Year Zero: Road to Eden</a>
@@ -173,8 +152,17 @@
 </li>
 <li class="tocentry"><a href="../GameGuides/SH2R.htm">Silent Hill 2 Remake</a>
 </li>
-<li class="tocentry"><a href="../GameGuides/SHF.htm">Silent Hill f</a>
-</li>
+<li class="tocentry current"><a class="current" href="../GameGuides/SHF.htm">Silent Hill f</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#summary">Summary</a></li>
+
+<li class="tocentry"><a href="#tools">Tools</a></li>
+
+<li class="tocentry"><a href="#manipulating-save-states">Manipulating save states</a></li>
+
+<li class="tocentry"><a href="#useful-links">Useful Links</a></li>
+
+</ul>
 <li class="tocentry"><a href="../GameGuides/SleepingDogsDE.htm">Sleeping Dogs: Definitive Edition</a>
 </li>
 <li class="tocentry"><a href="../GameGuides/South_of_Midnight.htm">South of Midnight</a>
@@ -305,7 +293,7 @@
             <div class="nav-content">
                 <div role="navigation" aria-label="breadcrumbs navigation">
                     <div class="breadcrumbs">
-<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../M-Z.htm">M-Z</a></li> / <li><a href="../GameGuides/mhrise.htm">Monster Hunter Rise</a></li></ul>
+<ul><li><a href="../index.htm">Home</a></li> / <li><a href="../Gameguides.htm">Game guides</a></li> / <li><a href="../M-Z.htm">M-Z</a></li> / <li><a href="../GameGuides/SHF.htm">Silent Hill f</a></li></ul>
 					
                     </div>
                     <hr />
@@ -313,8 +301,8 @@
                 <div role="main">
                     <div class="section">
 <div class="figure">
-<img src="../Images\mhrise.png" alt="Monster Hunter Rise" title="Shot by Originalnicodr" class="shadowed autosize" width="896" height="180" />
-<p>Shot by Originalnicodr</p>
+<img src="../Images\shf_header.png" alt="Silent Hill f" title="Shot by ItsYFP" class="shadowed autosize" width="896" height="180" />
+<p>Shot by ItsYFP</p>
 </div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <table class="table table-bordered-all table-responsive">
@@ -327,23 +315,23 @@
 <tbody>
 <tr>
 	<td>Vanilla Photo Mode</td>
-	<td>Yes (lol)</td>
-</tr>
-<tr>
-	<td>Hotsampling</td>
-	<td>Yes</td>
-</tr>
-<tr>
-	<td>DSR</td>
 	<td>No</td>
 </tr>
 <tr>
+	<td>Hotsampling</td>
+	<td>Yes (use windowed mode)</td>
+</tr>
+<tr>
+	<td>DSR</td>
+	<td>Probably</td>
+</tr>
+<tr>
 	<td>Custom Aspect Ratios</td>
-	<td>Yes*</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Reshade</td>
-	<td>Yes*</td>
+	<td>Yes</td>
 </tr>
 <tr>
 	<td>Ansel</td>
@@ -353,109 +341,36 @@
 	<td>Graphics API</td>
 	<td>DirectX 12</td>
 </tr>
+<tr>
+	<td>Game version</td>
+	<td><font face="Stores"> S </font> 1.10</td>
+</tr>
 </tbody>
 </table>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://github.com/praydog/REFramework" target="_blank">REFramework (script and plugin loader among other things)</a><br />
-<strong>Features</strong>: Freecam and Time scale (pause)</li>
-<li><a href="https://www.nexusmods.com/monsterhunterrise/mods/84" target="_blank">FoV editor</a><br />
-<strong>Features</strong>: FoV control</li>
-<li><a href="https://www.nexusmods.com/monsterhunterrise/mods/40" target="_blank">aspect_ratio_fit and resolution_scale</a><br />
-<strong>Features</strong>: Custome AR and resolution scale (for cutscenes).</li>
-<li><a href="https://github.com/originalnicodr/RELit" target="_blank">RELit by Originalnicodr and Otis_inf</a><br />
-<strong>Features</strong>: Lighting Control, turn off scene lights, exposure control.<br />
-Make sure to check out <a href="../GeneralGuides/relit.htm">the guide</a> on it.</li>
-<li><a href="https://github.com/alphazolam/EMV-Engine" target="_blank">EMV Engine</a><br />
-<strong>Features</strong>: Console, Enemy Spawner, Character Poser, Gravity Gun, and more.
-Make sure to check out the <a href="../GeneralGuides/emv_engine.htm">guide</a> on it.</li>
+<li><a href="https://www.patreon.com/posts/83234146" target="_blank">Unreal Engine Unlocker v5.4.11 or higher</a> (Not free, available on Patreon)<br />
+<strong><a href="https://opm.fransbouma.com/uuuv5.htm" target="_blank">Features</a></strong>: Camera control, FoV control, HUD toggle, game speed, pause/timestop, hotsampling, post processing, camera paths, pose tools</li>
 </ul>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>First, install REFramework by dropping its files into the game folder. Then, to install the other mods drop their files into the new <code>reframework\autorun</code> folder.</p>
-<p>Below I will leave you my settings. These are not necessary but you can copy and paste them into your <code>re2_fw_config.txt</code> file (created automatically when running the game with REFramework for the first time):</p>
-<pre class="nocode">FreeCam_DisableMoveKey=-1
-FreeCam_DisableMovement=false
-FreeCam_Enabled=false
-FreeCam_LockKey=-1
-FreeCam_LockPosition=false
-FreeCam_MoveDownKey=29
-FreeCam_MoveUpKey=57
-FreeCam_RotationSpeed=0.017000
-FreeCam_Speed=0.100000
-FreeCam_SpeedModifier=4.000000
-FreeCam_SpeedModifierFast=42
-FreeCam_SpeedModifierSlow=56
-FreeCam_ToggleKey=211
-Scene_TimeScale=0.000001
-Scene_TimeScaleContinuousKey=-1
-Scene_TimeScaleEnabled=false
-Scene_TimeScaleToggleKey=199
-</pre><h2 id="custom-aspect-ratios">Custom Aspect Ratios<a class="headerlink" href="#custom-aspect-ratios" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>The game doesn't support custom aspect ratios out of the box, so you will need to use the plugin linked above.</p>
-<h2 id="hud-toggle">HUD toggle<a class="headerlink" href="#hud-toggle" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>To turn off the HUD you will need to execute the following script. Create a .txt file, put code in the code-block below on it, save it and change the file extension to <code>.lua</code>. Then in the game, open the REFramework menu, click on <code>Run script</code> and select the file you created.</p>
-<p>Turn off HUD</p>
-<pre class="nocode">re.on_pre_gui_draw_element(function(element, context)
-    return false
-end)
-</pre><p>To turn the HUD on again click the button that says <code>Reset scripts</code>. Take in mind this will unpause the game and reset the fov.</p>
-<h2 id="time-scale">Time Scale<a class="headerlink" href="#time-scale" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Using a time scale of 0 would totally freeze the time in the game, but it won't allow you to move the camera around. So instead select a value of <code>0.001</code>. You can however edit the <code>re2_fw_config.txt</code> file and put the value <code>0.000001</code> manually. If you used my file from above you already have it done for you.</p>
-<h2 id="controls">Controls<a class="headerlink" href="#controls" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Take in mind these are the controls if you copied my <code>re2_fw_config.txt</code> values from above. You can of course change some of these keys in the REFramework menu.</p>
-<table class="table table-bordered-all table-responsive">
-<thead>
-<tr>
-	<th>Description</th>
-	<th>Keyboard and Mouse / Joystick</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-	<td>REFramework menu</td>
-	<td>Ins</td>
-</tr>
-<tr>
-	<td>Toggle Freecam</td>
-	<td>Del</td>
-</tr>
-<tr>
-	<td>Toggle Timestop</td>
-	<td>Home</td>
-</tr>
-<tr>
-	<td>Point camera</td>
-	<td>Mouse / Right stick</td>
-</tr>
-<tr>
-	<td>Move camera forward, backward, left and right</td>
-	<td>W, S, A, D / Left stick</td>
-</tr>
-<tr>
-	<td>Move the camera upwards</td>
-	<td>Space</td>
-</tr>
-<tr>
-	<td>Move the camera downwards</td>
-	<td>Ctrl</td>
-</tr>
-</tbody>
-</table>
-<p>To edit the FoV open the REFramework menu, go at the bottom, and open the &quot;Djevv's FoV&quot; menu. Edit it from there.</p>
-<h2 id="reshade">Reshade<a class="headerlink" href="#reshade" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>At the time of writing the last version of reshade, 5.0.2 (addon version) crashes the game, so stick with 4.9.2 for now.</p>
-<h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2 id="manipulating-save-states">Manipulating save states<a class="headerlink" href="#manipulating-save-states" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>This is meant as a way to force Hinako's default outfit on her model. It has pretty much no use outside of taking screenshots. </p>
+<p>Keep in mind, this will break upcoming cutscenes and block you from entering doors that lead to bosses. This method also won't work on the dark shrine Hinako/Wolf Arm model.</p>
 <ul>
-<li>REFramework for some reason isn't blocking game inputs when interacting with its menu.</li>
-<li>If you change to a vertical AR the FOV value will change, so change the fov after deciding on an aspect ratio.</li>
-<li>If the game happens to crash while hotsampling and running it back again takes a long time (or just never gets to the title screen), deleting your <code>re2_fw_config.txt</code> seems to make it work again.</li>
-<li>The FoV editor doesnt work in cutscenes.</li>
-<li>The black bars when using custom aspect ratios in cutscenes can be taken out by turning the hud off.</li>
+<li>Download the <a href="https://www.nexusmods.com/silenthillf/mods/273" target="_blank">Save Game Editor from Nexus</a></li>
+<li>Extract it where ever you want, it will automatically find your save-game location upon start</li>
+<li>Save games can be edited while the game is running, you can load your modified save file right away from the main menu</li>
 </ul>
+<p>I'd recommend making at least 2 saves at the same spot. Load up any of those 2 with the Save Game Editor, switch to advanced.
+Under Save Game you find multiple properties, open <strong>GameProgressTag</strong> and <strong>StateMachineProgressTag</strong>, click on each <strong>value</strong> dropdown menu as well.
+Now just look at the image below.</p>
+<p><img src="../Images\SilentHillfguide\save_editor.jpg" alt="Save Editor" class="shadowed autosize" width="1792" height="1042" /></p>
+<p><em>Please just follow the instructions on the image if you edit a save-file.</em></p>
+<p>Anyways, doing so allows you to play with Hinako's default outfit. As mentioned above, it will break cutscenes by simply not playing them, you can still walk into the area where it is supposed to play out, as long as there aren't any doors blocking you from entering. If there are NPC's, you can also access and pose them with UUU (Mainly Shu and Rinko will be available throughout the Game).</p>
+<p>The Save-state I used <strong>Progress.Story.Ch01.0110_DownHill</strong></p>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
-<li><a href="https://www.nexusmods.com/monsterhunterrise/mods/31" target="_blank">Disabling color gradig LUT</a></li>
-<li><a href="https://www.pcgamingwiki.com/wiki/Monster_Hunter_Rise" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://www.pcgamingwiki.com/wiki/Silent_Hill_f" target="_blank">PC Gaming Wiki</a></li>
+<li><a href="https://www.nexusmods.com/games/silenthillf" target="_blank">Nexus Mods</a></li>
 </ul>
 
                     </div>
