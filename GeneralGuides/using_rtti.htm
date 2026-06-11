@@ -157,7 +157,8 @@
                 <div role="main">
                     <div class="section">
 <h1 id="using-rtti-info-in-a-game-exe">Using RTTI info in a game exe<a class="headerlink" href="#using-rtti-info-in-a-game-exe" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
-<p>(Information distilled from an excellent video by Hatti.)</p>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p>GhostInTheCamera and Otis_Inf made a utility implemented in Lua script which is used inside Cheat Engine to dump a module's RTTI types, find instances of those types and reverse lookup instances in memory what RTTI type they have. You can find it <a href="https://framedsc.com/GeneralGuides/using_rtti.htm" target="_blank">here</a>.</p>
+</div><p>(Information distilled from an excellent video by Hatti.)</p>
 <p>The first action is to search for <code>.?AV</code> as string in the game exe using cheat engine. Do a search on the .exe alone, by selecting
 the exe in the combobox in Memory Scan options. Set Scan type to string, Writable and CopyOnWrite set to a filled checkbox. If you find more than
 a 1000 entries, it's usable and types of the game are in RTTI info in the exe. If you find just a few hundred, forget it. </p>
