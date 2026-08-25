@@ -325,7 +325,7 @@
 </tr>
 <tr>
 	<td>Hotsampling</td>
-	<td>No</td>
+	<td>Yes*</td>
 </tr>
 <tr>
 	<td>DSR</td>
@@ -333,7 +333,7 @@
 </tr>
 <tr>
 	<td>Custom Aspect Ratios</td>
-	<td>Yes (with tools)*</td>
+	<td>Yes*</td>
 </tr>
 <tr>
 	<td>Reshade</td>
@@ -349,21 +349,24 @@
 </tr>
 <tr>
 	<td>Game Version</td>
-	<td>1.03B <font face="Stores"> S </font></td>
+	<td>Latest <font face="Stores"> S </font></td>
 </tr>
 </tbody>
 </table>
-<p>* <em>Custom Aspect Ratios can be set in the mod menu, but may not rescale the image correctly.</em></p>
+<p>* <em>Custom Aspect Ratios are possible with the ghostinthecamera tools (as is hotsampling) with proper image scaling and black bar removal. They can also be set in the mod menu, but may not rescale the image correctly.</em></p>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <ul>
+<li><a href="https://patreon.com/ghostinthecamera" target="_blank">Camera tools by ghostinthecamera</a><br />
+<strong>The below mods are not needed for a working camera - the tools provide this functionality</strong></li>
+<strong>Features</strong>: Camera control, FOV, timestop, HUD Toggle (allows depth buffer use as below), Effects toggles (DOF, vignette), character outlines, Hotsampling & custom resolutions, paths etc</li>
 <li><a href="https://github.com/Zolika1351/Persona5ScriptHook/releases/" target="_blank">Persona5ScriptHook</a></li>
 <li><a href="https://zolika1351.pages.dev/mods/persona5menu" target="_blank">ZMenu</a></li>
 </ul>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>Development on the mod menu has finished according to the author; as such, the guide may become outdated following a game update. If so, as an alternative, you can roll back to a previous version of the game following <a href="../GeneralGuides/steam_update_guide.htm">this guide</a>.</p>
 </div><h2 id="requirements-for-depth-buffer-support">Requirements for Depth Buffer support<a class="headerlink" href="#requirements-for-depth-buffer-support" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Important!</span><p>The game writes HUD and menu data to the depth buffer. </p>
-<p>Disabling the HUD is <strong>required</strong> for the depth buffer to work. See <a href="#script-functions">Scripts Functions</a> section for how to disable the HUD.</p>
-</div><p>For depth buffer support, set the following pre-processor definitions:</p>
+<p>Disabling the HUD is <strong>required</strong> for the depth buffer to work. The tools HUD disable provides this. Additionally, see <a href="#script-functions">Scripts Functions</a> section for how to disable the HUD.</p>
+</div><p>*this may not be needed for the latest version of the game* For depth buffer support, set the following pre-processor definitions:</p>
 <ul>
 <li><code>RESHADE_DEPTH_LINEARIZATION_FAR_PLANE</code> to <code>100.0</code></li>
 <li><code>RESHADE_DEPTH_INPUT_IS_UPSIDE_DOWN</code> to <code>0</code></li>
